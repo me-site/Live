@@ -92,6 +92,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
             "Gather.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /电台|广播|游戏|地方|Juli|港澳/) {skip = 1;} else {skip = 0; print $0;}} else if (skip == 0) {print $0;}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 sed -i 's@https://tv\.iill\.top/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/@g' "$target_path"
+                sed -i 's@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$target_path"
                 sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$target_path"
                 ;;
         esac

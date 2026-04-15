@@ -1,8 +1,5 @@
 Gather.m3u,https://down.homesite.workers.dev/?url=https://tv.iill.top/m3u/Gather
 Anbox.m3u,https://tv.anbox.ip-ddns.com/live20
-GuangxiTV.txt,https://zb.484947.xyz/
 Hongkong.txt,https://me.ug.cx/tv/Hongkong.txt
 KongTaiTV.m3u,https://me.ug.cx/tv/KongTaiTV.m3u
-FYTV.txt,http://iptv.4666888.xyz/FYTV.txt
 Smart.txt,http://xclasvgas.sylu.net:8080/smt.php
-Merged.m3u,http://66.103.204.107/list.php

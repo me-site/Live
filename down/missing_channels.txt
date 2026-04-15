@@ -9,7 +9,7 @@ CCTV4K
 女性时尚
 高尔夫网球
 央视文化精品
-NOW 爆谷星影台
+NOW 爆谷台
 myTV SUPER Free
 tvN
 TVBS综艺台
@@ -19,6 +19,7 @@ HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+BBC Earth
 BBC Lifestyle
 Discovery
 Discovery Asia
@@ -36,4 +37,3 @@ NOW 668
 Astro Cricket
 beIN Sports 1
 beIN Sports 2
-博斯运动二台

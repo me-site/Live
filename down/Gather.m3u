@@ -77,17 +77,17 @@ https://hls.iill.top/api/Sports-Network/index.m3u8
 #EXTINF:-1 tvg-id="博斯運動二台" tvg-name="博斯運動二台" tvg-logo="https://epg-1.iill.top/logo/博斯運動二台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯運動 二「CatchPlay」
 https://hls.iill.top/api/Football-Channel/index.m3u8
 #EXTINF:-1 tvg-id="博斯無限台" tvg-name="博斯無限台" tvg-logo="https://epg-1.iill.top/logo/博斯無限台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯無限 一「FainTV」
-https://v.iill.top/tw/Unlimited-Channel/index.m3u8
+https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Unlimited-Channel/index.m3u8
 #EXTINF:-1 tvg-id="博斯無限二台" tvg-name="博斯無限二台" tvg-logo="https://epg-1.iill.top/logo/博斯無限二台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯無限 二「FainTV」
-https://v.iill.top/tw/Unlimited-Channel-2/index.m3u8
+https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Unlimited-Channel-2/index.m3u8
 #EXTINF:-1 tvg-id="博斯高球台" tvg-name="博斯高球台" tvg-logo="https://epg-1.iill.top/logo/博斯高球台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯高球 一「FainTV」
-https://v.iill.top/tw/Golf-Channel/index.m3u8
+https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Golf-Channel/index.m3u8
 #EXTINF:-1 tvg-id="博斯高球二台" tvg-name="博斯高球二台" tvg-logo="https://epg-1.iill.top/logo/博斯高球二台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯高球 二「FainTV」
-https://v.iill.top/tw/Golf-Plus/index.m3u8
+https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Golf-Plus/index.m3u8
 #EXTINF:-1 tvg-id="博斯網球台" tvg-name="博斯網球台" tvg-logo="https://epg-1.iill.top/logo/博斯網球台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯網球「FainTV」
-https://v.iill.top/tw/Tennis-Channel/index.m3u8
+https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Tennis-Channel/index.m3u8
 #EXTINF:-1 tvg-id="博斯魅力台" tvg-name="博斯魅力台" tvg-logo="https://epg-1.iill.top/logo/博斯魅力台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯魅力「FainTV」
-https://v.iill.top/tw/Trendsport-Channel/index.m3u8
+https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Trendsport-Channel/index.m3u8
 
 #EXTINF:-1 tvg-id="緯來日本台" tvg-name="緯來日本台" tvg-logo="https://epg.iill.top/logo/緯來日本.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」",緯來日本「Relay」
 https://v.iill.top/api/VL-Japan/index.m3u8

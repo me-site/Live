@@ -1,92 +1,32 @@
-name: IPTV Studio 自动化流水线
+name: IPTV Auto Update
 
 on:
   schedule:
-    # 每天北京时间 03:00, 09:00, 15:00, 21:00 运行
-    - cron: '0 1,7,13,19 * * *'
-  workflow_dispatch: # 支持手动触发
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    # 每 6 小时自动运行一次 (UTC 时间)
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    # 允许你在 Actions 页面手动点击运行
 
 jobs:
-  iptv-update:
+  update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    env:
-      TZ: Asia/Shanghai
 
     steps:
-      - name: 1. 检出代码
+      - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      # --- 核心任务: IPTV 更新 ---
-      - name: 2. 运行 IPTV 维护脚本
-        env:
-          TG_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+      - name: Setup Shell Environment
         run: |
-          # A. 【先清理】确保 down 目录是干净的，创建 files 目录防止报错
-          echo "🧹 清理旧的报告和缓存..."
-          rm -rf down/*
-          mkdir -p down
-          mkdir -p files
-          
-          # B. 【再执行】运行你的 IPTV 维护脚本
-          echo "🚀 启动 IPTV 定期维护任务..."
-          chmod +x ./list/update_iptv.sh
-          ./list/update_iptv.sh
-          
-          # C. 【组装报告】此时生成的报告是全新的
-          echo "正在组装 Ando 专属报告..."
-          if [ -f "down/download_report.txt" ]; then
-              DL_REPORT=$(cat down/download_report.txt | sed ':a;N;$!ba;s/\n/%0A/g')
-          else
-              DL_REPORT="· 无下载记录"
-          fi
+          chmod +x list/update_live.sh
 
-          if [ -s "down/missing_channels.txt" ]; then
-              MISS_COUNT=$(wc -l < down/missing_channels.txt)
-              MISS_LIST=$(head -n 50 down/missing_channels.txt | sed 's/^/· /' | sed ':a;N;$!ba;s/\n/%0A/g')
-              FAILED_STR="❌ *匹配失败频道 ($MISS_COUNT):*%0A$MISS_LIST"
-          else
-              FAILED_STR="✅ *所有频道均匹配成功*"
-          fi
-
-          MYTV_COUNT=$(grep -c "^https?://" mytv.m3u || echo "0")
-          LIVE_COUNT=$(grep -c "^https?://" live.m3u || echo "0")
-          
-          MSG="📺 *Ando IPTV 自动化报告*%0A"
-          MSG="${MSG}📅 时间: $(date '+%Y-%m-%d %H:%M')%0A"
-          MSG="${MSG}📊 *直播源下载报告:*%0A${DL_REPORT}%0A"
-          MSG="${MSG}----------------------------%0A"
-          MSG="${MSG}📈 *有效源统计:* mytv($MYTV_COUNT) / live($LIVE_COUNT)%0A"
-          MSG="${MSG}$FAILED_STR"
-
-          curl -s -X POST "https://api.telegram.org/bot$TG_TOKEN/sendMessage" \
-            -d "chat_id=$TG_CHAT_ID" \
-            -d "text=$MSG" \
-            -d "parse_mode=Markdown"
-
-      # --- 3. 同步到仓库 ---
-      - name: 3. 提交变动
+      - name: Run Update Script
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Ando-Bot"
-          
-          # 【提交】此时 files 和 down 里的文件都是最新的
-          git add iptv.m3u mytv.m3u live.m3u 2>/dev/null || true
-          git add files/ 2>/dev/null || true
-          git add down/ 2>/dev/null || true
-          
-          if git diff --cached --quiet; then
-            echo "没有检测到任何变动，跳过提交。"
-          else
-            git commit -m "📺 IPTV & Data Update: $(date '+%Y-%m-%d %H:%M')"
-            git pull --rebase --autostash origin main
-            git push origin main
-          fi
+          ./list/update_live.sh
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add live.m3u down/ files/
+          git commit -m "Auto Update IPTV: $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
+          git push

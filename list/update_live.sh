@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - 逻辑全开版 (含免检白名单与五重过滤)
+# IPTV 维护脚本 - Live 专属版 (仅输出 live.m3u)
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -16,8 +16,7 @@ NAME_TXT="$CONFIG_DIR/name.txt"
 NAME_M3U="$CONFIG_DIR/extinf.m3u"
 DOWN_CONFIG="$CONFIG_DIR/down.txt"
 
-MY_M3U="$BASE_DIR/mytv.m3u"
-FINAL_M3U="$BASE_DIR/iptv.m3u"
+# 仅保留 live.m3u
 LIVE_M3U="$BASE_DIR/live.m3u"
 MISSING_CHANNELS_FILE="$DOWN_DIR/missing_channels.txt"
 DOWNLOAD_LOG="$DOWN_DIR/download_report.txt"
@@ -26,7 +25,7 @@ THREAD_COUNT=25
 > "$MISSING_CHANNELS_FILE"
 > "$DOWNLOAD_LOG"
 
-# --- 步骤 1: 构建字典 ---
+# --- 步骤 1: 构建标准字典 ---
 echo "🏗️ 正在构建标准字典..."
 TEMPLATE_NAMES_FILE="$DOWN_DIR/template_names.tmp"
 sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' "$NAME_M3U" | sort -u > "$TEMPLATE_NAMES_FILE"
@@ -49,7 +48,7 @@ while IFS='|' read -r -a names; do
     fi
 done < "$NAME_TXT"
 
-# --- 步骤 2: 下载原始镜像并执行特定逻辑 ---
+# --- 步骤 2: 下载原始镜像并处理逻辑 ---
 echo "📥 阶段 1: 处理下载与特定源逻辑..."
 IDX=100
 PRIORITY_IDX="$DOWN_DIR/priority.idx"; > "$PRIORITY_IDX"
@@ -69,7 +68,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
 
     if [ "$h_code" -eq 200 ]; then
         h_size=$(awk "BEGIN {printf \"%.1f MB\", $b_size/1048576}")
-        echo "· $f_n   【 $h_size 】" >> "$DOWNLOAD_LOG"
+        echo "· $f_n    【 $h_size 】" >> "$DOWNLOAD_LOG"
 
         sed 's/^\xEF\xBB\xBF//; s/\r//g' "$raw_path" > "$target_path"
 
@@ -78,22 +77,10 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
             mv "${target_path}.tmp" "$target_path"
         fi
 
-        # ==========================================================
-        # 【全兼容版】规范化 tvg-name，支持空格，精准处理引号乱象
-        # 兼容：tvg-name="CCTV 1" | tvg-name=CCTV 1" | tvg-name="CCTV 1 | tvg-name=CCTV 1
-        # ==========================================================
-        
-        # 1. 彻底剥离 tvg-name= 后面直到下一个标签前可能存在的乱码引号
-        # 将 tvg-name="CCTV 1 统一变为 tvg-name=CCTV 1
+        # 规范化 tvg-name 标签
         sed -i -E 's/tvg-name=["'\'']?([^"'\'',]+)["'\'']?/tvg-name=\1/g' "$target_path"
-        
-        # 2. 重新精准包裹：匹配到逗号、tvg-logo 或 catchup 停止
-        # 这一步会处理带空格的名字，如 tvg-name="CCTV 1"
         sed -i -E 's/tvg-name=([^",]+)([, ]+tvg-logo|[, ]+catchup|,)/tvg-name="\1"\2/g' "$target_path"
-        
-        # 3. 兜底处理：如果 tvg-name 就在行尾（后面没东西了）
         sed -i -E 's/tvg-name=([^", ]+)$/tvg-name="\1"/g' "$target_path"
-        # ==========================================================
 
         case "$f_n" in
             "Smart.txt")
@@ -101,11 +88,11 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 ;;
             "Merged.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /group-title="?(大陸频道|LiTV|未整理|GPT-.*)"?/) { skip = 1; } else { skip = 0; print $0; }} else { if (skip == 0) print $0; }}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
+                # 添加代理前缀
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /group-title="?(綜合其他|兒童卡通|新闻财经|音乐综艺|电影戏剧|生活旅游|体育竞技|纪实探索|台湾备用)"?/) { n_p = 1; } else { n_p = 0; } print $0;} else if ($0 ~ /^https?:\/\//) {if (n_p == 1 && $0 !~ /^https:\/\/rtp\.cc\.cd\/tw\.php\?url=/) { print "https://rtp.cc.cd/tw.php?url=" $0; } else { print $0; } n_p = 0;} else { print $0; }}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 ;;
             "Gather.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /电台|广播|游戏|地方|Juli|港澳/) {skip = 1;} else {skip = 0; print $0;}} else if (skip == 0) {print $0;}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
-                # 添加代理前缀
                 sed -i '/rtp\.cc\.cd/! s@https://tv\.iill\.top/@https://rtp.cc.cd/tw.php?url=https://tv.iill.top/@g' "$target_path"
                 sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/tw.php?url=https://v.iill.top/4gtv/@g' "$target_path"
                 ;;
@@ -114,11 +101,11 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 ;;
         esac
     else
-        echo "· $f_n   【 ❌ 】" >> "$DOWNLOAD_LOG"
+        echo "· $f_n    【 ❌ 】" >> "$DOWNLOAD_LOG"
     fi
 done < "$DOWN_CONFIG"
 
-# --- 步骤 3: 匹配与测活 (含免检逻辑) ---
+# --- 步骤 3: 匹配与测活 ---
 echo "🔍 阶段 2: 匹配与测活..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 while IFS='|' read -r f_n p_val; do
@@ -139,22 +126,20 @@ done < "$PRIORITY_IDX"
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
 check_url_worker() {
     IFS='|' read -r t u s p <<< "$1"
-    
-    # 🔥 免检白名单
+    # 白名单免检
     if [[ "$s" == "ChinaTV.m3u" || "$s" == "HunanTV.m3u" || "$s" == "Playlist.m3u" ]]; then
         echo "$t|$u|$s|$p" >> "$2"
         return
     fi
-
     local code=$(curl -sL -k -I --connect-timeout 5 --max-time 8 "$u" 2>/dev/null | awk 'NR==1{print $2}')
     [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "$2"
 }
 export -f check_url_worker
 [ -s "$ALL_MATCHED" ] && cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
 
-# --- 步骤 4: 组装结果 (五重过滤仅限 live.m3u) ---
-echo "📦 阶段 3: 组装结果..."
-printf "#EXTM3U\n" > "$MY_M3U"; printf "#EXTM3U\n" > "$FINAL_M3U"; printf "#EXTM3U\n" > "$LIVE_M3U"
+# --- 步骤 4: 组装结果 (仅 Live 逻辑) ---
+echo "📦 阶段 3: 组装结果 (Live 模式)..."
+printf "#EXTM3U\n" > "$LIVE_M3U"
 MATCHED_STD_NAMES="$DOWN_DIR/matched_std_names.tmp"; > "$MATCHED_STD_NAMES"
 
 while read -r tpl_line || [ -n "$tpl_line" ]; do
@@ -163,16 +148,16 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     [ -z "$t_name" ] && continue
     [[ "$tpl_line" =~ "成人" ]] && continue
 
+    # 按优先级排序
     MATCH_RAW=$(awk -F'|' -v t="$t_name" '$1==t' "$HEALTHY_LIST" | sort -t'|' -k4 -n)
+    
     if [ -n "$MATCH_RAW" ]; then
         echo "$t_name" >> "$MATCHED_STD_NAMES"
         while IFS='|' read -r _t v_u _src _p; do
-            echo "$tpl_line" >> "$MY_M3U"; echo "$v_u" >> "$MY_M3U"
-            echo "$tpl_line" >> "$FINAL_M3U"; echo "$v_u" >> "$FINAL_M3U"
-
-            # 🚀 仅针对 live.m3u 执行五重过滤
+            # --- 🚀 核心：五重过滤逻辑 ---
             group_val=$(echo "$tpl_line" | sed -n 's/.*group-title="\([^"]*\)".*/\1/p')
             skip_live=0
+            
             [ "$group_val" == "湖南" ] && skip_live=1
             [ "$_src" == "ChinaTV.m3u" ] && skip_live=1
             [[ "$v_u" =~ "link.itv.us.kg" ]] && skip_live=1
@@ -180,7 +165,7 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
             [[ "$v_u" =~ \.flv ]] && skip_live=1
 
             if [ $skip_live -eq 0 ]; then
-                # 【安全替换】仅在写入 live.m3u 前，将 tw.php 替换为 play.php
+                # 执行 URL 替换 (tw -> play)
                 v_u_live="${v_u//rtp.cc.cd\/tw.php/rtp.cc.cd\/play.php}"
                 
                 echo "$tpl_line" >> "$LIVE_M3U"
@@ -199,4 +184,4 @@ while IFS='|' read -r -a names; do
     fi
 done < "$NAME_TXT"
 
-echo "✅ 任务完成。"
+echo "✅ 任务完成，已生成 live.m3u。"

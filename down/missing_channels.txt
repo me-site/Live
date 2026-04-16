@@ -10,16 +10,13 @@ CCTV4K
 高尔夫网球
 央视文化精品
 NOW 爆谷星影台
+NOW 爆谷台
 myTV SUPER Free
 tvN
 韩国娱乐台
 TVBS综艺台
 HGTV居家乐活频道
 TLC旅游生活频道
-HBO强档巨献
-HBO温馨家庭
-HBO原创巨献
-Discovery
 Discovery Asia
 Discovery SCI
 DMAX
@@ -35,3 +32,5 @@ NOW 668
 Astro Cricket
 beIN Sports 1
 beIN Sports 2
+beIN Sports 3
+智林体育

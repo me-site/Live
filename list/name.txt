@@ -125,9 +125,9 @@ DreamWorks|DreamWorks|Dream Works夢工廠動畫|DreamWorks 夢工廠動畫|DREA
 尼克儿童频道|尼克儿童频道|尼克兒童頻道|尼克儿童|尼克兒童|NICKELODEONASIA尼克儿童频道
 好莱坞电影台|好莱坞电影台|好萊塢電影台|好莱坞电影|好萊塢電影|Hollywood Movies
 HBO|HBO|HBO Asia|HBO HD|HBO香港|HBO_HD
-HBO强档巨献|HBO强档巨献|HBO HITS (HD)|HBO Hits HD|HBOHITS|HBO_HITS
-HBO温馨家庭|HBO温馨家庭|HBO FAMILY (HD)|HBO Family HD|HBOFAMILY
-HBO原创巨献|HBO原创巨献|HBO SIGNATURE (HD)|HBO Signature HD|HBOSIGNATURE|HBO Signature Taiwan
+HBO强档巨献|HBO强档巨献|HBO 強檔鉅獻|HBO HITS (HD)|HBO Hits HD|HBOHITS|HBO_HITS|HBO Hits
+HBO温馨家庭|HBO温馨家庭|HBO 溫馨家庭|HBO FAMILY (HD)|HBO Family HD|HBOFAMILY|HBO Family
+HBO原创巨献|HBO原创巨献|HBO 原創鉅獻|HBO SIGNATURE (HD)|HBO Signature HD|HBOSIGNATURE|HBO Signature Taiwan|HBO Signature
 ROCK Action|ROCKACTIONHD|ROCKACTIONHD|ROCK Action|ROCK ACTION (HD)
 ROCK X Stream|ROCKXSTREAM摇滚极限频道|ROCKXSTREAM摇滚极限频道|ROCK Xstream極限頻道|ROCK Xstream搖滾極限頻道|ROCK XSTREAM摇滚极限频道
 ROCK Entertainment|ROCKENTERTAINMENT|ROCKENTERTAINMENT|ROCK Entertainment|ROCK ENTERTAINMENT (HD)|ROCK综艺娱乐|ROCK ENTERTAINMENT
@@ -135,7 +135,7 @@ BBC Earth|BBCEARTH|BBCEARTH|BBC Earth|BBC Earth Asia|BBC EARTH (HD)|BBC EARTH|BB
 BBC Lifestyle|BBCLIFESTYLE|BBCLIFESTYLE|BBC Lifestyle|BBC LIFESTYLE (HD)|BBC LIFESTYLE|BBC Earth Lifestyle
 Discovery|DISCOVERY|DISCOVERY|Discovery Channnel|DISCOVERY HD|探索频道
 Discovery Asia|DISCOVERYASIA|DISCOVERYASIA|Discovery Asia
-Discovery SCI|Discovery科学频道|DISCOVERY科学频道|DISCOVERY科学频道|Discovery Science
+Discovery SCI|Discovery科学频道|DISCOVERY科学频道|Discovery科學頻道|Discovery 科學頻道|Discovery Science
 DMAX|DMAX|DMAX Asia
 动物星球|动物星球|動物星球|AnimalPlanet HD
 CI罪案侦查频道|CI罪案侦查频道|CI 罪案偵查頻道|CI 罪案侦查频道|CI

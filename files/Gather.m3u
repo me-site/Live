@@ -132,7 +132,7 @@ https://live5.tdm.com.mo/ch6/hd_ch6.live/playlist.m3u8
 #EXTINF:-1 tvg-id="博斯運動一台" tvg-name="博斯運動一台" tvg-logo="https://epg-1.iill.top/logo/博斯運動一台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯運動 一「CatchPlay」
 https://hls.iill.top/api/Sports-Network/index.m3u8
 #EXTINF:-1 tvg-id="博斯運動二台" tvg-name="博斯運動二台" tvg-logo="https://epg-1.iill.top/logo/博斯運動二台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯運動 二「FainTV」
-https://v.iill.top/api/Football-Channel/index.m3u8
+https://v.iill.top/tw/Football-Channel/index.m3u8
 #EXTINF:-1 tvg-id="博斯無限台" tvg-name="博斯無限台" tvg-logo="https://epg-1.iill.top/logo/博斯無限台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯無限 一「FainTV」
 https://v.iill.top/tw/Unlimited-Channel/index.m3u8
 #EXTINF:-1 tvg-id="博斯無限二台" tvg-name="博斯無限二台" tvg-logo="https://epg-1.iill.top/logo/博斯無限二台.png" http-user-agent="okhttp/1.9.89" group-title="•台湾「限制」", 博斯無限 二「FainTV」

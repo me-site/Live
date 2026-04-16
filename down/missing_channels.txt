@@ -12,16 +12,20 @@ CCTV4K
 NOW 爆谷星影台
 NOW 爆谷台
 myTV SUPER Free
+LSTime 电影台
 tvN
 韩国娱乐台
+中天娱乐台
 TVBS综艺台
 HGTV居家乐活频道
 TLC旅游生活频道
+HBO强档巨献
 Discovery Asia
 Discovery SCI
 DMAX
 动物星球
 亚洲美食频道
+Global Trekker
 Magellan TV
 LOL
 NBA TV
@@ -32,5 +36,4 @@ NOW 668
 Astro Cricket
 beIN Sports 1
 beIN Sports 2
-beIN Sports 3
 智林体育

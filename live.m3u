@@ -1871,7 +1871,7 @@ https://hls.iill.top/api/BBC-Lifestyle/index.m3u8
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live027/index.m3u8
 #EXTINF:-1 tvg-name="视纳华仁纪实频道" tvg-logo="https://me.ug.cx/logo/CNEX.png" group-title="纪录",視納華仁紀實頻道
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv013/index.m3u8
-#EXTINF:-1 tvg-name="History" tvg-logo="https://me.ug.cx/logo/History.png" group-title="纪录",History 歷史頻道
+#EXTINF:-1 tvg-name="HISTORY" tvg-logo="https://me.ug.cx/logo/History.png" group-title="纪录",History 歷史頻道
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live026/index.m3u8
 #EXTINF:-1 tvg-name="亚洲旅游HD" tvg-logo="https://me.ug.cx/logo/亚洲旅游.png" group-title="纪录",亞洲旅遊HD
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv076/index.m3u8

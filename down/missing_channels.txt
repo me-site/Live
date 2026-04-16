@@ -12,37 +12,21 @@ CCTV4K
 NOW 爆谷星影台
 NOW 爆谷台
 myTV SUPER Free
-民视综艺台
-三立综合台
 tvN
-Lifetime
-韩国娱乐台
-时尚运动X
 TVBS综艺台
-靖天欢乐台
-八大综艺台
-爱尔达娱乐台
+八大精彩台
 HGTV居家乐活频道
 TLC旅游生活频道
-DreamWorks
-尼克儿童频道
 HBO
-ROCK Action
-ROCK X Stream
-ROCK Entertainment
+HBO强档巨献
+HBO温馨家庭
+HBO原创巨献
 Discovery Asia
 Discovery SCI
 DMAX
 动物星球
-CI罪案侦查频道
-视纳华仁纪实频道
-History
 亚洲美食频道
-亚洲旅游HD
-Love Nature
-Global Trekker
 Magellan TV
-INULTRA
 LOL
 NBA TV
 Eurosport
@@ -53,4 +37,3 @@ Astro Cricket
 beIN Sports 1
 beIN Sports 2
 beIN Sports 3
-智林体育

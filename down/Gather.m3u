@@ -10,8 +10,10 @@ https://epg.iill.top/v/301.mp4
 #EXTINF:-1 tvg-id="免费订阅" tvg-name="免费订阅" tvg-logo="https://epg-1.iill.top/logo/温馨提示.png" group-title="•溫馨「提示」",建議使用：請保持 个人觀看 請勿頻繁切換
 https://epg-1.iill.top/v/301.mp4
 
-#EXTINF:-1 tvg-id="HBO HD" tvg-name="HBO HD" tvg-logo="https://epg.iill.top/logo/HBO.png" group-title="•測試「Relay」",HBO「回看/12H」
+#EXTINF:-1 tvg-id="HBO HD" tvg-name="HBO HD" tvg-logo="https://epg.iill.top/logo/HBO.png" group-title="•測試「Relay」",HBO「回看/6H」
 https://hls.iill.top/test/HBO/index.m3u8
+#EXTINF:-1 tvg-id="緯來體育台" tvg-name="緯來體育台" tvg-logo="https://epg.iill.top/logo/緯來體育.png" group-title="•測試「Relay」",緯來體育「回看/24H」
+https://v.iill.top/test/VL-Sports/index.m3u8
 
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.iill.top/logo/CCTV1.png" group-title="•央視「Relay」",CCTV 1 綜合「Relay」
 https://v.iill.top/api/CCTV1/index.m3u8

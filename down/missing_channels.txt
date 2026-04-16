@@ -1,23 +1,4 @@
-CCTV1
-CCTV2
-CCTV3
-CCTV4
-CCTV5
-CCTV6
-CCTV7
-CCTV8
-CCTV9
-CCTV10
-CCTV11
-CCTV12
-CCTV13
-CCTV14
-CCTV15
-CCTV16
-CCTV17
-CCTV5+
 CCTV4K
-风云足球
 风云音乐
 风云剧场
 第一剧场
@@ -38,10 +19,6 @@ tvN
 TVBS综艺台
 HGTV居家乐活频道
 TLC旅游生活频道
-HBO强档巨献
-HBO温馨家庭
-HBO原创巨献
-BBC Lifestyle
 Discovery Asia
 Discovery SCI
 DMAX
@@ -57,5 +34,4 @@ NOW 668
 Astro Cricket
 beIN Sports 1
 beIN Sports 2
-beIN Sports 3
 博斯魅力台

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - Live 专属修复版 (强制 HTTPS)
+# IPTV 维护脚本 - Live 专属修复版 (强化过盾下载)
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -11,12 +11,9 @@ M3U_RAW_DIR="$BASE_DIR/files"
 DOWN_DIR="$BASE_DIR/down"
 
 # --- 目录初始化 ---
-# 确保 files 存在
 mkdir -p "$M3U_RAW_DIR"
-# 每次运行清理并重建 down 目录
 rm -rf "$DOWN_DIR"
 mkdir -p "$DOWN_DIR"
-# 确保配置目录存在
 mkdir -p "$CONFIG_DIR"
 
 NAME_TXT="$CONFIG_DIR/name.txt"
@@ -66,26 +63,41 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     ((IDX++))
     
     raw_path="$M3U_RAW_DIR/$f_n"
-target_path="$DOWN_DIR/$f_n"
+    target_path="$DOWN_DIR/$f_n"
 
-# 增加特定变量
-EXTRA_HEADERS=""
-if [[ "$url" == *"catvod.com"* ]]; then
-    # 针对 CatVod 伪造更真实的头部
-    EXTRA_HEADERS="-H 'Referer: https://live.catvod.com/' -H 'Origin: https://live.catvod.com/'"
-fi
-
-dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
-    -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-    -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
-    -H "Accept-Language: zh-CN,zh;q=0.9" \
-    $EXTRA_HEADERS \
-    "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
+    # --- 强力过盾下载模块 ---
+    if [[ "$url" == *"catvod.com"* ]]; then
+        # 针对 CatVod 模拟最真实的浏览器行为
+        dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 20 \
+            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" \
+            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
+            -H "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8" \
+            -H "Cache-Control: no-cache" \
+            -H "Pragma: no-cache" \
+            -H "Referer: https://live.catvod.com/" \
+            -H "Sec-Ch-Ua: \"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\"" \
+            -H "Sec-Ch-Ua-Mobile: ?0" \
+            -H "Sec-Ch-Ua-Platform: \"Windows\"" \
+            -H "Sec-Fetch-Dest: document" \
+            -H "Sec-Fetch-Mode: navigate" \
+            -H "Sec-Fetch-Site: same-origin" \
+            -H "Upgrade-Insecure-Requests: 1" \
+            "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
+    else
+        # 普通源下载
+        dl_info=$(curl -L -k -s --retry 2 --retry-delay 3 --connect-timeout 15 \
+            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" \
+            "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
+    fi
 
     h_code=$(echo $dl_info | cut -d',' -f1)
     b_size=$(echo $dl_info | cut -d',' -f2)
 
-    # 打印调试信息，方便在 GitHub Actions 日志里看
+    # 二次检查：有些时候虽然返回 200，但内容是 CF 的拦截页面
+    if [ "$h_code" -eq 200 ] && grep -q "Just a moment" "$raw_path"; then
+        h_code=403
+    fi
+
     echo "DEBUG: 访问 $f_n 状态码: $h_code, 大小: $b_size"
 
     if [ "$h_code" -eq 200 ]; then
@@ -113,7 +125,7 @@ dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
                 ;;
         esac
     else
-        echo "· $f_n    【 ❌ 】" >> "$DOWNLOAD_LOG"
+        echo "· $f_n    【 ❌ 状态码: $h_code 】" >> "$DOWNLOAD_LOG"
     fi
 done < "$DOWN_CONFIG"
 

@@ -126,6 +126,7 @@ while IFS='|' read -r f_n p_val; do
         if [[ "$line" =~ "#EXTINF" ]]; then
             raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
+            
             std_name=$(grep -i "^${raw_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
             if [ -n "$std_name" ]; then
                 read -r v_url
@@ -136,18 +137,32 @@ while IFS='|' read -r f_n p_val; do
 done < "$PRIORITY_IDX"
 
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
+
+# 1. 定义测活规则（函数）
 check_url_worker() {
     IFS='|' read -r t u s p <<< "$1"
-    if [[ "$s" == "CatVod.m3u" || "$s" == "Playlist.m3u" ]]; then
+    
+    # 免检逻辑 (CatVod, Playlist 以及 rtp.cc.cd 开头的源)
+    if [[ "$s" == "CatVod.m3u" || "$s" == "Playlist.m3u" || "$u" == https://rtp.cc.cd/* ]]; then
         echo "$t|$u|$s|$p" >> "$2"
         return
     fi
-    # 测活同样模拟播放器 UA
+    
+    # 普通源：模拟 VLC 测活
     local code=$(curl -sL -k -I --connect-timeout 5 --max-time 8 -A "VLC/3.0.18 LibVLC/3.0.18" "$u" 2>/dev/null | awk 'NR==1{print $2}')
     [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "$2"
 }
+
+# 2. 导出函数环境（让多线程 xargs 能识别到它）
 export -f check_url_worker
-[ -s "$ALL_MATCHED" ] && cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
+
+# 3. 启动并行任务（发令枪）
+if [ -s "$ALL_MATCHED" ]; then
+    echo "🚀 正在并行测活中，请稍候..."
+    cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
+else
+    echo "⚠️ 警告：没有找到任何匹配的频道，请检查 name.txt 或字典配置。"
+fi
 
 # --- 步骤 4: 组装结果 ---
 echo "📦 阶段 3: 组装 live.m3u..."

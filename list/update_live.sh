@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - Live 专属修复版 (修复语法错误 + 缓存保底)
+# IPTV 维护脚本 - 深度模拟播放器下载 + 完整保底逻辑版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -51,7 +51,7 @@ while IFS='|' read -r -a names; do
     fi
 done < "$NAME_TXT"
 
-# --- 步骤 2: 下载原始镜像并处理逻辑 ---
+# --- 步骤 2: 下载原始镜像并处理逻辑 (保留核心逻辑并增强模拟) ---
 echo "📥 阶段 1: 处理下载逻辑..."
 IDX=100
 PRIORITY_IDX="$DOWN_DIR/priority.idx"; > "$PRIORITY_IDX"
@@ -65,19 +65,26 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     raw_path="$M3U_RAW_DIR/$f_n"
     target_path="$DOWN_DIR/$f_n"
 
-    # 执行下载到临时文件
-    dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
-        -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-        -H "Referer: https://live.catvod.com/" \
+    # 动态获取域名用于 Referer
+    domain=$(echo "$url" | awk -F[/:] '{print $1"//"$4}')
+
+    # 执行下载到临时文件 (增强模拟播放器头)
+    dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 20 \
+        -A "VLC/3.0.18 LibVLC/3.0.18" \
+        -H "Referer: $domain" \
+        -H "Origin: $domain" \
+        -H "Connection: keep-alive" \
+        -H "Range: bytes=0-" \
+        -H "Accept: */*" \
         "$url" -o "$raw_path.new" -w "%{http_code}")
 
     # 判断下载是否有效（排除 403 和 CF 拦截页）
-    if [ "$dl_info" -eq 200 ] && ! grep -q "Just a moment..." "$raw_path.new"; then
+    if [[ "$dl_info" =~ ^(200|206)$ ]] && ! grep -q "Just a moment..." "$raw_path.new" && [ -s "$raw_path.new" ]; then
         mv "$raw_path.new" "$raw_path"
         echo "DEBUG: $f_n 下载成功。"
     else
         rm -f "$raw_path.new"
-        echo "DEBUG: $f_n GitHub 下载失败 (CF拦截)，尝试调用本地缓存。"
+        echo "DEBUG: $f_n GitHub 下载失败 (CF拦截或Code:$dl_info)，尝试调用本地缓存。"
     fi
 
     # 核心判断：如果有文件（不论是新下的还是旧的）才进行后续处理
@@ -135,13 +142,14 @@ check_url_worker() {
         echo "$t|$u|$s|$p" >> "$2"
         return
     fi
-    local code=$(curl -sL -k -I --connect-timeout 5 --max-time 8 "$u" 2>/dev/null | awk 'NR==1{print $2}')
+    # 测活同样模拟播放器 UA
+    local code=$(curl -sL -k -I --connect-timeout 5 --max-time 8 -A "VLC/3.0.18 LibVLC/3.0.18" "$u" 2>/dev/null | awk 'NR==1{print $2}')
     [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "$2"
 }
 export -f check_url_worker
 [ -s "$ALL_MATCHED" ] && cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
 
-# --- 步骤 4: 组装结果 (强制 HTTPS & 非 FLV) ---
+# --- 步骤 4: 组装结果 ---
 echo "📦 阶段 3: 组装 live.m3u..."
 printf "#EXTM3U\n" > "$LIVE_M3U"
 MATCHED_STD_NAMES="$DOWN_DIR/matched_std_names.tmp"; > "$MATCHED_STD_NAMES"
@@ -167,14 +175,5 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
         done <<< "$MATCH_RAW"
     fi
 done < <(sed '1d' "$NAME_M3U")
-
-# --- 步骤 5: 缺失统计 ---
-while IFS='|' read -r -a names; do
-    display_name=$(echo "${names[0]}" | xargs)
-    std_name=$(grep -i "^${display_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
-    if [ -z "$std_name" ] || ! grep -q "^$std_name$" "$MATCHED_STD_NAMES"; then
-        echo "$display_name" >> "$MISSING_CHANNELS_FILE"
-    fi
-done < "$NAME_TXT"
 
 echo "✅ 任务完成，live.m3u 已生成。"

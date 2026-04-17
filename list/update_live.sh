@@ -65,41 +65,30 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     raw_path="$M3U_RAW_DIR/$f_n"
     target_path="$DOWN_DIR/$f_n"
 
-    # --- 强化下载模块 ---
-    EXTRA_HEADERS=""
-    if [[ "$url" == *"catvod.com"* ]]; then
-        EXTRA_HEADERS="-H 'Referer: https://live.catvod.com/' -H 'Origin: https://live.catvod.com/'"
-    fi
-
+    # 执行下载
     dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
         -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-        -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
-        -H "Accept-Language: zh-CN,zh;q=0.9" \
-        $EXTRA_HEADERS \
-        "$url" -o "$raw_path.tmp" -w "%{http_code},%{size_download}")
+        -H "Referer: https://live.catvod.com/" \
+        "$url" -o "$raw_path.new" -w "%{http_code}")
 
-    h_code=$(echo $dl_info | cut -d',' -f1)
-    b_size=$(echo $dl_info | cut -d',' -f2)
-
-    # 逻辑判断：如果触发了 CF 盾 (HTML内容) 或状态码不对
-    is_cf=0
-    if [ "$h_code" -eq 200 ] && grep -q "Just a moment..." "$raw_path.tmp"; then is_cf=1; fi
-    
-    if [[ "$h_code" -eq 200 && $is_cf -eq 0 ]]; then
-        # 下载完全成功
-        mv "$raw_path.tmp" "$raw_path"
-        echo "DEBUG: 访问 $f_n 成功 (200)"
+    # 判断下载是否真的有效（状态码200 且 且内容不是CF拦截页）
+    if [ "$dl_info" -eq 200 ] && ! grep -q "Just a moment..." "$raw_path.new"; then
+        mv "$raw_path.new" "$raw_path"
+        echo "DEBUG: $f_n 下载成功。"
     else
-        # 下载失败或遇到盾
-        rm -f "$raw_path.tmp"
-        echo "DEBUG: 访问 $f_n 失败 (状态码: $h_code, CF盾: $is_cf)"
+        rm -f "$raw_path.new"
+        echo "DEBUG: $f_n GitHub 下载失败 (CF拦截)，尝试调用本地缓存。"
     fi
 
-    # --- 缓存应用判断 ---
+    # 只要本地 files/ 下有文件，就继续执行匹配逻辑
     if [ -f "$raw_path" ] && [ -s "$raw_path" ]; then
-        # 无论本次是否成功，只要本地有文件（旧的或手动传的），就使用它
-        h_size=$(awk "BEGIN {printf \"%.1f MB\", $(stat -c%s "$raw_path")/1048576}")
-        echo "· $f_n    【 $h_size (Local) 】" >> "$DOWNLOAD_LOG"
+        cp "$raw_path" "$target_path"
+        # ... 这里接你原来的规范化处理逻辑 (sed/awk等) ...
+        echo "· $f_n    【 使用有效数据 】" >> "$DOWNLOAD_LOG"
+    else
+        echo "· $f_n    【 ❌ 彻底无法获取 】" >> "$DOWNLOAD_LOG"
+    fi
+done < "$DOWN_CONFIG"
 
         sed 's/^\xEF\xBB\xBF//; s/\r//g' "$raw_path" > "$target_path"
 

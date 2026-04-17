@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - Live 专属修复版 (强化过盾 & 缓存兜底)
+# IPTV 维护脚本 - Live 专属修复版 (修复语法错误 + 缓存保底)
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -65,13 +65,13 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     raw_path="$M3U_RAW_DIR/$f_n"
     target_path="$DOWN_DIR/$f_n"
 
-    # 执行下载
+    # 执行下载到临时文件
     dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
         -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
         -H "Referer: https://live.catvod.com/" \
         "$url" -o "$raw_path.new" -w "%{http_code}")
 
-    # 判断下载是否真的有效（状态码200 且 且内容不是CF拦截页）
+    # 判断下载是否有效（排除 403 和 CF 拦截页）
     if [ "$dl_info" -eq 200 ] && ! grep -q "Just a moment..." "$raw_path.new"; then
         mv "$raw_path.new" "$raw_path"
         echo "DEBUG: $f_n 下载成功。"
@@ -80,15 +80,10 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
         echo "DEBUG: $f_n GitHub 下载失败 (CF拦截)，尝试调用本地缓存。"
     fi
 
-    # 只要本地 files/ 下有文件，就继续执行匹配逻辑
+    # 核心判断：如果有文件（不论是新下的还是旧的）才进行后续处理
     if [ -f "$raw_path" ] && [ -s "$raw_path" ]; then
-        cp "$raw_path" "$target_path"
-        # ... 这里接你原来的规范化处理逻辑 (sed/awk等) ...
-        echo "· $f_n    【 使用有效数据 】" >> "$DOWNLOAD_LOG"
-    else
-        echo "· $f_n    【 ❌ 彻底无法获取 】" >> "$DOWNLOAD_LOG"
-    fi
-done < "$DOWN_CONFIG"
+        h_size=$(awk "BEGIN {printf \"%.1f MB\", $(stat -c%s "$raw_path")/1048576}")
+        echo "· $f_n    【 $h_size 】" >> "$DOWNLOAD_LOG"
 
         sed 's/^\xEF\xBB\xBF//; s/\r//g' "$raw_path" > "$target_path"
 

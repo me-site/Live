@@ -3,4 +3,4 @@ Hongkong.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/he
 KongTaiTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/KongTaiTV.m3u
 CatVod.m3u,https://down.homesite.workers.dev/?url=https://live.catvod.com/?tk=691aed6eddc2e361474044878e71f344
 Anbox.m3u,https://tv1.anbox.ip-ddns.com/live20
-Smart.txt,http://xclasvgas.sylu.net:8080/smt.php
+Smart.txt,http://xclasvgas1.sylu.net:8080/smt.php

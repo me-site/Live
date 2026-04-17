@@ -68,9 +68,20 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     raw_path="$M3U_RAW_DIR/$f_n"
     target_path="$DOWN_DIR/$f_n"
     
-    dl_info=$(curl -L -k -s --retry 2 --connect-timeout 10 -A "Mozilla/5.0" "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
+    # 强化版的 curl：模拟更真实的浏览器头部，并增加重试次数
+    dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
+        -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
+        -H "Accept-Language: zh-CN,zh;q=0.9" \
+        -H "Cache-Control: no-cache" \
+        -H "Pragma: no-cache" \
+        -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+        "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
+
     h_code=$(echo $dl_info | cut -d',' -f1)
     b_size=$(echo $dl_info | cut -d',' -f2)
+
+    # 打印调试信息，方便在 GitHub Actions 日志里看
+    echo "DEBUG: 访问 $f_n 状态码: $h_code, 大小: $b_size"
 
     if [ "$h_code" -eq 200 ]; then
         h_size=$(awk "BEGIN {printf \"%.1f MB\", $b_size/1048576}")

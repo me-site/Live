@@ -66,16 +66,21 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     ((IDX++))
     
     raw_path="$M3U_RAW_DIR/$f_n"
-    target_path="$DOWN_DIR/$f_n"
-    
-    # 强化版的 curl：模拟更真实的浏览器头部，并增加重试次数
-    dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
-        -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
-        -H "Accept-Language: zh-CN,zh;q=0.9" \
-        -H "Cache-Control: no-cache" \
-        -H "Pragma: no-cache" \
-        -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-        "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
+target_path="$DOWN_DIR/$f_n"
+
+# 增加特定变量
+EXTRA_HEADERS=""
+if [[ "$url" == *"catvod.com"* ]]; then
+    # 针对 CatVod 伪造更真实的头部
+    EXTRA_HEADERS="-H 'Referer: https://live.catvod.com/' -H 'Origin: https://live.catvod.com/'"
+fi
+
+dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
+    -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+    -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
+    -H "Accept-Language: zh-CN,zh;q=0.9" \
+    $EXTRA_HEADERS \
+    "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
 
     h_code=$(echo $dl_info | cut -d',' -f1)
     b_size=$(echo $dl_info | cut -d',' -f2)

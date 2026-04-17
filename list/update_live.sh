@@ -138,7 +138,7 @@ done < "$PRIORITY_IDX"
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
 check_url_worker() {
     IFS='|' read -r t u s p <<< "$1"
-    if [[ "$s" == "ChinaTV.m3u" || "$s" == "Playlist.m3u" ]]; then
+    if [[ "$s" == "CatVod.m3u" || "$s" == "Playlist.m3u" ]]; then
         echo "$t|$u|$s|$p" >> "$2"
         return
     fi

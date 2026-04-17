@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - Live 专属修复版 (强化过盾下载)
+# IPTV 维护脚本 - Live 专属修复版 (强化过盾 & 缓存兜底)
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -65,44 +65,41 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     raw_path="$M3U_RAW_DIR/$f_n"
     target_path="$DOWN_DIR/$f_n"
 
-    # --- 强力过盾下载模块 ---
+    # --- 强化下载模块 ---
+    EXTRA_HEADERS=""
     if [[ "$url" == *"catvod.com"* ]]; then
-        # 针对 CatVod 模拟最真实的浏览器行为
-        dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 20 \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" \
-            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
-            -H "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8" \
-            -H "Cache-Control: no-cache" \
-            -H "Pragma: no-cache" \
-            -H "Referer: https://live.catvod.com/" \
-            -H "Sec-Ch-Ua: \"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\"" \
-            -H "Sec-Ch-Ua-Mobile: ?0" \
-            -H "Sec-Ch-Ua-Platform: \"Windows\"" \
-            -H "Sec-Fetch-Dest: document" \
-            -H "Sec-Fetch-Mode: navigate" \
-            -H "Sec-Fetch-Site: same-origin" \
-            -H "Upgrade-Insecure-Requests: 1" \
-            "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
-    else
-        # 普通源下载
-        dl_info=$(curl -L -k -s --retry 2 --retry-delay 3 --connect-timeout 15 \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" \
-            "$url" -o "$raw_path" -w "%{http_code},%{size_download}")
+        EXTRA_HEADERS="-H 'Referer: https://live.catvod.com/' -H 'Origin: https://live.catvod.com/'"
     fi
+
+    dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 15 \
+        -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+        -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8" \
+        -H "Accept-Language: zh-CN,zh;q=0.9" \
+        $EXTRA_HEADERS \
+        "$url" -o "$raw_path.tmp" -w "%{http_code},%{size_download}")
 
     h_code=$(echo $dl_info | cut -d',' -f1)
     b_size=$(echo $dl_info | cut -d',' -f2)
 
-    # 二次检查：有些时候虽然返回 200，但内容是 CF 的拦截页面
-    if [ "$h_code" -eq 200 ] && grep -q "Just a moment" "$raw_path"; then
-        h_code=403
+    # 逻辑判断：如果触发了 CF 盾 (HTML内容) 或状态码不对
+    is_cf=0
+    if [ "$h_code" -eq 200 ] && grep -q "Just a moment..." "$raw_path.tmp"; then is_cf=1; fi
+    
+    if [[ "$h_code" -eq 200 && $is_cf -eq 0 ]]; then
+        # 下载完全成功
+        mv "$raw_path.tmp" "$raw_path"
+        echo "DEBUG: 访问 $f_n 成功 (200)"
+    else
+        # 下载失败或遇到盾
+        rm -f "$raw_path.tmp"
+        echo "DEBUG: 访问 $f_n 失败 (状态码: $h_code, CF盾: $is_cf)"
     fi
 
-    echo "DEBUG: 访问 $f_n 状态码: $h_code, 大小: $b_size"
-
-    if [ "$h_code" -eq 200 ]; then
-        h_size=$(awk "BEGIN {printf \"%.1f MB\", $b_size/1048576}")
-        echo "· $f_n    【 $h_size 】" >> "$DOWNLOAD_LOG"
+    # --- 缓存应用判断 ---
+    if [ -f "$raw_path" ] && [ -s "$raw_path" ]; then
+        # 无论本次是否成功，只要本地有文件（旧的或手动传的），就使用它
+        h_size=$(awk "BEGIN {printf \"%.1f MB\", $(stat -c%s "$raw_path")/1048576}")
+        echo "· $f_n    【 $h_size (Local) 】" >> "$DOWNLOAD_LOG"
 
         sed 's/^\xEF\xBB\xBF//; s/\r//g' "$raw_path" > "$target_path"
 
@@ -125,7 +122,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 ;;
         esac
     else
-        echo "· $f_n    【 ❌ 状态码: $h_code 】" >> "$DOWNLOAD_LOG"
+        echo "· $f_n    【 ❌ 彻底失效 】" >> "$DOWNLOAD_LOG"
     fi
 done < "$DOWN_CONFIG"
 

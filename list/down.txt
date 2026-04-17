@@ -1,5 +1,5 @@
-Hongkong.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/Hongkong.txt
-KongTaiTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/KongTaiTV.m3u
+Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/Live.txt
+MyTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/MyTV.m3u
 Gather.m3u,https://down.homesite.workers.dev/?url=https://tv.iill.top/m3u/Gather
 ChinaTV.txt,https://zb.484947.xyz/
 CatVod.m3u,https://down.homesite.workers.dev/?url=https://live.catvod.com/?tk=691aed6eddc2e361474044878e71f344

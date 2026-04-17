@@ -10,19 +10,21 @@ CCTV4K
 高尔夫网球
 央视文化精品
 NOW 爆谷星影台
-NOW 爆谷台
 myTV SUPER Free
-东森财经新闻台
 LSTime 电影台
 tvN
+Lifetime
 韩国娱乐台
 TVBS综艺台
-八大精彩台
 HGTV居家乐活频道
 TLC旅游生活频道
+DreamWorks
+尼克儿童频道
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK X Stream
+ROCK Entertainment
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -31,7 +33,9 @@ Discovery SCI
 DMAX
 动物星球
 亚洲美食频道
+Global Trekker
 Magellan TV
+INULTRA
 LOL
 NBA TV
 Eurosport
@@ -42,4 +46,3 @@ Astro Cricket
 beIN Sports 1
 beIN Sports 2
 智林体育
-博斯无限台

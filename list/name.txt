@@ -76,7 +76,7 @@ RTHK31|RTHK 31|港台电视31
 RTHK32|RTHK 32|港台电视32
 RTHK33|RTHK 33|港台电视33
 PopC|PopC|POPC|Popc
-AMC电影台|amc电影台
+AMC电影台|amc电影台|AMC 电影台|amc 电影台|amc電影台|AMC電影台|amc 電影台|AMC 電影台
 美亚电影台|美亚电影台|美亞電影台|美亞電影台(國語)|美亚电影|美亞電影
 NOW 新闻台|Now新聞台|Now News|NOW新闻台
 NOW 爆谷星影台|Now爆谷星影台|now爆谷電影台(原音)|NOW爆谷星影台

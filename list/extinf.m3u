@@ -61,6 +61,7 @@
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://me.ug.cx/logo/凤凰香港.png" group-title="香港",鳳凰香港台
 #EXTINF:-1 tvg-name="无线新闻台" tvg-logo="https://me.ug.cx/logo/TVB新闻.png" group-title="香港",無綫新聞台
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.ug.cx/logo/TVB翡翠.png" group-title="香港",翡翠台
+#EXTINF:-1 tvg-name="华丽翡翠台" tvg-logo="https://me.ug.cx/logo/TVB翡翠.png" group-title="新马",华丽翡翠台
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.ug.cx/logo/TVB明珠.png" group-title="香港",明珠台
 #EXTINF:-1 tvg-name="J2" tvg-logo="https://me.ug.cx/logo/J2.png" group-title="香港",TVB J2
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.ug.cx/logo/TVBPlus.png" group-title="香港",TVB Plus
@@ -148,14 +149,13 @@
 #EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.ug.cx/logo/Channel5.png" group-title="新马",Channel 5
 #EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.ug.cx/logo/Channel8.png" group-title="新马",Channel 8
 #EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.ug.cx/logo/ChannelU.png" group-title="新马",Channel U
-#EXTINF:-1 tvg-name="华丽翡翠台(新加坡)" tvg-logo="https://me.ug.cx/logo/翡翠台.png" group-title="香港",华丽翡翠台(新加坡)
+#EXTINF:-1 tvg-name="华丽翡翠台(新加坡)" tvg-logo="https://me.ug.cx/logo/TVB翡翠.png" group-title="新马",华丽翡翠台(新加坡)
 #EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.ug.cx/logo/天映频道.png" group-title="新马",天映新加坡
 #EXTINF:-1 tvg-name="天映经典频道" tvg-logo="https://me.ug.cx/logo/天映经典.png" group-title="新马",天映经典频道
 #EXTINF:-1 tvg-name="ASTROAOD" tvg-logo="https://me.ug.cx/logo/AstroAOD.png" group-title="新马",Astro AOD
 #EXTINF:-1 tvg-name="ASTROAEC" tvg-logo="https://me.ug.cx/logo/AstroAEC.png" group-title="新马",Astro AEC
 #EXTINF:-1 tvg-name="ASTROQJ" tvg-logo="https://me.ug.cx/logo/AstroQJ.png" group-title="新马",Astro QJ
 #EXTINF:-1 tvg-name="ASTRO欢喜台" tvg-logo="https://me.ug.cx/logo/Astro欢喜.png" group-title="新马",Astro 欢喜台
-#EXTINF:-1 tvg-name="华丽翡翠台" tvg-logo="https://me.ug.cx/logo/翡翠台.png" group-title="新马",华丽翡翠台
 #EXTINF:-1 tvg-name="CMusic" tvg-logo="https://me.ug.cx/logo/CMusic.png" group-title="新马",CMusic
 #EXTINF:-1 tvg-name="My Cinema Europe" tvg-logo="https://me.ug.cx/logo/MyCinemaEurope.png" group-title="新马",My Cinema Europe
 #EXTINF:-1 tvg-name="经典电影台" tvg-logo="https://me.ug.cx/logo/经典电影.png" group-title="新马",经典电影台

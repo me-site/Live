@@ -132,6 +132,8 @@ https://live.264788.xyz/channel/cctv5p?streamid=223e1dc8d7606f14f535ccfca40dd137
 #EXTINF:-1 tvg-name="CCTV5Plus" tvg-logo="https://me.ug.cx/logo/CCTV5+.png" group-title="央视",CCTV5+ 体育赛事
 https://live.264788.xyz/channel/cctv5p?streamid=f8f1d72e30c98f67e9d9b7abe956d039&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 #EXTINF:-1 tvg-name="CCTV5Plus" tvg-logo="https://me.ug.cx/logo/CCTV5+.png" group-title="央视",CCTV5+ 体育赛事
+https://v.iill.top/api/CCTV5+/index.m3u8
+#EXTINF:-1 tvg-name="CCTV5Plus" tvg-logo="https://me.ug.cx/logo/CCTV5+.png" group-title="央视",CCTV5+ 体育赛事
 https://vip1.484947.xyz/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV4K" tvg-logo="https://me.ug.cx/logo/CCTV4K.png" group-title="央视",CCTV 4K
 https://live.264788.xyz/channel/cctv4k?streamid=69b8ad870d6e6b638349a2eb5d3c6e98&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
@@ -539,6 +541,8 @@ https://pixman.passwdwork.cc.cd/proxy/a7de9e9ba71250e9.m3u8
 https://smt.1678520.xyz/163189/602e9465658d4f8c
 #EXTINF:-1 tvg-name="纬来电影台" tvg-logo="https://me.ug.cx/logo/纬来电影.png" group-title="台湾",緯來電影台
 https://v.iill.top/api/VL-Movies/index.m3u8
+#EXTINF:-1 tvg-name="纬来日本台" tvg-logo="https://me.ug.cx/logo/纬来日本.png" group-title="台湾",緯來日本台
+https://v.iill.top/api/VL-Japan/index.m3u8
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.ug.cx/logo/纬来体育.png" group-title="台湾",緯來體育台
 https://php.jdshipin.com/smt.php?id=videolandsport
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.ug.cx/logo/纬来体育.png" group-title="台湾",緯來體育台
@@ -645,8 +649,6 @@ https://cdn12.178.indevs.in/163189/61b8ea35ffce4630
 https://cdn12.178.indevs.in/163189/a643783ec587540e
 #EXTINF:-1 tvg-name="影迷数位电影台" tvg-logo="https://me.ug.cx/logo/影迷数位电影.png" group-title="新马",影迷数位电影台
 https://cdn12.178.indevs.in/163189/a643783ec587540e
-#EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.ug.cx/logo/beINSports3.png" group-title="新马",beIN Sports 3
-https://hls.iill.top/api/beIN-Sports-3/index.m3u8
 #EXTINF:-1 tvg-name="CINEMAX" tvg-logo="https://me.ug.cx/logo/Cinemax.png" group-title="电影",CINEMAX
 https://v.iill.top/api/Cinemax/index.m3u8
 #EXTINF:-1 tvg-name="CINEMAWORLD" tvg-logo="https://me.ug.cx/logo/CinemaWorld.png" group-title="电影",CinemaWorld
@@ -666,7 +668,15 @@ https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live105/index.m3u8
 #EXTINF:-1 tvg-name="好莱坞电影台" tvg-logo="https://me.ug.cx/logo/好莱坞电影.png" group-title="电影",好萊塢電影台
 https://v.iill.top/api/Hollywood-Movie/index.m3u8
 #EXTINF:-1 tvg-name="HBO" tvg-logo="https://me.ug.cx/logo/HBOHD.png" group-title="电影",HBO HD
+https://hls.iill.top/api/HBO/index.m3u8
+#EXTINF:-1 tvg-name="HBO" tvg-logo="https://me.ug.cx/logo/HBOHD.png" group-title="电影",HBO HD
 https://hls.iill.top/test/HBO/index.m3u8
+#EXTINF:-1 tvg-name="HBO强档巨献" tvg-logo="https://me.ug.cx/logo/HBOhits.png" group-title="电影",HBO 強檔鉅獻
+https://hls.iill.top/api/HBO-Hits/index.m3u8
+#EXTINF:-1 tvg-name="HBO温馨家庭" tvg-logo="https://me.ug.cx/logo/HBOfamily.png" group-title="电影",HBO 溫馨家庭
+https://hls.iill.top/api/HBO-Family/index.m3u8
+#EXTINF:-1 tvg-name="HBO原创巨献" tvg-logo="https://me.ug.cx/logo/HBOsignature.png" group-title="电影",HBO 原創鉅獻
+https://hls.iill.top/api/HBO-Signature/index.m3u8
 #EXTINF:-1 tvg-name="ROCKACTIONHD" tvg-logo="https://me.ug.cx/logo/ROCKAction.png" group-title="电影",ROCK Action
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live138/index.m3u8
 #EXTINF:-1 tvg-name="ROCKXSTREAM摇滚极限频道" tvg-logo="https://me.ug.cx/logo/ROCKXStream.png" group-title="电影",ROCK X Stream

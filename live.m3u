@@ -685,8 +685,6 @@ https://cdn12.178.indevs.in/163189/61b8ea35ffce4630
 https://cdn12.178.indevs.in/163189/a643783ec587540e
 #EXTINF:-1 tvg-name="影迷数位电影台" tvg-logo="https://me.ug.cx/logo/影迷数位电影.png" group-title="新马",影迷数位电影台
 https://cdn12.178.indevs.in/163189/a643783ec587540e
-#EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.ug.cx/logo/beINSports3.png" group-title="新马",beIN Sports 3
-https://hls.iill.top/api/beIN-Sports-3/index.m3u8
 #EXTINF:-1 tvg-name="CINEMAX" tvg-logo="https://me.ug.cx/logo/Cinemax.png" group-title="电影",CINEMAX
 https://v.iill.top/api/Cinemax/index.m3u8
 #EXTINF:-1 tvg-name="CINEMAWORLD" tvg-logo="https://me.ug.cx/logo/CinemaWorld.png" group-title="电影",CinemaWorld
@@ -706,8 +704,6 @@ https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live105/index.m3u8
 #EXTINF:-1 tvg-name="好莱坞电影台" tvg-logo="https://me.ug.cx/logo/好莱坞电影.png" group-title="电影",好萊塢電影台
 https://v.iill.top/api/Hollywood-Movie/index.m3u8
 #EXTINF:-1 tvg-name="HBO" tvg-logo="https://me.ug.cx/logo/HBOHD.png" group-title="电影",HBO HD
-https://hls.iill.top/api/HBO/index.m3u8
-#EXTINF:-1 tvg-name="HBO" tvg-logo="https://me.ug.cx/logo/HBOHD.png" group-title="电影",HBO HD
 https://hls.iill.top/test/HBO/index.m3u8
 #EXTINF:-1 tvg-name="HBO强档巨献" tvg-logo="https://me.ug.cx/logo/HBOhits.png" group-title="电影",HBO 強檔鉅獻
 https://hls.iill.top/api/HBO-Hits/index.m3u8
@@ -717,6 +713,8 @@ https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live138/index.m3u8
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live124/index.m3u8
 #EXTINF:-1 tvg-name="ROCKENTERTAINMENT" tvg-logo="https://me.ug.cx/logo/ROCKEntertainment.png" group-title="电影",ROCK Entertainment
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live080/index.m3u8
+#EXTINF:-1 tvg-name="BBCEARTH" tvg-logo="https://me.ug.cx/logo/BBCEarth.png" group-title="纪录",BBC Earth HD
+https://hls.iill.top/api/BBC-Earth/index.m3u8
 #EXTINF:-1 tvg-name="BBCLIFESTYLE" tvg-logo="https://me.ug.cx/logo/BBCLifestyle.png" group-title="纪录",BBC Lifestyle
 https://hls.iill.top/api/BBC-Lifestyle/index.m3u8
 #EXTINF:-1 tvg-name="DISCOVERY" tvg-logo="https://me.ug.cx/logo/Discovery.png" group-title="纪录",Discovery HD

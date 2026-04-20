@@ -85,10 +85,10 @@
 #EXTINF:-1 tvg-name="Now Sports 精選" tvg-logo="https://me.ug.cx/logo/NOWSportsPrime.png" group-title="香港",Now Sports Prime
 #EXTINF:-1 tvg-name="Now Sports 1" tvg-logo="https://me.ug.cx/logo/NOWSports1.png" group-title="香港",Now 體育 1
 
-#EXTINF:-1 tvg-name="寰宇新闻台" tvg-logo="https://me.ug.cx/logo/寰宇新闻.png" group-title="台湾",寰宇新聞台
-#EXTINF:-1 tvg-name="寰宇台湾台" tvg-logo="https://me.ug.cx/logo/寰宇新闻台湾.png" group-title="台湾",寰宇台湾台
-#EXTINF:-1 tvg-name="寰宇财经新闻台" tvg-logo="https://me.ug.cx/logo/寰宇财经.png" group-title="台湾",寰宇财经新闻台
-#EXTINF:-1 tvg-name="中天新闻台" tvg-logo="https://me.ug.cx/logo/中天新闻.png" group-title="台湾",中天新聞台
+#EXTINF:-1 tvg-name="寰宇新闻" tvg-logo="https://me.ug.cx/logo/寰宇新闻.png" group-title="台湾",寰宇新聞台
+#EXTINF:-1 tvg-name="寰宇新聞台灣台" tvg-logo="https://me.ug.cx/logo/寰宇新闻台湾.png" group-title="台湾",寰宇台湾台
+#EXTINF:-1 tvg-name="寰宇財經台" tvg-logo="https://me.ug.cx/logo/寰宇财经.png" group-title="台湾",寰宇财经新闻台
+#EXTINF:-1 tvg-name="中天新闻" tvg-logo="https://me.ug.cx/logo/中天新闻.png" group-title="台湾",中天新聞台
 #EXTINF:-1 tvg-name="中天娱乐台" tvg-logo="https://me.ug.cx/logo/中天娱乐.png" group-title="台湾",中天娛樂台
 #EXTINF:-1 tvg-name="中天综合台" tvg-logo="https://me.ug.cx/logo/中天综合.png" group-title="台湾",中天綜合台
 #EXTINF:-1 tvg-name="中天亚洲台" tvg-logo="https://me.ug.cx/logo/中天亚洲.png" group-title="台湾",中天亞洲台
@@ -116,7 +116,7 @@
 #EXTINF:-1 tvg-name="龙华电影HD" tvg-logo="https://me.ug.cx/logo/龙华电影.png" group-title="台湾",龍華電影台
 #EXTINF:-1 tvg-name="龙华经典HD" tvg-logo="https://me.ug.cx/logo/龙华经典.png" group-title="台湾",龍華經典台
 #EXTINF:-1 tvg-name="龙华洋片HD" tvg-logo="https://me.ug.cx/logo/龙华洋片.png" group-title="台湾",龍華洋片台
-#EXTINF:-1 tvg-name="龍華日韓台" tvg-logo="https://me.ug.cx/logo/龙华日韩.png" group-title="台湾",龍華日韓台
+#EXTINF:-1 tvg-name="龙华日韩" tvg-logo="https://me.ug.cx/logo/龙华日韩.png" group-title="台湾",龍華日韓台
 #EXTINF:-1 tvg-name="龙华偶像HD" tvg-logo="https://me.ug.cx/logo/龙华偶像.png" group-title="台湾",龍華偶像台
 #EXTINF:-1 tvg-name="龙华戏剧HD" tvg-logo="https://me.ug.cx/logo/龙华戏剧.png" group-title="台湾",龍華戲劇台
 #EXTINF:-1 tvg-name="纬来电影台" tvg-logo="https://me.ug.cx/logo/纬来电影.png" group-title="台湾",緯來電影台

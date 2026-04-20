@@ -2,7 +2,7 @@
 · MyTV.m3u    【 0.0 MB 】
 · Gather.m3u    【 0.3 MB 】
 · ChinaTV.txt    【 0.0 MB 】
-· JackTV.m3u    【 ❌ 彻底失效 】
+· JackTV.m3u    【 0.0 MB 】
 · CatVod.m3u    【 ❌ 彻底失效 】
 · Anbox.m3u    【 ❌ 彻底失效 】
 · Smart.txt    【 ❌ 彻底失效 】

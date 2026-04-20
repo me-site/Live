@@ -61,12 +61,12 @@
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://me.ug.cx/logo/凤凰香港.png" group-title="香港",鳳凰香港台
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.ug.cx/logo/TVB新闻.png" group-title="香港",無綫新聞台
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.ug.cx/logo/TVB翡翠.png" group-title="香港",翡翠台
-#EXTINF:-1 tvg-name="TVB Pearl" tvg-logo="https://me.ug.cx/logo/TVB明珠.png" group-title="香港",明珠台hoy
+#EXTINF:-1 tvg-name="TVB Pearl" tvg-logo="https://me.ug.cx/logo/TVB明珠.png" group-title="香港",明珠台
 #EXTINF:-1 tvg-name="TVB J2" tvg-logo="https://me.ug.cx/logo/J2.png" group-title="香港",TVB J2
-#EXTINF:-1 tvg-name="TVB Plus" tvg-logo="https://me.ug.cx/logo/TVBPlus.png" group-title="香港",TVB Plus
+#EXTINF:-1 tvg-name="TVBPlus" tvg-logo="https://me.ug.cx/logo/TVBPlus.png" group-title="香港",TVB Plus
 #EXTINF:-1 tvg-name="TVB娱乐新闻台" tvg-logo="https://me.ug.cx/logo/TVB娱乐新闻.png" group-title="香港",娛樂新聞台
-#EXTINF:-1 tvg-name="千禧经典" tvg-logo="https://me.ug.cx/logo/千禧经典.png" group-title="香港",千禧经典台
-#EXTINF:-1 tvg-name="黄金华剧" tvg-logo="https://me.ug.cx/logo/黄金华剧.png" group-title="香港",黄金华剧台
+#EXTINF:-1 tvg-name="千禧经典台" tvg-logo="https://me.ug.cx/logo/千禧经典.png" group-title="香港",千禧经典台
+#EXTINF:-1 tvg-name="黄金华剧台" tvg-logo="https://me.ug.cx/logo/黄金华剧.png" group-title="香港",黄金华剧台
 #EXTINF:-1 tvg-name="TVB功夫台" tvg-logo="https://me.ug.cx/logo/TVB功夫.png" group-title="香港",亚洲功夫台
 #EXTINF:-1 tvg-name="SUPER FREE" tvg-logo="https://me.ug.cx/logo/MyTVSuperFree.png" group-title="香港",MyTV Super Free
 #EXTINF:-1 tvg-name="VIU频道" tvg-logo="https://me.ug.cx/logo/ViuTV.png" group-title="香港",ViuTV
@@ -88,7 +88,7 @@
 #EXTINF:-1 tvg-name="寰宇新闻" tvg-logo="https://me.ug.cx/logo/寰宇新闻.png" group-title="台湾",寰宇新聞台
 #EXTINF:-1 tvg-name="寰宇新聞台灣台" tvg-logo="https://me.ug.cx/logo/寰宇新闻台湾.png" group-title="台湾",寰宇台湾台
 #EXTINF:-1 tvg-name="寰宇財經台" tvg-logo="https://me.ug.cx/logo/寰宇财经.png" group-title="台湾",寰宇财经新闻台
-#EXTINF:-1 tvg-name="中天新闻" tvg-logo="https://me.ug.cx/logo/中天新闻.png" group-title="台湾",中天新聞台
+#EXTINF:-1 tvg-name="中天新闻台" tvg-logo="https://me.ug.cx/logo/中天新闻.png" group-title="台湾",中天新聞台
 #EXTINF:-1 tvg-name="中天娱乐台" tvg-logo="https://me.ug.cx/logo/中天娱乐.png" group-title="台湾",中天娛樂台
 #EXTINF:-1 tvg-name="中天综合台" tvg-logo="https://me.ug.cx/logo/中天综合.png" group-title="台湾",中天綜合台
 #EXTINF:-1 tvg-name="中天亚洲台" tvg-logo="https://me.ug.cx/logo/中天亚洲.png" group-title="台湾",中天亞洲台
@@ -155,10 +155,10 @@
 #EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://me.ug.cx/logo/AstroAEC.png" group-title="新马",Astro AEC
 #EXTINF:-1 tvg-name="Astro QJ" tvg-logo="https://me.ug.cx/logo/AstroQJ.png" group-title="新马",Astro QJ
 #EXTINF:-1 tvg-name="Astro欢喜台" tvg-logo="https://me.ug.cx/logo/Astro欢喜.png" group-title="新马",Astro 欢喜台
-#EXTINF:-1 tvg-name="CMusic" tvg-logo="https://me.ug.cx/logo/CMusic.png" group-title="新马",CMusic
+#EXTINF:-1 tvg-name="电影原声台CMUSIC" tvg-logo="https://me.ug.cx/logo/CMusic.png" group-title="新马",CMusic
 #EXTINF:-1 tvg-name="MCE我的欧洲电影台" tvg-logo="https://me.ug.cx/logo/MCE光影欧洲.png" group-title="新马",MCE 我的欧洲电影台
 #EXTINF:-1 tvg-name="经典电影台" tvg-logo="https://me.ug.cx/logo/经典电影.png" group-title="新马",经典电影台
-#EXTINF:-1 tvg-name="影迷数位电影" tvg-logo="https://me.ug.cx/logo/影迷数位电影.png" group-title="新马",影迷数位电影台
+#EXTINF:-1 tvg-name="影迷数位电影台" tvg-logo="https://me.ug.cx/logo/影迷数位电影.png" group-title="新马",影迷数位电影台
 #EXTINF:-1 tvg-name="NBATV" tvg-logo="https://me.ug.cx/logo/NBA.png" group-title="新马",NBA TV
 #EXTINF:-1 tvg-name="ASTROCRICKET" tvg-logo="https://me.ug.cx/logo/AstroCricket.png" group-title="新马",Astro Cricket
 #EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.ug.cx/logo/EuroSport.png" group-title="新马",EuroSport HD

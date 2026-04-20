@@ -2,7 +2,7 @@ Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/
 MyTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/MyTV.m3u
 Gather.m3u,https://down.homesite.workers.dev/?url=https://tv.iill.top/m3u/Gather
 ChinaTV.txt,https://zb.484947.xyz/
-JackTV.m3u,https://php.946985.filegear-sg.me/jackTV.m3u
+JackTV.m3u,https://down.homesite.workers.dev/?url=https://php.946985.filegear-sg.me/jackTV.m3u
 CatVod.m3u,https://down.homesite.workers.dev/?url=https://live.catvod.com/?tk=691aed6eddc2e361474044878e71f344
 Anbox.m3u,https://tv1.anbox.ip-ddns.com/live20
 Smart.txt,http://xclasvgas1.sylu.net:8080/smt.php

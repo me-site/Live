@@ -60,16 +60,15 @@ CCTV4K|CCTV4K|CCTV-4K超高清
 无线新闻|无线新闻|無綫新聞台|无线新闻台|iNews 互動新聞台
 无线财经资讯台|无线财经资讯台
 翡翠台|翡翠台|翡翠台(原音)
-明珠台|明珠台|Pearl|珍珠台
-J2|J 2
+明珠台|明珠台|Pearl|珍珠台|TVB Pearl
+J2|J 2|TVB J2
 TVB Plus||TVBPLUS|TVBPLUS|TVB Plus|TVB PLUS
-TVB星河|TVB星河频道
 黄金华剧台|黄金华剧
 千禧经典台|千禧经典
-娱乐新闻台|娛樂新聞台
+娱乐新闻台|娛樂新聞台|TVB娱乐新闻台
 功夫台|亚洲功夫台|TVB功夫台|亚洲剧台
 MyTV SUPER Free|SUPERFREE|MytvSuper Free|myTV SUPER FREE|SUPER FREE
-ViuTV|ViuTV|VIUTV|VIUTV1
+ViuTV|ViuTV|VIUTV|VIUTV1|VIU频道
 ViuTV Six|ViuTVsix|ViuTV six|VIUTVSIX|Viu6
 HOY 资讯台|HOY78|HOY 78|HOY资讯台
 RTHK31|RTHK 31|港台电视31
@@ -78,12 +77,12 @@ RTHK33|RTHK 33|港台电视33
 PopC|PopC|POPC|Popc
 AMC电影台|amc电影台|AMC 电影台|amc 电影台|amc電影台|AMC電影台|amc 電影台|AMC 電影台
 美亚电影台|美亚电影台|美亞電影台|美亞電影台(國語)|美亚电影|美亞電影
-NOW 新闻台|Now新聞台|Now News|NOW新闻台
+NOW 新闻台|Now新聞台|Now News|NOW新闻台|Now新闻
 NOW 爆谷星影台|Now爆谷星影台|now爆谷電影台(原音)|NOW爆谷星影台
-NOW 爆谷台|NOW爆谷台|now爆谷星影台|NOW 爆谷台
-NOW 668|NOW668|NOW668|Now 668
-NOW Sports 精选|NOWSPORTS精选|NOWSPORTS精选|NOWSPORTS精選|Now Sports Prime
-NOW Sports 1|NOWSPORTS1|NOWSPORTS1|Now體育1|Now体育1
+NOW 爆谷台|NOW爆谷台|now爆谷星影台|NOW 爆谷台|Now 爆谷台
+NOW 668|NOW668|NOW668|Now 668|Now668
+NOW Sports 精选|NOWSPORTS精选|NOWSPORTS精选|NOWSPORTS精選|Now Sports Prime|Now Sports 精選
+NOW Sports 1|NOWSPORTS1|NOWSPORTS1|Now體育1|Now体育1|Now Sports 1
 
 寰宇新闻台|寰宇新闻台|寰宇新聞台|寰宇新闻|寰宇新聞
 寰宇台湾台|寰宇台湾
@@ -168,7 +167,8 @@ tvN|TVN|TVN|tvN Asia
 Channel 5|Channel5|Channel 5 HD
 Channel 8|Channel8|Channel 8 HD
 Channel U|ChannelU|Channel U HD
-华丽翡翠台(新加坡)|华丽翡翠台(新加坡)
+华丽翡翠台|华丽翡翠台(新加坡)|华丽翡翠台
+TVB星河|TVB星河频道|TVB星河新加坡
 天映頻道|天映频道|天映頻道Celestial Movies
 天映经典|天映经典|天映經典|CCM 天映經典|天映经典频道|天映經典頻道|Celestial Classic
 ASTROAOD|Astro AOD

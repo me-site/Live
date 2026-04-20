@@ -174,7 +174,7 @@ Channel U|ChannelU|Channel U HD
 ASTROAOD|Astro AOD
 ASTROAEC|Astro AEC
 ASTROQJ|Astro QJ
-ASTRO欢喜台|Astro 欢喜台
+ASTRO欢喜台|Astro 欢喜台|Astro欢喜台
 华丽翡翠台|华丽翡翠
 CMusic|CMusic
 MCE光影欧洲|MCE 光影欧洲|My Cinema Europe|MyCinemaEurope|MCE我的欧洲电影台|MCE 我的欧洲电影台

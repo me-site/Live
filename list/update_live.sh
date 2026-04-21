@@ -142,8 +142,8 @@ HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
 check_url_worker() {
     IFS='|' read -r t u s p <<< "$1"
     
-    # 免检逻辑 (CatVod, Playlist 以及 rtp.cc.cd 开头的源)
-    if [[ "$s" == "CatVod.m3u" || "$s" == "Playlist.m3u" || "$u" == https://rtp.cc.cd/* ]]; then
+    # 免检逻辑 (Smart, Playlist 以及 rtp.cc.cd 开头的源)
+    if [[ "$s" == "Smart.m3u" || "$s" == "Playlist.m3u" || "$u" == https://rtp.cc.cd/* ]]; then
         echo "$t|$u|$s|$p" >> "$2"
         return
     fi

@@ -1,6 +1,6 @@
-Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/Live.txt
 MyTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/MyTV.m3u
 Smart.m3u,https://melive.onrender.com/trams.m3u?token=lanx
+Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/Live.txt
 Gather.m3u,https://down.homesite.workers.dev/?url=https://tv.iill.top/m3u/Gather
 ChinaTV.txt,https://zb.484947.xyz/
 JackTV.m3u,https://down.homesite.workers.dev/?url=https://php.946985.filegear-sg.me/jackTV.m3u

@@ -450,7 +450,7 @@ https://live.264788.xyz/channel/heilongjiangweishi?streamid=9e03d442683b7ecf5b88
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://me.ug.cx/logo/黑龙江卫视.png" group-title="卫视",黑龙江卫视
 https://vip1.484947.xyz/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://me.ug.cx/logo/凤凰中文.png" group-title="香港",鳳凰中文台
-https://cdn6.163189.xyz/163189/fhzw
+https://php.jdshipin.com/smt.php?id=phoenixtv_hd
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://me.ug.cx/logo/凤凰中文.png" group-title="香港",鳳凰中文台
 https://melive.onrender.com/trams/60/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://me.ug.cx/logo/凤凰中文.png" group-title="香港",鳳凰中文台
@@ -464,6 +464,8 @@ https://php.jdshipin.com/smt.php?id=phoenixtv_hd
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.ug.cx/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://cdn6.163189.xyz/163189/fhzx
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.ug.cx/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
+https://php.jdshipin.com/smt.php?id=phoenixinfo_hd
+#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.ug.cx/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://melive.onrender.com/trams/61/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.ug.cx/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://melive.onrender.com/trams/61/playlist.m3u8?token=lanx
@@ -474,7 +476,7 @@ https://live.264788.xyz/channel/fenghuangweishizixun?streamid=7fb13f400476e75ce6
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.ug.cx/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://php.jdshipin.com/smt.php?id=phoenixinfo_hd
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://me.ug.cx/logo/凤凰香港.png" group-title="香港",鳳凰香港台
-https://cdn6.163189.xyz/163189/fhhk
+https://php.jdshipin.com/smt.php?id=hkphoenix_twn
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://me.ug.cx/logo/凤凰香港.png" group-title="香港",鳳凰香港台
 https://melive.onrender.com/trams/1345/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://me.ug.cx/logo/凤凰香港.png" group-title="香港",鳳凰香港台
@@ -501,6 +503,8 @@ https://o11.163189.xyz/stream/tvb/fct/
 https://php.jdshipin.com/smt.php?id=jade_twn
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.ug.cx/logo/TVB翡翠.png" group-title="香港",翡翠台
 https://php.jdshipin.com/smt.php?id=jade_xue
+#EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.ug.cx/logo/TVB翡翠.png" group-title="香港",翡翠台
+https://hls.163189.xyz/163189/0205c25f6b2ce920
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.ug.cx/logo/TVB明珠.png" group-title="香港",明珠台
 https://o11.163189.xyz/stream/tvb/mzt/
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.ug.cx/logo/TVB明珠.png" group-title="香港",明珠台
@@ -509,8 +513,6 @@ https://melive.onrender.com/trams/1617/playlist.m3u8?token=lanx
 https://o11.163189.xyz/stream/tvb/mzt/
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.ug.cx/logo/TVB明珠.png" group-title="香港",明珠台
 https://php.jdshipin.com/smt.php?id=pearl_twn
-#EXTINF:-1 tvg-name="TVBJ2" tvg-logo="https://me.ug.cx/logo/J2.png" group-title="香港",TVB J2
-https://melive.onrender.com/trams/1615/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TVBPlus" tvg-logo="https://me.ug.cx/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://o11.163189.xyz/stream/tvb/tvbp/
 #EXTINF:-1 tvg-name="TVBPlus" tvg-logo="https://me.ug.cx/logo/TVBPlus.png" group-title="香港",TVB Plus
@@ -820,6 +822,8 @@ https://pixman.passwdwork.cc.cd/proxy/0544643d41929cc4.m3u8
 #EXTINF:-1 tvg-name="博斯网球台" tvg-logo="https://me.ug.cx/logo/博斯网球.png" group-title="台湾",博斯網球台
 https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Tennis-Channel/index.m3u8
 #EXTINF:-1 tvg-name="博斯高球1台" tvg-logo="https://me.ug.cx/logo/博斯高球1.png" group-title="台湾",博斯高球1台
+https://pixman.passwdwork.cc.cd/proxy/38095717a7e960f8.m3u8
+#EXTINF:-1 tvg-name="博斯高球1台" tvg-logo="https://me.ug.cx/logo/博斯高球1.png" group-title="台湾",博斯高球1台
 https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/Golf-Channel/index.m3u8
 #EXTINF:-1 tvg-name="博斯高球2台" tvg-logo="https://me.ug.cx/logo/博斯高球2.png" group-title="台湾",博斯高球2台
 https://melive.onrender.com/trams/2085/playlist.m3u8?token=lanx
@@ -911,8 +915,6 @@ https://melive.onrender.com/trams/2653/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.ug.cx/logo/EuroSport.png" group-title="新马",EuroSport HD
 https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.ug.cx/logo/beINSports3.png" group-title="新马",beIN Sports 3
-https://hls.iill.top/api/beIN-Sports-3/index.m3u8
 #EXTINF:-1 tvg-name="AXN" tvg-logo="https://me.ug.cx/logo/AXN.png" group-title="电影",AXN
 https://melive.onrender.com/trams/906/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="AXN" tvg-logo="https://me.ug.cx/logo/AXN.png" group-title="电影",AXN
@@ -973,10 +975,14 @@ https://melive.onrender.com/trams/1207/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2782/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="HBO强档巨献" tvg-logo="https://me.ug.cx/logo/HBOhits.png" group-title="电影",HBO 強檔鉅獻
 https://melive.onrender.com/trams/2782/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="HBO强档巨献" tvg-logo="https://me.ug.cx/logo/HBOhits.png" group-title="电影",HBO 強檔鉅獻
+https://hls.iill.top/api/HBO-Hits/index.m3u8
 #EXTINF:-1 tvg-name="HBO温馨家庭" tvg-logo="https://me.ug.cx/logo/HBOfamily.png" group-title="电影",HBO 溫馨家庭
 https://melive.onrender.com/trams/2711/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="HBO温馨家庭" tvg-logo="https://me.ug.cx/logo/HBOfamily.png" group-title="电影",HBO 溫馨家庭
 https://melive.onrender.com/trams/2711/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="HBO温馨家庭" tvg-logo="https://me.ug.cx/logo/HBOfamily.png" group-title="电影",HBO 溫馨家庭
+https://hls.iill.top/api/HBO-Family/index.m3u8
 #EXTINF:-1 tvg-name="HBO原创巨献" tvg-logo="https://me.ug.cx/logo/HBOsignature.png" group-title="电影",HBO 原創鉅獻
 https://melive.onrender.com/trams/2722/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="HBO原创巨献" tvg-logo="https://me.ug.cx/logo/HBOsignature.png" group-title="电影",HBO 原創鉅獻
@@ -1003,14 +1009,20 @@ https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live080/index.m3u8
 https://melive.onrender.com/trams/2037/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="BBCEARTH" tvg-logo="https://me.ug.cx/logo/BBCEarth.png" group-title="纪录",BBC Earth HD
 https://melive.onrender.com/trams/2037/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="BBCEARTH" tvg-logo="https://me.ug.cx/logo/BBCEarth.png" group-title="纪录",BBC Earth HD
+https://hls.iill.top/api/BBC-Earth/index.m3u8
 #EXTINF:-1 tvg-name="BBCLIFESTYLE" tvg-logo="https://me.ug.cx/logo/BBCLifestyle.png" group-title="纪录",BBC Lifestyle
 https://melive.onrender.com/trams/2038/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="BBCLIFESTYLE" tvg-logo="https://me.ug.cx/logo/BBCLifestyle.png" group-title="纪录",BBC Lifestyle
 https://melive.onrender.com/trams/2038/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="BBCLIFESTYLE" tvg-logo="https://me.ug.cx/logo/BBCLifestyle.png" group-title="纪录",BBC Lifestyle
+https://hls.iill.top/api/BBC-Lifestyle/index.m3u8
 #EXTINF:-1 tvg-name="DISCOVERY" tvg-logo="https://me.ug.cx/logo/Discovery.png" group-title="纪录",Discovery HD
 https://melive.onrender.com/trams/2878/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="DISCOVERY" tvg-logo="https://me.ug.cx/logo/Discovery.png" group-title="纪录",Discovery HD
 https://melive.onrender.com/trams/2878/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="DISCOVERY" tvg-logo="https://me.ug.cx/logo/Discovery.png" group-title="纪录",Discovery HD
+https://hls.iill.top/api/Discovery/index.m3u8
 #EXTINF:-1 tvg-name="DISCOVERYASIA" tvg-logo="https://me.ug.cx/logo/DiscoveryAsia.png" group-title="纪录",Discovery Asia
 https://melive.onrender.com/trams/2888/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="DISCOVERYASIA" tvg-logo="https://me.ug.cx/logo/DiscoveryAsia.png" group-title="纪录",Discovery Asia

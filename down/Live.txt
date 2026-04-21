@@ -308,12 +308,8 @@ https://live.264788.xyz/channel/fenghuangweishizixun?streamid=77bd953dbf073e11b8
 https://live.264788.xyz/channel/fenghuangweishizixun?streamid=7fb13f400476e75ce6c34d1f40c28473&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
 #EXTINF:-1 tvg-name="Now新聞台",Now新聞台
 https://cdn.163189.xyz/163189/now
-#EXTINF:-1 tvg-name="鳳凰中文台",鳳凰中文台
-https://cdn6.163189.xyz/163189/fhzw
 #EXTINF:-1 tvg-name="鳳凰資訊台",鳳凰資訊台
 https://cdn6.163189.xyz/163189/fhzx
-#EXTINF:-1 tvg-name="鳳凰香港台",鳳凰香港台
-https://cdn6.163189.xyz/163189/fhhk
 #EXTINF:-1 tvg-name="無綫新聞台",無綫新聞台
 https://cdn6.163189.xyz/163189/wxxw
 #EXTINF:-1 tvg-name="娛樂新聞台",娛樂新聞台

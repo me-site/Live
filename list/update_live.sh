@@ -54,11 +54,20 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
     [[ -z "$f_n" || -z "$url" || "$f_n" == "#"* ]] && continue
     f_n=$(echo "$f_n" | xargs); url=$(echo "$url" | xargs)
     echo "$f_n|$idx" >> "$PRIORITY_MAP"
+    
+    # 下载文件
     curl -L -k -s --retry 2 --connect-timeout 15 -A "VLC/3.0.18" "$url" -o "$DOWN_DIR/$f_n"
+    
+    # 【精准替换】：针对 Gather.m3u 中的三个特定目录前缀加代理
     if [[ "$f_n" == *"Gather"* && -s "$DOWN_DIR/$f_n" ]]; then
-        sed -i 's@https://tv\.iill\.top/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/@g' "$DOWN_DIR/$f_n"
-        sed -i 's@https://v\.iill\.top/@https://rtp.cc.cd/play.php?url=https://v.iill.top/@g' "$DOWN_DIR/$f_n"
+        # 处理 tw/
+        sed -i 's@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$DOWN_DIR/$f_n"
+        # 处理 4gtv/
+        sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$DOWN_DIR/$f_n"
+        # 处理 ofiii/ (注意这个是在 tv 域名下)
+        sed -i 's@https://tv\.iill\.top/ofiii/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/ofiii/@g' "$DOWN_DIR/$f_n"
     fi
+    
     ((idx++))
 done
 

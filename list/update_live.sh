@@ -89,57 +89,64 @@ for file in "$FILES_DIR"/*; do
     rm "$work_file"
 done
 
-# 4. 字典匹配与模板填充 (极速版)
+# 4. 字典匹配与模板填充 (极速兼容版)
 echo "--- Step 3: 极速匹配与模板拼合 ---"
 all_m3u="$DOWN_DIR/all.m3u"
 final_live="$WORKDIR/live.m3u"
 echo "#EXTM3U" > "$all_m3u"
 echo "#EXTM3U" > "$final_live"
 
-# 预处理字典：清理空格和换行，存入内存（变量）
-NAME_DICT=$(tr -d '\r' < "$LIST_DIR/name.txt" | sed 's/[ \t]*|[ \t]*/|/g')
+# 1. 预处理字典：清理空格、换行，并在内存中完成正则转义
+# 将每个别名两边的特殊符号（+ ( ) - 等）进行转义，确保 grep 能识别
+NAME_DICT=$(tr -d '\r' < "$LIST_DIR/name.txt" | awk -F'|' '{
+    line = ""
+    for(i=1; i<=NF; i++) {
+        gsub(/[ \t]+/, "", $i); # 清理别名空格
+        if($i == "") continue;
+        tmp = $i;
+        gsub(/[+().^$*?]/, "\\\\&", tmp); # 对正则元字符进行转义
+        line = (line == "" ? tmp : line "|" tmp)
+    }
+    print line
+}')
 
 while IFS= read -r t_line || [ -n "$t_line" ]; do
     [[ -z "$t_line" || "$t_line" =~ ^#EXTM3U ]] && continue
     
     if [[ "$t_line" == "#EXTINF"* ]]; then
-        # 1. 快速提取 tvg-name
+        # 提取 tvg-name
         t_name=$(echo "$t_line" | grep -o 'tvg-name="[^"]*"' | cut -d'"' -f2)
         [ -z "$t_name" ] && t_name=$(echo "$t_line" | sed 's/.*,//')
 
-        # 2. 从内存变量中快速定位别名行
-        # 逻辑：找到包含 |t_name| 的行，提取整行别名
-        alias_line=$(echo "$NAME_DICT" | grep -Ei "(^|\|)$t_name(\||$)" | head -n 1)
+        # 2. 从内存字典中找到该标准名所属的整行转义后的别名
+        # 精准匹配：匹配 (行首或|) + 标准名 + (|或行尾)
+        search_regex_part=$(echo "$NAME_DICT" | grep -Ei "(^|\|)$t_name(\||$)" | head -n 1)
         
-        if [ -z "$alias_line" ]; then
-            # 没字典则只搜自己
-            search_regex="^$t_name,"
+        if [ -z "$search_regex_part" ]; then
+            # 没字典则只搜自己，记得转义自己
+            tmp_name=$(echo "$t_name" | sed 's/[+().^$*?]/\\&/g')
+            search_regex="^($tmp_name),"
         else
-            # 将 别名1|别名2 转换为正则: ^(别名1|别名2),
-            # 这里一次性处理，大幅减少循环次数
-            regex_safe=$(echo "$alias_line" | sed 's/[][()\-+.^$*]/\\&/g')
-            search_regex="^($regex_safe),"
+            search_regex="^($search_regex_part),"
         fi
 
-        # 3. 一次性从 raw_db 捞出该频道的所有 URL
-        # grep -Ei 的速度极快，远超逐行判断
+        # 3. 极速匹配 raw_db
         matched_sources=$(grep -Ei "$search_regex" "$raw_db")
 
         if [ -n "$matched_sources" ]; then
             echo "$matched_sources" | while IFS=',' read -r f_name f_url; do
                 [ -z "$f_url" ] && continue
                 
-                # 写入汇总 (无需检测，极快)
+                # 写入 all.m3u (全量汇总)
                 echo "$t_line" >> "$all_m3u"
                 echo "$f_url" >> "$all_m3u"
 
-                # 4. 存活检测 (这是最耗时的部分)
-                # 免检名单加速
+                # 4. 存活检测 (跳过已知快速源)
                 if [[ "$f_url" == https://rtp.cc.cd* ]] || [[ "$f_url" == https://melive.onrender.com* ]]; then
                     echo "$t_line" >> "$final_live"
                     echo "$f_url" >> "$final_live"
                 else
-                    # 存活检测
+                    # 降低超时到 2秒，进一步提速
                     if curl -I -L -k -s -m 2 -o /dev/null -f "$f_url"; then
                         echo "$t_line" >> "$final_live"
                         echo "$f_url" >> "$final_live"
@@ -150,4 +157,4 @@ while IFS= read -r t_line || [ -n "$t_line" ]; do
     fi
 done < "$LIST_DIR/extinf.m3u"
 
-echo "--- 极速更新完成 ---"
+echo "--- 更新完成，请查看 live.m3u ---"

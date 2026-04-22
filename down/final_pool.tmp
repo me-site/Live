@@ -11,6 +11,7 @@ Astro AOD|https://o11.163189.xyz/stream/live/aod/|Live.txt|101.1519
 Astro QJ|https://melive.onrender.com/trams/1623/playlist.m3u8?token=lanx|Smart.m3u|108.1070
 Astro欢喜台|https://o11.163189.xyz/stream/live/hxt/|Live.txt|101.1522
 Astro欢喜台|https://php.jdshipin.com/smt.php?id=Huahee|Live.txt|101.1593
+BBCEARTH|https://hls.iill.top/api/BBC-Earth/index.m3u8|Gather.m3u|103.1223
 BBCEARTH|https://melive.onrender.com/trams/2037/playlist.m3u8?token=lanx|Smart.m3u|108.1515
 BBCEARTH|https://melive.onrender.com/trams/2037/playlist.m3u8?token=lanx|Smart.m3u|108.1546
 BBCLIFESTYLE|https://melive.onrender.com/trams/2038/playlist.m3u8?token=lanx|Smart.m3u|108.1516
@@ -200,14 +201,11 @@ DREAMWORKS|https://melive.onrender.com/trams/2785/playlist.m3u8?token=lanx|Smart
 EUROSPORTHD|https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx|Smart.m3u|108.1098
 EUROSPORTHD|https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx|Smart.m3u|108.1165
 GLOBALTREKKER|https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live112/index.m3u8|Gather.m3u|103.1168
-HBO|https://hls.iill.top/test/HBO/index.m3u8|Gather.m3u|103.1005
-HBO|https://hls.iill.top/api/HBO/index.m3u8|Gather.m3u|103.1226
 HBO|https://melive.onrender.com/trams/1015/playlist.m3u8?token=lanx|Smart.m3u|108.1050
 HBO|https://melive.onrender.com/trams/898/playlist.m3u8?token=lanx|Smart.m3u|108.1182
 HBO|https://melive.onrender.com/trams/898/playlist.m3u8?token=lanx|Smart.m3u|108.1474
 HBO|https://melive.onrender.com/trams/1015/playlist.m3u8?token=lanx|Smart.m3u|108.1497
 HBO|https://melive.onrender.com/trams/1015/playlist.m3u8?token=lanx|Smart.m3u|108.1556
-HBO原创巨献|https://hls.iill.top/api/HBO-Signature/index.m3u8|Gather.m3u|103.1229
 HBO原创巨献|https://melive.onrender.com/trams/2722/playlist.m3u8?token=lanx|Smart.m3u|108.1051
 HBO原创巨献|https://melive.onrender.com/trams/2868/playlist.m3u8?token=lanx|Smart.m3u|108.1184
 HBO原创巨献|https://melive.onrender.com/trams/2868/playlist.m3u8?token=lanx|Smart.m3u|108.1476
@@ -216,6 +214,7 @@ HBO强档巨献|https://melive.onrender.com/trams/2782/playlist.m3u8?token=lanx|
 HBO强档巨献|https://melive.onrender.com/trams/1207/playlist.m3u8?token=lanx|Smart.m3u|108.1183
 HBO强档巨献|https://melive.onrender.com/trams/1207/playlist.m3u8?token=lanx|Smart.m3u|108.1475
 HBO强档巨献|https://melive.onrender.com/trams/2782/playlist.m3u8?token=lanx|Smart.m3u|108.1499
+HBO温馨家庭|https://hls.iill.top/api/HBO-Family/index.m3u8|Gather.m3u|103.1228
 HBO温馨家庭|https://melive.onrender.com/trams/2711/playlist.m3u8?token=lanx|Smart.m3u|108.1041
 HBO温馨家庭|https://melive.onrender.com/trams/2711/playlist.m3u8?token=lanx|Smart.m3u|108.1495
 HISTORY|https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-live026/index.m3u8|Gather.m3u|103.1137

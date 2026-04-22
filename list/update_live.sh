@@ -32,8 +32,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     filename="src_${idx}.tmp"
     echo "正在下载 [${idx}] ${alias_name}: $url"
     
-    # 增加 User-Agent 伪装，避免被 GitHub 或 Worker 拦截
-    # 使用 -k 忽略证书错误，-L 跟踪重定向
+    # 增加 User-Agent 伪装，避免被拦截
     curl -L -k -s -f \
          -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
          --connect-timeout 20 "$url" -o "$FILES_DIR/$filename"
@@ -55,7 +54,7 @@ for file in "$FILES_DIR"/*; do
     work_file="${file}.process"
     tr -d '\r' < "$file" > "$work_file"
 
-    # 执行你要求的 Gather.m3u 处理原则
+    # 执行清洗原则
     sed -i '/#EXTINF.*\(电台\|精選\|游戏\|广播\)/{N;d;}' "$work_file"
     sed -i 's@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$work_file"
     sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$work_file"
@@ -96,19 +95,17 @@ final_live="$WORKDIR/live.m3u"
 echo "#EXTM3U" > "$all_m3u"
 echo "#EXTM3U" > "$final_live"
 
-# 定义 URL 全局去重池（用于 live.m3u 全局去重）
+# 定义 URL 全局去重池
 global_dupe_pool="$DOWN_DIR/global_url_pool.tmp"
 touch "$global_dupe_pool"
 
-# 1. 预处理字典：清理空格、换行，并完成正则转义
-# 这里增加了一个处理：确保别名之间的匹配是独立的
+# 1. 预处理字典
 NAME_DICT=$(tr -d '\r' < "$LIST_DIR/name.txt" | awk -F'|' '{
     line = ""
     for(i=1; i<=NF; i++) {
         gsub(/^[ \t]+|[ \t]+$/, "", $i); 
         if($i == "") continue;
         tmp = $i;
-        # 预转义正则特殊字符
         gsub(/[+().^$*?]/, "\\\\&", tmp); 
         line = (line == "" ? tmp : line "|" tmp)
     }
@@ -119,12 +116,10 @@ while IFS= read -r t_line || [ -n "$t_line" ]; do
     [[ -z "$t_line" || "$t_line" =~ ^#EXTM3U ]] && continue
     
     if [[ "$t_line" == "#EXTINF"* ]]; then
-        # 提取 tvg-name
         t_name=$(echo "$t_line" | grep -o 'tvg-name="[^"]*"' | cut -d'"' -f2)
         [ -z "$t_name" ] && t_name=$(echo "$t_line" | sed 's/.*,//')
 
-        # 2. 获取该频道的转义别名正则
-        # 关键：使用 (^|\|) 和 (\||$) 确保 CCTV1 不会匹配到 CCTV10
+        # 2. 获取别名正则
         search_regex_part=$(echo "$NAME_DICT" | grep -Ei "(^|\|)$t_name(\||$)" | head -n 1)
         
         if [ -z "$search_regex_part" ]; then
@@ -134,33 +129,32 @@ while IFS= read -r t_line || [ -n "$t_line" ]; do
             search_regex="^($search_regex_part),"
         fi
 
-        # 3. 从 raw_db 中捞出所有匹配源（raw_db 已按 down.txt 排序）
+        # 3. 捞出匹配源
         matched_sources=$(grep -Ei "$search_regex" "$raw_db")
 
         if [ -n "$matched_sources" ]; then
             echo "$matched_sources" | while IFS=',' read -r f_name f_url; do
                 [ -z "$f_url" ] && continue
                 
-                # --- [全局去重逻辑] ---
-                # 检查该 URL 是否已被之前的频道或当前频道的先前源占用
-                if grep -qx F "$f_url" "$global_dupe_pool"; then
-                    continue # 发现重复链接，直接丢弃，保留先前的
+                # --- [修正后的全局去重逻辑] ---
+                # 使用 -qxF 连写，或者分写为 -q -x -F
+                if grep -qxF "$f_url" "$global_dupe_pool"; then
+                    continue 
                 fi
                 # ---------------------
 
-                # 4. 存活检测（仅对没出现过的 URL 进行检测）
+                # 4. 存活检测
                 is_valid=0
                 if [[ "$f_url" == https://rtp.cc.cd* ]] || [[ "$f_url" == https://melive.onrender.com* ]]; then
                     is_valid=1
                 else
-                    # 2秒超时提速
+                    # 降低超时到 2 秒加速
                     if curl -I -L -k -s -m 2 -o /dev/null -f "$f_url"; then
                         is_valid=1
                     fi
                 fi
 
                 if [ "$is_valid" -eq 1 ]; then
-                    # 只有校验成功的才存入去重池并写入文件
                     echo "$f_url" >> "$global_dupe_pool"
                     
                     # 写入汇总

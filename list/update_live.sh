@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - 深度模拟播放器下载 + 完整保底逻辑版
+# IPTV 维护脚本 - 物理优先级锁定 + URL 去重增强版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -10,10 +10,11 @@ CONFIG_DIR="$BASE_DIR/list"
 M3U_RAW_DIR="$BASE_DIR/files"
 DOWN_DIR="$BASE_DIR/down"
 
-# --- 目录初始化 ---
-mkdir -p "$M3U_RAW_DIR"
+# --- 环境清理与目录初始化 ---
+# 彻底清理 down 目录，确保没有旧的权重数据干扰
 rm -rf "$DOWN_DIR"
 mkdir -p "$DOWN_DIR"
+mkdir -p "$M3U_RAW_DIR"
 mkdir -p "$CONFIG_DIR"
 
 NAME_TXT="$CONFIG_DIR/name.txt"
@@ -71,18 +72,23 @@ done < "$NAME_TXT"
 
 # --- 步骤 2: 下载原始镜像并处理逻辑 ---
 echo "📥 阶段 1: 处理下载逻辑..."
+# 预处理 down.txt 确保没有 Windows 换行符干扰
+CLEAN_CONFIG="$DOWN_DIR/down_clean.txt"
+sed 's/\r//g; /^$/d; /^[[:space:]]*$/d' "$DOWN_CONFIG" > "$CLEAN_CONFIG"
+
 IDX=100
 PRIORITY_IDX="$DOWN_DIR/priority.idx"; > "$PRIORITY_IDX"
 
 while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     [[ -z "$f_n" || -z "$url" || "$f_n" == "#"* ]] && continue
     f_n=$(echo "$f_n" | xargs); url=$(echo "$url" | xargs)
+    
+    # 物理锁定优先级：第一行就是100，第二行就是101
     echo "$f_n|$IDX" >> "$PRIORITY_IDX"
     ((IDX++))
     
     raw_path="$M3U_RAW_DIR/$f_n"
     target_path="$DOWN_DIR/$f_n"
-
     domain=$(echo "$url" | awk -F[/:] '{print $1"//"$4}')
 
     dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 20 \
@@ -99,7 +105,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
         echo "DEBUG: $f_n 下载成功。"
     else
         rm -f "$raw_path.new"
-        echo "DEBUG: $f_n 下载失败或拦截 (Code:$dl_info)，尝试调用缓存。"
+        echo "DEBUG: $f_n 尝试使用本地缓存或下载失败。"
     fi
 
     if [ -f "$raw_path" ] && [ -s "$raw_path" ]; then
@@ -113,6 +119,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
             mv "${target_path}.tmp" "$target_path"
         fi
 
+        # 统一 tvg-name 格式
         sed -i -E 's/tvg-name=["'\'']?([^"'\'',]+)["'\'']?/tvg-name=\1/g' "$target_path"
         sed -i -E 's/tvg-name=([^",]+)([, ]+tvg-logo|[, ]+catchup|,)/tvg-name="\1"\2/g' "$target_path"
         sed -i -E 's/tvg-name=([^", ]+)$/tvg-name="\1"/g' "$target_path"
@@ -125,12 +132,10 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$target_path"
                 ;;
         esac
-    else
-        echo "· $f_n    【 ❌ 彻底失效 】" >> "$DOWNLOAD_LOG"
     fi
-done < "$DOWN_CONFIG"
+done < "$CLEAN_CONFIG"
 
-# --- 步骤 3: 匹配与测活 (复合优先级逻辑) ---
+# --- 步骤 3: 匹配与测活 ---
 echo "🔍 阶段 2: 匹配与测活..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 
@@ -138,7 +143,7 @@ while IFS='|' read -r f_n p_val; do
     target_file="$DOWN_DIR/$f_n"
     [ ! -f "$target_file" ] && continue
     
-    line_num=1000  # 内部行号锁定
+    line_num=1000  # 文件内行号锁定
     
     while read -r line; do
         if [[ "$line" =~ "#EXTINF" ]]; then
@@ -151,7 +156,6 @@ while IFS='|' read -r f_n p_val; do
             std_name=$(grep -i "^${raw_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
             
             if [ -n "$std_name" ]; then
-                # 复合权重：文件顺序.行号顺序
                 combined_priority="${p_val}.${line_num}"
                 echo "$std_name|$v_url|$f_n|$combined_priority" >> "$ALL_MATCHED"
             fi
@@ -170,8 +174,8 @@ fi
 echo "📦 阶段 3: 组装 live.m3u..."
 printf "#EXTM3U\n" > "$LIVE_M3U"
 
-# 【核心修复】：先按频道名排，再按复合权重（k4）排。
-# 这样保证了同一个 URL 如果出现多次，权重最小（也就是 down.txt 靠前）的那个会排在最上面。
+# 排序逻辑：按频道名聚拢，频道内部按复合权重(k4)进行版本号/数字排序(-V)
+# 这一步确保了对于同一个频道，排在前面的源一定是来自 down.txt 靠前的文件
 FINAL_POOL="$DOWN_DIR/final_pool.tmp"
 sort -t'|' -k1,1 -k4,4V "$HEALTHY_LIST" > "$FINAL_POOL"
 
@@ -181,14 +185,15 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
-    # 获取该频道的所有匹配记录（此时已经是按权重 p_val.line_num 排序好的）
-    # 注意：这里我们要带上 URL 进行去重处理
-    MATCHED_DATA=$(awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL")
+    # 精确匹配该频道的线路数据
+    MATCH_LINES=$(awk -F'|' -v t="$t_name" '$1==t' "$FINAL_POOL")
 
-    if [ -n "$MATCHED_DATA" ]; then
-        # 【关键】：在输出前进行去重。由于 MATCHED_DATA 已经是按权重排好序的，
-        # awk '!seen[$0]++' 会保留第一次出现的 URL（即权重最小、最靠前的那个文件里的源）
-        echo "$MATCHED_DATA" | awk '!seen[$0]++' | while read -r v_u; do
+    if [ -n "$MATCH_LINES" ]; then
+        # 核心去重：保留第一次出现的 URL (也就是权重最低、最靠前的源)
+        # 如果 URL 相同，排在后面的文件里的源会被直接丢弃
+        echo "$MATCH_LINES" | awk -F'|' '!seen[$2]++' | while read -r line_data; do
+            v_u=$(echo "$line_data" | cut -d'|' -f2)
+            
             [[ ! "$v_u" =~ ^https?:// ]] && continue
             [[ "$v_u" =~ \.flv ]] && continue
             
@@ -198,4 +203,4 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     fi
 done < <(grep "#EXTINF" "$NAME_M3U")
 
-echo "✅ 任务完成：顺序与权重已完全锁定。"
+echo "✅ 任务完成：顺序与去重已严格执行。"

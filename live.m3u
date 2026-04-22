@@ -915,6 +915,8 @@ https://melive.onrender.com/trams/2653/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.ug.cx/logo/EuroSport.png" group-title="新马",EuroSport HD
 https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.ug.cx/logo/beINSports3.png" group-title="新马",beIN Sports 3
+https://hls.iill.top/api/beIN-Sports-3/index.m3u8
 #EXTINF:-1 tvg-name="AXN" tvg-logo="https://me.ug.cx/logo/AXN.png" group-title="电影",AXN
 https://melive.onrender.com/trams/906/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="AXN" tvg-logo="https://me.ug.cx/logo/AXN.png" group-title="电影",AXN
@@ -975,14 +977,10 @@ https://melive.onrender.com/trams/1207/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2782/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="HBO强档巨献" tvg-logo="https://me.ug.cx/logo/HBOhits.png" group-title="电影",HBO 強檔鉅獻
 https://melive.onrender.com/trams/2782/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="HBO强档巨献" tvg-logo="https://me.ug.cx/logo/HBOhits.png" group-title="电影",HBO 強檔鉅獻
-https://hls.iill.top/api/HBO-Hits/index.m3u8
 #EXTINF:-1 tvg-name="HBO温馨家庭" tvg-logo="https://me.ug.cx/logo/HBOfamily.png" group-title="电影",HBO 溫馨家庭
 https://melive.onrender.com/trams/2711/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="HBO温馨家庭" tvg-logo="https://me.ug.cx/logo/HBOfamily.png" group-title="电影",HBO 溫馨家庭
 https://melive.onrender.com/trams/2711/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="HBO温馨家庭" tvg-logo="https://me.ug.cx/logo/HBOfamily.png" group-title="电影",HBO 溫馨家庭
-https://hls.iill.top/api/HBO-Family/index.m3u8
 #EXTINF:-1 tvg-name="HBO原创巨献" tvg-logo="https://me.ug.cx/logo/HBOsignature.png" group-title="电影",HBO 原創鉅獻
 https://melive.onrender.com/trams/2722/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="HBO原创巨献" tvg-logo="https://me.ug.cx/logo/HBOsignature.png" group-title="电影",HBO 原創鉅獻
@@ -1015,12 +1013,12 @@ https://hls.iill.top/api/BBC-Earth/index.m3u8
 https://melive.onrender.com/trams/2038/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="BBCLIFESTYLE" tvg-logo="https://me.ug.cx/logo/BBCLifestyle.png" group-title="纪录",BBC Lifestyle
 https://melive.onrender.com/trams/2038/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="BBCLIFESTYLE" tvg-logo="https://me.ug.cx/logo/BBCLifestyle.png" group-title="纪录",BBC Lifestyle
+https://hls.iill.top/api/BBC-Lifestyle/index.m3u8
 #EXTINF:-1 tvg-name="DISCOVERY" tvg-logo="https://me.ug.cx/logo/Discovery.png" group-title="纪录",Discovery HD
 https://melive.onrender.com/trams/2878/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="DISCOVERY" tvg-logo="https://me.ug.cx/logo/Discovery.png" group-title="纪录",Discovery HD
 https://melive.onrender.com/trams/2878/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="DISCOVERY" tvg-logo="https://me.ug.cx/logo/Discovery.png" group-title="纪录",Discovery HD
-https://hls.iill.top/api/Discovery/index.m3u8
 #EXTINF:-1 tvg-name="DISCOVERYASIA" tvg-logo="https://me.ug.cx/logo/DiscoveryAsia.png" group-title="纪录",Discovery Asia
 https://melive.onrender.com/trams/2888/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="DISCOVERYASIA" tvg-logo="https://me.ug.cx/logo/DiscoveryAsia.png" group-title="纪录",Discovery Asia

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - 优先级绝对锁定 + 增强匹配修复版
+# IPTV 维护脚本 - 字典原样匹配 (保留空格) + 优先级锁定版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -23,7 +23,6 @@ THREAD_COUNT=25
 # --- 测活函数 ---
 check_url_worker() {
     IFS='|' read -r t u s p <<< "$1"
-    # Smart 和 rtp.cc.cd 免检，其余 curl 测活
     if [[ "$s" == *"Smart"* || "$u" == https://rtp.cc.cd/* ]]; then
         echo "$t|$u|$s|$p" >> "$2"
         return
@@ -38,30 +37,34 @@ echo "🏗️ 构建标准字典..."
 TEMPLATE_NAMES_FILE="$DOWN_DIR/template_names.tmp"
 sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' "$NAME_M3U" | sort -u > "$TEMPLATE_NAMES_FILE"
 DICT_MAP="$DOWN_DIR/dict_map.tmp"; > "$DICT_MAP"
+
 while IFS='|' read -r -a names; do
     target_std=""
     for n in "${names[@]}"; do
         clean_n=$(echo "$n" | xargs)
         [ -z "$clean_n" ] && continue
-        target_std=$(grep -i "^$clean_n$" "$TEMPLATE_NAMES_FILE" | head -n1)
+        target_std=$(grep -ix "$clean_n" "$TEMPLATE_NAMES_FILE" | head -n1)
         [ -n "$target_std" ] && break
     done
+    
     if [ -n "$target_std" ]; then
         for n in "${names[@]}"; do
-            clean_n=$(echo "$n" | xargs)
-            [ -n "$clean_n" ] && echo "${clean_n^^}|$target_std" >> "$DICT_MAP"
+            clean_n=$(echo "$n" | xargs) # 仅去掉首尾极端空格，保留词间空格
+            if [ -n "$clean_n" ]; then
+                # 转换大写作为匹配 Key，但不删除内部空格
+                key=$(echo "$clean_n" | tr '[:lower:]' '[:upper:]')
+                echo "$key|$target_std" >> "$DICT_MAP"
+            fi
         done
     fi
 done < "$NAME_TXT"
 
 # --- 步骤 2: 下载逻辑 ---
 echo "📥 阶段 1: 下载源文件..."
-# 增加对 down.txt 的清洗，防止换行符干扰
 sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     [[ -z "$f_n" || -z "$url" || "$f_n" == "#"* ]] && continue
     f_n=$(echo "$f_n" | xargs); url=$(echo "$url" | xargs)
-    raw_path="$M3U_RAW_DIR/$f_n"
-    target_path="$DOWN_DIR/$f_n"
+    raw_path="$M3U_RAW_DIR/$f_n"; target_path="$DOWN_DIR/$f_n"
     
     curl -L -k -s --retry 2 --connect-timeout 15 -A "VLC/3.0.18" "$url" -o "$raw_path"
     
@@ -77,7 +80,7 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
     fi
 done
 
-# --- 步骤 3: 匹配与权重分配 (深度兼容版) ---
+# --- 步骤 3: 匹配与权重分配 (保留空格逻辑) ---
 echo "🔍 阶段 2: 匹配并分配权重..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 
@@ -89,78 +92,57 @@ for target_file in "$DOWN_DIR"/*; do
     case "$f_n" in
         *"MyTV"*)   p_val=100 ;;
         *"Live.txt"*) p_val=101 ;;
-        *"MeLive"*)   p_val=102 ;; # 确保 MeLive 优先级很高
+        *"MeLive"*)   p_val=102 ;;
         *"Gather"*)   p_val=110 ;;
-        *"Smart"*)    p_val=111 ;;
         *)            p_val=120 ;;
     esac
-
-    echo "DEBUG: 正在分析文件 [$f_n] ..."
 
     line_num=1000
     while read -r line || [ -n "$line" ]; do
         if [[ "$line" =~ "#EXTINF" ]]; then
-            # 1. 提取原始名称并清理
-            raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
+            # 【独立提取】：直接提取 tvg-name 引号内的原始值，保留内部空格
+            raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
+            
+            # 保底逻辑：如果没提取到引号内容，再取逗号后的值
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
             
-            # 2. 读取下一行 URL
             read -r v_url || [ -n "$v_url" ]
-            [ -z "$v_url" ] && continue
+            [ -z "$v_url" ] && [[ ! "$v_url" =~ ^https?:// ]] && continue
             
-            # 3. 【核心修复】繁简预处理 + 去空格
-            # 将常见的繁体字临时替换为简体进行匹配（针对台湾源）
-            search_name=$(echo "$raw_name" | sed 's/台/台/g; s/視/视/g; s/國/国/g; s/際/际/g; s/體/体/g; s/育/育/g; s/新聞/新闻/g; s/綜合/综合/g; s/娛樂/娱乐/g')
-            search_key=$(echo "$search_name" | tr '[:lower:]' '[:upper:]' | sed 's/ //g')
-
-            # 4. 在字典中查找
-            std_name=$(grep -i "^$search_key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
+            # 【转换 Key】：仅转大写，不删空格，只清理掉提取过程中可能多出的引号
+            match_key=$(echo "$raw_name" | tr '[:lower:]' '[:upper:]' | sed 's/"//g')
             
-            # 5. 【保底逻辑】如果精准匹配失败，尝试关键词包含匹配
-            if [ -z "$std_name" ]; then
-                std_name=$(grep -i "$search_key" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
-            fi
+            # 字典查询：精准匹配带空格的名称
+            std_name=$(grep -i "^$match_key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
             
             if [ -n "$std_name" ]; then
                 echo "$std_name|$v_url|$f_n|$p_val.$line_num" >> "$ALL_MATCHED"
-            else
-                # 记录哪些名字没匹配上，方便你查问题
-                echo "DEBUG: 未匹配频道: [$raw_name] 来自 $f_n" >> "$DOWN_DIR/unmatched.log"
             fi
             ((line_num++))
         fi
     done < "$target_file"
 done
 
-# 并行测活
+# --- 并行测活 ---
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
 if [ -s "$ALL_MATCHED" ]; then
-    echo "🚀 启动并行测活 (线程: $THREAD_COUNT)..."
     cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
-else
-    echo "❌ 错误：没有任何匹配结果，请检查字典或源文件。"
 fi
 
 # --- 步骤 4: 组装结果 ---
 echo "📦 阶段 3: 组装最终结果..."
 echo "#EXTM3U" > "$LIVE_M3U"
-
-# 排序逻辑：频道名升序(k1)，权重数字升序(k4,n)
-FINAL_POOL="$DOWN_DIR/final_pool.tmp"
-sort -t'|' -k1,1 -k4,4n "$HEALTHY_LIST" > "$FINAL_POOL"
+sort -t'|' -k1,1 -k4,4n "$HEALTHY_LIST" > "$DOWN_DIR/final_pool.tmp"
 
 while read -r tpl_line || [ -n "$tpl_line" ]; do
     [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
-    
-    t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
+    t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
     [ -z "$t_name" ] && continue
 
-    # 从排好序的池中提取 URL，并保持物理权重去重
-    awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL" | awk '!seen[$0]++' | while read -r v_u; do
-        [[ ! "$v_u" =~ ^https?:// ]] && continue
+    awk -F'|' -v t="$t_name" '$1==t {print $2}' "$DOWN_DIR/final_pool.tmp" | awk '!seen[$0]++' | while read -r v_u; do
         echo "$tpl_line" >> "$LIVE_M3U"
         echo "$v_u" >> "$LIVE_M3U"
     done
 done < <(grep "#EXTINF" "$NAME_M3U")
 
-echo "✅ 完成！优先级已强制锁定：MyTV(100) > Live(101) > MeLive(102)。"
+echo "✅ 完成！保留空格匹配已生效，优先级：MyTV > Live > MeLive。"

@@ -2,16 +2,14 @@ name: Live Auto Update
 
 on:
   schedule:
-    # 每 6 小时运行一次 (UTC 时间 0,6,12,18 点)
     - cron: '0 */6 * * *'
   workflow_dispatch:
-    # 支持手动点击触发
 
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 明确授予写权限
+      contents: write
 
     steps:
       - name: Checkout Code
@@ -30,11 +28,14 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 添加生成的文件和变动的目录
+          # 使用 -A 记录所有变动（包括物理删除的文件）
           git add live.m3u
-          git add files/* 2>/dev/null || true
-          git add down/* 2>/dev/null || true
+          git add -A files/
+          git add -A down/
           
-          # 提交更改，如果没有变动则跳过
-          git commit -m "Auto Update IPTV: $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto Update IPTV: $(date +'%Y-%m-%d %H:%M')"
+            git push origin main
+          fi

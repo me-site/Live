@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 自动化维护脚本 - 模板 Logo 填充版
+# IPTV 自动化维护脚本 - 增加关键字过滤 & Gather 特殊处理
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -11,6 +11,7 @@ DOWN_DIR="$BASE_DIR/down"
 FILES_DIR="$BASE_DIR/files"
 
 # --- 1. 初始化 ---
+echo "🧹 初始化目录..."
 rm -rf "$DOWN_DIR"
 mkdir -p "$DOWN_DIR" "$FILES_DIR"
 
@@ -21,8 +22,8 @@ ALL_M3U="$DOWN_DIR/all.m3u"
 LIVE_M3U="$BASE_DIR/live.m3u"
 THREAD_COUNT=25
 
-# --- 2. 下载并格式化源 (纠正 tvg-name 引号) ---
-echo "📥 正在下载并预处理源文件..."
+# --- 2. 下载并预处理 (含 Gather 替换与关键字过滤) ---
+echo "📥 正在下载并清洗源文件..."
 PRIORITY_MAP="$DOWN_DIR/priority.map"
 > "$PRIORITY_MAP"
 idx=100
@@ -37,20 +38,38 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
     
     echo "$f_n|$idx" >> "$PRIORITY_MAP"
 
-    # 规范化源文件：补全 tvg-name 引号，移除多余空格
-    sed -i -E 's/tvg-name="?([^", ]+)"?/tvg-name="\1"/g' "$target_file"
+    # A. 如果是 TXT 则转为 M3U
+    if [[ "$f_n" == *.txt ]]; then
+        temp_m3u="$DOWN_DIR/${f_n%.txt}.m3u"
+        echo "#EXTM3U" > "$temp_m3u"
+        while IFS=',' read -r cname curl_val || [ -n "$cname" ]; do
+            [ -z "$curl_val" ] && continue
+            echo "#EXTINF:-1 tvg-name=\"$cname\",$cname" >> "$temp_m3u"
+            echo "$curl_val" >> "$temp_m3u"
+        done < "$target_file"
+        mv "$temp_m3u" "$target_file"
+    fi
 
+    # B. 强力纠正引号 (为后续匹配做准备)
+    sed -i -E 's/tvg-name=([^" ,]+)/tvg-name="\1"/g' "$target_file"
+
+    # C. Gather.m3u 特殊 URL 替换
     if [[ "$f_n" == *"Gather"* ]]; then
+        echo "🔧 正在应用 Gather 代理替换规则..."
         sed -i 's@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$target_file"
         sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$target_file"
         sed -i 's@https://tv\.iill\.top/ofiii/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/ofiii/@g' "$target_file"
     fi
+
+    # D. 关键字硬过滤 (删除电台、精選、游戏、广播)
+    # 逻辑：删除包含关键字的 #EXTINF 行及其下一行 (URL)
+    sed -i '/#EXTINF.*\(电台\|精選\|游戏\|广播\)/{N;d;}' "$target_file"
+
     ((idx++))
 done
 
 # --- 3. 建立匹配字典 ---
-echo "🏗️ 正在构建字典映射..."
-# 提取模板中定义的频道名（即你 Logo 对应的 key）
+echo "🏗️ 构建字典映射..."
 TPL_CHANNELS="$DOWN_DIR/tpl_channels.tmp"
 sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' "$NAME_M3U" | sort -u > "$TPL_CHANNELS"
 
@@ -70,47 +89,34 @@ while IFS='|' read -r -a names; do
     fi
 done < "$NAME_TXT"
 
-# --- 4. 扫描所有下载的源，分拣入库 ---
-echo "🔍 扫描下载源并匹配模板频道..."
+# --- 4. 扫描所有源，匹配入库 ---
+echo "🔍 扫描并匹配..."
 SOURCE_POOL="$DOWN_DIR/source_pool.tmp"; > "$SOURCE_POOL"
 
 for f in "$FILES_DIR"/*; do
     [ ! -f "$f" ] && continue
     f_name=$(basename "$f")
     p_val=$(grep "^$f_name|" "$PRIORITY_MAP" | cut -d'|' -f2)
-    [ -z "$p_val" ] && p_val=999
     
-    # 支持 TXT 和 M3U 混合扫描
-    if [[ "$f_name" == *.txt ]]; then
-        while IFS=',' read -r c_name c_url || [ -n "$c_name" ]; do
+    while read -r line; do
+        if [[ "$line" =~ "#EXTINF" ]]; then
+            c_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
+            [ -z "$c_name" ] && c_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
+            read -r c_url
             [[ ! "$c_url" =~ ^https:// ]] && continue
+            
             key=$(echo "$c_name" | tr '[:lower:]' '[:upper:]')
             std_name=$(grep "^$key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
             [ -z "$std_name" ] && std_name=$(grep -ix "$c_name" "$TPL_CHANNELS" | head -n1)
             [ -n "$std_name" ] && echo "$std_name|$c_url|$p_val" >> "$SOURCE_POOL"
-        done < "$f"
-    else
-        while read -r line; do
-            if [[ "$line" =~ "#EXTINF" ]]; then
-                c_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
-                [ -z "$c_name" ] && c_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
-                read -r c_url
-                [[ ! "$c_url" =~ ^https:// ]] && continue
-                key=$(echo "$c_name" | tr '[:lower:]' '[:upper:]')
-                std_name=$(grep "^$key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
-                [ -z "$std_name" ] && std_name=$(grep -ix "$c_name" "$TPL_CHANNELS" | head -n1)
-                [ -n "$std_name" ] && echo "$std_name|$c_url|$p_val" >> "$SOURCE_POOL"
-            fi
-        done < "$f"
-    fi
+        fi
+    done < "$f"
 done
 
-# 按文件名优先级排序
 sort -t'|' -k1,1 -k3,3n "$SOURCE_POOL" -o "$DOWN_DIR/source_pool.sorted"
 
-# --- 5. 以模板为核心进行填充 (all.m3u) ---
-echo "📦 正在将源填入 Logo 模板..."
-echo "#EXTM3U" > "$ALL_M3U"
+# --- 5. 以模板为核心生成 all.m3u (保留 Logo) ---
+echo "📦 填充模板生成 all.m3u..."
 RAW_INDEX="$DOWN_DIR/raw_index.tmp"; > "$RAW_INDEX"
 tpl_line_idx=100000
 
@@ -119,16 +125,13 @@ while read -r line || [ -n "$line" ]; do
     t_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
     [ -z "$t_name" ] && continue
 
-    # 在已排序的池子中查找属于该模板频道的所有 URL
-    # 去重并保持顺序
     awk -F'|' -v t="$t_name" '$1==t {print $2}' "$DOWN_DIR/source_pool.sorted" | awk '!seen[$0]++' | while read -r match_url; do
-        # 写入索引：模板行号 | 模板原始整行(带Logo) | 匹配到的URL
         echo "$tpl_line_idx|$line|$match_url" >> "$RAW_INDEX"
     done
     ((tpl_line_idx++))
 done < "$NAME_M3U"
 
-# 生成 all.m3u 用于存档
+echo "#EXTM3U" > "$ALL_M3U"
 cut -d'|' -f2,3 "$RAW_INDEX" | tr '|' '\n' >> "$ALL_M3U"
 
 # --- 6. 测活生成最终 live.m3u ---
@@ -136,11 +139,9 @@ echo "⚡ 并发测活..."
 CLEAN_POOL="$DOWN_DIR/clean_pool.tmp"; > "$CLEAN_POOL"
 export CLEAN_POOL
 
-check_task() {
+check_url() {
     item="$1"
-    idx=$(echo "$item" | cut -d'|' -f1)
-    inf=$(echo "$item" | cut -d'|' -f2)
-    url=$(echo "$item" | cut -d'|' -f3)
+    idx=$(echo "$item" | cut -d'|' -f1); inf=$(echo "$item" | cut -d'|' -f2); url=$(echo "$item" | cut -d'|' -f3)
 
     if [[ "$url" == *"rtp.cc.cd"* || "$url" == *"melive.onrender.com"* ]]; then
         echo "$idx|$inf|$url" >> "$CLEAN_POOL"
@@ -151,15 +152,14 @@ check_task() {
         fi
     fi
 }
-export -f check_task
+export -f check_url
 
-cat "$RAW_INDEX" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_task "{}"'
+cat "$RAW_INDEX" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url "{}"'
 
-# 最终回写：严格遵循模板物理顺序
 echo "#EXTM3U" > "$LIVE_M3U"
 sort -t'|' -k1,1n "$CLEAN_POOL" | while IFS='|' read -r o_idx o_inf o_url; do
     echo "$o_inf" >> "$LIVE_M3U"
     echo "$o_url" >> "$LIVE_M3U"
 done
 
-echo "✅ 任务完成！所有源已按模板 Logo 样式填充并排序。"
+echo "✅ 完成！关键字已过滤，Gather 已代理。"

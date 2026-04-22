@@ -89,22 +89,27 @@ for file in "$FILES_DIR"/*; do
     rm "$work_file"
 done
 
-# 4. 字典匹配与模板填充 (极速兼容版)
-echo "--- Step 3: 极速匹配与模板拼合 ---"
+# 4. 字典匹配与模板填充 (极速+去重+顺序保留版)
+echo "--- Step 3: 极速匹配并根据顺序去重 ---"
 all_m3u="$DOWN_DIR/all.m3u"
 final_live="$WORKDIR/live.m3u"
 echo "#EXTM3U" > "$all_m3u"
 echo "#EXTM3U" > "$final_live"
 
-# 1. 预处理字典：清理空格、换行，并在内存中完成正则转义
-# 将每个别名两边的特殊符号（+ ( ) - 等）进行转义，确保 grep 能识别
+# 定义 URL 全局去重池（用于 live.m3u 全局去重）
+global_dupe_pool="$DOWN_DIR/global_url_pool.tmp"
+touch "$global_dupe_pool"
+
+# 1. 预处理字典：清理空格、换行，并完成正则转义
+# 这里增加了一个处理：确保别名之间的匹配是独立的
 NAME_DICT=$(tr -d '\r' < "$LIST_DIR/name.txt" | awk -F'|' '{
     line = ""
     for(i=1; i<=NF; i++) {
-        gsub(/[ \t]+/, "", $i); # 清理别名空格
+        gsub(/^[ \t]+|[ \t]+$/, "", $i); 
         if($i == "") continue;
         tmp = $i;
-        gsub(/[+().^$*?]/, "\\\\&", tmp); # 对正则元字符进行转义
+        # 预转义正则特殊字符
+        gsub(/[+().^$*?]/, "\\\\&", tmp); 
         line = (line == "" ? tmp : line "|" tmp)
     }
     print line
@@ -118,43 +123,58 @@ while IFS= read -r t_line || [ -n "$t_line" ]; do
         t_name=$(echo "$t_line" | grep -o 'tvg-name="[^"]*"' | cut -d'"' -f2)
         [ -z "$t_name" ] && t_name=$(echo "$t_line" | sed 's/.*,//')
 
-        # 2. 从内存字典中找到该标准名所属的整行转义后的别名
-        # 精准匹配：匹配 (行首或|) + 标准名 + (|或行尾)
+        # 2. 获取该频道的转义别名正则
+        # 关键：使用 (^|\|) 和 (\||$) 确保 CCTV1 不会匹配到 CCTV10
         search_regex_part=$(echo "$NAME_DICT" | grep -Ei "(^|\|)$t_name(\||$)" | head -n 1)
         
         if [ -z "$search_regex_part" ]; then
-            # 没字典则只搜自己，记得转义自己
             tmp_name=$(echo "$t_name" | sed 's/[+().^$*?]/\\&/g')
             search_regex="^($tmp_name),"
         else
             search_regex="^($search_regex_part),"
         fi
 
-        # 3. 极速匹配 raw_db
+        # 3. 从 raw_db 中捞出所有匹配源（raw_db 已按 down.txt 排序）
         matched_sources=$(grep -Ei "$search_regex" "$raw_db")
 
         if [ -n "$matched_sources" ]; then
             echo "$matched_sources" | while IFS=',' read -r f_name f_url; do
                 [ -z "$f_url" ] && continue
                 
-                # 写入 all.m3u (全量汇总)
-                echo "$t_line" >> "$all_m3u"
-                echo "$f_url" >> "$all_m3u"
+                # --- [全局去重逻辑] ---
+                # 检查该 URL 是否已被之前的频道或当前频道的先前源占用
+                if grep -qx F "$f_url" "$global_dupe_pool"; then
+                    continue # 发现重复链接，直接丢弃，保留先前的
+                fi
+                # ---------------------
 
-                # 4. 存活检测 (跳过已知快速源)
+                # 4. 存活检测（仅对没出现过的 URL 进行检测）
+                is_valid=0
                 if [[ "$f_url" == https://rtp.cc.cd* ]] || [[ "$f_url" == https://melive.onrender.com* ]]; then
+                    is_valid=1
+                else
+                    # 2秒超时提速
+                    if curl -I -L -k -s -m 2 -o /dev/null -f "$f_url"; then
+                        is_valid=1
+                    fi
+                fi
+
+                if [ "$is_valid" -eq 1 ]; then
+                    # 只有校验成功的才存入去重池并写入文件
+                    echo "$f_url" >> "$global_dupe_pool"
+                    
+                    # 写入汇总
+                    echo "$t_line" >> "$all_m3u"
+                    echo "$f_url" >> "$all_m3u"
+                    
+                    # 写入最终列表
                     echo "$t_line" >> "$final_live"
                     echo "$f_url" >> "$final_live"
-                else
-                    # 降低超时到 2秒，进一步提速
-                    if curl -I -L -k -s -m 2 -o /dev/null -f "$f_url"; then
-                        echo "$t_line" >> "$final_live"
-                        echo "$f_url" >> "$final_live"
-                    fi
                 fi
             done
         fi
     fi
 done < "$LIST_DIR/extinf.m3u"
 
-echo "--- 更新完成，请查看 live.m3u ---"
+rm -f "$global_dupe_pool"
+echo "--- 处理完成：去重已生效，优先保留靠前的订阅源 ---"

@@ -14,16 +14,19 @@ jobs:
 
       - name: Set up Environment
         run: |
-          chmod +x update_live.sh
+          # 注意这里修改了路径，指向 list 目录下的脚本
+          chmod +x list/update_live.sh
+          # 创建目录，确保脚本运行环境正常
           mkdir -p files down
 
       - name: Run Update Script
-        run: ./update_live.sh
+        run: ./list/update_live.sh
 
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          # 包含根目录下的 live.m3u 以及 down 目录的变化
           git add .
           git commit -m "Auto Update live.m3u $(date +'%Y-%m-%d %H:%M')" || exit 0
           git push

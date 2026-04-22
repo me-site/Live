@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - 先组装、后测活清洗版
+# IPTV 维护脚本 - 先组装、后测活清洗（稳健回写版）
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -64,7 +64,7 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
     ((idx++))
 done
 
-# --- 步骤 3: 匹配并打上权重标记 (此时不测活) ---
+# --- 步骤 3: 匹配并打上权重标记 ---
 echo "🔍 阶段 2: 全量匹配中..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 
@@ -96,58 +96,60 @@ for target_file in "$DOWN_DIR"/*; do
     done < "$target_file"
 done
 
-# --- 步骤 4: 按照优先级预组装 (包含所有源) ---
+# --- 步骤 4: 按照优先级预组装 ---
 echo "📦 阶段 3: 按照权重预组装 M3U..."
 PRE_M3U="$DOWN_DIR/pre_live.m3u"
-echo "#EXTM3U" > "$PRE_M3U"
 POOL_SORTED="$DOWN_DIR/pool_sorted.tmp"
 sort -t'|' -k1,1 -k4,4n "$ALL_MATCHED" > "$POOL_SORTED"
 
+# 创建带行号的临时文件，方便最后按顺序回写
+> "$PRE_M3U"
+row_idx=1
 while read -r tpl_line || [ -n "$tpl_line" ]; do
     [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
     t_name=$(echo "$tpl_line" | awk -F'tvg-name="' '{print $2}' | awk -F'"' '{print $1}')
     [ -z "$t_name" ] && continue
 
     awk -F'|' -v t="$t_name" '$1==t {print $2}' "$POOL_SORTED" | awk '!seen[$0]++' | while read -r v_u; do
-        # 此时我们将 模板行 和 URL 先拼在一起，中间用特殊符号隔开，方便测活
-        echo "$tpl_line|$v_u" >> "$PRE_M3U"
+        # 格式: 行号|EXTINF行|URL
+        echo "$row_idx|$tpl_line|$v_u" >> "$PRE_M3U"
+        ((row_idx++))
     done
 done < <(grep "#EXTINF" "$NAME_M3U")
 
 # --- 步骤 5: 最终测活清洗 ---
-echo "⚡ 阶段 4: 最终线路清洗 (并发检测)..."
-echo "#EXTM3U" > "$LIVE_M3U"
+echo "⚡ 阶段 4: 最终线路清洗..."
+CLEAN_POOL="$DOWN_DIR/clean_pool.tmp"; > "$CLEAN_POOL"
 
-# 导出变量供多线程使用
-export LIVE_M3U
-check_and_write() {
-    line="$1"
-    inf_part=$(echo "$line" | cut -d'|' -f1)
-    url_part=$(echo "$line" | cut -d'|' -f2)
+check_worker() {
+    row_data="$1"
+    # 分解数据
+    r_idx=$(echo "$row_data" | cut -d'|' -f1)
+    inf_part=$(echo "$row_data" | cut -d'|' -f2)
+    url_part=$(echo "$row_data" | cut -d'|' -f3)
     
-    # 免检名单
+    # 免检
     if [[ "$url_part" == *"rtp.cc.cd"* || "$url_part" == *"melive.onrender.com"* ]]; then
-        echo -e "$inf_part\n$url_part" >> "$2"
+        echo "$r_idx|$inf_part|$url_part" >> "$2"
         return
     fi
     
-    # 实际检测
+    # 测活
     code=$(curl -sL -k -I --connect-timeout 3 "$url_part" 2>/dev/null | awk 'NR==1{print $2}')
     if [[ "$code" =~ ^(200|206|301|302)$ ]]; then
-        echo -e "$inf_part\n$url_part" >> "$2"
+        echo "$row_data" >> "$2"
     fi
 }
-export -f check_and_write
+export -f check_worker
 
-# 清洗池
-CLEAN_POOL="$DOWN_DIR/clean_pool.tmp"; > "$CLEAN_POOL"
-grep -v "#EXTM3U" "$PRE_M3U" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_and_write "{}" "$1"' -- "$CLEAN_POOL"
+# 并发测活
+cat "$PRE_M3U" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_worker "{}" "$1"' -- "$CLEAN_POOL"
 
-# 按照预组装的物理顺序重新写回文件（保持优先级）
-# 因为 xargs 并发写入是无序的，我们需要用原文件的顺序来过滤
-while read -r original_line; do
-    [[ "$original_line" == "#EXTM3U" ]] && continue
-    grep -Fqx "$original_line" "$CLEAN_POOL" && (echo "$original_line" | tr '|' '\n' >> "$LIVE_M3U")
-done < "$PRE_M3U"
+# 最终组装：按第一列行号(r_idx)重新排序，确保优先级顺序
+echo "#EXTM3U" > "$LIVE_M3U"
+sort -t'|' -k1,1n "$CLEAN_POOL" | while IFS='|' read -r r_idx inf_line url_line; do
+    echo "$inf_line" >> "$LIVE_M3U"
+    echo "$url_line" >> "$LIVE_M3U"
+done
 
-echo "✅ 完成！先组装后清洗逻辑已生效。"
+echo "✅ 处理完成，生成的 live.m3u 已更新。"

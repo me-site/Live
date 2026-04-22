@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 BASE=$(pwd)
@@ -40,13 +39,10 @@ TMP_M3U="$DOWN_DIR/tmp.m3u"
 
 for file in "$FILES_DIR"/*.txt; do
   [ -e "$file" ] || continue
-
   while IFS= read -r line || [ -n "$line" ]; do
     name=$(echo "$line" | cut -d',' -f1)
     url=$(echo "$line" | cut -d',' -f2-)
-
     [ -z "$url" ] && continue
-
     echo "#EXTINF:-1,tvg-name=\"$name\" group-title=\"直播\",$name" >> "$TMP_M3U"
     echo "$url" >> "$TMP_M3U"
   done < "$file"
@@ -60,7 +56,6 @@ echo "===== name.txt 字典规范 ====="
 while IFS= read -r line || [ -n "$line" ]; do
   IFS='|' read -ra arr <<< "$line"
   main="${arr[0]}"
-
   for alias in "${arr[@]:1}"; do
     sed -i "s/tvg-name=\"$alias\"/tvg-name=\"$main\"/g" "$TMP_M3U"
   done
@@ -68,9 +63,7 @@ done < "$NAME_DICT"
 
 echo "===== Gather 规则处理 ====="
 work_file="$TMP_M3U"
-
 sed -i '/#EXTINF.*\(电台\|精選\|游戏\|广播\)/{N;d;}' "$work_file"
-
 sed -i 's@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$work_file"
 sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$work_file"
 sed -i 's@https://tv\.iill\.top/ofiii/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/ofiii/@g' "$work_file"
@@ -79,38 +72,44 @@ echo "===== 合并 all.m3u ====="
 ALL="$DOWN_DIR/all.m3u"
 cp "$work_file" "$ALL"
 
-echo "===== HTTP Probe 检测 + http过滤（安全版） ====="
 FINAL="$BASE/live.m3u"
 > "$FINAL"
+
+# 并发检测函数
+check_url() {
+  local url="$1"
+  local tmpfile="$2"
+
+  # 非http开头直接写回
+  if [[ "$url" != http* ]]; then
+    echo "$url" >> "$tmpfile"
+    return
+  fi
+
+  # 特殊域名直接保留
+  if [[ "$url" == *"rtp.cc.cd"* ]] || [[ "$url" == *"melive.onrender.com"* ]]; then
+    echo "$url" >> "$tmpfile"
+    return
+  fi
+
+  # HTTP Probe 10秒超时
+  http_code=$(curl -L --max-time 10 -o /dev/null -s -w "%{http_code}" -r 0-1024 "$url")
+  if [[ "$http_code" == "200" || "$http_code" == "206" ]]; then
+    echo "$url" >> "$tmpfile"
+  else
+    echo "⚠ 弃用源（不可访问或超时）: $url"
+  fi
+}
+
+export -f check_url
+export FINAL
 
 # 暂时关闭 set -e 防止循环中断
 set +e
 
-while read -r line || [ -n "$line" ]; do
+# 处理所有 URL 并发（10个并行任务）
+cat "$ALL" | parallel -j 10 --line-buffer 'check_url {} "'"$FINAL"'"'
 
-  # 非URL直接保留
-  if [[ "$line" != http* ]]; then
-    echo "$line" >> "$FINAL"
-    continue
-  fi
-
-  # 特殊域名直接保留（不检测）
-  if [[ "$line" == *"rtp.cc.cd"* ]] || [[ "$line" == *"melive.onrender.com"* ]]; then
-    echo "$line" >> "$FINAL"
-    continue
-  fi
-
-  # HTTP Probe 检测 (10秒超时)
-  http_code=$(curl -L --max-time 10 -o /dev/null -s -w "%{http_code}" -r 0-1024 "$line")
-  if [[ "$http_code" == "200" || "$http_code" == "206" ]]; then
-    echo "$line" >> "$FINAL"
-  else
-    echo "⚠ 弃用源（不可访问或超时）: $line"
-  fi
-
-done < "$ALL"
-
-# 恢复 set -e
 set -e
 
 echo "===== 完成 ====="

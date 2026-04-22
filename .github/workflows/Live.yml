@@ -1,41 +1,31 @@
-name: Live Auto Update
+name: Live Builder
 
 on:
+  push:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */6 * * *'   # 每6小时构建一次
   workflow_dispatch:
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Shell Environment
+      - name: Install tools
         run: |
-          chmod +x list/update_live.sh
+          sudo apt update
+          sudo apt install -y ffmpeg jq curl
 
-      - name: Run Update Script
-        run: |
-          ./list/update_live.sh
+      - name: Run live.sh
+        run: bash list/live.sh
 
-      - name: Commit and Push Changes
+      - name: Commit result
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          
-          # 使用 -A 记录所有变动（包括物理删除的文件）
-          git add live.m3u
-          git add -A files/
-          git add -A down/
-          
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Auto Update IPTV: $(date +'%Y-%m-%d %H:%M')"
-            git push origin main
-          fi
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add live.m3u down/ files/
+          git commit -m "auto build live.m3u" || echo "no changes"
+          git push

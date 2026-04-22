@@ -77,46 +77,55 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
     fi
 done
 
-# --- 步骤 3: 匹配与权重分配 (修复 MeLive 匹配逻辑) ---
+# --- 步骤 3: 匹配与权重分配 (深度兼容版) ---
 echo "🔍 阶段 2: 匹配并分配权重..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 
 for target_file in "$DOWN_DIR"/*; do
     [ ! -f "$target_file" ] && continue
     f_n=$(basename "$target_file")
-    # 排除中间处理文件
     [[ "$f_n" == *.tmp || "$f_n" == *.idx || "$f_n" == *"clean"* ]] && continue
     
-    # 【强制优先级定义】使用模糊匹配防止文件名变体
     case "$f_n" in
         *"MyTV"*)   p_val=100 ;;
         *"Live.txt"*) p_val=101 ;;
-        *"MeLive"*)   p_val=102 ;;
+        *"MeLive"*)   p_val=102 ;; # 确保 MeLive 优先级很高
         *"Gather"*)   p_val=110 ;;
         *"Smart"*)    p_val=111 ;;
         *)            p_val=120 ;;
     esac
 
-    echo "DEBUG: 正在处理源文件 [$f_n]，分配权重: $p_val"
+    echo "DEBUG: 正在分析文件 [$f_n] ..."
 
     line_num=1000
-    # 使用 while read 确保最后一行（即使无换行符）也能被处理
     while read -r line || [ -n "$line" ]; do
         if [[ "$line" =~ "#EXTINF" ]]; then
-            # 提取名称逻辑增强
+            # 1. 提取原始名称并清理
             raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
             
-            # 读取下一行 URL
+            # 2. 读取下一行 URL
             read -r v_url || [ -n "$v_url" ]
             [ -z "$v_url" ] && continue
             
-            # 字典匹配：转换为大写进行查找
-            search_key=$(echo "$raw_name" | tr '[:lower:]' '[:upper:]')
+            # 3. 【核心修复】繁简预处理 + 去空格
+            # 将常见的繁体字临时替换为简体进行匹配（针对台湾源）
+            search_name=$(echo "$raw_name" | sed 's/台/台/g; s/視/视/g; s/國/国/g; s/際/际/g; s/體/体/g; s/育/育/g; s/新聞/新闻/g; s/綜合/综合/g; s/娛樂/娱乐/g')
+            search_key=$(echo "$search_name" | tr '[:lower:]' '[:upper:]' | sed 's/ //g')
+
+            # 4. 在字典中查找
             std_name=$(grep -i "^$search_key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
+            
+            # 5. 【保底逻辑】如果精准匹配失败，尝试关键词包含匹配
+            if [ -z "$std_name" ]; then
+                std_name=$(grep -i "$search_key" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
+            fi
             
             if [ -n "$std_name" ]; then
                 echo "$std_name|$v_url|$f_n|$p_val.$line_num" >> "$ALL_MATCHED"
+            else
+                # 记录哪些名字没匹配上，方便你查问题
+                echo "DEBUG: 未匹配频道: [$raw_name] 来自 $f_n" >> "$DOWN_DIR/unmatched.log"
             fi
             ((line_num++))
         fi

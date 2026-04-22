@@ -1,39 +1,29 @@
-name: Update IPTV Live List
+name: Auto Live M3U
 
 on:
   schedule:
-    - cron: '0 22 * * *' # 北京时间早上 6 点
+    - cron: '0 */6 * * *' # 每6小时运行一次
   workflow_dispatch:      # 支持手动触发
-  push:
-    paths:
-      - 'list/**'
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-    # 授予写入权限，否则无法推送到仓库
-    permissions:
-      contents: write
-    
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Timezone
-        run: sudo timedatectl set-timezone Asia/Shanghai
-
-      - name: Fix Script Permissions
-        run: chmod +x ./list/update_live.sh
+      - name: Set up Environment
+        run: |
+          chmod +x update_live.sh
+          mkdir -p files down
 
       - name: Run Update Script
-        run: |
-          # 执行脚本
-          ./list/update_live.sh
+        run: ./update_live.sh
 
-      - name: Git Push
+      - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          # 只有在有变动时才提交，防止报错
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update $(date +'%Y-%m-%d %H:%M')" && git push)
+          git commit -m "Auto Update live.m3u $(date +'%Y-%m-%d %H:%M')" || exit 0
+          git push

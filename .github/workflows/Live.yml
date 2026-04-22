@@ -1,31 +1,55 @@
-name: Live Builder
+name: Update IPTV Live List
 
+# 触发条件
 on:
-  push:
   schedule:
-    - cron: '0 */6 * * *'   # 每6小时构建一次
-  workflow_dispatch:
+    # 每天北京时间早上 6 点运行 (UTC 22:00)
+    - cron: '0 22 * * *'
+  workflow_dispatch: # 支持手动触发运行
+  push:
+    paths:
+      - 'list/**'      # 当你修改 list 文件夹里的配置时自动运行
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # 必须拉取最新代码，否则提交会冲突
+          fetch-depth: 0
 
-      - name: Install tools
+      - name: Set up Timezone
+        run: sudo timedatectl set-timezone Asia/Shanghai
+
+      - name: Install Dependencies
         run: |
-          sudo apt update
-          sudo apt install -y ffmpeg jq curl
+          sudo apt-get update
+          sudo apt-get install -y curl grep sed coreutils
 
-      - name: Run live.sh
-        run: bash list/live.sh
+      - name: Set Script Permissions
+        run: chmod +x ./list/update_live.sh
 
-      - name: Commit result
+      - name: Run Update Script
+        run: ./list/update_live.sh
+
+      - name: Check for Changes
+        id: git-check
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add live.m3u down/ files/
-          git commit -m "auto build live.m3u" || echo "no changes"
+          git add .
+          # 检查是否有文件变动
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and Push Changes
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M:%S')"
           git push

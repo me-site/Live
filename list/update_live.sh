@@ -164,21 +164,29 @@ else
     echo "⚠️ 警告：没有找到任何匹配的频道，请检查 name.txt 或字典配置。"
 fi
 
-# --- 步骤 4: 组装结果 ---
+# --- 步骤 4: 组装结果 (修正排序增强版) ---
 echo "📦 阶段 3: 组装 live.m3u..."
 printf "#EXTM3U\n" > "$LIVE_M3U"
-MATCHED_STD_NAMES="$DOWN_DIR/matched_std_names.tmp"; > "$MATCHED_STD_NAMES"
+
+# 预处理测活结果，确保它是纯净的数字排序
+# 这样在循环内部处理时会更快更准
+SORTED_HEALTHY="$DOWN_DIR/healthy_sorted.tmp"
+sort -t'|' -k4 -n "$HEALTHY_LIST" > "$SORTED_HEALTHY"
 
 while read -r tpl_line || [ -n "$tpl_line" ]; do
     [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
+    
+    # 提取模板中的 tvg-name
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
-    MATCH_RAW=$(awk -F'|' -v t="$t_name" '$1==t' "$HEALTHY_LIST" | sort -t'|' -k4 -n)
+    # 从排好序的文件中提取匹配该频道的源
+    # 因为 SORTED_HEALTHY 已经全局按权重排过序了，这里拿到的顺序必然是 down.txt 的顺序
+    MATCH_RAW=$(awk -F'|' -v t="$t_name" '$1==t' "$SORTED_HEALTHY")
     
     if [ -n "$MATCH_RAW" ]; then
-        echo "$t_name" >> "$MATCHED_STD_NAMES"
         while IFS='|' read -r _t v_u _src _p; do
+            # 过滤非 https 或 flv 的逻辑保持不变
             skip_live=0
             [[ ! "$v_u" =~ ^https:// ]] && skip_live=1
             [[ "$v_u" =~ \.flv ]] && skip_live=1
@@ -189,6 +197,6 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
             fi
         done <<< "$MATCH_RAW"
     fi
-done < <(sed '1d' "$NAME_M3U")
+done < <(grep "#EXTINF" "$NAME_M3U") # 更加稳健的读取方式，直接过滤 EXTINF 行
 
 echo "✅ 任务完成，live.m3u 已生成。"

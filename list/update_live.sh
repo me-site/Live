@@ -96,45 +96,50 @@ for target_file in "$DOWN_DIR"/*; do
     done < "$target_file"
 done
 
-# --- 步骤 4: 按照优先级预组装 ---
-echo "📦 阶段 3: 按照权重预组装 M3U..."
+# --- 步骤 4: 按照模板物理顺序预组装 ---
+echo "📦 阶段 3: 按照模板槽位锁定优先级..."
 PRE_M3U="$DOWN_DIR/pre_live.m3u"
 POOL_SORTED="$DOWN_DIR/pool_sorted.tmp"
+# 预排序池子：标准名(k1) -> down.txt权重(k4)
 sort -t'|' -k1,1 -k4,4n "$ALL_MATCHED" > "$POOL_SORTED"
 
-# 创建带行号的临时文件，方便最后按顺序回写
 > "$PRE_M3U"
-row_idx=1
+tpl_idx=100000  # 模板物理行号起始
 while read -r tpl_line || [ -n "$tpl_line" ]; do
     [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
+    
+    # 提取模板中的标准 tvg-name
     t_name=$(echo "$tpl_line" | awk -F'tvg-name="' '{print $2}' | awk -F'"' '{print $1}')
     [ -z "$t_name" ] && continue
 
-    awk -F'|' -v t="$t_name" '$1==t {print $2}' "$POOL_SORTED" | awk '!seen[$0]++' | while read -r v_u; do
-        # 格式: 行号|EXTINF行|URL
-        echo "$row_idx|$tpl_line|$v_u" >> "$PRE_M3U"
-        ((row_idx++))
+    # 这里是核心修改：
+    # 为每一个模板定义的频道分配一个独立的位置，并按源权重提取
+    # 注意：这里我们给每个 URL 一个三级索引：模板顺序.源权重.原始行号
+    match_count=1
+    awk -F'|' -v t="$t_name" '$1==t {print $0}' "$POOL_SORTED" | awk '!seen[$2]++' | while read -r line; do
+        # 格式：模板行号_源顺序 | EXTINF行 | URL
+        # 这里的 tpl_idx 保证了它在 extinf.m3u 中的物理位置
+        echo "${tpl_idx}_${match_count}|$tpl_line|$(echo "$line" | cut -d'|' -f2)" >> "$PRE_M3U"
+        ((match_count++))
     done
+    ((tpl_idx++))
 done < <(grep "#EXTINF" "$NAME_M3U")
 
-# --- 步骤 5: 最终测活清洗 ---
-echo "⚡ 阶段 4: 最终线路清洗..."
+# --- 步骤 5: 最终测活与物理顺序写回 ---
+echo "⚡ 阶段 4: 最终线路清洗与顺序固化..."
 CLEAN_POOL="$DOWN_DIR/clean_pool.tmp"; > "$CLEAN_POOL"
 
 check_worker() {
     row_data="$1"
-    # 分解数据
-    r_idx=$(echo "$row_data" | cut -d'|' -f1)
+    p_idx=$(echo "$row_data" | cut -d'|' -f1)
     inf_part=$(echo "$row_data" | cut -d'|' -f2)
     url_part=$(echo "$row_data" | cut -d'|' -f3)
     
-    # 免检
     if [[ "$url_part" == *"rtp.cc.cd"* || "$url_part" == *"melive.onrender.com"* ]]; then
-        echo "$r_idx|$inf_part|$url_part" >> "$2"
+        echo "$p_idx|$inf_part|$url_part" >> "$2"
         return
     fi
     
-    # 测活
     code=$(curl -sL -k -I --connect-timeout 3 "$url_part" 2>/dev/null | awk 'NR==1{print $2}')
     if [[ "$code" =~ ^(200|206|301|302)$ ]]; then
         echo "$row_data" >> "$2"
@@ -145,11 +150,12 @@ export -f check_worker
 # 并发测活
 cat "$PRE_M3U" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_worker "{}" "$1"' -- "$CLEAN_POOL"
 
-# 最终组装：按第一列行号(r_idx)重新排序，确保优先级顺序
+# 【最终回写】：严格按照模板行号(p_idx)排序
 echo "#EXTM3U" > "$LIVE_M3U"
-sort -t'|' -k1,1n "$CLEAN_POOL" | while IFS='|' read -r r_idx inf_line url_line; do
+# 使用 -V (version sort) 处理带下划线的行号排序
+sort -t'|' -k1,1V "$CLEAN_POOL" | while IFS='|' read -r p_idx inf_line url_line; do
     echo "$inf_line" >> "$LIVE_M3U"
     echo "$url_line" >> "$LIVE_M3U"
 done
 
-echo "✅ 处理完成，生成的 live.m3u 已更新。"
+echo "✅ 完成！现在顺序完全由 extinf.m3u 决定，同一频道内由 down.txt 决定。"

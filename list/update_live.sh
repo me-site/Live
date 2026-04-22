@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - 字典原样匹配 (保留空格) + 优先级锁定版
+# IPTV 维护脚本 - 深度诊断与暴力匹配版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -18,21 +18,10 @@ NAME_TXT="$CONFIG_DIR/name.txt"
 NAME_M3U="$CONFIG_DIR/extinf.m3u"
 DOWN_CONFIG="$CONFIG_DIR/down.txt"
 LIVE_M3U="$BASE_DIR/live.m3u"
+MELIVE_DEBUG="$DOWN_DIR/debug_melive.log"
 THREAD_COUNT=25
 
-# --- 测活函数 ---
-check_url_worker() {
-    IFS='|' read -r t u s p <<< "$1"
-    if [[ "$s" == *"Smart"* || "$u" == https://rtp.cc.cd/* ]]; then
-        echo "$t|$u|$s|$p" >> "$2"
-        return
-    fi
-    local code=$(curl -sL -k -I --connect-timeout 3 --max-time 5 -A "VLC/3.0.18" "$u" 2>/dev/null | awk 'NR==1{print $2}')
-    [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "$2"
-}
-export -f check_url_worker
-
-# --- 步骤 1: 字典构建 ---
+# --- 步骤 1: 字典构建 (保持原样匹配) ---
 echo "🏗️ 构建标准字典..."
 TEMPLATE_NAMES_FILE="$DOWN_DIR/template_names.tmp"
 sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' "$NAME_M3U" | sort -u > "$TEMPLATE_NAMES_FILE"
@@ -42,17 +31,14 @@ while IFS='|' read -r -a names; do
     target_std=""
     for n in "${names[@]}"; do
         clean_n=$(echo "$n" | xargs)
-        [ -z "$clean_n" ] && continue
-        target_std=$(grep -ix "$clean_n" "$TEMPLATE_NAMES_FILE" | head -n1)
+        [ -n "$clean_n" ] && target_std=$(grep -ix "$clean_n" "$TEMPLATE_NAMES_FILE" | head -n1)
         [ -n "$target_std" ] && break
     done
-    
     if [ -n "$target_std" ]; then
         for n in "${names[@]}"; do
-            clean_n=$(echo "$n" | xargs) # 仅去掉首尾极端空格，保留词间空格
+            clean_n=$(echo "$n" | xargs)
             if [ -n "$clean_n" ]; then
-                # 转换大写作为匹配 Key，但不删除内部空格
-                key=$(echo "$clean_n" | tr '[:lower:]' '[:upper:]')
+                key=$(echo "$clean_n" | tr '[:lower:]' '[:upper:]' | tr -d '[:cntrl:]')
                 echo "$key|$target_std" >> "$DICT_MAP"
             fi
         done
@@ -60,59 +46,54 @@ while IFS='|' read -r -a names; do
 done < "$NAME_TXT"
 
 # --- 步骤 2: 下载逻辑 ---
-echo "📥 阶段 1: 下载源文件..."
+echo "📥 下载源文件..."
 sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     [[ -z "$f_n" || -z "$url" || "$f_n" == "#"* ]] && continue
-    f_n=$(echo "$f_n" | xargs); url=$(echo "$url" | xargs)
-    raw_path="$M3U_RAW_DIR/$f_n"; target_path="$DOWN_DIR/$f_n"
-    
-    curl -L -k -s --retry 2 --connect-timeout 15 -A "VLC/3.0.18" "$url" -o "$raw_path"
-    
-    if [ -s "$raw_path" ]; then
-        sed 's/^\xEF\xBB\xBF//; s/\r//g' "$raw_path" > "$target_path"
-        if [[ "$f_n" == *.txt ]]; then
-            awk -F'[, ]+' '{if($1!="" && $2 ~ /^http/){print "#EXTINF:-1 tvg-name=\""$1"\","$1"\n"$2}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
-        fi
-        if [[ "$f_n" == *"Gather"* ]]; then
-            sed -i 's@https://tv\.iill\.top/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/@g' "$target_path"
-            sed -i 's@https://v\.iill\.top/@https://rtp.cc.cd/play.php?url=https://v.iill.top/@g' "$target_path"
-        fi
+    curl -L -k -s --retry 2 --connect-timeout 15 -A "VLC/3.0.18" "$url" -o "$DOWN_DIR/$f_n"
+    # 如果是 Gather 依然做转发处理
+    if [[ "$f_n" == *"Gather"* && -s "$DOWN_DIR/$f_n" ]]; then
+        sed -i 's@https://[tv|v]\.iill\.top/@https://rtp.cc.cd/play.php?url=&@g' "$DOWN_DIR/$f_n"
     fi
 done
 
-# --- 步骤 3: 匹配与权重分配 (保留空格逻辑) ---
+# --- 步骤 3: 暴力匹配 (增加诊断日志) ---
 echo "🔍 阶段 2: 匹配并分配权重..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
+echo "=== MeLive 提取记录 ===" > "$MELIVE_DEBUG"
 
 for target_file in "$DOWN_DIR"/*; do
     [ ! -f "$target_file" ] && continue
     f_n=$(basename "$target_file")
-    [[ "$f_n" == *.tmp || "$f_n" == *.idx || "$f_n" == *"clean"* ]] && continue
+    [[ "$f_n" == *.tmp || "$f_n" == *.idx || "$f_n" == "dict_map.tmp" ]] && continue
     
-    case "$f_n" in
-        *"MyTV"*)   p_val=100 ;;
-        *"Live.txt"*) p_val=101 ;;
-        *"MeLive"*)   p_val=102 ;;
-        *"Gather"*)   p_val=110 ;;
-        *)            p_val=120 ;;
-    esac
+    # 分配优先级数字
+    p_val=120
+    [[ "$f_n" == *"MyTV"* ]] && p_val=100
+    [[ "$f_n" == *"Live.txt"* ]] && p_val=101
+    [[ "$f_n" == *"MeLive"* ]] && p_val=102
+    [[ "$f_n" == *"Gather"* ]] && p_val=110
 
     line_num=1000
     while read -r line || [ -n "$line" ]; do
         if [[ "$line" =~ "#EXTINF" ]]; then
-            # 【独立提取】：直接提取 tvg-name 引号内的原始值，保留内部空格
-            raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
+            # 【暴力提取】：提取 tvg-name=" 之后到下一个引号之前的所有内容
+            raw_name=$(echo "$line" | awk -F'tvg-name="' '{print $2}' | awk -F'"' '{print $1}')
             
-            # 保底逻辑：如果没提取到引号内容，再取逗号后的值
+            # 保底取逗号后
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
             
             read -r v_url || [ -n "$v_url" ]
-            [ -z "$v_url" ] && [[ ! "$v_url" =~ ^https?:// ]] && continue
+            [[ ! "$v_url" =~ ^https?:// ]] && continue
             
-            # 【转换 Key】：仅转大写，不删空格，只清理掉提取过程中可能多出的引号
-            match_key=$(echo "$raw_name" | tr '[:lower:]' '[:upper:]' | sed 's/"//g')
+            # 生成匹配 Key (转大写，删控制字符，保留内部空格)
+            match_key=$(echo "$raw_name" | tr '[:lower:]' '[:upper:]' | tr -d '[:cntrl:]')
             
-            # 字典查询：精准匹配带空格的名称
+            # 诊断日志：专门记录 MeLive 的情况
+            if [[ "$f_n" == *"MeLive"* ]]; then
+                echo "文件:$f_n | 提取名:[$raw_name] | 匹配Key:[$match_key]" >> "$MELIVE_DEBUG"
+            fi
+
+            # 字典查询
             std_name=$(grep -i "^$match_key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
             
             if [ -n "$std_name" ]; then
@@ -123,26 +104,29 @@ for target_file in "$DOWN_DIR"/*; do
     done < "$target_file"
 done
 
-# --- 并行测活 ---
+# --- 测活与组装 (略显精简) ---
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
 if [ -s "$ALL_MATCHED" ]; then
-    cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
+    # 这里简单处理：rtp.cc.cd 免检，其余通过直接写入
+    grep "rtp.cc.cd" "$ALL_MATCHED" >> "$HEALTHY_LIST"
+    grep -v "rtp.cc.cd" "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c '
+        IFS="|' read -r t u s p <<< "{}"
+        code=$(curl -sL -k -I --connect-timeout 2 "$u" 2>/dev/null | awk "NR==1{print \$2}")
+        [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "'$HEALTHY_LIST'"
+    '
 fi
 
-# --- 步骤 4: 组装结果 ---
-echo "📦 阶段 3: 组装最终结果..."
 echo "#EXTM3U" > "$LIVE_M3U"
 sort -t'|' -k1,1 -k4,4n "$HEALTHY_LIST" > "$DOWN_DIR/final_pool.tmp"
 
 while read -r tpl_line || [ -n "$tpl_line" ]; do
     [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
-    t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
-    [ -z "$t_name" ] && continue
-
+    t_name=$(echo "$tpl_line" | awk -F'tvg-name="' '{print $2}' | awk -F'"' '{print $1}')
+    
     awk -F'|' -v t="$t_name" '$1==t {print $2}' "$DOWN_DIR/final_pool.tmp" | awk '!seen[$0]++' | while read -r v_u; do
         echo "$tpl_line" >> "$LIVE_M3U"
         echo "$v_u" >> "$LIVE_M3U"
     done
 done < <(grep "#EXTINF" "$NAME_M3U")
 
-echo "✅ 完成！保留空格匹配已生效，优先级：MyTV > Live > MeLive。"
+echo "✅ 处理完成。如果 MeLive 还是没有，请查看 $MELIVE_DEBUG 文件内容。"

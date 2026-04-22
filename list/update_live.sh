@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - 三大源优先级绝对锁定版
+# IPTV 维护脚本 - 优先级绝对锁定 + 增强匹配修复版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -24,7 +24,7 @@ THREAD_COUNT=25
 check_url_worker() {
     IFS='|' read -r t u s p <<< "$1"
     # Smart 和 rtp.cc.cd 免检，其余 curl 测活
-    if [[ "$s" == "Smart.m3u" || "$u" == https://rtp.cc.cd/* ]]; then
+    if [[ "$s" == *"Smart"* || "$u" == https://rtp.cc.cd/* ]]; then
         echo "$t|$u|$s|$p" >> "$2"
         return
     fi
@@ -42,6 +42,7 @@ while IFS='|' read -r -a names; do
     target_std=""
     for n in "${names[@]}"; do
         clean_n=$(echo "$n" | xargs)
+        [ -z "$clean_n" ] && continue
         target_std=$(grep -i "^$clean_n$" "$TEMPLATE_NAMES_FILE" | head -n1)
         [ -n "$target_std" ] && break
     done
@@ -55,55 +56,66 @@ done < "$NAME_TXT"
 
 # --- 步骤 2: 下载逻辑 ---
 echo "📥 阶段 1: 下载源文件..."
-sed 's/\r//g' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
+# 增加对 down.txt 的清洗，防止换行符干扰
+sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     [[ -z "$f_n" || -z "$url" || "$f_n" == "#"* ]] && continue
     f_n=$(echo "$f_n" | xargs); url=$(echo "$url" | xargs)
-    raw_path="$M3U_RAW_DIR/$f_n"; target_path="$DOWN_DIR/$f_n"
+    raw_path="$M3U_RAW_DIR/$f_n"
+    target_path="$DOWN_DIR/$f_n"
     
     curl -L -k -s --retry 2 --connect-timeout 15 -A "VLC/3.0.18" "$url" -o "$raw_path"
     
     if [ -s "$raw_path" ]; then
         sed 's/^\xEF\xBB\xBF//; s/\r//g' "$raw_path" > "$target_path"
-        # TXT 转 M3U 格式
         if [[ "$f_n" == *.txt ]]; then
             awk -F'[, ]+' '{if($1!="" && $2 ~ /^http/){print "#EXTINF:-1 tvg-name=\""$1"\","$1"\n"$2}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
         fi
-        # 特殊处理 Gather 的转发地址
-        if [ "$f_n" == "Gather.m3u" ]; then
+        if [[ "$f_n" == *"Gather"* ]]; then
             sed -i 's@https://tv\.iill\.top/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/@g' "$target_path"
             sed -i 's@https://v\.iill\.top/@https://rtp.cc.cd/play.php?url=https://v.iill.top/@g' "$target_path"
         fi
     fi
 done
 
-# --- 步骤 3: 匹配与强制优先级分配 ---
-echo "🔍 阶段 2: 匹配并分配权重 (MyTV/Live/MeLive 优先)..."
+# --- 步骤 3: 匹配与权重分配 (修复 MeLive 匹配逻辑) ---
+echo "🔍 阶段 2: 匹配并分配权重..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 
 for target_file in "$DOWN_DIR"/*; do
+    [ ! -f "$target_file" ] && continue
     f_n=$(basename "$target_file")
-    [[ ! -f "$target_file" || "$f_n" == *.tmp || "$f_n" == *.idx ]] && continue
+    # 排除中间处理文件
+    [[ "$f_n" == *.tmp || "$f_n" == *.idx || "$f_n" == *"clean"* ]] && continue
     
-    # 【强制优先级定义】
+    # 【强制优先级定义】使用模糊匹配防止文件名变体
     case "$f_n" in
-        "MyTV.m3u")   p_val=100 ;; # 最高
-        "Live.txt")   p_val=101 ;; # 次高
-        "MeLive.m3u") p_val=102 ;; # 第三
-        "Gather.m3u") p_val=110 ;; # 靠后
-        "Smart.m3u")  p_val=111 ;;
-        *)            p_val=120 ;; # 其他
+        *"MyTV"*)   p_val=100 ;;
+        *"Live.txt"*) p_val=101 ;;
+        *"MeLive"*)   p_val=102 ;;
+        *"Gather"*)   p_val=110 ;;
+        *"Smart"*)    p_val=111 ;;
+        *)            p_val=120 ;;
     esac
 
+    echo "DEBUG: 正在处理源文件 [$f_n]，分配权重: $p_val"
+
     line_num=1000
-    while read -r line; do
+    # 使用 while read 确保最后一行（即使无换行符）也能被处理
+    while read -r line || [ -n "$line" ]; do
         if [[ "$line" =~ "#EXTINF" ]]; then
+            # 提取名称逻辑增强
             raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
-            read -r v_url; [ -z "$v_url" ] && continue
             
-            std_name=$(grep -i "^${raw_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
+            # 读取下一行 URL
+            read -r v_url || [ -n "$v_url" ]
+            [ -z "$v_url" ] && continue
+            
+            # 字典匹配：转换为大写进行查找
+            search_key=$(echo "$raw_name" | tr '[:lower:]' '[:upper:]')
+            std_name=$(grep -i "^$search_key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
+            
             if [ -n "$std_name" ]; then
-                # 写入：频道名|URL|文件名|权重.行号
                 echo "$std_name|$v_url|$f_n|$p_val.$line_num" >> "$ALL_MATCHED"
             fi
             ((line_num++))
@@ -113,25 +125,33 @@ done
 
 # 并行测活
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
-cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
+if [ -s "$ALL_MATCHED" ]; then
+    echo "🚀 启动并行测活 (线程: $THREAD_COUNT)..."
+    cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
+else
+    echo "❌ 错误：没有任何匹配结果，请检查字典或源文件。"
+fi
 
 # --- 步骤 4: 组装结果 ---
-echo "📦 阶段 3: 组装输出文件..."
+echo "📦 阶段 3: 组装最终结果..."
 echo "#EXTM3U" > "$LIVE_M3U"
 
-# 排序：按频道名，组内按权重数字从小到大
+# 排序逻辑：频道名升序(k1)，权重数字升序(k4,n)
 FINAL_POOL="$DOWN_DIR/final_pool.tmp"
 sort -t'|' -k1,1 -k4,4n "$HEALTHY_LIST" > "$FINAL_POOL"
 
-while read -r tpl_line; do
+while read -r tpl_line || [ -n "$tpl_line" ]; do
+    [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
+    
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
-    # 提取、排序并去重 URL
+    # 从排好序的池中提取 URL，并保持物理权重去重
     awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL" | awk '!seen[$0]++' | while read -r v_u; do
+        [[ ! "$v_u" =~ ^https?:// ]] && continue
         echo "$tpl_line" >> "$LIVE_M3U"
         echo "$v_u" >> "$LIVE_M3U"
     done
 done < <(grep "#EXTINF" "$NAME_M3U")
 
-echo "✅ 完成！优先级已锁定：MyTV > Live.txt > MeLive > 其他。"
+echo "✅ 完成！优先级已强制锁定：MyTV(100) > Live(101) > MeLive(102)。"

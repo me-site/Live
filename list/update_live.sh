@@ -1,61 +1,86 @@
 #!/bin/bash
 
-# 1. 路径初始化与清理
+# 1. 路径初始化
 cd "$(dirname "$0")/.."
 WORKDIR=$(pwd)
 LIST_DIR="$WORKDIR/list"
 FILES_DIR="$WORKDIR/files"
 DOWN_DIR="$WORKDIR/down"
 
-# 清理旧数据
+# 强制清理
 rm -rf "$DOWN_DIR"/*
 mkdir -p "$DOWN_DIR" "$FILES_DIR"
 
-# 2. 按照 down.txt 顺序下载直播源
-echo "--- Step 1: 下载原始源 ---"
+# 2. 下载原始源 (针对 "别名,链接" 格式优化)
+echo "--- Step 1: 下载源文件 ---"
 idx=0
-while IFS= read -r url || [ -n "$url" ]; do
-    url=$(echo "$url" | tr -d '\r' | xargs)
-    [[ -z "$url" || "$url" =~ ^# ]] && continue
+while IFS= read -r line || [ -n "$line" ]; do
+    # 清理回车和前后空格
+    line=$(echo "$line" | tr -d '\r' | xargs)
+    [[ -z "$line" || "$line" =~ ^# ]] && continue
+    
+    # 拆分别名和 URL (支持 别名,URL 和 纯URL)
+    if [[ "$line" == *","* ]]; then
+        alias_name=$(echo "$line" | cut -d',' -f1)
+        url=$(echo "$line" | cut -d',' -f2-)
+    else
+        alias_name="source"
+        url="$line"
+    fi
+
     idx=$((idx+1))
-    echo "Downloading: $url"
-    curl -L -s -f --connect-timeout 15 "$url" -o "$FILES_DIR/src_${idx}.tmp"
+    filename="src_${idx}.tmp"
+    echo "正在下载 [${idx}] ${alias_name}: $url"
+    
+    # 增加 User-Agent 伪装，避免被 GitHub 或 Worker 拦截
+    # 使用 -k 忽略证书错误，-L 跟踪重定向
+    curl -L -k -s -f \
+         -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+         --connect-timeout 20 "$url" -o "$FILES_DIR/$filename"
+    
+    if [ -s "$FILES_DIR/$filename" ]; then
+        echo "   [成功] 文件大小: $(du -sh "$FILES_DIR/$filename" | cut -f1)"
+    else
+        echo "   [失败] 下载为空，请检查链接或网络！"
+    fi
 done < "$LIST_DIR/down.txt"
 
-# 3. 预处理并生成规范化的 raw_database.txt (Name,URL)
-echo "--- Step 2: 格式化直播源 ---"
+# 3. 提取并生成 raw_database.txt
+echo "--- Step 2: 提取并清洗数据 ---"
 raw_db="$DOWN_DIR/raw_database.txt"
 touch "$raw_db"
 
 for file in "$FILES_DIR"/*; do
-    [ -e "$file" ] || continue
-    # 清理回车符
-    work_file="${file}.work"
+    [ -s "$file" ] || continue
+    work_file="${file}.process"
     tr -d '\r' < "$file" > "$work_file"
 
-    # 执行 Gather.m3u 预处理原则
+    # 执行你要求的 Gather.m3u 处理原则
     sed -i '/#EXTINF.*\(电台\|精選\|游戏\|广播\)/{N;d;}' "$work_file"
     sed -i 's@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$work_file"
     sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$work_file"
     sed -i 's@https://tv\.iill\.top/ofiii/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/ofiii/@g' "$work_file"
 
-    # 提取：兼容 M3U(tvg-name) 和 TXT(Name,URL)
+    # 兼容 M3U 和 TXT 的提取逻辑
     awk '
     BEGIN { IGNORECASE = 1 }
-    # 处理 M3U
     /#EXTINF/ {
-        name="";
-        if (match($0, /tvg-name="?([^",]*)"?/, a)) name=a[1];
-        else if (match($0, /,(.*)$/, b)) name=b[1];
+        name = "";
+        if (match($0, /tvg-name="?([^",]*)"?/, a)) name = a[1];
+        else if (match($0, /,(.*)$/, b)) name = b[1];
         gsub(/^[ \t]+|[ \t]+$/, "", name);
-        getline url;
-        gsub(/^[ \t]+|[ \t]+$/, "", url);
-        if (url ~ /^https:\/\//) print name "," url;
+        while (getline url > 0) {
+            gsub(/^[ \t]+|[ \t]+$/, "", url);
+            if (url ~ /^https:\/\//) {
+                if (name != "") print name "," url;
+                break;
+            }
+            if (url ~ /^#EXTINF/) break; 
+        }
     }
-    # 处理 TXT (CCTV1,https://...)
-    !/#EXTINF/ && /,https:\/\// {
-        split($0, c, ",");
-        n=c[1]; u=c[2];
+    !/#EXTINF/ && /https:\/\// && /,/ {
+        split($0, p, ",");
+        n=p[1]; u=p[2];
         gsub(/^[ \t]+|[ \t]+$/, "", n);
         gsub(/^[ \t]+|[ \t]+$/, "", u);
         if (u ~ /^https:\/\//) print n "," u;
@@ -64,58 +89,51 @@ for file in "$FILES_DIR"/*; do
     rm "$work_file"
 done
 
-# 4. 字典关联与模板填充
-echo "--- Step 3: 字典匹配与模板填充 ---"
+# 4. 字典匹配逻辑 (保持你的多源要求)
+echo "--- Step 3: 根据模板生成 live.m3u ---"
 all_m3u="$DOWN_DIR/all.m3u"
 final_live="$WORKDIR/live.m3u"
 echo "#EXTM3U" > "$all_m3u"
 echo "#EXTM3U" > "$final_live"
 
-# 遍历模板 extinf.m3u
-while IFS= read -r template_line || [ -n "$template_line" ]; do
-    if [[ "$template_line" == "#EXTINF"* ]]; then
-        # 提取 tvg-name 作为标准 ID (如 CCTV1)
-        target_id=$(echo "$template_line" | grep -o 'tvg-name="[^"]*"' | cut -d'"' -f2)
+while IFS= read -r t_line || [ -n "$t_line" ]; do
+    if [[ "$t_line" == "#EXTINF"* ]]; then
+        t_name=$(echo "$t_line" | grep -o 'tvg-name="[^"]*"' | cut -d'"' -f2)
         
-        # 在 name.txt 中找到包含该 ID 的整行，获取所有别名
-        # 使用 grep -w 确保精确匹配，避免 CCTV1 匹配到 CCTV10
-        alias_line=$(grep -Ei "(^|\|)$target_id(\||$)" "$LIST_DIR/name.txt" | tr -d '\r')
+        # 在 name.txt 找别名
+        alias_line=$(grep -Ei "(^|\|)$t_name(\||$)" "$LIST_DIR/name.txt" | tr -d '\r')
         
         if [ -z "$alias_line" ]; then
-            # 如果字典没写，只搜自己
-            search_regex="^$target_id,"
+            search_regex="^$t_name,"
         else
-            # 将 CCTV1|中央一台 转换为正则 ^(CCTV1|中央一台),
-            # 对特殊符号如 () - 进行转义处理
-            regex_part=$(echo "$alias_line" | sed 's/[][()\-+.^$*]/\\&/g')
-            search_regex="^($regex_part),"
+            # 对名称里的特殊字符转义
+            regex_safe=$(echo "$alias_line" | sed 's/[][()\-+.^$*]/\\&/g')
+            search_regex="^($regex_safe),"
         fi
 
-        # 在 raw_db 中搜寻所有命中别名的直播源
+        # 在数据库里找所有符合别名的源
         grep -Ei "$search_regex" "$raw_db" | cut -d',' -f2- | while read -r stream_url; do
             [ -z "$stream_url" ] && continue
             
-            # 写入汇总 all.m3u
-            echo "$template_line" >> "$all_m3u"
+            echo "$t_line" >> "$all_m3u"
             echo "$stream_url" >> "$all_m3u"
 
-            # 校验有效性
+            # 免检与存活检测
             is_valid=0
             if [[ "$stream_url" == https://rtp.cc.cd* ]] || [[ "$stream_url" == https://melive.onrender.com* ]]; then
                 is_valid=1
             else
-                # 3秒超时检测
-                if curl -I -s -m 3 -o /dev/null -f "$stream_url"; then
+                if curl -I -L -k -s -m 3 -o /dev/null -f "$stream_url"; then
                     is_valid=1
                 fi
             fi
 
             if [ "$is_valid" -eq 1 ]; then
-                echo "$template_line" >> "$final_live"
+                echo "$t_line" >> "$final_live"
                 echo "$stream_url" >> "$final_live"
             fi
         done
     fi
 done < "$LIST_DIR/extinf.m3u"
 
-echo "任务完成！"
+echo "脚本运行结束。"

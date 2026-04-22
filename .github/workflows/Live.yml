@@ -1,55 +1,39 @@
 name: Update IPTV Live List
 
-# 触发条件
 on:
   schedule:
-    # 每天北京时间早上 6 点运行 (UTC 22:00)
-    - cron: '0 22 * * *'
-  workflow_dispatch: # 支持手动触发运行
+    - cron: '0 22 * * *' # 北京时间早上 6 点
+  workflow_dispatch:      # 支持手动触发
   push:
     paths:
-      - 'list/**'      # 当你修改 list 文件夹里的配置时自动运行
+      - 'list/**'
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    # 授予写入权限，否则无法推送到仓库
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          # 必须拉取最新代码，否则提交会冲突
-          fetch-depth: 0
 
       - name: Set up Timezone
         run: sudo timedatectl set-timezone Asia/Shanghai
 
-      - name: Install Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl grep sed coreutils
-
-      - name: Set Script Permissions
+      - name: Fix Script Permissions
         run: chmod +x ./list/update_live.sh
 
       - name: Run Update Script
-        run: ./list/update_live.sh
-
-      - name: Check for Changes
-        id: git-check
         run: |
-          git add .
-          # 检查是否有文件变动
-          if git diff --staged --quiet; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
+          # 执行脚本
+          ./list/update_live.sh
 
-      - name: Commit and Push Changes
-        if: steps.git-check.outputs.changed == 'true'
+      - name: Git Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M:%S')"
-          git push
+          git add .
+          # 只有在有变动时才提交，防止报错
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update $(date +'%Y-%m-%d %H:%M')" && git push)

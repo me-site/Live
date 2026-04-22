@@ -117,86 +117,74 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     fi
 done < "$DOWN_CONFIG"
 
-# --- 步骤 3: 匹配与测活 ---
+# --- 步骤 3: 匹配与测活 (引入行号权重) ---
 echo "🔍 阶段 2: 匹配与测活..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
+
 while IFS='|' read -r f_n p_val; do
-    [ ! -f "$DOWN_DIR/$f_n" ] && continue
+    target_file="$DOWN_DIR/$f_n"
+    [ ! -f "$target_file" ] && continue
+    
+    line_num=1000  # 初始内部行号，确保它是四位数以便排序
+    
+    # 使用 while 循环处理，确保 line_num 随行递增
     while read -r line; do
         if [[ "$line" =~ "#EXTINF" ]]; then
+            # 1. 提取名称
             raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
             
+            # 2. 提取 URL
+            read -r v_url
+            [ -z "$v_url" ] && continue
+            
+            # 3. 字典匹配
             std_name=$(grep -i "^${raw_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
+            
             if [ -n "$std_name" ]; then
-                read -r v_url
-                [ -n "$v_url" ] && echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
+                # 关键修改：复合权重 = 文件优先级 + 内部行号 (例如 101.1001)
+                combined_priority="${p_val}.${line_num}"
+                echo "$std_name|$v_url|$f_n|$combined_priority" >> "$ALL_MATCHED"
             fi
+            ((line_num++))
         fi
-    done < "$DOWN_DIR/$f_n"
+    done < "$target_file"
 done < "$PRIORITY_IDX"
 
+# --- 并行测活 ---
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
-
-# 1. 定义测活规则（函数）
-check_url_worker() {
-    IFS='|' read -r t u s p <<< "$1"
-    
-    # 免检逻辑 (Smart, Playlist 以及 rtp.cc.cd 开头的源)
-    if [[ "$s" == "Smart.m3u" || "$s" == "Playlist.m3u" || "$u" == https://rtp.cc.cd/* ]]; then
-        echo "$t|$u|$s|$p" >> "$2"
-        return
-    fi
-    
-    # 普通源：模拟 VLC 测活
-    local code=$(curl -sL -k -I --connect-timeout 5 --max-time 8 -A "VLC/3.0.18 LibVLC/3.0.18" "$u" 2>/dev/null | awk 'NR==1{print $2}')
-    [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "$2"
-}
-
-# 2. 导出函数环境（让多线程 xargs 能识别到它）
 export -f check_url_worker
-
-# 3. 启动并行任务（发令枪）
 if [ -s "$ALL_MATCHED" ]; then
-    echo "🚀 正在并行测活中，请稍候..."
     cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
-else
-    echo "⚠️ 警告：没有找到任何匹配的频道，请检查 name.txt 或字典配置。"
 fi
 
-# --- 步骤 4: 组装结果 (修正排序增强版) ---
+# --- 步骤 4: 组装结果 (严格行号排序版) ---
 echo "📦 阶段 3: 组装 live.m3u..."
 printf "#EXTM3U\n" > "$LIVE_M3U"
 
-# 预处理测活结果，确保它是纯净的数字排序
-# 这样在循环内部处理时会更快更准
-SORTED_HEALTHY="$DOWN_DIR/healthy_sorted.tmp"
-sort -t'|' -k4 -n "$HEALTHY_LIST" > "$SORTED_HEALTHY"
+# 对测活结果进行排序：先按频道(k1)，再按复合权重(k4)进行版本号/数字排序(-V)
+FINAL_POOL="$DOWN_DIR/final_pool.tmp"
+sort -t'|' -k1,1 -k4,4V "$HEALTHY_LIST" > "$FINAL_POOL"
 
 while read -r tpl_line || [ -n "$tpl_line" ]; do
     [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
     
-    # 提取模板中的 tvg-name
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
-    # 从排好序的文件中提取匹配该频道的源
-    # 因为 SORTED_HEALTHY 已经全局按权重排过序了，这里拿到的顺序必然是 down.txt 的顺序
-    MATCH_RAW=$(awk -F'|' -v t="$t_name" '$1==t' "$SORTED_HEALTHY")
-    
-    if [ -n "$MATCH_RAW" ]; then
-        while IFS='|' read -r _t v_u _src _p; do
-            # 过滤非 https 或 flv 的逻辑保持不变
-            skip_live=0
-            [[ ! "$v_u" =~ ^https:// ]] && skip_live=1
-            [[ "$v_u" =~ \.flv ]] && skip_live=1
+    # 精确匹配频道，并保持 FINAL_POOL 里的物理顺序
+    MATCHED_URLS=$(awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL")
 
-            if [ $skip_live -eq 0 ]; then
-                echo "$tpl_line" >> "$LIVE_M3U"
-                echo "$v_u" >> "$LIVE_M3U"
-            fi
-        done <<< "$MATCH_RAW"
+    if [ -n "$MATCHED_URLS" ]; then
+        # 此时顺序已经是：down.txt顺序 -> 文件内行号顺序
+        echo "$MATCHED_URLS" | awk '!seen[$0]++' | while read -r v_u; do
+            [[ ! "$v_u" =~ ^https?:// ]] && continue
+            [[ "$v_u" =~ \.flv ]] && continue
+            
+            echo "$tpl_line" >> "$LIVE_M3U"
+            echo "$v_u" >> "$LIVE_M3U"
+        done
     fi
-done < <(grep "#EXTINF" "$NAME_M3U") # 更加稳健的读取方式，直接过滤 EXTINF 行
+done < <(grep "#EXTINF" "$NAME_M3U")
 
-echo "✅ 任务完成，live.m3u 已生成。"
+echo "✅ 修复完成：已实现文件间优先级 + 文件内行号双重锁定。"

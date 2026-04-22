@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - 严格 down.txt 顺序优先级 (修复引号版)
+# IPTV 维护脚本 - 先组装、后测活清洗版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -18,7 +18,6 @@ NAME_TXT="$CONFIG_DIR/name.txt"
 NAME_M3U="$CONFIG_DIR/extinf.m3u"
 DOWN_CONFIG="$CONFIG_DIR/down.txt"
 LIVE_M3U="$BASE_DIR/live.m3u"
-MELIVE_DEBUG="$DOWN_DIR/debug_melive.log"
 PRIORITY_MAP="$DOWN_DIR/priority_map.tmp"
 THREAD_COUNT=25
 
@@ -47,7 +46,7 @@ while IFS='|' read -r -a names; do
 done < "$NAME_TXT"
 
 # --- 步骤 2: 下载逻辑 & 动态生成优先级 ---
-echo "📥 下载源文件并锁定 down.txt 顺序..."
+echo "📥 下载源文件..."
 > "$PRIORITY_MAP"
 idx=100
 sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
@@ -55,26 +54,19 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
     f_n=$(echo "$f_n" | xargs); url=$(echo "$url" | xargs)
     echo "$f_n|$idx" >> "$PRIORITY_MAP"
     
-    # 下载文件
     curl -L -k -s --retry 2 --connect-timeout 15 -A "VLC/3.0.18" "$url" -o "$DOWN_DIR/$f_n"
     
-    # 【精准替换】：针对 Gather.m3u 中的三个特定目录前缀加代理
     if [[ "$f_n" == *"Gather"* && -s "$DOWN_DIR/$f_n" ]]; then
-        # 处理 tw/
         sed -i 's@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$DOWN_DIR/$f_n"
-        # 处理 4gtv/
         sed -i 's@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$DOWN_DIR/$f_n"
-        # 处理 ofiii/ (注意这个是在 tv 域名下)
         sed -i 's@https://tv\.iill\.top/ofiii/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/ofiii/@g' "$DOWN_DIR/$f_n"
     fi
-    
     ((idx++))
 done
 
-# --- 步骤 3: 匹配并应用动态权重 ---
-echo "🔍 阶段 2: 匹配并应用动态权重..."
+# --- 步骤 3: 匹配并打上权重标记 (此时不测活) ---
+echo "🔍 阶段 2: 全量匹配中..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
-echo "=== MeLive 提取记录 ===" > "$MELIVE_DEBUG"
 
 for target_file in "$DOWN_DIR"/*; do
     [ ! -f "$target_file" ] && continue
@@ -94,12 +86,8 @@ for target_file in "$DOWN_DIR"/*; do
             [[ ! "$v_url" =~ ^https?:// ]] && continue
             
             match_key=$(echo "$raw_name" | tr '[:lower:]' '[:upper:]' | tr -d '[:cntrl:]')
-            
-            if [[ "$f_n" == *"MeLive"* ]]; then
-                echo "文件:$f_n | 提取名:[$raw_name] | 匹配Key:[$match_key]" >> "$MELIVE_DEBUG"
-            fi
-
             std_name=$(grep -i "^$match_key|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
+            
             if [ -n "$std_name" ]; then
                 echo "$std_name|$v_url|$f_n|$p_val.$line_num" >> "$ALL_MATCHED"
             fi
@@ -108,40 +96,58 @@ for target_file in "$DOWN_DIR"/*; do
     done < "$target_file"
 done
 
-# --- 步骤 4: 测活 (增加 melive 免检) ---
-HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
-if [ -s "$ALL_MATCHED" ]; then
-    echo "⚡ 开始测活..."
-    
-    # 【免检逻辑】：使用 grep -E 支持扩展正则，匹配 rtp.cc.cd 或 melive.onrender.com
-    grep -E "rtp\.cc\.cd|melive\.onrender\.com" "$ALL_MATCHED" >> "$HEALTHY_LIST"
-    
-    # 【需检测逻辑】：排除掉上述两个免检域名的源进行实际测活
-    grep -v -E "rtp\.cc\.cd|melive\.onrender\.com" "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c "
-        item='{}'
-        IFS='|' read -r t u s p <<< \"\$item\"
-        code=\$(curl -sL -k -I --connect-timeout 2 \"\$u\" 2>/dev/null | awk 'NR==1{print \$2}')
-        if [[ \"\$code\" =~ ^(200|206|301|302)\$ ]]; then
-            echo \"\$t|\$u|\$s|\$p\" >> \"$HEALTHY_LIST\"
-        fi
-    "
-fi
-
-# --- 步骤 5: 按照模板组装 ---
-echo "📦 阶段 3: 按照 down.txt 权重组装最终结果..."
-echo "#EXTM3U" > "$LIVE_M3U"
-FINAL_POOL="$DOWN_DIR/final_pool.tmp"
-sort -t'|' -k1,1 -k4,4n "$HEALTHY_LIST" > "$FINAL_POOL"
+# --- 步骤 4: 按照优先级预组装 (包含所有源) ---
+echo "📦 阶段 3: 按照权重预组装 M3U..."
+PRE_M3U="$DOWN_DIR/pre_live.m3u"
+echo "#EXTM3U" > "$PRE_M3U"
+POOL_SORTED="$DOWN_DIR/pool_sorted.tmp"
+sort -t'|' -k1,1 -k4,4n "$ALL_MATCHED" > "$POOL_SORTED"
 
 while read -r tpl_line || [ -n "$tpl_line" ]; do
     [[ ! "$tpl_line" =~ "#EXTINF" ]] && continue
     t_name=$(echo "$tpl_line" | awk -F'tvg-name="' '{print $2}' | awk -F'"' '{print $1}')
     [ -z "$t_name" ] && continue
 
-    awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL" | awk '!seen[$0]++' | while read -r v_u; do
-        echo "$tpl_line" >> "$LIVE_M3U"
-        echo "$v_u" >> "$LIVE_M3U"
+    awk -F'|' -v t="$t_name" '$1==t {print $2}' "$POOL_SORTED" | awk '!seen[$0]++' | while read -r v_u; do
+        # 此时我们将 模板行 和 URL 先拼在一起，中间用特殊符号隔开，方便测活
+        echo "$tpl_line|$v_u" >> "$PRE_M3U"
     done
 done < <(grep "#EXTINF" "$NAME_M3U")
 
-echo "✅ 完成！"
+# --- 步骤 5: 最终测活清洗 ---
+echo "⚡ 阶段 4: 最终线路清洗 (并发检测)..."
+echo "#EXTM3U" > "$LIVE_M3U"
+
+# 导出变量供多线程使用
+export LIVE_M3U
+check_and_write() {
+    line="$1"
+    inf_part=$(echo "$line" | cut -d'|' -f1)
+    url_part=$(echo "$line" | cut -d'|' -f2)
+    
+    # 免检名单
+    if [[ "$url_part" == *"rtp.cc.cd"* || "$url_part" == *"melive.onrender.com"* ]]; then
+        echo -e "$inf_part\n$url_part" >> "$2"
+        return
+    fi
+    
+    # 实际检测
+    code=$(curl -sL -k -I --connect-timeout 3 "$url_part" 2>/dev/null | awk 'NR==1{print $2}')
+    if [[ "$code" =~ ^(200|206|301|302)$ ]]; then
+        echo -e "$inf_part\n$url_part" >> "$2"
+    fi
+}
+export -f check_and_write
+
+# 清洗池
+CLEAN_POOL="$DOWN_DIR/clean_pool.tmp"; > "$CLEAN_POOL"
+grep -v "#EXTM3U" "$PRE_M3U" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_and_write "{}" "$1"' -- "$CLEAN_POOL"
+
+# 按照预组装的物理顺序重新写回文件（保持优先级）
+# 因为 xargs 并发写入是无序的，我们需要用原文件的顺序来过滤
+while read -r original_line; do
+    [[ "$original_line" == "#EXTM3U" ]] && continue
+    grep -Fqx "$original_line" "$CLEAN_POOL" && (echo "$original_line" | tr '|' '\n' >> "$LIVE_M3U")
+done < "$PRE_M3U"
+
+echo "✅ 完成！先组装后清洗逻辑已生效。"

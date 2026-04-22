@@ -6,4 +6,4 @@ ChinaTV.txt,https://zb.484947.xyz/
 JackTV.m3u,https://down.me-site.workers.dev/?url=https://php.946985.filegear-sg.me/jackTV.m3u
 Anbox.m3u,https://tv1.anbox.ip-ddns.com/live20
 Smart.txt,http://xclasvgas1.sylu.net:8080/smt.php
-Smart.m3u,https://melive1.onrender.com/trams.m3u?token=lanx
+Smart.m3u,https://melive.onrender.com/trams.m3u?token=lanx

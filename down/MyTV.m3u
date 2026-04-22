@@ -43,11 +43,11 @@ https://cdn10.163189.xyz/stream/163189/ccm/
 https://o11.163189.xyz/stream/live/ccm/
 #EXTINF:-1 tvg-name="金光布袋戏" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/金光布袋戏.png" group-title="Juli",金光布袋戏
 https://o11.163189.xyz/stream/live/jgbdx/
-#EXTINF:-1 tvg-id="AOD" tvg-name="Astro AOD" tvg-logo="https://cdn.jsdelivr.net/gh/luoluowoaini/666-@iill-logo-mytvsuper/AOD.png" group-title="Juli",ASTROAOD
+#EXTINF:-1 tvg-id="AOD" tvg-name="Astro" AOD" tvg-logo="https://cdn.jsdelivr.net/gh/luoluowoaini/666-@iill-logo-mytvsuper/AOD.png" group-title="Juli",ASTROAOD
 https://o11.163189.xyz/stream/live/aod/
-#EXTINF:-1 tvg-id="AEC" tvg-name="Astro AEC" tvg-logo="https://cdn.jsdelivr.net/gh/luoluowoaini/666-@iill-logo-mytvsuper/AEC.png" group-title="Juli",ASTROAEC
+#EXTINF:-1 tvg-id="AEC" tvg-name="Astro" AEC" tvg-logo="https://cdn.jsdelivr.net/gh/luoluowoaini/666-@iill-logo-mytvsuper/AEC.png" group-title="Juli",ASTROAEC
 https://o11.163189.xyz/stream/live/aec/
-#EXTINF:-1 tvg-id="QJ" tvg-name="Astro QJ" tvg-logo="https://cdn.jsdelivr.net/gh/luoluowoaini/666-@main/Astro QJ.png" group-title="Juli",ASTROQJ
+#EXTINF:-1 tvg-id="QJ" tvg-name="Astro" QJ" tvg-logo="https://cdn.jsdelivr.net/gh/luoluowoaini/666-@main/Astro QJ.png" group-title="Juli",ASTROQJ
 https://o11.163189.xyz/stream/live/qj/
 #EXTINF:-1 tvg-name="HUAHEEDAI" tvg-logo="https://cdn.jsdelivr.net/gh/luoluowoaini/CCTV4K-LOGO@main/HUA HEE DAI.png" group-title="Juli",ASTRO欢喜台
 https://o11.163189.xyz/stream/live/hxt/
@@ -71,7 +71,7 @@ https://cdn12.178.indevs.in/163189/a643783ec587540e
 https://cdn12.178.indevs.in/163189/0bcf9bb8c452e56a
 #EXTINF:-1 tvg-name="CinemaWorld頻道" group-title="mytv",CinemaWorld
 https://cdn12.178.indevs.in/163189/6086cfe7a9756110
-#EXTINF:-1 tvg-name="My Cinema Europe" group-title="mytv",My Cinema Europe
+#EXTINF:-1 tvg-name="My" Cinema Europe" group-title="mytv",My Cinema Europe
 https://cdn12.178.indevs.in/163189/5bda99f1c049edef
 #EXTINF:-1 tvg-name="經典電影台" group-title="mytv",经典电影台
 https://cdn12.178.indevs.in/163189/61b8ea35ffce4630

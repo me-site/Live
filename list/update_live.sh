@@ -99,15 +99,16 @@ for target_file in "$DOWN_DIR"/*; do
     done < "$target_file"
 done
 
-# --- 步骤 4: 测活 (修复引号错误部分) ---
+# --- 步骤 4: 测活 (增加 melive 免检) ---
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
 if [ -s "$ALL_MATCHED" ]; then
     echo "⚡ 开始测活..."
-    # rtp.cc.cd 免检
-    grep "rtp.cc.cd" "$ALL_MATCHED" >> "$HEALTHY_LIST"
     
-    # 其余测活：修改了转义逻辑，避免 EOF 错误
-    grep -v "rtp.cc.cd" "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c "
+    # 【免检逻辑】：使用 grep -E 支持扩展正则，匹配 rtp.cc.cd 或 melive.onrender.com
+    grep -E "rtp\.cc\.cd|melive\.onrender\.com" "$ALL_MATCHED" >> "$HEALTHY_LIST"
+    
+    # 【需检测逻辑】：排除掉上述两个免检域名的源进行实际测活
+    grep -v -E "rtp\.cc\.cd|melive\.onrender\.com" "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c "
         item='{}'
         IFS='|' read -r t u s p <<< \"\$item\"
         code=\$(curl -sL -k -I --connect-timeout 2 \"\$u\" 2>/dev/null | awk 'NR==1{print \$2}')

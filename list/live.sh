@@ -79,12 +79,11 @@ echo "===== 合并 all.m3u ====="
 ALL="$DOWN_DIR/all.m3u"
 cp "$work_file" "$ALL"
 
-echo "===== ffmpeg 检测 + http过滤（安全版） ====="
-
+echo "===== HTTP Probe 检测 + http过滤（安全版） ====="
 FINAL="$BASE/live.m3u"
 > "$FINAL"
 
-# 关键：防止 set -e 干扰 while
+# 暂时关闭 set -e 防止循环中断
 set +e
 
 while read -r line || [ -n "$line" ]; do
@@ -101,18 +100,17 @@ while read -r line || [ -n "$line" ]; do
     continue
   fi
 
-  # ffmpeg 检测（10秒）
-  timeout 10 ffmpeg -i "$line" -t 2 -f null - 2>/dev/null
-  rc=$?
-
-  if [ $rc -eq 0 ]; then
+  # HTTP Probe 检测 (10秒超时)
+  http_code=$(curl -L --max-time 10 -o /dev/null -s -w "%{http_code}" -r 0-1024 "$line")
+  if [[ "$http_code" == "200" || "$http_code" == "206" ]]; then
     echo "$line" >> "$FINAL"
   else
-    echo "⚠ 弃用源（失败/超时）: $line"
+    echo "⚠ 弃用源（不可访问或超时）: $line"
   fi
 
 done < "$ALL"
 
+# 恢复 set -e
 set -e
 
 echo "===== 完成 ====="

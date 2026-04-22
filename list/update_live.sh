@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 自动化维护脚本 - 增加关键字过滤 & Gather 特殊处理
+# IPTV 自动化维护脚本 - 严格双引号 & 关键字过滤版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -22,7 +22,7 @@ ALL_M3U="$DOWN_DIR/all.m3u"
 LIVE_M3U="$BASE_DIR/live.m3u"
 THREAD_COUNT=25
 
-# --- 2. 下载并预处理 (含 Gather 替换与关键字过滤) ---
+# --- 2. 下载并预处理 ---
 echo "📥 正在下载并清洗源文件..."
 PRIORITY_MAP="$DOWN_DIR/priority.map"
 > "$PRIORITY_MAP"
@@ -38,7 +38,7 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
     
     echo "$f_n|$idx" >> "$PRIORITY_MAP"
 
-    # A. 如果是 TXT 则转为 M3U
+    # A. 如果是 TXT 则转为 M3U (严格带引号)
     if [[ "$f_n" == *.txt ]]; then
         temp_m3u="$DOWN_DIR/${f_n%.txt}.m3u"
         echo "#EXTM3U" > "$temp_m3u"
@@ -50,7 +50,7 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
         mv "$temp_m3u" "$target_file"
     fi
 
-    # B. 强力纠正引号 (为后续匹配做准备)
+    # B. 纠正引号格式
     sed -i -E 's/tvg-name=([^" ,]+)/tvg-name="\1"/g' "$target_file"
 
     # C. Gather.m3u 特殊 URL 替换
@@ -61,8 +61,7 @@ sed 's/\r//g; /^$/d' "$DOWN_CONFIG" | while IFS=',' read -r f_n url || [ -n "$f_
         sed -i 's@https://tv\.iill\.top/ofiii/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/ofiii/@g' "$target_file"
     fi
 
-    # D. 关键字硬过滤 (删除电台、精選、游戏、广播)
-    # 逻辑：删除包含关键字的 #EXTINF 行及其下一行 (URL)
+    # D. 关键字硬过滤
     sed -i '/#EXTINF.*\(电台\|精選\|游戏\|广播\)/{N;d;}' "$target_file"
 
     ((idx++))
@@ -89,7 +88,7 @@ while IFS='|' read -r -a names; do
     fi
 done < "$NAME_TXT"
 
-# --- 4. 扫描所有源，匹配入库 ---
+# --- 4. 扫描所有源 ---
 echo "🔍 扫描并匹配..."
 SOURCE_POOL="$DOWN_DIR/source_pool.tmp"; > "$SOURCE_POOL"
 
@@ -115,24 +114,23 @@ done
 
 sort -t'|' -k1,1 -k3,3n "$SOURCE_POOL" -o "$DOWN_DIR/source_pool.sorted"
 
-# --- 5. 以模板为核心生成 all.m3u (保留 Logo) ---
-echo "📦 填充模板生成 all.m3u..."
+# --- 5. 以模板为核心生成 all.m3u (严格保留原始行) ---
+echo "📦 填充模板生成临时库..."
 RAW_INDEX="$DOWN_DIR/raw_index.tmp"; > "$RAW_INDEX"
 tpl_line_idx=100000
 
 while read -r line || [ -n "$line" ]; do
     [[ ! "$line" =~ "#EXTINF" ]] && continue
+    # 提取用于匹配的名字，但不修改原始 $line
     t_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p')
     [ -z "$t_name" ] && continue
 
     awk -F'|' -v t="$t_name" '$1==t {print $2}' "$DOWN_DIR/source_pool.sorted" | awk '!seen[$0]++' | while read -r match_url; do
-        echo "$tpl_line_idx|$line|$match_url" >> "$RAW_INDEX"
+        # 使用三个竖线作为特殊分隔符，防止属性冲突
+        echo "${tpl_line_idx}|||${line}|||${match_url}" >> "$RAW_INDEX"
     done
     ((tpl_line_idx++))
 done < "$NAME_M3U"
-
-echo "#EXTM3U" > "$ALL_M3U"
-cut -d'|' -f2,3 "$RAW_INDEX" | tr '|' '\n' >> "$ALL_M3U"
 
 # --- 6. 测活生成最终 live.m3u ---
 echo "⚡ 并发测活..."
@@ -141,14 +139,18 @@ export CLEAN_POOL
 
 check_url() {
     item="$1"
-    idx=$(echo "$item" | cut -d'|' -f1); inf=$(echo "$item" | cut -d'|' -f2); url=$(echo "$item" | cut -d'|' -f3)
+    # 使用 awk 分解，避免 IFS 剥离引号
+    idx=$(echo "$item" | awk -F'|||' '{print $1}')
+    inf=$(echo "$item" | awk -F'|||' '{print $2}')
+    url=$(echo "$item" | awk -F'|||' '{print $3}')
 
     if [[ "$url" == *"rtp.cc.cd"* || "$url" == *"melive.onrender.com"* ]]; then
-        echo "$idx|$inf|$url" >> "$CLEAN_POOL"
+        echo "${idx}|||${inf}|||${url}" >> "$CLEAN_POOL"
     else
+        # 增加超时判断
         code=$(curl -sL -k -I --connect-timeout 3 "$url" 2>/dev/null | awk 'NR==1{print $2}')
         if [[ "$code" =~ ^(200|206|301|302)$ ]]; then
-            echo "$idx|$inf|$url" >> "$CLEAN_POOL"
+            echo "${idx}|||${inf}|||${url}" >> "$CLEAN_POOL"
         fi
     fi
 }
@@ -157,9 +159,14 @@ export -f check_url
 cat "$RAW_INDEX" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url "{}"'
 
 echo "#EXTM3U" > "$LIVE_M3U"
-sort -t'|' -k1,1n "$CLEAN_POOL" | while IFS='|' read -r o_idx o_inf o_url; do
-    echo "$o_inf" >> "$LIVE_M3U"
-    echo "$o_url" >> "$LIVE_M3U"
+# 最终排序输出，确保不丢失任何引号
+sort -t'|' -k1,1n "$CLEAN_POOL" | while read -r line; do
+    o_inf=$(echo "$line" | awk -F'|||' '{print $2}')
+    o_url=$(echo "$line" | awk -F'|||' '{print $3}')
+    if [ -n "$o_inf" ] && [ -n "$o_url" ]; then
+        echo "$o_inf" >> "$LIVE_M3U"
+        echo "$o_url" >> "$LIVE_M3U"
+    fi
 done
 
-echo "✅ 完成！关键字已过滤，Gather 已代理。"
+echo "✅ 完成！live.m3u 已生成，双引号已严格保留。"

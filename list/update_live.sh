@@ -70,7 +70,7 @@ for target_file in "$DOWN_DIR"/*; do
     p_val=120
     [[ "$f_n" == *"MyTV"* ]] && p_val=100
     [[ "$f_n" == *"Live.txt"* ]] && p_val=101
-    [[ "$f_n" == *"MeLive"* ]] && p_val=102
+    [[ "$f_n" == *"Smart"* ]] && p_val=102
     [[ "$f_n" == *"Gather"* ]] && p_val=110
 
     line_num=1000

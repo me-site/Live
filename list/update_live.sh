@@ -166,11 +166,12 @@ if [ -s "$ALL_MATCHED" ]; then
     cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
 fi
 
-# --- 步骤 4: 组装结果 ---
+# --- 步骤 4: 组装结果 (去重逻辑优化版) ---
 echo "📦 阶段 3: 组装 live.m3u..."
 printf "#EXTM3U\n" > "$LIVE_M3U"
 
-# 先排序：按频道聚拢，再按复合权重数字排序
+# 【核心修复】：先按频道名排，再按复合权重（k4）排。
+# 这样保证了同一个 URL 如果出现多次，权重最小（也就是 down.txt 靠前）的那个会排在最上面。
 FINAL_POOL="$DOWN_DIR/final_pool.tmp"
 sort -t'|' -k1,1 -k4,4V "$HEALTHY_LIST" > "$FINAL_POOL"
 
@@ -180,10 +181,14 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
-    MATCHED_URLS=$(awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL")
+    # 获取该频道的所有匹配记录（此时已经是按权重 p_val.line_num 排序好的）
+    # 注意：这里我们要带上 URL 进行去重处理
+    MATCHED_DATA=$(awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL")
 
-    if [ -n "$MATCHED_URLS" ]; then
-        echo "$MATCHED_URLS" | awk '!seen[$0]++' | while read -r v_u; do
+    if [ -n "$MATCHED_DATA" ]; then
+        # 【关键】：在输出前进行去重。由于 MATCHED_DATA 已经是按权重排好序的，
+        # awk '!seen[$0]++' 会保留第一次出现的 URL（即权重最小、最靠前的那个文件里的源）
+        echo "$MATCHED_DATA" | awk '!seen[$0]++' | while read -r v_u; do
             [[ ! "$v_u" =~ ^https?:// ]] && continue
             [[ "$v_u" =~ \.flv ]] && continue
             

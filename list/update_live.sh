@@ -28,6 +28,24 @@ THREAD_COUNT=25
 > "$MISSING_CHANNELS_FILE"
 > "$DOWNLOAD_LOG"
 
+# ====================================================
+# 测活函数定义 (必须在被 export 之前定义)
+# ====================================================
+check_url_worker() {
+    IFS='|' read -r t u s p <<< "$1"
+    
+    # 免检逻辑 (Smart, Playlist 以及 rtp.cc.cd 开头的源)
+    if [[ "$s" == "Smart.m3u" || "$s" == "Playlist.m3u" || "$u" == https://rtp.cc.cd/* ]]; then
+        echo "$t|$u|$s|$p" >> "$2"
+        return
+    fi
+    
+    # 普通源：模拟 VLC 测活
+    local code=$(curl -sL -k -I --connect-timeout 3 --max-time 5 -A "VLC/3.0.18 LibVLC/3.0.18" "$u" 2>/dev/null | awk 'NR==1{print $2}')
+    [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "$2"
+}
+export -f check_url_worker
+
 # --- 步骤 1: 构建标准字典 ---
 echo "🏗️ 正在构建标准字典..."
 TEMPLATE_NAMES_FILE="$DOWN_DIR/template_names.tmp"
@@ -51,7 +69,7 @@ while IFS='|' read -r -a names; do
     fi
 done < "$NAME_TXT"
 
-# --- 步骤 2: 下载原始镜像并处理逻辑 (保留核心逻辑并增强模拟) ---
+# --- 步骤 2: 下载原始镜像并处理逻辑 ---
 echo "📥 阶段 1: 处理下载逻辑..."
 IDX=100
 PRIORITY_IDX="$DOWN_DIR/priority.idx"; > "$PRIORITY_IDX"
@@ -65,10 +83,8 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     raw_path="$M3U_RAW_DIR/$f_n"
     target_path="$DOWN_DIR/$f_n"
 
-    # 动态获取域名用于 Referer
     domain=$(echo "$url" | awk -F[/:] '{print $1"//"$4}')
 
-    # 执行下载到临时文件 (增强模拟播放器头)
     dl_info=$(curl -L -k -s --retry 3 --retry-delay 5 --connect-timeout 20 \
         -A "VLC/3.0.18 LibVLC/3.0.18" \
         -H "Referer: $domain" \
@@ -78,16 +94,14 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
         -H "Accept: */*" \
         "$url" -o "$raw_path.new" -w "%{http_code}")
 
-    # 判断下载是否有效（排除 403 和 CF 拦截页）
     if [[ "$dl_info" =~ ^(200|206)$ ]] && ! grep -q "Just a moment..." "$raw_path.new" && [ -s "$raw_path.new" ]; then
         mv "$raw_path.new" "$raw_path"
         echo "DEBUG: $f_n 下载成功。"
     else
         rm -f "$raw_path.new"
-        echo "DEBUG: $f_n GitHub 下载失败 (CF拦截或Code:$dl_info)，尝试调用本地缓存。"
+        echo "DEBUG: $f_n 下载失败或拦截 (Code:$dl_info)，尝试调用缓存。"
     fi
 
-    # 核心判断：如果有文件（不论是新下的还是旧的）才进行后续处理
     if [ -f "$raw_path" ] && [ -s "$raw_path" ]; then
         h_size=$(awk "BEGIN {printf \"%.1f MB\", $(stat -c%s "$raw_path")/1048576}")
         echo "· $f_n    【 $h_size 】" >> "$DOWNLOAD_LOG"
@@ -99,7 +113,6 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
             mv "${target_path}.tmp" "$target_path"
         fi
 
-        # 规范化 tvg-name 标签
         sed -i -E 's/tvg-name=["'\'']?([^"'\'',]+)["'\'']?/tvg-name=\1/g' "$target_path"
         sed -i -E 's/tvg-name=([^",]+)([, ]+tvg-logo|[, ]+catchup|,)/tvg-name="\1"\2/g' "$target_path"
         sed -i -E 's/tvg-name=([^", ]+)$/tvg-name="\1"/g' "$target_path"
@@ -117,7 +130,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     fi
 done < "$DOWN_CONFIG"
 
-# --- 步骤 3: 匹配与测活 (引入行号权重) ---
+# --- 步骤 3: 匹配与测活 (复合优先级逻辑) ---
 echo "🔍 阶段 2: 匹配与测活..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 
@@ -125,24 +138,20 @@ while IFS='|' read -r f_n p_val; do
     target_file="$DOWN_DIR/$f_n"
     [ ! -f "$target_file" ] && continue
     
-    line_num=1000  # 初始内部行号，确保它是四位数以便排序
+    line_num=1000  # 内部行号锁定
     
-    # 使用 while 循环处理，确保 line_num 随行递增
     while read -r line; do
         if [[ "$line" =~ "#EXTINF" ]]; then
-            # 1. 提取名称
             raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
             
-            # 2. 提取 URL
             read -r v_url
             [ -z "$v_url" ] && continue
             
-            # 3. 字典匹配
             std_name=$(grep -i "^${raw_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
             
             if [ -n "$std_name" ]; then
-                # 关键修改：复合权重 = 文件优先级 + 内部行号 (例如 101.1001)
+                # 复合权重：文件顺序.行号顺序
                 combined_priority="${p_val}.${line_num}"
                 echo "$std_name|$v_url|$f_n|$combined_priority" >> "$ALL_MATCHED"
             fi
@@ -151,18 +160,17 @@ while IFS='|' read -r f_n p_val; do
     done < "$target_file"
 done < "$PRIORITY_IDX"
 
-# --- 并行测活 ---
 HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
-export -f check_url_worker
 if [ -s "$ALL_MATCHED" ]; then
+    echo "🚀 启动并行测活..."
     cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
 fi
 
-# --- 步骤 4: 组装结果 (严格行号排序版) ---
+# --- 步骤 4: 组装结果 ---
 echo "📦 阶段 3: 组装 live.m3u..."
 printf "#EXTM3U\n" > "$LIVE_M3U"
 
-# 对测活结果进行排序：先按频道(k1)，再按复合权重(k4)进行版本号/数字排序(-V)
+# 先排序：按频道聚拢，再按复合权重数字排序
 FINAL_POOL="$DOWN_DIR/final_pool.tmp"
 sort -t'|' -k1,1 -k4,4V "$HEALTHY_LIST" > "$FINAL_POOL"
 
@@ -172,11 +180,9 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
-    # 精确匹配频道，并保持 FINAL_POOL 里的物理顺序
     MATCHED_URLS=$(awk -F'|' -v t="$t_name" '$1==t {print $2}' "$FINAL_POOL")
 
     if [ -n "$MATCHED_URLS" ]; then
-        # 此时顺序已经是：down.txt顺序 -> 文件内行号顺序
         echo "$MATCHED_URLS" | awk '!seen[$0]++' | while read -r v_u; do
             [[ ! "$v_u" =~ ^https?:// ]] && continue
             [[ "$v_u" =~ \.flv ]] && continue
@@ -187,4 +193,4 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     fi
 done < <(grep "#EXTINF" "$NAME_M3U")
 
-echo "✅ 修复完成：已实现文件间优先级 + 文件内行号双重锁定。"
+echo "✅ 任务完成：顺序与权重已完全锁定。"

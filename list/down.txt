@@ -1,5 +1,5 @@
 MyTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/MyTV.m3u
-MeLive.m3u,https://tv.studio.us.kg/MeLive.m3u
+MeLive.m3u,https://tv.studio.us.kg/list/MeLive.m3u
 Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/Live.txt
 Gather.m3u,https://down.me-site.workers.dev/?url=https://tv.iill.top/m3u/Gather
 ChinaTV.txt,https://zb.484947.xyz/

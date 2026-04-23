@@ -247,13 +247,13 @@
 #EXTINF:-1 tvg-name="Unbeaten" tvg-logo="https://me.hi.hn/logo/tv/Unbeaten.png" group-title="体育",Unbeaten
 #EXTINF:-1 tvg-name="WWE" tvg-logo="https://me.hi.hn/logo/tv/WWE.png" group-title="体育",WWE TV
 #EXTINF:-1 tvg-name="ArenaBola1" tvg-logo="https://me.hi.hn/logo/tv/ArenaBola1.png" group-title="体育",Arena Bola 1
-#EXTINF:-1 tvg-name="ArenaBola2" tvg-logo="https://me.hi.hn/logo/tv/ArenaBola2" group-title="体育",Arena Bola 2
+#EXTINF:-1 tvg-name="ArenaBola2" tvg-logo="https://me.hi.hn/logo/tv/ArenaBola2.png" group-title="体育",Arena Bola 2
 #EXTINF:-1 tvg-name="SPOTV1" tvg-logo="https://me.hi.hn/logo/tv/SPOTV1.png" group-title="体育",SPOTV 1 HD
 #EXTINF:-1 tvg-name="SPOTV2" tvg-logo="https://me.hi.hn/logo/tv/SPOTV2.png" group-title="体育",SPOTV 2 HD
 #EXTINF:-1 tvg-name="TntSports1" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 1
-#EXTINF:-1 tvg-name="TntSports2" tvg-logo="https://me.hi.hn/logo/tv/TntSports2.png" group-title="体育",Tnt Sports 2
-#EXTINF:-1 tvg-name="TntSports3" tvg-logo="https://me.hi.hn/logo/tv/TntSports3.png" group-title="体育",Tnt Sports 3
-#EXTINF:-1 tvg-name="TntSports4" tvg-logo="https://me.hi.hn/logo/tv/TntSports4.png" group-title="体育",Tnt Sports 4
+#EXTINF:-1 tvg-name="TntSports2" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 2
+#EXTINF:-1 tvg-name="TntSports3" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 3
+#EXTINF:-1 tvg-name="TntSports4" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 4
 #EXTINF:-1 tvg-name="RugbyPassTV" tvg-logo="https://me.hi.hn/logo/tv/RugbyPass.png" group-title="体育",Rugby Pass TV
 #EXTINF:-1 tvg-name="SkysportsCricket" tvg-logo="https://me.hi.hn/logo/tv/SkysportsCricket.png" group-title="体育",Skysports Cricket
 #EXTINF:-1 tvg-name="SkysportsEPL" tvg-logo="https://me.hi.hn/logo/tv/SkysportsEPL.png" group-title="体育",Skysports EPL

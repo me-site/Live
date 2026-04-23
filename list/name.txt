@@ -208,10 +208,6 @@ Astro Arena|Arena|AstroArena
 Astro Arena 2|Arena 2|AstroArena2
 Astro Badminton|AstroBadminton
 Astro Badminton 2|AstroBadminton2
-Astro Beinsports 1|AstroBeinsports1
-Astro Beinsports 2|AstroBeinsports2
-Astro Beinsports 3|AstroBeinsports3
-
 
 AXN|AXN Taiwan
 CINEMAX|Cinemax Asia
@@ -271,6 +267,6 @@ Skysports Mix|SkysportsMix
 Skysports Racing|SkysportsRacing
 Eurosport|EUROSPORTHD
 beINSPORTSXTRA|BEINSPORTSXTRA
-beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports
-beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2
-beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beINSports3
+beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports|Astro Beinsports 1|AstroBeinsports1
+beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2|Astro Beinsports 2|AstroBeinsports2
+beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beINSports3|Astro Beinsports 3|AstroBeinsports3

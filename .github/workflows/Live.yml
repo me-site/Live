@@ -2,8 +2,8 @@ name: Live Auto M3U
 
 on:
   schedule:
-    # 每天北京时间 07:15 运行 (对应 UTC 23:15)
-    - cron: '15 23 * * *'
+    # 每 6 小时的第 15 分钟运行 (例如 00:15, 06:15, 12:15, 18:15 UTC)
+    - cron: '15 */6 * * *'
   workflow_dispatch:
 
 concurrency:

@@ -1,3 +1,4 @@
+CCTV.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/CCTV.txt
 MyTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/MyTV.m3u
 Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/Live.txt
 Smart.m3u,https://melive.onrender.com/trams.m3u?token=lanx

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# IPTV 维护脚本 - live.m3u 专用版
+# IPTV 维护脚本 - IPTV Studio 精简版 (生成 live.m3u)
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -17,7 +17,7 @@ NAME_M3U="$CONFIG_DIR/extinf.m3u"
 DOWN_CONFIG="$CONFIG_DIR/down.txt"
 
 # 统一输出文件
-LIVE_M3U="$BASE_DIR/live.m3u"
+FINAL_M3U="$BASE_DIR/live.m3u"
 MISSING_CHANNELS_FILE="$DOWN_DIR/missing_channels.txt"
 DOWNLOAD_LOG="$DOWN_DIR/download_report.txt"
 
@@ -68,7 +68,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     if [ "$h_code" -eq 200 ]; then
         sed 's/^\xEF\xBB\xBF//; s/\r//g' "$raw_path" > "$target_path"
 
-        # 处理 tvg-name 引号逻辑
+        # 统一 tvg-name 引号逻辑
         sed -i -E 's/tvg-name=["'\'']?([^"'\'',]+)["'\'']?/tvg-name=\1/g' "$target_path"
         sed -i -E 's/tvg-name=([^"'\,'\r\n]+?)([, ]+tvg-logo|[, ]+group-title|[, ]+catchup|$)/tvg-name="\1"\2/g' "$target_path"
 
@@ -79,15 +79,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
 
         case "$f_n" in
            "Smart.m3u")
-                awk '
-                /^#EXTINF/ {
-                    if ($0 ~ /马来西亚|印度尼西亚|中国|韩国|日本|印度|泰国|英国|越南|菲律宾|tvN|TvN/) {
-                        getline; 
-                        next;
-                    }
-                }
-                { print $0 }
-                ' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
+                awk '/^#EXTINF/ {if ($0 ~ /马来西亚|印度尼西亚|中国|韩国|日本|印度|泰国|英国|越南|菲律宾|tvN|TvN/) {getline; next;}} { print $0 }' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 ;;
             "Merged.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /group-title="?(大陸频道|LiTV|未整理|GPT-.*)"?/) { skip = 1; } else { skip = 0; print $0; }} else { if (skip == 0) print $0; }}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
@@ -111,6 +103,9 @@ done < "$DOWN_CONFIG"
 # --- 步骤 3: 匹配与并发测活 ---
 echo "🔍 阶段 2: 匹配与测活..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
+UNIQUE_URLS="$DOWN_DIR/unique_urls.tmp"; > "$UNIQUE_URLS"
+LIVE_URLS="$DOWN_DIR/live_urls.tmp"; > "$LIVE_URLS"
+
 while IFS='|' read -r f_n p_val; do
     [ ! -f "$DOWN_DIR/$f_n" ] && continue
     while read -r line; do
@@ -120,29 +115,43 @@ while IFS='|' read -r f_n p_val; do
             std_name=$(grep -i "^${raw_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
             if [ -n "$std_name" ]; then
                 read -r v_url
-                [ -n "$v_url" ] && echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
+                if [ -n "$v_url" ]; then
+                    echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
+                    # 免检逻辑判断
+                    if [[ "$f_n" == "ChinaTV.m3u" || "$f_n" == "HunanTV.m3u" || "$f_n" == "Playlist.m3u" || \
+                          "$v_url" == https://link.itv.us.kg* || "$v_url" == https://smart.ando.eu.org* || "$v_url" == https://rtp.cc.cd* ]]; then
+                        echo "$v_url" >> "$LIVE_URLS"
+                    else
+                        echo "$v_url" >> "$UNIQUE_URLS"
+                    fi
+                fi
             fi
         fi
     done < "$DOWN_DIR/$f_n"
 done < "$PRIORITY_IDX"
 
-HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
+# URL 去重检测
+[ -s "$UNIQUE_URLS" ] && sort -u "$UNIQUE_URLS" -o "$UNIQUE_URLS"
+
 check_url_worker() {
-    IFS='|' read -r t u s p <<< "$1"
-    if [[ "$s" == "ChinaTV.m3u" || "$s" == "HunanTV.m3u" || "$s" == "Playlist.m3u" || \
-          "$u" == https://link.itv.us.kg* || "$u" == https://smart.ando.eu.org* || "$u" == https://rtp.cc.cd* ]]; then
-        echo "$t|$u|$s|$p" >> "$2"
-        return
-    fi
+    local u="$1"
     local code=$(curl -sL -k -I --connect-timeout 5 --max-time 8 "$u" 2>/dev/null | awk 'NR==1{print $2}')
-    [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$t|$u|$s|$p" >> "$2"
+    [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$u" >> "$2"
 }
 export -f check_url_worker
-[ -s "$ALL_MATCHED" ] && cat "$ALL_MATCHED" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$HEALTHY_LIST"
 
-# --- 步骤 4: 组装结果 (live.m3u) ---
-echo "📦 阶段 3: 组装结果 live.m3u..."
-printf "#EXTM3U\n" > "$LIVE_M3U"
+[ -s "$UNIQUE_URLS" ] && cat "$UNIQUE_URLS" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$LIVE_URLS"
+
+HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
+while IFS='|' read -r t u s p; do
+    if grep -qF "$u" "$LIVE_URLS"; then
+        echo "$t|$u|$s|$p" >> "$HEALTHY_LIST"
+    fi
+done < "$ALL_MATCHED"
+
+# --- 步骤 4: 组装结果 (单文件模式) ---
+echo "📦 阶段 3: 组装结果 (live.m3u)..."
+printf "#EXTM3U\n" > "$FINAL_M3U"
 MATCHED_STD_NAMES="$DOWN_DIR/matched_std_names.tmp"; > "$MATCHED_STD_NAMES"
 
 while read -r tpl_line || [ -n "$tpl_line" ]; do
@@ -150,25 +159,25 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
-    # 获取该标准频道下所有有效的源，并按优先级排序
     MATCH_RAW=$(awk -F'|' -v t="$t_name" '$1==t' "$HEALTHY_LIST" | sort -t'|' -k4 -n)
     
     if [ -n "$MATCH_RAW" ]; then
         echo "$t_name" >> "$MATCHED_STD_NAMES"
         while IFS='|' read -r _t v_u _src _p; do
-            echo "$tpl_line" >> "$LIVE_M3U"
-            echo "$v_u" >> "$LIVE_M3U"
+            echo "$tpl_line" >> "$FINAL_M3U"
+            echo "$v_u" >> "$FINAL_M3U"
         done <<< "$MATCH_RAW"
     fi
 done < <(sed '1d' "$NAME_M3U")
 
 # --- 步骤 5: 缺失频道统计 ---
 while IFS='|' read -r -a names; do
-    display_name=$(echo "${names[0]}" | xargs)
+    display_name=$(echo "${names[0]}" | tr -d '\r' | xargs)
+    [ -z "$display_name" ] && continue
     std_name=$(grep -i "^${display_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
     if [ -z "$std_name" ] || ! grep -q "^$std_name$" "$MATCHED_STD_NAMES"; then
         echo "$display_name" >> "$MISSING_CHANNELS_FILE"
     fi
 done < "$NAME_TXT"
 
-echo "✅ 任务完成，生成文件：live.m3u"
+echo "✅ 任务完成。结果已保存至 live.m3u"

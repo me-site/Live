@@ -200,7 +200,6 @@ Astro Football|Astro Football (Back Up 1)|AstroFootball
 Astro Sports Plus|AstroSportsPlus
 Astro Golf|AstroGolf
 Astro Cricket|ASTROCRICKET
-Astro W-Sports|AstroWSports
 Astro Grandstand|Astro Grandstand (Back Up 1)|AstroGrandstand
 Astro PL 1|Astro PL 1 (Back Up 1)|Astro PL 1 (Back Up 2)|AstroPL1
 Astro PL 2|AstroPL2
@@ -249,10 +248,8 @@ Unbeaten|UNBEATEN
 WWE|WWE TV
 Arena Bola 1|ArenaBola1
 Arena Bola 2|ArenaBola2
-RTM Sports HD|RTMSports
 SPOTV 1 HD|SPOTV1
 SPO TV 2|SPOTV2
-Supersports 2|Supersports2
 Tnt Sports 1|TNTSports1
 TNT Sports 2|TNTSports2
 TNT Sports 3|TNTSports3

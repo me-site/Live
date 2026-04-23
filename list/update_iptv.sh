@@ -79,7 +79,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
 
         case "$f_n" in
            "Smart.m3u")
-                awk '/^#EXTINF/ {if ($0 ~ /马来西亚|印度尼西亚|中国|韩国|日本|印度|泰国|英国|越南|菲律宾|tvN|TvN/) {getline; next;}} { print $0 }' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
+                awk '/^#EXTINF/ {if ($0 ~ /马来西亚|印度尼西亚|韩国|日本|印度|泰国|英国|越南|菲律宾|tvN|TvN/) {getline; next;}} { print $0 }' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 ;;
             "Merged.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /group-title="?(大陸频道|LiTV|未整理|GPT-.*)"?/) { skip = 1; } else { skip = 0; print $0; }} else { if (skip == 0) print $0; }}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
@@ -87,9 +87,9 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 ;;
             "Gather.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /电台|广播|游戏|地方|Juli|港澳/) {skip = 1;} else {skip = 0; print $0;}} else if (skip == 0) {print $0;}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
-                sed -i '/rtp\.cc\.cd/! s@https://tv\.iill\.top/@https://rtp.cc.cd/tw.php?url=https://tv.iill.top/@g' "$target_path"
-                sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/tw.php?url=https://v.iill.top/4gtv/@g' "$target_path"
-                sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/tw/@https://rtp.cc.cd/tw.php?url=https://v.iill.top/tw/@g' "$target_path"
+                sed -i '/rtp\.cc\.cd/! s@https://tv\.iill\.top/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/@g' "$target_path"
+                sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$target_path"
+                sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$target_path"
                 ;;
             "Playlist.m3u")
                 sed -i 's|https://sc2026.stream-link.org|https://link.itv.us.kg|g' "$target_path"
@@ -119,7 +119,7 @@ while IFS='|' read -r f_n p_val; do
                     echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
                     # 免检逻辑判断
                     if [[ "$f_n" == "ChinaTV.m3u" || "$f_n" == "HunanTV.m3u" || "$f_n" == "Playlist.m3u" || \
-                          "$v_url" == https://link.itv.us.kg* || "$v_url" == https://smart.ando.eu.org* || "$v_url" == https://rtp.cc.cd* ]]; then
+                          "$v_url" == https://link.itv.us.kg* || "$v_url" == https://melive.onrender.com* || "$v_url" == https://rtp.cc.cd* ]]; then
                         echo "$v_url" >> "$LIVE_URLS"
                     else
                         echo "$v_url" >> "$UNIQUE_URLS"

@@ -31,7 +31,7 @@ jobs:
           rm -rf down/*
           mkdir -p down files
           chmod +x ./list/update_live.sh
-          ./list/update_iptv.sh
+          ./list/update_live.sh
 
       - name: 3. 终端状态汇总 (Actions 日志可见)
         run: |

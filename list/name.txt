@@ -168,7 +168,7 @@ LSTime 电影台|龙详时代|LS Time電影台
 EYETV旅游|EYETV 旅游|EYETV旅游台HD
 EYETV戏剧|EYETV 戏剧|EYETV戏剧台HD
 爱尔达娱乐台|愛爾達娛樂台
-爱尔达戏剧台|爱尔达戏剧台
+爱尔达影剧台|爱尔达戏剧台
 爱尔达体育1台|Elta体育1台
 爱尔达体育2台|Elta體育2台
 爱尔达体育3台|Elta體育3台

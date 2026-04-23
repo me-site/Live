@@ -116,7 +116,13 @@ while IFS='|' read -r f_n p_val; do
             if [ -n "$std_name" ]; then
                 read -r v_url
                 if [ -n "$v_url" ]; then
+                    # 【新增过滤逻辑】：如果是 http:// 开头的链接，直接跳过，不存入待测和匹配名单
+                    if [[ "$v_url" == http://* ]]; then
+                        continue
+                    fi
+
                     echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
+                    
                     # 免检逻辑判断
                     if [[ "$f_n" == "Smart.m3u" || "$f_n" == "HunanTV.m3u" || "$f_n" == "Playlist.m3u" || \
                           "$v_url" == https://link.itv.us.kg* || "$v_url" == https://melive.onrender.com* || "$v_url" == https://rtp.cc.cd* ]]; then

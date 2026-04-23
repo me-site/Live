@@ -787,7 +787,7 @@ https://melive.onrender.com/trams/1619/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/1619/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="无线财经体育" tvg-logo="https://me.hi.hn/logo/TVB财经体育.png" group-title="香港",無線財經體育資訊台
 https://melive.onrender.com/trams/1820/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="TVBJ2" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB J2
+#EXTINF:-1 tvg-name="TVBJ2" tvg-logo="https://me.hi.hn/logo/J2.png" group-title="香港",TVB J2
 https://melive.onrender.com/trams/1615/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://o11.163189.xyz/stream/tvb/tvbp/
@@ -1011,7 +1011,7 @@ https://cdn12.178.indevs.in/163189/2973b910e7719c08
 https://cdn12.178.indevs.in/163189/2973b910e7719c08
 #EXTINF:-1 tvg-name="公视戏剧" tvg-logo="https://me.hi.hn/logo/公视戏剧.png" group-title="台湾",公視戲劇
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv042/index.m3u8
-#EXTINF:-1 tvg-name="八大第一台" tvg-logo="https://me.hi.hn/logo/八大第一.png" group-title="台湾",八大第一台
+#EXTINF:-1 tvg-name="八大第一台" tvg-logo="https://me.hi.hn/logo/八大第1.png" group-title="台湾",八大第一台
 https://melive.onrender.com/trams/752/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="八大综合台" tvg-logo="https://me.hi.hn/logo/八大综合.png" group-title="台湾",八大綜合台
 https://melive.onrender.com/trams/754/playlist.m3u8?token=lanx
@@ -1079,13 +1079,13 @@ https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv065/index.m3u8
 https://melive.onrender.com/trams/2018/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="靖天国际台" tvg-logo="https://me.hi.hn/logo/靖天国际.png" group-title="台湾",靖天國際台
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv063/index.m3u8
-#EXTINF:-1 tvg-name="靖天日本台" tvg-logo="https://me.hi.hn/logo/靖天日本.png" group-title="娱乐",靖天日本台
+#EXTINF:-1 tvg-name="靖天日本台" tvg-logo="https://me.hi.hn/logo/靖天日本.png" group-title="台湾",靖天日本台
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv047/index.m3u8
-#EXTINF:-1 tvg-name="靖天欢乐台" tvg-logo="https://me.hi.hn/logo/靖天欢乐.png" group-title="娱乐",靖天歡樂台
+#EXTINF:-1 tvg-name="靖天欢乐台" tvg-logo="https://me.hi.hn/logo/靖天欢乐.png" group-title="台湾",靖天歡樂台
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv054/index.m3u8
-#EXTINF:-1 tvg-name="靖天映画台" tvg-logo="https://me.hi.hn/logo/靖天映画.png" group-title="娱乐",靖天映畫台
+#EXTINF:-1 tvg-name="靖天映画台" tvg-logo="https://me.hi.hn/logo/靖天映画.png" group-title="台湾",靖天映畫台
 https://cdn12.178.indevs.in/163189/bd4752bd7828b2bf
-#EXTINF:-1 tvg-name="靖天映画台" tvg-logo="https://me.hi.hn/logo/靖天映画.png" group-title="娱乐",靖天映畫台
+#EXTINF:-1 tvg-name="靖天映画台" tvg-logo="https://me.hi.hn/logo/靖天映画.png" group-title="台湾",靖天映畫台
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv055/index.m3u8
 #EXTINF:-1 tvg-name="靖天电影台" tvg-logo="https://me.hi.hn/logo/靖天电影.png" group-title="台湾",靖天電影台
 https://cdn12.178.indevs.in/163189/ed33509e03e78c7a

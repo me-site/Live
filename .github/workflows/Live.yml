@@ -1,4 +1,4 @@
-name: IPTV Studio 自动化直播源
+name: Live Auto M3U
 
 on:
   schedule:
@@ -30,7 +30,7 @@ jobs:
           # 清理临时目录并运行脚本
           rm -rf down/*
           mkdir -p down files
-          chmod +x ./list/update_iptv.sh
+          chmod +x ./list/update_live.sh
           ./list/update_iptv.sh
 
       - name: 3. 终端状态汇总 (Actions 日志可见)

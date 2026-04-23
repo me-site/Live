@@ -49,24 +49,22 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "Ando-Bot"
           
-          # 1. 先把你要的文件 add 进暂存区，这样它就不再是 "untracked" 了
-          if [ -f "live.m3u" ]; then
-            git add live.m3u
-          else
-            echo "错误：未找到 live.m3u"
-            exit 1
-          fi
+          # 1. 暂存目标文件
+          git add live.m3u
           
-          # 2. 现在执行清理，-dfx 就不会删掉已经 add 的 live.m3u 了
-          git clean -dfx
-          
-          # 3. 检查是否有内容变更
+          # 2. 检查是否有内容变更
           if git diff --cached --quiet; then
-            echo "内容没有变化，跳过提交。"
+            echo "没有变化，跳过提交。"
           else
             git commit -m "📺 IPTV Update (live.m3u): $(date '+%Y-%m-%d %H:%M')"
             
-            # 4. 这里的 rebase 前最好再做一次 reset 确保万无一失
+            # 【核心修复】强制重置并清理
+            # 这一步会强制让工作区回到刚刚 commit 的状态，抹除一切“unstaged changes”
+            git reset --hard HEAD
+            # 清理所有未追踪的杂物（-x 连同忽略文件一起删）
+            git clean -dfx
+            
+            # 3. 此时工作区绝对干净，执行同步
             git pull --rebase -X theirs origin main
             git push origin main
           fi

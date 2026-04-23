@@ -1,29 +1,64 @@
-name: Auto Live M3U
+name: IPTV Studio 自动化直播源
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # 每6小时运行一次
-  workflow_dispatch:      # 支持手动触发
+    # 每天北京时间 07:15 运行 (对应 UTC 23:15)
+    - cron: '15 23 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  iptv-update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      TZ: Asia/Shanghai
+
     steps:
-      - name: Checkout Code
+      - name: 1. 检出代码
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up Environment
+      - name: 2. 执行维护脚本
+        id: run_script
         run: |
-          chmod +x list/update_live.sh
-          mkdir -p files down
+          # 清理临时目录并运行脚本
+          rm -rf down/*
+          mkdir -p down files
+          chmod +x ./list/update_iptv.sh
+          ./list/update_iptv.sh
 
-      - name: Run Update Script
-        run: ./list/update_live.sh
-
-      - name: Commit and Push
+      - name: 3. 终端状态汇总 (Actions 日志可见)
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git commit -m "Auto Update live.m3u $(date +'%Y-%m-%d %H:%M')" || exit 0
-          git push
+          # 在 GitHub Action 运行日志中打印简单的统计信息
+          if [ -f "live.m3u" ]; then
+            COUNT=$(grep -c "^https\?://" live.m3u)
+            echo "✅ 成功生成 live.m3u, 有效频道数量: $COUNT"
+          else
+            echo "❌ 未找到 live.m3u 文件"
+          fi
+
+      - name: 4. 同步至仓库
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Ando-Bot"
+          
+          # 确保添加 live.m3u 以及可能更新的 list 配置文件
+          git add live.m3u
+          # 如果你想保留运行日志/缺失统计，可以取消下面一行的注释
+          # git add down/missing_channels.txt
+          
+          if git diff --cached --quiet; then
+            echo "没有变化，跳过提交。"
+          else
+            git commit -m "📺 IPTV Update (live.m3u): $(date '+%Y-%m-%d %H:%M')"
+            # 使用 rebase 确保推送成功
+            git pull --rebase -X theirs origin main
+            git push origin main
+          fi

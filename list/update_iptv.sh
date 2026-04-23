@@ -86,7 +86,7 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /group-title="?(綜合其他|兒童卡通|新闻财经|音乐综艺|电影戏剧|生活旅游|体育竞技|纪实探索|台湾备用)"?/) { n_p = 1; } else { n_p = 0; } print $0;} else if ($0 ~ /^https?:\/\//) {if (n_p == 1 && $0 !~ /^https:\/\/rtp\.cc\.cd\/tw\.php\?url=/) { print "https://rtp.cc.cd/tw.php?url=" $0; } else { print $0; } n_p = 0;} else { print $0; }}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 ;;
             "Gather.m3u")
-                awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /电台|广播|游戏|地方|Juli|港澳/) {skip = 1;} else {skip = 0; print $0;}} else if (skip == 0) {print $0;}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
+                awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /电台|广播|游戏|Juli|港澳/) {skip = 1;} else {skip = 0; print $0;}} else if (skip == 0) {print $0;}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 sed -i '/rtp\.cc\.cd/! s@https://tv\.iill\.top/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/@g' "$target_path"
                 sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$target_path"
                 sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$target_path"
@@ -118,7 +118,7 @@ while IFS='|' read -r f_n p_val; do
                 if [ -n "$v_url" ]; then
                     echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
                     # 免检逻辑判断
-                    if [[ "$f_n" == "ChinaTV.m3u" || "$f_n" == "HunanTV.m3u" || "$f_n" == "Playlist.m3u" || \
+                    if [[ "$f_n" == "Smart.m3u" || "$f_n" == "HunanTV.m3u" || "$f_n" == "Playlist.m3u" || \
                           "$v_url" == https://link.itv.us.kg* || "$v_url" == https://melive.onrender.com* || "$v_url" == https://rtp.cc.cd* ]]; then
                         echo "$v_url" >> "$LIVE_URLS"
                     else

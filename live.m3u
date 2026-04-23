@@ -1405,7 +1405,7 @@ https://melive.onrender.com/trams/2865/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2866/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="SkysportsRacing" tvg-logo="https://me.hi.hn/logo/tv/SkysportsRacing.png" group-title="体育",Skysports Racing
 https://melive.onrender.com/trams/2867/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.hi.hn/logo/tv/Eurosport.png" group-title="体育",Eurosport
+#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.hi.hn/logo/tv/EuroSport.png" group-title="体育",Eurosport
 https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="BEINSPORTS1" tvg-logo="https://me.hi.hn/logo/tv/beINSports1.png" group-title="体育",beIN Sports 1
 https://melive.onrender.com/trams/2825/playlist.m3u8?token=lanx

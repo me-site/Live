@@ -1057,7 +1057,7 @@ https://v.iill.top/api/VL-Japan/index.m3u8
 https://melive.onrender.com/trams/2049/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="纬来电影台" tvg-logo="https://me.hi.hn/logo/纬来电影.png" group-title="台湾",緯來電影台
 https://v.iill.top/api/VL-Movies/index.m3u8
-#EXTINF:-1 tvg-name="纬来精彩台" tvg-logo="https://me.hi.hn/logo/纬来精彩.png" group-title="台湾",緯來精彩台
+#EXTINF:-1 tvg-name="纬来精采台" tvg-logo="https://me.hi.hn/logo/纬来精采.png" group-title="台湾",緯來精采台
 https://melive.onrender.com/trams/2472/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="纬来戏剧台" tvg-logo="https://me.hi.hn/logo/纬来戏剧.png" group-title="台湾",緯來戲劇台
 https://v.iill.top/api/VL-Drama/index.m3u8

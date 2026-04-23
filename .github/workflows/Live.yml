@@ -49,16 +49,20 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "Ando-Bot"
           
-          # 确保添加 live.m3u 以及可能更新的 list 配置文件
+          # 1. 强制清理所有未被 git 追踪的临时文件 (down/*, files/* 等)
+          # -d 表示目录，-f 表示强制，-x 表示连同 .gitignore 忽略的文件也清理
+          git clean -dfx
+          
+          # 2. 只添加你需要保留的结果文件
           git add live.m3u
-          # 如果你想保留运行日志/缺失统计，可以取消下面一行的注释
-          # git add down/missing_channels.txt
           
           if git diff --cached --quiet; then
             echo "没有变化，跳过提交。"
           else
             git commit -m "📺 IPTV Update (live.m3u): $(date '+%Y-%m-%d %H:%M')"
-            # 使用 rebase 确保推送成功
+            
+            # 3. 使用 rebase 同步，并确保本地 commit 优先
+            # 如果 pull 过程中有冲突，以本地新生成的 live.m3u 为准
             git pull --rebase -X theirs origin main
             git push origin main
           fi

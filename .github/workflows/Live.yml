@@ -43,26 +43,24 @@ jobs:
             echo "❌ 未找到 live.m3u 文件"
           fi
 
-      - name: 4. 同步至仓库
+      -- name: 4. 同步至仓库
         if: success()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Ando-Bot"
           
-          # 1. 暂存所有你关心的文件（包括 live.m3u 和处理后的目录）
-          # 如果你想保留 files 和 down 里的结果，就把它们也加上
-          git add live.m3u files/*.m3u files/*.txt down/*.m3u down/*.txt 2>/dev/null || true
+          # 【核心修改点】告诉 Git 你要提交哪些内容
+          # 这里不仅添加 live.m3u，还添加 files 和 down 文件夹下的所有内容
+          git add live.m3u files/* down/* 2>/dev/null || true
           
-          # 2. 检查是否有内容变更
           if git diff --cached --quiet; then
             echo "没有变化，跳过提交。"
           else
             git commit -m "📺 IPTV Update: $(date '+%Y-%m-%d %H:%M')"
             
-            # 【注意】先 Pull 再 Push，且在 Clean 之前处理
+            # 先同步远程改动，防止推送失败
             git pull --rebase -X theirs origin main
             
-            # 只有在推送前，如果你一定要清理本地环境，才执行 clean
-            # 但其实 Actions 运行完会自动销毁容器，通常不需要手动 clean
+            # 推送
             git push origin main
           fi

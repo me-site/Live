@@ -2,7 +2,7 @@ name: Live Auto M3U
 
 on:
   schedule:
-    # 每 6 小时的第 15 分钟运行 (北京时间: 06:15, 12:15, 18:15, 00:15)
+    # 每 6 小时的第 15 分钟运行一次
     - cron: '15 */6 * * *'
   workflow_dispatch: # 允许手动点击运行
 
@@ -14,7 +14,7 @@ jobs:
   iptv-update:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 关键：必须赋予写入权限，否则 push 会报错
+      contents: write # 必须有写入权限才能推送文件到仓库
     env:
       TZ: Asia/Shanghai
 
@@ -22,25 +22,24 @@ jobs:
       - name: 1. 检出代码
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 获取完整历史，避免 rebase 冲突
+          fetch-depth: 0
 
       - name: 2. 执行维护脚本
-        id: run_script
         run: |
-          # 确保目录存在并清理旧的中间文件
+          # 确保必要目录存在
           mkdir -p down files list
-          rm -f down/* # 赋予脚本执行权限并运行
+          # 清理上一次运行残留的临时文件，但不删 files 目录（由脚本重新下载覆盖）
+          rm -f down/*
+          
+          # 赋予权限并执行脚本
           chmod +x ./list/update_live.sh
           ./list/update_live.sh
 
-      - name: 3. 终端状态汇总
+      - name: 3. 清理冗余临时文件
+        # 为了让 files 和 down 目录更整洁，只保留你需要的 txt/m3u 文件
         run: |
-          if [ -f "live.m3u" ]; then
-            COUNT=$(grep -c "^https\?://" live.m3u)
-            echo "✅ 成功生成 live.m3u, 有效频道数量: $COUNT"
-          else
-            echo "❌ 未找到 live.m3u 文件"
-          fi
+          find files/ -type f ! -name "*.m3u" ! -name "*.txt" -delete 2>/dev/null || true
+          find down/ -type f ! -name "*.m3u" ! -name "*.txt" -delete 2>/dev/null || true
 
       - name: 4. 同步至仓库
         if: success()
@@ -48,21 +47,22 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 1. 添加所有生成的文件到暂存区
-          # 包括最终的 live.m3u，以及原始目录 files 和处理目录 down
-          git add live.m3u files/* down/* 2>/dev/null || true
+          # 【核心关键】：将 live.m3u 以及 files/ 和 down/ 目录下的所有 m3u 和 txt 文件都加入 Git
+          git add live.m3u
+          git add files/*.m3u files/*.txt 2>/dev/null || true
+          git add down/*.m3u down/*.txt 2>/dev/null || true
           
-          # 2. 检查是否有变动，无变动则退出
+          # 检查是否有文件变化
           if git diff --cached --quiet; then
-            echo "内容没有变化，跳过提交。"
+            echo "没有检测到任何内容变化，跳过提交。"
             exit 0
           fi
 
-          # 3. 提交并拉取远程改动以防冲突
-          git commit -m "📺 IPTV Update: $(date '+%Y-%m-%d %H:%M')"
+          # 提交变更
+          git commit -m "📺 自动更新: $(date '+%Y-%m-%d %H:%M') (包含原始 files 镜像)"
           
-          # 使用 --rebase 保持提交历史整洁
+          # 先拉取远程改动，防止多人协作或冲突
           git pull --rebase origin main
           
-          # 4. 推送到仓库
+          # 推送到 GitHub 仓库
           git push origin main

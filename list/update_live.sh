@@ -81,6 +81,23 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
            "Smart.m3u")
                 awk '/^#EXTINF/ {if ($0 ~ /马来西亚|印度尼西亚|韩国|日本|印度|泰国|英国|越南|菲律宾|tvN|TvN/) {getline; next;}} { print $0 }' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 ;;
+            "GPT.m3u")
+                # 逻辑：仅保留 group-title 为推流整合、GPT-台湾/香港/记录/电影/新加坡/新闻/体育/马来西亚的频道
+                awk '
+                /^#EXTINF/ {
+                    if ($0 ~ /group-title="?(推流整合|GPT-台湾|GPT-香港|GPT-记录|GPT-电影|GPT-新加坡|GPT-新闻|GPT-体育|GPT-马来西亚)"?/) {
+                        skip = 0; # 匹配到了，不跳过
+                        print $0;
+                    } else {
+                        skip = 1; # 未匹配，跳过当前行及后续行
+                    }
+                    next;
+                }
+                { 
+                    if (skip == 0) print $0; # 如果 skip 为 0，打印非 #EXTINF 行（即 URL）
+                }
+                ' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
+                ;;    
             "Merged.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /group-title="?(大陸频道|LiTV|未整理|GPT-.*)"?/) { skip = 1; } else { skip = 0; print $0; }} else { if (skip == 0) print $0; }}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /group-title="?(綜合其他|兒童卡通|新闻财经|音乐综艺|电影戏剧|生活旅游|体育竞技|纪实探索|台湾备用)"?/) { n_p = 1; } else { n_p = 0; } print $0;} else if ($0 ~ /^https?:\/\//) {if (n_p == 1 && $0 !~ /^https:\/\/rtp\.cc\.cd\/tw\.php\?url=/) { print "https://rtp.cc.cd/tw.php?url=" $0; } else { print $0; } n_p = 0;} else { print $0; }}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"

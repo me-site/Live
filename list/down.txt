@@ -4,4 +4,4 @@ Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/
 Smart.m3u,https://melive.onrender.com/trams.m3u?token=lanx
 Gather.m3u,https://down.me-site.workers.dev/?url=https://tv.iill.top/m3u/Gather
 GuanxiTV.txt,https://zb.484947.xyz/
-GPT.m3u,https://gptapi.passwdword.xyz/get.php?username=tg_qs0br4lk&password=dbfg95ax5rqr&type=m3u_plus
+GPT.m3u,https://gptapi.passwdword.xyz/get.php?&type=m3u_plus

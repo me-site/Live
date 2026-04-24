@@ -49,22 +49,20 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "Ando-Bot"
           
-          # 1. 暂存目标文件
-          git add live.m3u
+          # 1. 暂存所有你关心的文件（包括 live.m3u 和处理后的目录）
+          # 如果你想保留 files 和 down 里的结果，就把它们也加上
+          git add live.m3u files/*.m3u files/*.txt down/*.m3u down/*.txt 2>/dev/null || true
           
           # 2. 检查是否有内容变更
           if git diff --cached --quiet; then
             echo "没有变化，跳过提交。"
           else
-            git commit -m "📺 IPTV Update (live.m3u): $(date '+%Y-%m-%d %H:%M')"
+            git commit -m "📺 IPTV Update: $(date '+%Y-%m-%d %H:%M')"
             
-            # 【核心修复】强制重置并清理
-            # 这一步会强制让工作区回到刚刚 commit 的状态，抹除一切“unstaged changes”
-            git reset --hard HEAD
-            # 清理所有未追踪的杂物（-x 连同忽略文件一起删）
-            git clean -dfx
-            
-            # 3. 此时工作区绝对干净，执行同步
+            # 【注意】先 Pull 再 Push，且在 Clean 之前处理
             git pull --rebase -X theirs origin main
+            
+            # 只有在推送前，如果你一定要清理本地环境，才执行 clean
+            # 但其实 Actions 运行完会自动销毁容器，通常不需要手动 clean
             git push origin main
           fi

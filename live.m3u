@@ -1387,6 +1387,8 @@ https://melive.onrender.com/trams/2691/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2781/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="SPOTV" tvg-logo="https://me.hi.hn/logo/tv/SPOTV1.png" group-title="体育",SPOTV 1 HD
 https://melive.onrender.com/trams/2709/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="SPOTV" tvg-logo="https://me.hi.hn/logo/tv/SPOTV1.png" group-title="体育",SPOTV 1 HD
+https://hls.iill.top/api/Spotv-1/index.m3u8
 #EXTINF:-1 tvg-name="TntSports1" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 1
 https://melive.onrender.com/trams/2764/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TntSports2" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 2
@@ -1419,5 +1421,3 @@ https://melive.onrender.com/trams/2825/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2826/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3
 https://melive.onrender.com/trams/2827/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3
-https://hls.iill.top/api/beIN-Sports-3/index.m3u8

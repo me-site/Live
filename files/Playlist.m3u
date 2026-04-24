@@ -1,0 +1,47 @@
+#EXTM3U url-tvg="http://iptv.707626.xyz/api/epg/xmltv.xml" x-tvg-url="http://iptv.707626.xyz/api/epg/xmltv.xml"
+
+#EXTINF:-1 tvg-id="FIGHT SPORTS HD" tvg-name="FIGHT SPORTS HD" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/FIGHTSPORTHD.png" group-title="StarHub",FIGHT SPORTS HD
+http://iptv.707626.xyz/live/stream-194af46d/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Sports 1 HD" tvg-name="Hub Sports 1 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/221_1920x1080_HTV.png" group-title="StarHub",Hub Sports 1 HD
+http://iptv.707626.xyz/live/stream-921fcd39/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Sports 2 HD" tvg-name="Hub Sports 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/222_1920x1080_HTV.png" group-title="StarHub",Hub Sports 2 HD
+http://iptv.707626.xyz/live/stream-6096b13a/master.m3u8
+
+#EXTINF:-1 tvg-id="中天新聞台" tvg-name="中天新聞台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/CTI2.png" group-title="台湾",中天新聞台
+http://iptv.707626.xyz/live/stream-ch-c6gd/master.m3u8
+
+#EXTINF:-1 tvg-id="寰宇新聞台" tvg-name="寰宇新聞台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/Global2.png" group-title="台湾",寰宇新聞台
+http://iptv.707626.xyz/live/stream-ch-xde5/master.m3u8
+
+#EXTINF:-1 tvg-id="Now爆谷星影台" tvg-name="Now星影台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/now5.png" group-title="香港",Now星影台
+http://iptv.707626.xyz/live/stream-now-x1vz/master.m3u8
+
+#EXTINF:-1 tvg-id="Now 爆谷台" tvg-name="Now爆谷台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/now4.png" group-title="香港",Now爆谷台
+http://iptv.707626.xyz/live/stream-now-91y5/master.m3u8
+
+#EXTINF:-1 tvg-id="PopC" tvg-name="PopC" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/POPC.png" group-title="香港",PopC
+http://iptv.707626.xyz/live/stream-221591ba/master.m3u8
+
+#EXTINF:-1 tvg-id="功夫台" tvg-name="功夫台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/TVB15.png" group-title="香港",功夫台
+http://iptv.707626.xyz/live/stream-ch-j3ol/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name="年代新闻" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/ERA2.png" group-title="香港",年代新闻
+http://iptv.707626.xyz/live/stream-ch-flf6/master.m3u8
+
+#EXTINF:-1 tvg-id="TVB 星河台" tvg-name="星河頻道" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/TVB6.png" group-title="香港",星河頻道
+http://iptv.707626.xyz/live/stream-ch-6n45/master.m3u8
+
+#EXTINF:-1 tvg-id="無綫新聞台" tvg-name="無綫新聞台" tvg-logo="https://tvlogo-282.pages.dev/logos/無綫新聞台.png" group-title="香港",無綫新聞台
+http://iptv.707626.xyz/live/stream-bd5be085/master.m3u8
+
+#EXTINF:-1 tvg-id="美亞電影台" tvg-name="美亞電影台" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/美亚电影.png" group-title="香港",美亞電影台
+http://iptv.707626.xyz/live/stream-c5d6f2af/master.m3u8
+
+#EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/TVB1.png" group-title="香港",翡翠台
+http://iptv.707626.xyz/live/stream-0958b9c6/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name="龙祥时代" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/LStime.png" group-title="香港",龙祥时代
+http://iptv.707626.xyz/live/stream-ch-cpzy/master.m3u8
+

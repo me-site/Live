@@ -1,8 +1,6 @@
 CCTV-高尔夫网球
-TVB Plus
 黄金华剧台
 PopC
-功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
@@ -27,4 +25,5 @@ Discovery SCI
 动物星球
 TLC旅游生活频道
 Unbeaten
+SPOTV 2
 beINSPORTSXTRA

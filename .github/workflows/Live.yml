@@ -47,22 +47,23 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 【核心关键】：将 live.m3u 以及 files/ 和 down/ 目录下的所有 m3u 和 txt 文件都加入 Git
-          git add live.m3u
-          git add files/*.m3u files/*.txt 2>/dev/null || true
-          git add down/*.m3u down/*.txt 2>/dev/null || true
+          # 1. 添加所有目标文件
+          git add live.m3u files/*.m3u files/*.txt down/*.m3u down/*.txt down/*.txt 2>/dev/null || true
           
-          # 检查是否有文件变化
+          # 2. 如果没有变化则退出
           if git diff --cached --quiet; then
-            echo "没有检测到任何内容变化，跳过提交。"
+            echo "内容没有变化，跳过提交。"
             exit 0
           fi
 
-          # 提交变更
-          git commit -m "📺 自动更新: $(date '+%Y-%m-%d %H:%M') (包含原始 files 镜像)"
+          # 3. 提交本地改动
+          git commit -m "📺 自动更新: $(date '+%Y-%m-%d %H:%M') (包含原始镜像)"
+
+          # 4. 【核心修复】解决 pull --rebase 报错
+          # 在 pull 之前，强制让工作区与刚刚 commit 的状态保持绝对一致
+          # 这样就不会再报 "unstaged changes" 的错误了
+          git reset --hard HEAD
           
-          # 先拉取远程改动，防止多人协作或冲突
+          # 5. 拉取并推送
           git pull --rebase origin main
-          
-          # 推送到 GitHub 仓库
           git push origin main

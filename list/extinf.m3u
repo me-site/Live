@@ -187,17 +187,17 @@
 #EXTINF:-1 tvg-name="TVN" tvg-logo="https://me.hi.hn/logo/tvN.png" group-title="新马",tvN
 #EXTINF:-1 tvg-name="韩国娱乐台KMTV" tvg-logo="https://me.hi.hn/logo/韩国娱乐.png" group-title="新马",韓國娛樂台
 #EXTINF:-1 tvg-name="时尚运动X" tvg-logo="https://me.hi.hn/logo/时尚运动X.png" group-title="新马",時尚運動X
-#EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/Channel5.png" group-title="新马",Channel 5
-#EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/Channel8.png" group-title="新马",Channel 8
-#EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/ChannelU.png" group-title="新马",Channel U
+#EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5
+#EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/tv/Channel8.png" group-title="新马",Channel 8
+#EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/tv/ChannelU.png" group-title="新马",Channel U
 #EXTINF:-1 tvg-name="翡翠台(国际版)" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="新马",华丽翡翠台
 #EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
 #EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
-#EXTINF:-1 tvg-name="Astro AOD" tvg-logo="https://me.hi.hn/logo/AstroAOD.png" group-title="新马",Astro AOD
-#EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://me.hi.hn/logo/AstroAEC.png" group-title="新马",Astro AEC
-#EXTINF:-1 tvg-name="Astro QJ" tvg-logo="https://me.hi.hn/logo/AstroQJ.png" group-title="新马",Astro QJ
-#EXTINF:-1 tvg-name="Astro Hua Hee Dai" tvg-logo="https://me.hi.hn/logo/Astro欢喜.png" group-title="新马",Astro 欢喜台
+#EXTINF:-1 tvg-name="Astro AOD" tvg-logo="https://me.hi.hn/logo/tv/AstroAOD.png" group-title="新马",Astro AOD
+#EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://me.hi.hn/logo/tv/AstroAEC.png" group-title="新马",Astro AEC
+#EXTINF:-1 tvg-name="Astro QJ" tvg-logo="https://me.hi.hn/logo/tv/AstroQJ.png" group-title="新马",Astro QJ
+#EXTINF:-1 tvg-name="Astro Hua Hee Dai" tvg-logo="https://me.hi.hn/logo/tv/Astro欢喜.png" group-title="新马",Astro 欢喜台
 #EXTINF:-1 tvg-name="Astro Football" tvg-logo="https://me.hi.hn/logo/tv/AstroFootball.png" group-title="新马",Astro Football
 #EXTINF:-1 tvg-name="Astro Sports Plus" tvg-logo="https://me.hi.hn/logo/tv/AstroSportsPlus.png" group-title="新马",Astro Sports Plus
 #EXTINF:-1 tvg-name="Astro Golf" tvg-logo="https://me.hi.hn/logo/tv/AstroGolf.png" group-title="新马",Astro Golf

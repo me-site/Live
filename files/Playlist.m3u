@@ -1,1 +1,104 @@
-error code: 521
+#EXTM3U url-tvg="http://iptv.707626.xyz/api/epg/xmltv.xml" x-tvg-url="http://iptv.707626.xyz/api/epg/xmltv.xml"
+
+#EXTINF:-1 tvg-id="FIGHT SPORTS HD" tvg-name="FIGHT SPORTS HD" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/FIGHTSPORTHD.png" group-title="StarHub",FIGHT SPORTS HD
+http://iptv.707626.xyz/live/stream-194af46d/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Premier 1" tvg-name="Hub Premier 1 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/221_1920x1080_HTV.png" group-title="StarHub",Hub Premier 1 HD
+http://iptv.707626.xyz/live/stream-6fedc14c/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name="Hub Premier 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/222_1920x1080_HTV.png" group-title="StarHub",Hub Premier 2 HD
+http://iptv.707626.xyz/live/stream-167a99e0/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Premier 3" tvg-name="Hub Premier 3 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/223_1920x1080_HTV.png" group-title="StarHub",Hub Premier 3 HD
+http://iptv.707626.xyz/live/stream-c6d2e34f/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Premier 4" tvg-name="Hub Premier 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/224_1920x1080_HTV.png" group-title="StarHub",Hub Premier 4 HD
+http://iptv.707626.xyz/live/stream-1585fb30/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Premier 5" tvg-name="Hub Premier 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/225_1920x1080_HTV.png" group-title="StarHub",Hub Premier 5 HD
+http://iptv.707626.xyz/live/stream-d322e8ac/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Premier 6" tvg-name="Hub Premier 6 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/226_1920x1080_HTV.png" group-title="StarHub",Hub Premier 6 HD
+http://iptv.707626.xyz/live/stream-f940032c/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Premier 7" tvg-name="Hub Premier 7 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/227_1920x1080_HTV.png" group-title="StarHub",Hub Premier 7 HD
+http://iptv.707626.xyz/live/stream-2409849a/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Premier 8" tvg-name="Hub Premier 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="StarHub",Hub Premier 8 HD
+http://iptv.707626.xyz/live/stream-070ff14b/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Sports 1 HD" tvg-name="Hub Sports 1 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/221_1920x1080_HTV.png" group-title="StarHub",Hub Sports 1 HD
+http://iptv.707626.xyz/live/stream-921fcd39/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Sports 2 HD" tvg-name="Hub Sports 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/222_1920x1080_HTV.png" group-title="StarHub",Hub Sports 2 HD
+http://iptv.707626.xyz/live/stream-6096b13a/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Sports 3 HD" tvg-name="Hub Sports 3 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/223_1920x1080_HTV.png" group-title="StarHub",Hub Sports 3 HD
+http://iptv.707626.xyz/live/stream-a7010be3/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Sports 4 HD" tvg-name="Hub Sports 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/224_1920x1080_HTV.png" group-title="StarHub",Hub Sports 4 HD
+http://iptv.707626.xyz/live/stream-00b51ef1/master.m3u8
+
+#EXTINF:-1 tvg-id="Hub Sports 5 HD" tvg-name="Hub Sports 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/225_1920x1080_HTV.png" group-title="StarHub",Hub Sports 5 HD
+http://iptv.707626.xyz/live/stream-190a791e/master.m3u8
+
+#EXTINF:-1 tvg-id="329" tvg-name="Hub Sports 6 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/226_1920x1080_HTV.png" group-title="StarHub",Hub Sports 6 HD
+http://iptv.707626.xyz/live/stream-11d2ef24/master.m3u8
+
+#EXTINF:-1 tvg-id="329" tvg-name="Hub Sports 7 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/227_1920x1080_HTV.png" group-title="StarHub",Hub Sports 7 HD
+http://iptv.707626.xyz/live/stream-b1dbd0d7/master.m3u8
+
+#EXTINF:-1 tvg-id="329" tvg-name="Hub Sports 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="StarHub",Hub Sports 8 HD
+http://iptv.707626.xyz/live/stream-7b4d7266/master.m3u8
+
+#EXTINF:-1 tvg-id="beIN Sports 2 HD" tvg-name="beIN Sports 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/211_1920x1080_HTV.png" group-title="StarHub",beIN Sports 2 HD
+http://iptv.707626.xyz/live/stream-7dbc89ae/master.m3u8
+
+#EXTINF:-1 tvg-id="329" tvg-name="beIN Sports 3 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/214_1920x1080_HTV.png" group-title="StarHub",beIN Sports 3 HD
+http://iptv.707626.xyz/live/stream-38307986/master.m3u8
+
+#EXTINF:-1 tvg-id="329" tvg-name="beIN Sports 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/215_1920x1080_HTV.png" group-title="StarHub",beIN Sports 4 HD
+http://iptv.707626.xyz/live/stream-21ea2f9c/master.m3u8
+
+#EXTINF:-1 tvg-id="329" tvg-name="beIN Sports 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/216_1920x1080_HTV.png" group-title="StarHub",beIN Sports 5 HD
+http://iptv.707626.xyz/live/stream-d16d80ca/master.m3u8
+
+#EXTINF:-1 tvg-id="beIN Sports HD" tvg-name="beIN Sports HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/213_1920x1080_HTV.png" group-title="StarHub",beIN Sports HD
+http://iptv.707626.xyz/live/stream-779988c7/master.m3u8
+
+#EXTINF:-1 tvg-id="中天新聞台" tvg-name="中天新聞台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/CTI2.png" group-title="台湾",中天新聞台
+http://iptv.707626.xyz/live/stream-ch-c6gd/master.m3u8
+
+#EXTINF:-1 tvg-id="寰宇新聞台" tvg-name="寰宇新聞台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/Global2.png" group-title="台湾",寰宇新聞台
+http://iptv.707626.xyz/live/stream-ch-xde5/master.m3u8
+
+#EXTINF:-1 tvg-id="Now爆谷星影台" tvg-name="Now星影台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/now5.png" group-title="香港",Now星影台
+http://iptv.707626.xyz/live/stream-now-x1vz/master.m3u8
+
+#EXTINF:-1 tvg-id="Now 爆谷台" tvg-name="Now爆谷台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/now4.png" group-title="香港",Now爆谷台
+http://iptv.707626.xyz/live/stream-now-91y5/master.m3u8
+
+#EXTINF:-1 tvg-id="PopC" tvg-name="PopC" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/POPC.png" group-title="香港",PopC
+http://iptv.707626.xyz/live/stream-221591ba/master.m3u8
+
+#EXTINF:-1 tvg-id="功夫台" tvg-name="功夫台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/TVB15.png" group-title="香港",功夫台
+http://iptv.707626.xyz/live/stream-ch-j3ol/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name="年代新闻" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/ERA2.png" group-title="香港",年代新闻
+http://iptv.707626.xyz/live/stream-ch-flf6/master.m3u8
+
+#EXTINF:-1 tvg-id="TVB 星河台" tvg-name="星河頻道" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/TVB6.png" group-title="香港",星河頻道
+http://iptv.707626.xyz/live/stream-ch-6n45/master.m3u8
+
+#EXTINF:-1 tvg-id="無綫新聞台" tvg-name="無綫新聞台" tvg-logo="https://tvlogo-282.pages.dev/logos/無綫新聞台.png" group-title="香港",無綫新聞台
+http://iptv.707626.xyz/live/stream-bd5be085/master.m3u8
+
+#EXTINF:-1 tvg-id="美亞電影台" tvg-name="美亞電影台" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/美亚电影.png" group-title="香港",美亞電影台
+http://iptv.707626.xyz/live/stream-c5d6f2af/master.m3u8
+
+#EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/TVB1.png" group-title="香港",翡翠台
+http://iptv.707626.xyz/live/stream-0958b9c6/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-name="龙祥时代" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/LStime.png" group-title="香港",龙祥时代
+http://iptv.707626.xyz/live/stream-ch-cpzy/master.m3u8
+

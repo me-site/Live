@@ -16,8 +16,6 @@ https://live.264788.xyz/channel/cctv1?streamid=cccb6b9cad34d95eaf06a39fcf6acd9e&
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://me.hi.hn/logo/CCTV1.png" group-title="央视",CCTV1 综合
 https://melive.onrender.com/trams/710/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://me.hi.hn/logo/CCTV1.png" group-title="央视",CCTV1 综合
-https://v.iill.top/api/CCTV1/index.m3u8
-#EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://me.hi.hn/logo/CCTV1.png" group-title="央视",CCTV1 综合
 https://vip1.484947.xyz/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://me.hi.hn/logo/CCTV2.png" group-title="央视",CCTV2 财经
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv2
@@ -1065,8 +1063,6 @@ https://v.iill.top/api/VL-E/index.m3u8
 https://melive.onrender.com/trams/2051/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
 https://v.iill.top/api/VL-Sports/index.m3u8
-#EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
-https://v.iill.top/test/VL-Sports/index.m3u8
 #EXTINF:-1 tvg-name="靖天综合台" tvg-logo="https://me.hi.hn/logo/靖天综合.png" group-title="台湾",靖天綜合台
 https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/4gtv-4gtv046/index.m3u8
 #EXTINF:-1 tvg-name="靖天资讯台" tvg-logo="https://me.hi.hn/logo/靖天资讯.png" group-title="台湾",靖天資訊台
@@ -1389,6 +1385,8 @@ https://melive.onrender.com/trams/2781/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2709/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="SPOTV" tvg-logo="https://me.hi.hn/logo/tv/SPOTV1.png" group-title="体育",SPOTV 1 HD
 https://hls.iill.top/api/Spotv-1/index.m3u8
+#EXTINF:-1 tvg-name="SPOTV 2" tvg-logo="https://me.hi.hn/logo/tv/SPOTV2.png" group-title="体育",SPOTV 2 HD
+https://hls.iill.top/api/Spotv-2/index.m3u8
 #EXTINF:-1 tvg-name="TntSports1" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 1
 https://melive.onrender.com/trams/2764/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TntSports2" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 2
@@ -1421,3 +1419,5 @@ https://melive.onrender.com/trams/2825/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2826/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3
 https://melive.onrender.com/trams/2827/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3
+https://hls.iill.top/api/beIN-Sports-3/index.m3u8

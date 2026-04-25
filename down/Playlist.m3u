@@ -48,16 +48,16 @@ http://iptv.707626.xyz/live/stream-11d2ef24/master.m3u8
 #EXTINF:-1 tvg-id="329" tvg-name="Hub Sports 7 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/227_1920x1080_HTV.png" group-title="StarHub",Hub Sports 7 HD
 http://iptv.707626.xyz/live/stream-b1dbd0d7/master.m3u8
 
-#EXTINF:-1 tvg-id="Hub Sports 8" tvg-name="Hub Sports 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="StarHub",Hub Sports 8 HD
+#EXTINF:-1 tvg-id="329" tvg-name="Hub Sports 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="StarHub",Hub Sports 8 HD
 http://iptv.707626.xyz/live/stream-7b4d7266/master.m3u8
 
 #EXTINF:-1 tvg-id="beIN Sports 2 HD" tvg-name="beIN Sports 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/211_1920x1080_HTV.png" group-title="StarHub",beIN Sports 2 HD
 http://iptv.707626.xyz/live/stream-7dbc89ae/master.m3u8
 
-#EXTINF:-1 tvg-id="beINSportsMax1.qa" tvg-name="beIN Sports 3 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/214_1920x1080_HTV.png" group-title="StarHub",beIN Sports 3 HD
+#EXTINF:-1 tvg-id="329" tvg-name="beIN Sports 3 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/214_1920x1080_HTV.png" group-title="StarHub",beIN Sports 3 HD
 http://iptv.707626.xyz/live/stream-38307986/master.m3u8
 
-#EXTINF:-1 tvg-id="beINSportsMax2.qa" tvg-name="beIN Sports 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/215_1920x1080_HTV.png" group-title="StarHub",beIN Sports 4 HD
+#EXTINF:-1 tvg-id="329" tvg-name="beIN Sports 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/215_1920x1080_HTV.png" group-title="StarHub",beIN Sports 4 HD
 http://iptv.707626.xyz/live/stream-21ea2f9c/master.m3u8
 
 #EXTINF:-1 tvg-id="329" tvg-name="beIN Sports 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/216_1920x1080_HTV.png" group-title="StarHub",beIN Sports 5 HD

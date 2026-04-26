@@ -995,18 +995,6 @@ https://melive.onrender.com/trams/2086/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2085/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="博斯高球2台" tvg-logo="https://me.hi.hn/logo/博斯高球2.png" group-title="台湾",博斯高球2台
 https://melive.onrender.com/trams/2085/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5
-https://melive.onrender.com/trams/1601/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5
-https://melive.onrender.com/trams/2788/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/tv/Channel8.png" group-title="新马",Channel 8
-https://melive.onrender.com/trams/1602/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/tv/Channel8.png" group-title="新马",Channel 8
-https://melive.onrender.com/trams/2789/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/tv/ChannelU.png" group-title="新马",Channel U
-https://melive.onrender.com/trams/2790/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/tv/ChannelU.png" group-title="新马",Channel U
-https://melive.onrender.com/trams/286/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="翡翠台(国际版)" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="新马",华丽翡翠台
 https://o11.163189.xyz/stream/live/hlt/
 #EXTINF:-1 tvg-name="翡翠台(国际版)" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="新马",华丽翡翠台
@@ -1043,6 +1031,18 @@ https://o11.163189.xyz/stream/live/ccm/
 https://php.jdshipin.com/smt.php?id=Celestial2
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
 https://melive.onrender.com/trams/1587/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5
+https://melive.onrender.com/trams/1601/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5
+https://melive.onrender.com/trams/2788/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/tv/Channel8.png" group-title="新马",Channel 8
+https://melive.onrender.com/trams/1602/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/tv/Channel8.png" group-title="新马",Channel 8
+https://melive.onrender.com/trams/2789/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/tv/ChannelU.png" group-title="新马",Channel U
+https://melive.onrender.com/trams/2790/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/tv/ChannelU.png" group-title="新马",Channel U
+https://melive.onrender.com/trams/286/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="Astro AOD" tvg-logo="https://me.hi.hn/logo/tv/AstroAOD.png" group-title="新马",Astro AOD
 https://o11.163189.xyz/stream/live/aod/
 #EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://me.hi.hn/logo/tv/AstroAEC.png" group-title="新马",Astro AEC
@@ -1157,7 +1157,7 @@ https://melive.onrender.com/trams/1922/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2691/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="Arena Bola 2" tvg-logo="https://me.hi.hn/logo/tv/ArenaBola2.png" group-title="体育",Arena Bola 2
 https://melive.onrender.com/trams/2781/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="SPOTV" tvg-logo="https://me.hi.hn/logo/tv/SPOTV1.png" group-title="体育",SPOTV 1 HD
+#EXTINF:-1 tvg-name="SPOTV" tvg-logo="https://me.hi.hn/logo/tv/SPOTV.png" group-title="体育",SPOTV
 https://melive.onrender.com/trams/2709/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TntSports1" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 1
 https://melive.onrender.com/trams/2764/playlist.m3u8?token=lanx
@@ -1169,21 +1169,21 @@ https://melive.onrender.com/trams/2766/playlist.m3u8?token=lanx
 https://melive.onrender.com/trams/2767/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="RugbyPassTV" tvg-logo="https://me.hi.hn/logo/tv/RugbyPass.png" group-title="体育",Rugby Pass TV
 https://melive.onrender.com/trams/2695/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="SkysportsCricket" tvg-logo="https://me.hi.hn/logo/tv/SkysportsCricket.png" group-title="体育",Skysports Cricket
-https://melive.onrender.com/trams/2861/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="SkysportsEPL" tvg-logo="https://me.hi.hn/logo/tv/SkysportsEPL.png" group-title="体育",Skysports EPL
+#EXTINF:-1 tvg-name="SkysportsEPL" tvg-logo="https://me.hi.hn/logo/tv/SkysportsEPL.png" group-title="体育",Skysports Premier League
 https://melive.onrender.com/trams/2862/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="SkysportsF1" tvg-logo="https://me.hi.hn/logo/tv/SkysportsF1.png" group-title="体育",Skysports F1
 https://melive.onrender.com/trams/2863/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="SkysportsGolf" tvg-logo="https://me.hi.hn/logo/tv/SkysportsGolf.png" group-title="体育",Skysports Golf
-https://melive.onrender.com/trams/2864/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="SkysportsMainEvent" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMainEvent.png" group-title="体育",Skysports Main Event
-https://melive.onrender.com/trams/2865/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="SkysportsMix" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMix.png" group-title="体育",Skysports Mix
 https://melive.onrender.com/trams/2866/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="SkysportsGolf" tvg-logo="https://me.hi.hn/logo/tv/SkysportsGolf.png" group-title="体育",Skysports Golf
+https://melive.onrender.com/trams/2864/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="SkysportsRacing" tvg-logo="https://me.hi.hn/logo/tv/SkysportsRacing.png" group-title="体育",Skysports Racing
 https://melive.onrender.com/trams/2867/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.hi.hn/logo/tv/EuroSport.png" group-title="体育",Eurosport
+#EXTINF:-1 tvg-name="SkysportsCricket" tvg-logo="https://me.hi.hn/logo/tv/SkysportsCricket.png" group-title="体育",Skysports Cricket
+https://melive.onrender.com/trams/2861/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="SkysportsMainEvent" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMainEvent.png" group-title="体育",Skysports Main Event
+https://melive.onrender.com/trams/2865/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.hi.hn/logo/tv/Eurosport.png" group-title="体育",Eurosport
 https://melive.onrender.com/trams/2890/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="BEINSPORTS1" tvg-logo="https://me.hi.hn/logo/tv/beINSports1.png" group-title="体育",beIN Sports 1
 https://melive.onrender.com/trams/2825/playlist.m3u8?token=lanx

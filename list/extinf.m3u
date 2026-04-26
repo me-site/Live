@@ -255,13 +255,13 @@
 #EXTINF:-1 tvg-name="TntSports3" tvg-logo="https://me.hi.hn/logo/tv/TntSports3.png" group-title="体育",Tnt Sports 3
 #EXTINF:-1 tvg-name="TntSports4" tvg-logo="https://me.hi.hn/logo/tv/TntSports4.png" group-title="体育",Tnt Sports 4
 #EXTINF:-1 tvg-name="RugbyPassTV" tvg-logo="https://me.hi.hn/logo/tv/RugbyPass.png" group-title="体育",Rugby Pass TV
-#EXTINF:-1 tvg-name="SkysportsCricket" tvg-logo="https://me.hi.hn/logo/tv/SkysportsCricket.png" group-title="体育",Skysports Cricket
-#EXTINF:-1 tvg-name="SkysportsEPL" tvg-logo="https://me.hi.hn/logo/tv/SkysportsEPL.png" group-title="体育",Skysports EPL
+#EXTINF:-1 tvg-name="SkysportsEPL" tvg-logo="https://me.hi.hn/logo/tv/SkysportsEPL.png" group-title="体育",Skysports Premier League
 #EXTINF:-1 tvg-name="SkysportsF1" tvg-logo="https://me.hi.hn/logo/tv/SkysportsF1.png" group-title="体育",Skysports F1
-#EXTINF:-1 tvg-name="SkysportsGolf" tvg-logo="https://me.hi.hn/logo/tv/SkysportsGolf.png" group-title="体育",Skysports Golf
-#EXTINF:-1 tvg-name="SkysportsMainEvent" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMainEvent.png" group-title="体育",Skysports Main Event
 #EXTINF:-1 tvg-name="SkysportsMix" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMix.png" group-title="体育",Skysports Mix
+#EXTINF:-1 tvg-name="SkysportsGolf" tvg-logo="https://me.hi.hn/logo/tv/SkysportsGolf.png" group-title="体育",Skysports Golf
 #EXTINF:-1 tvg-name="SkysportsRacing" tvg-logo="https://me.hi.hn/logo/tv/SkysportsRacing.png" group-title="体育",Skysports Racing
+#EXTINF:-1 tvg-name="SkysportsCricket" tvg-logo="https://me.hi.hn/logo/tv/SkysportsCricket.png" group-title="体育",Skysports Cricket
+#EXTINF:-1 tvg-name="SkysportsMainEvent" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMainEvent.png" group-title="体育",Skysports Main Event
 #EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.hi.hn/logo/tv/Eurosport.png" group-title="体育",Eurosport
 #EXTINF:-1 tvg-name="BEINSPORTSXTRA" tvg-logo="https://me.hi.hn/logo/tv/beINSportsXTRA.png" group-title="体育",beINSPORTSXTRA
 #EXTINF:-1 tvg-name="BEINSPORTS1" tvg-logo="https://me.hi.hn/logo/tv/beINSports1.png" group-title="体育",beIN Sports 1

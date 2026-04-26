@@ -164,7 +164,7 @@ CMusic|電影原聲台CMusic|CMUSIC
 My Cinema Europe|My Cinema Europe HD 我的歐洲電影|MYCINEMAEUROPEHD我的欧洲电影
 影迷数位电影台|影迷數位電影台
 影迷数位纪实台|影迷數位紀實台
-LSTime 电影台|龙详时代|LS Time電影台
+LSTime 电影台|龙详时代|LS Time電影台|龙祥时代
 EYETV旅游|EYETV 旅游|EYETV旅游台HD
 EYETV戏剧|EYETV 戏剧|EYETV戏剧台HD
 爱尔达娱乐台|愛爾達娛樂台
@@ -189,7 +189,7 @@ Channel 5|Channel 5 backup|新加坡5頻道|Channel 5 HD
 Channel 8|Channel 8 backup|新加坡8頻道|Channel 8 HD
 Channel U|Channel U backup|新加坡U頻道|Channel U HD
 华丽翡翠台|华丽台 HD (Wah Lai Toi)|TVB Jade|華麗(翡翠台)|翡翠台(国际版)
-TVB 星河|TVB 星河台  Xing He|TVB星河台|TVB星河
+TVB 星河|TVB 星河台  Xing He|TVB星河台|TVB星河|星河頻道
 天映频道|Celestial Movies HD|天映頻道Celestial Movies|Astro天映頻道|天映頻道(新加坡)|天映马来西亚|天映新加坡
 天映经典|Celestial Classic|天映經典頻道
 Astro AOD|AOD
@@ -264,6 +264,26 @@ Skysports Mix|SkysportsMix
 Skysports Racing|SkysportsRacing
 Eurosport|EUROSPORTHD
 beINSPORTSXTRA|BEINSPORTSXTRA
-beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports|Astro Beinsports 1|AstroBeinsports1
-beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2|Astro Beinsports 2|AstroBeinsports2
-beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beINSports3|Astro Beinsports 3|AstroBeinsports3
+beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports|Astro Beinsports 1|AstroBeinsports1|beIN Sports HD
+beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2|Astro Beinsports 2|AstroBeinsports2|beIN Sports 2 HD
+beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beINSports3|Astro Beinsports 3|AstroBeinsports3|beIN Sports 3 HD
+beIN Sports 4|beIN Sports 4 HD
+beIN Sports 5|beIN Sports 5 HD
+Fight Sports|FIGHT SPORTS HD
+Hub Premier 1|Hub Premier 1 HD
+Hub Premier 2|Hub Premier 2 HD
+Hub Premier 3|Hub Premier 3 HD
+Hub Premier 4|Hub Premier 4 HD
+Hub Premier 5|Hub Premier 5 HD
+Hub Premier 6|Hub Premier 6 HD
+Hub Premier 7|Hub Premier 7 HD
+Hub Premier 8|Hub Premier 8 HD
+
+
+
+
+
+
+
+
+

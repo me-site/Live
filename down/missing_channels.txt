@@ -4,7 +4,6 @@ PopC
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
-NOW 新闻台
 NOW华剧台
 NOW 爆谷台
 NOW 星影台
@@ -24,10 +23,20 @@ TVBS综艺台
 tvN
 韩国娱乐台
 Astro QJ
-HBO温馨家庭
 Discovery SCI
 动物星球
 TLC旅游生活频道
 Unbeaten
+SPOTV 2
 beINSPORTSXTRA
+Fight Sports
 Hub Premier 2
+Hub Premier 4
+Hub Premier 5
+Hub Premier 6
+Hub Premier 7
+Hub Sports 2
+Hub Sports 3
+Hub Sports 4
+Hub Sports 7
+Hub Sports 8

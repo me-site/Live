@@ -278,6 +278,14 @@ Hub Premier 5|Hub Premier 5 HD
 Hub Premier 6|Hub Premier 6 HD
 Hub Premier 7|Hub Premier 7 HD
 Hub Premier 8|Hub Premier 8 HD
+Hub Sports 1|Hub Sports 1 HD
+Hub Sports 2|Hub Sports 2 HD
+Hub Sports 3|Hub Sports 3 HD
+Hub Sports 4|Hub Sports 4 HD
+Hub Sports 5|Hub Sports 5 HD
+Hub Sports 6|Hub Sports 6 HD
+Hub Sports 7|Hub Sports 7 HD
+Hub Sports 8|Hub Sports 8 HD
 
 
 

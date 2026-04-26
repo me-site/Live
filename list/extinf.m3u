@@ -262,28 +262,28 @@
 #EXTINF:-1 tvg-name="SkysportsRacing" tvg-logo="https://me.hi.hn/logo/tv/SkysportsRacing.png" group-title="体育",Skysports Racing
 #EXTINF:-1 tvg-name="SkysportsCricket" tvg-logo="https://me.hi.hn/logo/tv/SkysportsCricket.png" group-title="体育",Skysports Cricket
 #EXTINF:-1 tvg-name="SkysportsMainEvent" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMainEvent.png" group-title="体育",Skysports Main Event
-#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https:/epg.yang-1989.eu.org/logo/Eurosport-1.png" group-title="体育",Eurosport 1
-#EXTINF:-1 tvg-name="EUROSPORT2HD" tvg-logo="https:/epg.yang-1989.eu.org/logo/Eurosport-2.png" group-title="体育",Eurosport 2
-#EXTINF:-1 tvg-name="FIGHT SPORTS HD" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/FIGHTSPORTHD.png" group-title="体育",FIGHT SPORTS HD
-#EXTINF:-1 tvg-name="Hub Premier 1 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/221_1920x1080_HTV.png" group-title="体育",Hub Premier 1 HD
-#EXTINF:-1 tvg-name="Hub Premier 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/222_1920x1080_HTV.png" group-title="体育",Hub Premier 2 HD
-#EXTINF:-1 tvg-name="Hub Premier 3 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/223_1920x1080_HTV.png" group-title="体育",Hub Premier 3 HD
-#EXTINF:-1 tvg-name="Hub Premier 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/224_1920x1080_HTV.png" group-title="体育",Hub Premier 4 HD
-#EXTINF:-1 tvg-name="Hub Premier 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/225_1920x1080_HTV.png" group-title="体育",Hub Premier 5 HD
-#EXTINF:-1 tvg-name="Hub Premier 6 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/226_1920x1080_HTV.png" group-title="体育",Hub Premier 6 HD
-#EXTINF:-1 tvg-name="Hub Premier 7 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/227_1920x1080_HTV.png" group-title="体育",Hub Premier 7 HD
-#EXTINF:-1 tvg-name="Hub Premier 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="体育",Hub Premier 8 HD
-#EXTINF:-1 tvg-name="Hub Sports 1 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/221_1920x1080_HTV.png" group-title="体育",Hub Sports 1 HD
-#EXTINF:-1 tvg-name="Hub Sports 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/222_1920x1080_HTV.png" group-title="体育",Hub Sports 2 HD
-#EXTINF:-1 tvg-name="Hub Sports 3 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/223_1920x1080_HTV.png" group-title="体育",Hub Sports 3 HD
-#EXTINF:-1 tvg-name="Hub Sports 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/224_1920x1080_HTV.png" group-title="体育",Hub Sports 4 HD
-#EXTINF:-1 tvg-name="Hub Sports 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/225_1920x1080_HTV.png" group-title="体育",Hub Sports 5 HD
-#EXTINF:-1 tvg-name="Hub Sports 6 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/226_1920x1080_HTV.png" group-title="体育",Hub Sports 6 HD
-#EXTINF:-1 tvg-name="Hub Sports 7 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/227_1920x1080_HTV.png" group-title="体育",Hub Sports 7 HD
-#EXTINF:-1 tvg-name="Hub Sports 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="体育",Hub Sports 8 HD
+#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.hi.hn/logo/tv/Eurosport-1.png" group-title="体育",Eurosport 1
+#EXTINF:-1 tvg-name="EUROSPORT2HD" tvg-logo="https://me.hi.hn/logo/tv/Eurosport-2.png" group-title="体育",Eurosport 2
+#EXTINF:-1 tvg-name="FIGHT SPORTS HD" tvg-logo="https://me.hi.hn/logo/tv/FightSports.png" group-title="体育",FIGHT SPORTS HD
+#EXTINF:-1 tvg-name="Hub Premier 1 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier1.png" group-title="体育",Hub Premier 1 HD
+#EXTINF:-1 tvg-name="Hub Premier 2 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier2.png" group-title="体育",Hub Premier 2 HD
+#EXTINF:-1 tvg-name="Hub Premier 3 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier3.png" group-title="体育",Hub Premier 3 HD
+#EXTINF:-1 tvg-name="Hub Premier 4 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier4.png" group-title="体育",Hub Premier 4 HD
+#EXTINF:-1 tvg-name="Hub Premier 5 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier5.png" group-title="体育",Hub Premier 5 HD
+#EXTINF:-1 tvg-name="Hub Premier 6 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier6.png" group-title="体育",Hub Premier 6 HD
+#EXTINF:-1 tvg-name="Hub Premier 7 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier7.png" group-title="体育",Hub Premier 7 HD
+#EXTINF:-1 tvg-name="Hub Premier 8 HD" tvg-logo="https://me.hi.hn/logo/tv/HubPremier8.png" group-title="体育",Hub Premier 8 HD
+#EXTINF:-1 tvg-name="Hub Sports 1 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-1.png" group-title="体育",Hub Sports 1 HD
+#EXTINF:-1 tvg-name="Hub Sports 2 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-2.png" group-title="体育",Hub Sports 2 HD
+#EXTINF:-1 tvg-name="Hub Sports 3 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-3.png" group-title="体育",Hub Sports 3 HD
+#EXTINF:-1 tvg-name="Hub Sports 4 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-4.png" group-title="体育",Hub Sports 4 HD
+#EXTINF:-1 tvg-name="Hub Sports 5 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-5.png" group-title="体育",Hub Sports 5 HD
+#EXTINF:-1 tvg-name="Hub Sports 6 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-6.png" group-title="体育",Hub Sports 6 HD
+#EXTINF:-1 tvg-name="Hub Sports 7 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-7.png" group-title="体育",Hub Sports 7 HD
+#EXTINF:-1 tvg-name="Hub Sports 8 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-8.png" group-title="体育",Hub Sports 8 HD
 #EXTINF:-1 tvg-name="BEINSPORTSXTRA" tvg-logo="https://me.hi.hn/logo/tv/beINSportsXTRA.png" group-title="体育",beINSPORTSXTRA
 #EXTINF:-1 tvg-name="BEINSPORTS1" tvg-logo="https://me.hi.hn/logo/tv/beINSports1.png" group-title="体育",beIN Sports 1 HD
 #EXTINF:-1 tvg-name="BEINSPORTS2" tvg-logo="https://me.hi.hn/logo/tv/beINSports2.png" group-title="体育",beIN Sports 2 HD
 #EXTINF:-1 tvg-name="BEINSPORTS3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3 HD
-#EXTINF:-1 tvg-name="BEINSPORTS4" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/215_1920x1080_HTV.png" group-title="体育",beIN Sports 4 HD
-#EXTINF:-1 tvg-name="BEINSPORTS5" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/216_1920x1080_HTV.png" group-title="体育",beIN Sports 5 HD
+#EXTINF:-1 tvg-name="BEINSPORTS4" tvg-logo="https://me.hi.hn/logo/tv/beINSports4.png" group-title="体育",beIN Sports 4 HD
+#EXTINF:-1 tvg-name="BEINSPORTS5" tvg-logo="https://me.hi.hn/logo/tv/beINSports5.png" group-title="体育",beIN Sports 5 HD

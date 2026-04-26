@@ -1,5 +1,5 @@
 CCTV.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/CCTV.txt
-Playlist.m3u,https://down.me-site.workers.dev/?url=https://iptv.707626.xyz/api/playlist.m3u
+Playlist.m3u,https://iptv.707626.xyz/api/playlist.m3u
 MyTV.m3u,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/MyTV.m3u
 Live.txt,https://raw.githubusercontent.com/me-site/me-site.github.io/refs/heads/main/tv/Live.txt
 Smart.m3u,https://melive.onrender.com/trams.m3u?token=lanx

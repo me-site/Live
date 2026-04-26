@@ -262,7 +262,8 @@ Skysports Golf|SkysportsGolf
 Skysports Main Event|SkysportsMainEvent
 Skysports Mix|SkysportsMix
 Skysports Racing|SkysportsRacing
-Eurosport|EUROSPORTHD
+Eurosport 1|EUROSPORTHD|Eurosport
+Eurosport 2|EUROSPORTHD
 beINSPORTSXTRA|BEINSPORTSXTRA
 beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports|Astro Beinsports 1|AstroBeinsports1|beIN Sports HD
 beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2|Astro Beinsports 2|AstroBeinsports2|beIN Sports 2 HD

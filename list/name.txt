@@ -267,8 +267,8 @@ beINSPORTSXTRA|BEINSPORTSXTRA
 beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports|Astro Beinsports 1|AstroBeinsports1|beIN Sports HD
 beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2|Astro Beinsports 2|AstroBeinsports2|beIN Sports 2 HD
 beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beINSports3|Astro Beinsports 3|AstroBeinsports3|beIN Sports 3 HD
-beIN Sports 4|beIN Sports 4 HD
-beIN Sports 5|beIN Sports 5 HD
+beIN Sports 4|beIN Sports 4 HD|BEINSPORTS4
+beIN Sports 5|beIN Sports 5 HD|BEINSPORTS5
 Fight Sports|FIGHT SPORTS HD
 Hub Premier 1|Hub Premier 1 HD
 Hub Premier 2|Hub Premier 2 HD

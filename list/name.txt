@@ -202,7 +202,7 @@ Astro Golf|AstroGolf
 Astro Cricket|ASTROCRICKET
 Astro Grandstand|Astro Grandstand (Back Up 1)|AstroGrandstand
 Astro PL 1|Astro PL 1 (Back Up 1)|Astro PL 1 (Back Up 2)|AstroPL1|Astro Premier League
-Astro PL 2|AstroPL2|Astro Premier League 2
+Astro PL 2|AstroPL2|Astro Premier League 2|Supersports 2
 Astro Arena|Arena|AstroArena
 Astro Arena 2|Arena 2|AstroArena2
 Astro Badminton|AstroBadminton

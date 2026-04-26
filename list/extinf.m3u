@@ -262,7 +262,8 @@
 #EXTINF:-1 tvg-name="SkysportsRacing" tvg-logo="https://me.hi.hn/logo/tv/SkysportsRacing.png" group-title="体育",Skysports Racing
 #EXTINF:-1 tvg-name="SkysportsCricket" tvg-logo="https://me.hi.hn/logo/tv/SkysportsCricket.png" group-title="体育",Skysports Cricket
 #EXTINF:-1 tvg-name="SkysportsMainEvent" tvg-logo="https://me.hi.hn/logo/tv/SkysportsMainEvent.png" group-title="体育",Skysports Main Event
-#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https://me.hi.hn/logo/tv/Eurosport.png" group-title="体育",Eurosport
+#EXTINF:-1 tvg-name="EUROSPORTHD" tvg-logo="https:/epg.yang-1989.eu.org/logo/Eurosport-1.png" group-title="体育",Eurosport 1
+#EXTINF:-1 tvg-name="EUROSPORT2HD" tvg-logo="https:/epg.yang-1989.eu.org/logo/Eurosport-2.png" group-title="体育",Eurosport 2
 #EXTINF:-1 tvg-name="FIGHT SPORTS HD" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/FIGHTSPORTHD.png" group-title="体育",FIGHT SPORTS HD
 #EXTINF:-1 tvg-name="Hub Premier 1 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/221_1920x1080_HTV.png" group-title="体育",Hub Premier 1 HD
 #EXTINF:-1 tvg-name="Hub Premier 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/222_1920x1080_HTV.png" group-title="体育",Hub Premier 2 HD

@@ -142,7 +142,7 @@ while IFS='|' read -r f_n p_val; do
                     
                     # 免检逻辑判断
                     if [[ "$f_n" == "Smart.m3u" || "$f_n" == "HunanTV.m3u" || "$f_n" == "Playlist.m3u" || \
-                          "$v_url" == https://link.itv.us.kg* || "$v_url" == https://melive.onrender.com* || "$v_url" == https://rtp.cc.cd* ]]; then
+                          "$v_url" == https://iptv.707626.xyz* || "$v_url" == https://melive.onrender.com* || "$v_url" == https://rtp.cc.cd* ]]; then
                         echo "$v_url" >> "$LIVE_URLS"
                     else
                         echo "$v_url" >> "$UNIQUE_URLS"

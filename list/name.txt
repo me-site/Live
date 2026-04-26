@@ -71,23 +71,23 @@ PopC|POPC
 myTV SUPER Free|MytvSuper Free|SUPERFREE
 myTV SUPER 亚洲剧|TVB亞洲劇台|亚洲剧台
 myTV SUPER 华语剧|TVB華語劇台|华语剧台
-NOW 新闻台|Now News|NOW新闻台
+NOW 新闻台|Now News|NOW新闻台|Now新聞台
 NOW华剧台|now華劇台|NOW华剧台
 NOW 爆谷台|now爆谷電影台|NOW爆谷台
 NOW 星影台|now爆谷星影台|NOW爆谷星影台
 NOW 668|Now 668|NOW668
-NOW Sports 精选|Now Sports Prime|NOWSPORTS精选
+NOW Sports 精选|Now Sports Prime|NOWSPORTS精选|Now Sports 精選
 NOW Sports 1|Now體育1|NOWSPORTS1
 HOY TV|HOY 77|HOY77
-HOY 资讯台|HOY78|HOY 78|HOY资讯台
-HOY 国际财经|HOY76|HOY 76
+HOY 资讯台|HOY78|HOY 78|HOY资讯台|HOY 資訊台
+HOY 国际财经|HOY76|HOY 76|HOY 國際財經台
 RTHK 31|RTHK31|RTHKTV31
 RTHK 32|RTHK32|RTHKTV32
 RTHK 33|RTHK33|RTHKTV33
 RTHK 34|RTHK34|RTHKTV34
 RTHK 35|RTHK35|RTHKTV35
 ViuTV|ViuTV|VIUTV1
-ViuTV Six|ViuTV six|Viu6|VIUTVSIX
+ViuTV Six|ViuTV six|Viu6|VIUTVSIX|ViuTVsix
 美亚电影台|美亚电影|美亞電影台
 
 
@@ -213,10 +213,10 @@ CINEMAX|Cinemax Asia
 CinemaWorld|CinemaWorld|CinemaWorld電影|CINEMAWORLD|CinemaWorld頻道
 DreamWorks梦工厂动画|DreamWorks|DreamWorks 夢工廠動畫|DREAMWORKS
 好莱坞电影台|Hollywood Movies|好萊塢電影台
-HBO|HBO_HD|HBO Asia|HBOHD
-HBO强档巨献|HBO_HITS|HBO Hits Asia
-HBO温馨家庭|HBO Family Asia
-HBO原创巨献|HBO Signature Taiwan|HBO Signature Asia
+HBO|HBO_HD|HBO Asia|HBOHD|HBO HD
+HBO强档巨献|HBO_HITS|HBO Hits Asia|HBO Hits HD
+HBO温馨家庭|HBO Family Asia|HBO Family HD
+HBO原创巨献|HBO Signature Taiwan|HBO Signature Asia|HBO Signature HD
 ROCK Action|ROCK Action|ROCKACTIONHD
 ROCK X Stream|ROCK Xstream極限頻道|ROCK Xstream搖滾極限頻道|ROCKXSTREAM摇滚极限频道
 ROCK Entertainment|ROCK Entertainment|ROCKENTERTAINMENT
@@ -224,7 +224,7 @@ ROCK Entertainment|ROCK Entertainment|ROCKENTERTAINMENT
 
 BBC Earth|BBC Earth HD|BBC Earth Asia|BBCEARTH
 BBC Lifestyle|BBC Earth Lifestyle|BBC Lifestyle|BBCLIFESTYLE
-Discovery|探索频道|DISCOVERY
+Discovery|探索频道|DISCOVERY|Discovery HD
 Discovery Asia|DISCOVERYASIA|DISCOVERYASIA|Discovery Asia
 Discovery SCI|Discovery科学频道|DISCOVERY科学频道|DISCOVERY科学频道|Discovery Science
 DMAX|DMAX|DMAX Asia
@@ -250,24 +250,24 @@ Arena Bola 1|ArenaBola1|Arena Bola
 Arena Bola 2|ArenaBola2
 SPOTV 1 HD|SPOTV1|SPOTV
 SPOTV 2|SPOTV2
-Tnt Sports 1|TNTSports1|TntSports1
-TNT Sports 2|TNTSports2|TntSports2
-TNT Sports 3|TNTSports3|TntSports3
-TNT Sports 4|TNTSports4|TntSports4
+Tnt Sports 1|TNTSports1|TntSports1|TNT Sports 1 HD
+TNT Sports 2|TNTSports2|TntSports2|TNT Sports 2 HD
+TNT Sports 3|TNTSports3|TntSports3|TNT Sports 3 HD
+TNT Sports 4|TNTSports4|TntSports4|TNT Sports 4 HD
 Rugby Pass TV|RugbyPassTV
-Skysports Cricket|SkysportsCricket
-Skysports EPL|SkysportsEPL
-Skysports F1|SkysportsF1
+Skysports Cricket|SkysportsCricket|SkySp Cricket
+Skysports EPL|SkysportsEPL|SkySp PL HD|Sky Sports Premier League
+Skysports F1|SkysportsF1|SkySp F1
 Skysports Golf|SkysportsGolf
 Skysports Main Event|SkysportsMainEvent
-Skysports Mix|SkysportsMix
+Skysports Mix|SkysportsMix|SkySp Mix HD
 Skysports Racing|SkysportsRacing
 Eurosport 1|EUROSPORTHD|Eurosport
 Eurosport 2|EUROSPORTHD
 beINSPORTSXTRA|BEINSPORTSXTRA
 beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports|Astro Beinsports 1|AstroBeinsports1|beIN Sports HD
 beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2|Astro Beinsports 2|AstroBeinsports2|beIN Sports 2 HD
-beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beINSports3|Astro Beinsports 3|AstroBeinsports3|beIN Sports 3 HD
+beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beIN Sports 3|Astro Beinsports 3|AstroBeinsports3|beIN Sports 3 HD
 beIN Sports 4|beIN Sports 4 HD|BEINSPORTS4
 beIN Sports 5|beIN Sports 5 HD|BEINSPORTS5
 Fight Sports|FIGHT SPORTS HD
@@ -279,14 +279,14 @@ Hub Premier 5|Hub Premier 5 HD
 Hub Premier 6|Hub Premier 6 HD
 Hub Premier 7|Hub Premier 7 HD
 Hub Premier 8|Hub Premier 8 HD
-Hub Sports 1|Hub Sports 1 HD
-Hub Sports 2|Hub Sports 2 HD
-Hub Sports 3|Hub Sports 3 HD
-Hub Sports 4|Hub Sports 4 HD
-Hub Sports 5|Hub Sports 5 HD
-Hub Sports 6|Hub Sports 6 HD
-Hub Sports 7|Hub Sports 7 HD
-Hub Sports 8|Hub Sports 8 HD
+Hub Sports 1|Hub Sports 1 HD|Hub Sports 1
+Hub Sports 2|Hub Sports 2 HD|Hub Sports 2
+Hub Sports 3|Hub Sports 3 HD|Hub Sports 3
+Hub Sports 4|Hub Sports 4 HD|Hub Sports 4
+Hub Sports 5|Hub Sports 5 HD|Hub Sports 5
+Hub Sports 6|Hub Sports 6 HD|Hub Sports 6
+Hub Sports 7|Hub Sports 7 HD|Hub Sports 7
+Hub Sports 8|Hub Sports 8 HD|Hub Sports 8
 
 
 

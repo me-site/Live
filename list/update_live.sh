@@ -104,9 +104,9 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 ;;
             "Gather.m3u")
                 awk '{if ($0 ~ /^#EXTINF/) {if ($0 ~ /电台|广播|游戏|Juli|港澳/) {skip = 1;} else {skip = 0; print $0;}} else if (skip == 0) {print $0;}}' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
-                sed -i '/rtp\.cc\.cd/! s@https://tv\.iill\.top/@https://rtp.cc.cd/play.php?url=https://tv.iill.top/@g' "$target_path"
-                sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/4gtv/@https://rtp.cc.cd/play.php?url=https://v.iill.top/4gtv/@g' "$target_path"
-                sed -i '/rtp\.cc\.cd/! s@https://v\.iill\.top/tw/@https://rtp.cc.cd/play.php?url=https://v.iill.top/tw/@g' "$target_path"
+                sed -i '/rtp\.cc\.cd/! s@https://iptv\.yang-1989\.eu\.org/@https://rtp.cc.cd/play.php?url=https://iptv.yang-1989.eu.org/@g' "$target_path"
+                sed -i '/rtp\.cc\.cd/! s@https://cdn-2\.ttvb\.eu\.org/4gtv/@https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/4gtv/@g' "$target_path"
+                sed -i '/rtp\.cc\.cd/! s@https://cdn-2\.ttvb\.eu\.org/tw/@https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/tw/@g' "$target_path"
                 ;;
             "Playlist.m3u")
                 sed -i 's|https://sc2026.stream-link.org|https://link.itv.us.kg|g' "$target_path"

@@ -1,6 +1,4 @@
 #EXTINF:-1 tvg-name="CCTV1",CCTV1
-https://cdn6.163189.xyz/163189/cctv1
-#EXTINF:-1 tvg-name="CCTV1",CCTV1
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv1
 #EXTINF:-1 tvg-name="CCTV2",CCTV2
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv2

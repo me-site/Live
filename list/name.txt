@@ -187,7 +187,7 @@ tvN|tvN Asia
 Channel 5|Channel 5 backup|新加坡5頻道|Channel 5 HD
 Channel 8|Channel 8 backup|新加坡8頻道|Channel 8 HD
 Channel U|Channel U backup|新加坡U頻道|Channel U HD
-华丽翡翠台|华丽台 HD (Wah Lai Toi)|TVB Jade|華麗(翡翠台)|翡翠台(国际版)
+华丽翡翠台|华丽台 HD (Wah Lai Toi)|TVB Jade|華麗(翡翠台)
 TVB 星河|TVB 星河台  Xing He|TVB星河台|TVB星河|星河頻道|TVB XING HE
 天映频道|Celestial Movies HD|天映頻道Celestial Movies|Astro天映頻道|天映頻道(新加坡)|天映马来西亚|天映新加坡
 天映经典|Celestial Classic|天映經典頻道|天映经典频道

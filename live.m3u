@@ -789,8 +789,6 @@ https://php.jdshipin.com/smt.php?id=inews_twn
 https://iptv.gv.uy/trams/1619/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://iptv.gv.uy/trams/1619/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="无线财经体育" tvg-logo="https://me.hi.hn/logo/TVB财经体育.png" group-title="香港",無線財經體育資訊台
-https://iptv.gv.uy/trams/1820/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TVBJ2" tvg-logo="https://me.hi.hn/logo/J2.png" group-title="香港",TVB J2
 https://iptv.gv.uy/trams/1615/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ====================================================
-# Live 维护脚本 - Live Studio 精简版 (生成 live.m3u)
+# Live 维护脚本 - Live Studio 物理去重版
 # ====================================================
 
 TZ="Asia/Shanghai"
@@ -82,20 +82,16 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 awk '/^#EXTINF/ {if ($0 ~ /马来西亚|印度尼西亚|韩国|日本|印度|泰国|英国|越南|菲律宾|tvN|TvN/) {getline; next;}} { print $0 }' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 ;;
             "GPT.m3u")
-                # 逻辑：仅保留 group-title 为推流整合、GPT-台湾/香港/记录/电影/新加坡/新闻/体育/马来西亚的频道
                 awk '
                 /^#EXTINF/ {
                     if ($0 ~ /group-title="?(推流整合|GPT-台湾|GPT-香港|GPT-记录|GPT-电影|GPT-新加坡|GPT-新闻|GPT-体育|GPT-马来西亚)"?/) {
-                        skip = 0; # 匹配到了，不跳过
-                        print $0;
+                        skip = 0; print $0;
                     } else {
-                        skip = 1; # 未匹配，跳过当前行及后续行
+                        skip = 1;
                     }
                     next;
                 }
-                { 
-                    if (skip == 0) print $0; # 如果 skip 为 0，打印非 #EXTINF 行（即 URL）
-                }
+                { if (skip == 0) print $0; }
                 ' "$target_path" > "${target_path}.tmp" && mv "${target_path}.tmp" "$target_path"
                 ;;    
             "Merged.m3u")
@@ -114,13 +110,12 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
     fi
 done < "$DOWN_CONFIG"
 
-# --- 步骤 3: 匹配与并发测活 ---
+# --- 步骤 3: 匹配与并发测活 (URL 物理去重) ---
 echo "🔍 阶段 2: 匹配与测活..."
 ALL_MATCHED="$DOWN_DIR/all_matched.tmp"; > "$ALL_MATCHED"
 RAW_URL_LIST="$DOWN_DIR/raw_urls.tmp"; > "$RAW_URL_LIST"
 LIVE_URLS="$DOWN_DIR/live_urls.tmp"; > "$LIVE_URLS"
 
-# 1. 提取所有匹配到的 URL 存入 ALL_MATCHED，并把待测 URL 丢进 RAW_URL_LIST
 while IFS='|' read -r f_n p_val; do
     [ ! -f "$DOWN_DIR/$f_n" ] && continue
     while read -r line; do
@@ -128,36 +123,51 @@ while IFS='|' read -r f_n p_val; do
             raw_name=$(echo "$line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
             [ -z "$raw_name" ] && raw_name=$(echo "$line" | awk -F',' '{print $NF}' | xargs)
             std_name=$(grep -i "^${raw_name^^}|" "$DICT_MAP" | head -n1 | cut -d'|' -f2)
-            
             if [ -n "$std_name" ]; then
                 read -r v_url
-                [ -z "$v_url" ] && continue
-                
-                # 记录所有匹配关系 (用于后续组装)
-                echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
-                
-                # 免检逻辑：如果是你自己 VPS (Pixman) 或特定稳定源，直接判活
-                if [[ "$v_url" == https://iptv.gv.uy* || "$v_url" == https://iptv.707626.xyz* || "$v_url" == https://rtp.cc.cd* ]]; then
-                    echo "$v_url" >> "$LIVE_URLS"
-                else
-                    echo "$v_url" >> "$RAW_URL_LIST"
+                if [ -n "$v_url" ]; then
+                    # 保护 Pixman：如果是 http 且是 127.0.0.1 或 自己的域名，不跳过
+                    if [[ "$v_url" == http://* && "$v_url" != *"127.0.0.1"* && "$v_url" != *"iptv.gv.uy"* ]]; then
+                        continue
+                    fi
+
+                    echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
+                    
+                    # 免检逻辑判断
+                    if [[ "$f_n" == "Smart.m3u" || "$f_n" == "HunanTV.m3u" || "$f_n" == "Playlist.m3u" || \
+                          "$v_url" == https://iptv.707626.xyz* || "$v_url" == https://iptv.gv.uy* || "$v_url" == https://rtp.cc.cd* || "$v_url" == http://127.0.0.1* ]]; then
+                        echo "$v_url" >> "$LIVE_URLS"
+                    else
+                        echo "$v_url" >> "$RAW_URL_LIST"
+                    fi
                 fi
             fi
         fi
     done < "$DOWN_DIR/$f_n"
 done < "$PRIORITY_IDX"
 
-# 2. 【核心去重】：对 RAW_URL_LIST 进行物理去重，生成 UNIQUE_URLS
-# 这样即使 100 个频道共用一个 URL，curl 也只跑一次
+# URL 物理去重 (保证测活只跑一次唯一链接)
 UNIQUE_URLS="$DOWN_DIR/unique_urls.tmp"
-sort -u "$RAW_URL_LIST" > "$UNIQUE_URLS"
+[ -s "$RAW_URL_LIST" ] && sort -u "$RAW_URL_LIST" > "$UNIQUE_URLS"
 
-# 3. 并发测活 (只测去重后的 URL)
-echo "🚀 正在对 $(wc -l < "$UNIQUE_URLS") 个唯一 URL 进行并发测活..."
+check_url_worker() {
+    local u="$1"
+    local code=$(curl -sL -k -I --connect-timeout 5 --max-time 8 "$u" 2>/dev/null | awk 'NR==1{print $2}')
+    [[ "$code" =~ ^(200|206|301|302)$ ]] && echo "$u" >> "$2"
+}
 export -f check_url_worker
+
+echo "🚀 正在对 $(wc -l < "$UNIQUE_URLS") 个唯一 URL 进行并发测活..."
 [ -s "$UNIQUE_URLS" ] && cat "$UNIQUE_URLS" | xargs -P "$THREAD_COUNT" -I {} bash -c 'check_url_worker "{}" "$1"' -- "$LIVE_URLS"
 
-# --- 步骤 4: 组装结果 (单文件模式) ---
+HEALTHY_LIST="$DOWN_DIR/healthy_list.tmp"; > "$HEALTHY_LIST"
+while IFS='|' read -r t u s p; do
+    if grep -qF "$u" "$LIVE_URLS"; then
+        echo "$t|$u|$s|$p" >> "$HEALTHY_LIST"
+    fi
+done < "$ALL_MATCHED"
+
+# --- 步骤 4: 组装结果 (保留原有的多源逻辑) ---
 echo "📦 阶段 3: 组装结果 (live.m3u)..."
 printf "#EXTM3U\n" > "$FINAL_M3U"
 MATCHED_STD_NAMES="$DOWN_DIR/matched_std_names.tmp"; > "$MATCHED_STD_NAMES"
@@ -167,10 +177,12 @@ while read -r tpl_line || [ -n "$tpl_line" ]; do
     t_name=$(echo "$tpl_line" | sed -n 's/.*tvg-name="\([^"]*\)".*/\1/p' | xargs)
     [ -z "$t_name" ] && continue
 
+    # 获取该频道的所有健康源，并按优先级排序
     MATCH_RAW=$(awk -F'|' -v t="$t_name" '$1==t' "$HEALTHY_LIST" | sort -t'|' -k4 -n)
     
     if [ -n "$MATCH_RAW" ]; then
         echo "$t_name" >> "$MATCHED_STD_NAMES"
+        # 严格保留你的多源写入逻辑：遍历所有匹配到的源并写入
         while IFS='|' read -r _t v_u _src _p; do
             echo "$tpl_line" >> "$FINAL_M3U"
             echo "$v_u" >> "$FINAL_M3U"

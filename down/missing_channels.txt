@@ -15,8 +15,11 @@ RTHK 33
 RTHK 34
 RTHK 35
 TVBS综艺台
+纬来日本台
+纬来戏剧台
 tvN
 Astro QJ
+HBO温馨家庭
 Discovery SCI
 动物星球
 TLC旅游生活频道
@@ -37,10 +40,14 @@ RTHK 33
 RTHK 34
 RTHK 35
 TVBS综艺台
+纬来日本台
+纬来戏剧台
 tvN
 Astro QJ
+HBO温馨家庭
 Discovery SCI
 动物星球
 TLC旅游生活频道
 Unbeaten
+SPOTV 2
 beINSPORTSXTRA

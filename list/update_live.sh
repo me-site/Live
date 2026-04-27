@@ -108,9 +108,6 @@ while IFS=',' read -r f_n url || [ -n "$f_n" ]; do
                 sed -i '/rtp\.cc\.cd/! s@https://cdn-2\.ttvb\.eu\.org/4gtv/@https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/4gtv/@g' "$target_path"
                 sed -i '/rtp\.cc\.cd/! s@https://cdn-2\.ttvb\.eu\.org/tw/@https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/tw/@g' "$target_path"
                 ;;
-            "Playlist.m3u")
-                sed -i 's|https://sc2026.stream-link.org|https://link.itv.us.kg|g' "$target_path"
-                ;;
         esac
     else
         echo "· $f_n    【 ❌ 】" >> "$DOWNLOAD_LOG"

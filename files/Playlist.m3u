@@ -6,6 +6,12 @@ https://iptv.707626.xyz/ch/7378138d7df213f3e16411960dbd2322/master.m3u8
 #EXTINF:-1 tvg-id="NickelodeonAsia.sg" tvg-name="Nickelodeon" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/NICKELODEON.png" group-title="🇭🇰 香港频道",Nickelodeon
 https://iptv.707626.xyz/ch/c86c29b2edfc72379273947448977aee/master.m3u8
 
+#EXTINF:-1 tvg-id="Now 爆谷台" tvg-name="Now 爆谷台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/now4.png" group-title="🇭🇰 香港频道",Now 爆谷台
+https://iptv.707626.xyz/ch/5a1d44f5c5b660522abf56632b52256d/master.m3u8
+
+#EXTINF:-1 tvg-id="Now爆谷星影台" tvg-name="Now星影台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/now5.png" group-title="🇭🇰 香港频道",Now星影台
+https://iptv.707626.xyz/ch/8ebeb98e234230feac64fb26d05912ba/master.m3u8
+
 #EXTINF:-1 tvg-id="PopC" tvg-name="PopC" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/POPC.png" group-title="🇭🇰 香港频道",PopC
 https://iptv.707626.xyz/ch/daeefde9dc8798b55bca340479357ebf/master.m3u8
 

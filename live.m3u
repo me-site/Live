@@ -845,6 +845,8 @@ https://cdn6.163189.xyz/163189/yzwx
 https://cdn.163189.xyz/163189/now
 #EXTINF:-1 tvg-name="NOW新闻台" tvg-logo="https://me.hi.hn/logo/NOW新闻.png" group-title="香港",NOW 新聞台
 https://cdn.163189.xyz/163189/now
+#EXTINF:-1 tvg-name="NOW爆谷台" tvg-logo="https://me.hi.hn/logo/NOW爆谷.png" group-title="香港",NOW 爆谷台
+https://iptv.707626.xyz/ch/5a1d44f5c5b660522abf56632b52256d/master.m3u8
 #EXTINF:-1 tvg-name="HOY78" tvg-logo="https://me.hi.hn/logo/HOY78资讯.png" group-title="香港",HOY资資訊台
 https://cdn.163189.xyz/163189/hoy78
 #EXTINF:-1 tvg-name="HOY78" tvg-logo="https://me.hi.hn/logo/HOY78资讯.png" group-title="香港",HOY资資訊台
@@ -1457,14 +1459,22 @@ https://iptv.gv.uy/trams/2691/playlist.m3u8?token=lanx
 https://iptv.gv.uy/trams/2781/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="SPOTV" tvg-logo="https://me.hi.hn/logo/tv/SPOTV.png" group-title="体育",SPOTV
 https://iptv.gv.uy/trams/2709/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="SPOTV" tvg-logo="https://me.hi.hn/logo/tv/SPOTV.png" group-title="体育",SPOTV
+https://cdn-1.ttvb.eu.org/api/Spotv-1/index.m3u8
+#EXTINF:-1 tvg-name="SPOTV 2" tvg-logo="https://me.hi.hn/logo/tv/SPOTV2.png" group-title="体育",SPOTV 2
+https://cdn-1.ttvb.eu.org/api/Spotv-2/index.m3u8
 #EXTINF:-1 tvg-name="TNT Sports 1 HD" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 1
 https://iptv.gv.uy/trams/2764/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="TNT Sports 1 HD" tvg-logo="https://me.hi.hn/logo/tv/TntSports1.png" group-title="体育",Tnt Sports 1
 https://cdn-1.ttvb.eu.org/api/TNT-Sports-1/index.m3u8
 #EXTINF:-1 tvg-name="TNT Sports 2 HD" tvg-logo="https://me.hi.hn/logo/tv/TntSports2.png" group-title="体育",Tnt Sports 2
 https://iptv.gv.uy/trams/2765/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="TNT Sports 2 HD" tvg-logo="https://me.hi.hn/logo/tv/TntSports2.png" group-title="体育",Tnt Sports 2
+https://cdn-1.ttvb.eu.org/api/TNT-Sports-2/index.m3u8
 #EXTINF:-1 tvg-name="TNT Sports 3 HD" tvg-logo="https://me.hi.hn/logo/tv/TntSports3.png" group-title="体育",Tnt Sports 3
 https://iptv.gv.uy/trams/2766/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="TNT Sports 3 HD" tvg-logo="https://me.hi.hn/logo/tv/TntSports3.png" group-title="体育",Tnt Sports 3
+https://cdn-1.ttvb.eu.org/api/TNT-Sports-3/index.m3u8
 #EXTINF:-1 tvg-name="TNT Sports 4 HD" tvg-logo="https://me.hi.hn/logo/tv/TntSports4.png" group-title="体育",Tnt Sports 4
 https://iptv.gv.uy/trams/2767/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="beIN SPORTS RUGBY香港" tvg-logo="https://me.hi.hn/logo/tv/RugbyPass.png" group-title="体育",Rugby Pass TV
@@ -1495,8 +1505,12 @@ https://iptv.gv.uy/trams/2865/playlist.m3u8?token=lanx
 https://iptv.gv.uy/trams/2890/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="EUROSPORT" tvg-logo="https://me.hi.hn/logo/tv/Eurosport-1.png" group-title="体育",Eurosport 1
 https://cdn-1.ttvb.eu.org/api/Eurosport-1/index.m3u8
+#EXTINF:-1 tvg-name="Eurosport 2" tvg-logo="https://me.hi.hn/logo/tv/Eurosport-2.png" group-title="体育",Eurosport 2
+https://cdn-1.ttvb.eu.org/api/Eurosport-2/index.m3u8
 #EXTINF:-1 tvg-name="Fight Sports" tvg-logo="https://me.hi.hn/logo/tv/FightSports.png" group-title="体育",FIGHT SPORTS HD
 https://iptv.707626.xyz/ch/4a60d42b902d9825f9a14f143a7bf5bc/master.m3u8
+#EXTINF:-1 tvg-name="Fight Sports" tvg-logo="https://me.hi.hn/logo/tv/FightSports.png" group-title="体育",FIGHT SPORTS HD
+https://cdn-1.ttvb.eu.org/api/Fight-Sports/index.m3u8
 #EXTINF:-1 tvg-name="Hub Premier 1" tvg-logo="https://me.hi.hn/logo/tv/HubPremier1.png" group-title="体育",Hub Premier 1 HD
 https://iptv.707626.xyz/ch/da42c0f533aa38f73db22add60558883/master.m3u8
 #EXTINF:-1 tvg-name="Hub Premier 1" tvg-logo="https://me.hi.hn/logo/tv/HubPremier1.png" group-title="体育",Hub Premier 1 HD
@@ -1513,12 +1527,20 @@ https://iptv.707626.xyz/ch/0351d46bc501451fbb9d1ce8cd306dff/master.m3u8
 https://cdn-1.ttvb.eu.org/api/Hub-Premier-4/index.m3u8
 #EXTINF:-1 tvg-name="Hub Premier 5" tvg-logo="https://me.hi.hn/logo/tv/HubPremier5.png" group-title="体育",Hub Premier 5 HD
 https://iptv.707626.xyz/ch/026a05e593ba60ad3802d7e8db0de100/master.m3u8
+#EXTINF:-1 tvg-name="Hub Premier 5" tvg-logo="https://me.hi.hn/logo/tv/HubPremier5.png" group-title="体育",Hub Premier 5 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Premier-5/index.m3u8
 #EXTINF:-1 tvg-name="Hub Premier 6" tvg-logo="https://me.hi.hn/logo/tv/HubPremier6.png" group-title="体育",Hub Premier 6 HD
 https://iptv.707626.xyz/ch/d540360177c34f8380a302eaa129621c/master.m3u8
+#EXTINF:-1 tvg-name="Hub Premier 6" tvg-logo="https://me.hi.hn/logo/tv/HubPremier6.png" group-title="体育",Hub Premier 6 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Premier-6/index.m3u8
 #EXTINF:-1 tvg-name="Hub Premier 7" tvg-logo="https://me.hi.hn/logo/tv/HubPremier7.png" group-title="体育",Hub Premier 7 HD
 https://iptv.707626.xyz/ch/200551b34cdec1c466b1b43697cfb3ee/master.m3u8
+#EXTINF:-1 tvg-name="Hub Premier 7" tvg-logo="https://me.hi.hn/logo/tv/HubPremier7.png" group-title="体育",Hub Premier 7 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Premier-7/index.m3u8
 #EXTINF:-1 tvg-name="Hub Premier 8" tvg-logo="https://me.hi.hn/logo/tv/HubPremier8.png" group-title="体育",Hub Premier 8 HD
 https://iptv.707626.xyz/ch/245264daf11067d9b89222b1bc725e1e/master.m3u8
+#EXTINF:-1 tvg-name="Hub Premier 8" tvg-logo="https://me.hi.hn/logo/tv/HubPremier8.png" group-title="体育",Hub Premier 8 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Premier-8/index.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 1 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-1.png" group-title="体育",Hub Sports 1 HD
 https://iptv.707626.xyz/ch/b9ca32abe8f6c8e0e913ae7fb7b76e7c/master.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 1 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-1.png" group-title="体育",Hub Sports 1 HD
@@ -1529,29 +1551,47 @@ https://iptv.707626.xyz/ch/8d255436fe68691047dad7651709ea34/master.m3u8
 https://cdn-1.ttvb.eu.org/api/Hub-Sports-2/index.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 3 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-3.png" group-title="体育",Hub Sports 3 HD
 https://iptv.707626.xyz/ch/874e51c0f277826e87073125e044dad9/master.m3u8
+#EXTINF:-1 tvg-name="Hub Sports 3 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-3.png" group-title="体育",Hub Sports 3 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Sports-3/index.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 4 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-4.png" group-title="体育",Hub Sports 4 HD
 https://iptv.707626.xyz/ch/24f90e2bf4ba913c0d297ccd5e0684ce/master.m3u8
+#EXTINF:-1 tvg-name="Hub Sports 4 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-4.png" group-title="体育",Hub Sports 4 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Sports-4/index.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 5 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-5.png" group-title="体育",Hub Sports 5 HD
 https://iptv.707626.xyz/ch/6a0c4b49ecf7a9f8c84d23f2d88ed22d/master.m3u8
+#EXTINF:-1 tvg-name="Hub Sports 5 HD" tvg-logo="https://me.hi.hn/logo/tv/HubSports-5.png" group-title="体育",Hub Sports 5 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Sports-5/index.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 6" tvg-logo="https://me.hi.hn/logo/tv/HubSports-6.png" group-title="体育",Hub Sports 6 HD
 https://iptv.707626.xyz/ch/734b2377606bd6de69ec71436c224d40/master.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 7" tvg-logo="https://me.hi.hn/logo/tv/HubSports-7.png" group-title="体育",Hub Sports 7 HD
 https://iptv.707626.xyz/ch/9590989cb53f0e47448f53abe5ff4ee8/master.m3u8
+#EXTINF:-1 tvg-name="Hub Sports 7" tvg-logo="https://me.hi.hn/logo/tv/HubSports-7.png" group-title="体育",Hub Sports 7 HD
+https://cdn-1.ttvb.eu.org/api/Hub-Sports-7/index.m3u8
 #EXTINF:-1 tvg-name="Hub Sports 8" tvg-logo="https://me.hi.hn/logo/tv/HubSports-8.png" group-title="体育",Hub Sports 8 HD
 https://iptv.707626.xyz/ch/187295c39cc8f118e8c128aa5703e470/master.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1" tvg-logo="https://me.hi.hn/logo/tv/beINSports1.png" group-title="体育",beIN Sports 1 HD
 https://iptv.707626.xyz/ch/8a2742ca6f44887706dc2cd75a458de3/master.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1" tvg-logo="https://me.hi.hn/logo/tv/beINSports1.png" group-title="体育",beIN Sports 1 HD
 https://iptv.gv.uy/trams/2825/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="beIN SPORTS 1" tvg-logo="https://me.hi.hn/logo/tv/beINSports1.png" group-title="体育",beIN Sports 1 HD
+https://cdn-1.ttvb.eu.org/api/beIN-Sports-1/index.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 2" tvg-logo="https://me.hi.hn/logo/tv/beINSports2.png" group-title="体育",beIN Sports 2 HD
 https://iptv.707626.xyz/ch/b6f0ba78ab0ef875376319e73782ddd5/master.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 2" tvg-logo="https://me.hi.hn/logo/tv/beINSports2.png" group-title="体育",beIN Sports 2 HD
 https://iptv.gv.uy/trams/2826/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="beIN SPORTS 2" tvg-logo="https://me.hi.hn/logo/tv/beINSports2.png" group-title="体育",beIN Sports 2 HD
+https://cdn-1.ttvb.eu.org/api/beIN-Sports-2/index.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3 HD
 https://iptv.707626.xyz/ch/30cc0805acb2aada8da9e2ae3fad5b5c/master.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3 HD
 https://iptv.gv.uy/trams/2827/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="beIN SPORTS 3" tvg-logo="https://me.hi.hn/logo/tv/beINSports3.png" group-title="体育",beIN Sports 3 HD
+https://cdn-1.ttvb.eu.org/api/beIN-Sports-3/index.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 4" tvg-logo="https://me.hi.hn/logo/tv/beINSports4.png" group-title="体育",beIN Sports 4 HD
 https://iptv.707626.xyz/ch/914bdf0fd79c1d2244606b261a3cad5c/master.m3u8
+#EXTINF:-1 tvg-name="beIN SPORTS 4" tvg-logo="https://me.hi.hn/logo/tv/beINSports4.png" group-title="体育",beIN Sports 4 HD
+https://cdn-1.ttvb.eu.org/api/beIN-Sports-4/index.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 5" tvg-logo="https://me.hi.hn/logo/tv/beINSports5.png" group-title="体育",beIN Sports 5 HD
 https://iptv.707626.xyz/ch/10e13715bab91e96840897bdb33ed0d0/master.m3u8
+#EXTINF:-1 tvg-name="beIN SPORTS 5" tvg-logo="https://me.hi.hn/logo/tv/beINSports5.png" group-title="体育",beIN Sports 5 HD
+https://cdn-1.ttvb.eu.org/api/beIN-Sports-5/index.m3u8

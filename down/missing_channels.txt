@@ -4,7 +4,6 @@ myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
@@ -27,7 +26,6 @@ myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
@@ -44,6 +42,4 @@ Discovery SCI
 动物星球
 TLC旅游生活频道
 W-Sports
-SPOTV 2
-Eurosport 2
 beINSPORTSXTRA

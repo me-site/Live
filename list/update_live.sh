@@ -137,7 +137,7 @@ while IFS='|' read -r f_n p_val; do
                 echo "$std_name|$v_url|$f_n|$p_val" >> "$ALL_MATCHED"
                 
                 # 免检逻辑：如果是你自己 VPS (Pixman) 或特定稳定源，直接判活
-                if [[ "$v_url" == https://iptv.gv.uy* || "$v_url" == http://127.0.0.1* || "$v_url" == https://rtp.cc.cd* ]]; then
+                if [[ "$v_url" == https://iptv.gv.uy* || "$v_url" == https://iptv.707626.xyz* || "$v_url" == https://rtp.cc.cd* ]]; then
                     echo "$v_url" >> "$LIVE_URLS"
                 else
                     echo "$v_url" >> "$RAW_URL_LIST"

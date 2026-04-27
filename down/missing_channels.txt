@@ -1,7 +1,6 @@
 CCTV-高尔夫网球
 无线财经资讯台
 J2
-TVB娱乐新闻
 黄金华剧台
 myTV SUPER Free
 myTV SUPER 亚洲剧
@@ -18,7 +17,6 @@ RTHK 33
 RTHK 34
 RTHK 35
 中天综合台
-非凡新闻台
 TVBS欢乐台
 TVBS综艺台
 台视综合台
@@ -37,8 +35,70 @@ EYETV戏剧
 爱尔达体育1台
 爱尔达体育2台
 爱尔达体育3台
+博斯运动一台
 tvN
-韩国娱乐台
+Channel 5
+Channel 8
+Channel U
+Astro QJ
+Astro Football
+Astro Sports Plus
+Astro Golf
+Astro Cricket
+Astro Grandstand
+Astro PL 1
+Astro PL 2
+Astro Arena
+Astro Arena 2
+Astro Badminton
+Astro Badminton 2
+AXN
+Discovery Asia
+Discovery SCI
+DMAX
+动物星球
+亚洲美食频道
+HGTV居家乐活频道
+TLC旅游生活频道
+CCTV-高尔夫网球
+无线财经资讯台
+J2
+黄金华剧台
+myTV SUPER Free
+myTV SUPER 亚洲剧
+myTV SUPER 华语剧
+NOW华剧台
+NOW 爆谷台
+NOW 星影台
+NOW 668
+NOW Sports 精选
+NOW Sports 1
+HOY TV
+HOY 国际财经
+RTHK 33
+RTHK 34
+RTHK 35
+中天综合台
+TVBS欢乐台
+TVBS综艺台
+台视综合台
+三立台湾台
+三立戏剧台
+三立都会台
+公视
+八大第一台
+八大综合台
+八大娱乐台
+八大戏剧台
+纬来精采台
+EYETV旅游
+EYETV戏剧
+爱尔达影剧台
+爱尔达体育1台
+爱尔达体育2台
+爱尔达体育3台
+博斯运动一台
+tvN
 Channel 5
 Channel 8
 Channel U
@@ -68,6 +128,8 @@ WWE
 W-Sports
 Arena Bola 1
 Arena Bola 2
+SPOTV 2
+TNT Sports 1
 Rugby Pass TV
 Skysports Golf
 Skysports Main Event

@@ -1425,7 +1425,7 @@ https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/4gtv/4gtv-live096/index
 https://iptv.gv.uy/trams/2508/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="NBATV" tvg-logo="https://me.hi.hn/logo/tv/NBA.png" group-title="体育",NBA TV
 https://iptv.gv.uy/trams/1694/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="WWE" tvg-logo="https://me.hi.hn/logo/tv/wwe.png" group-title="体育",WWE TV
+#EXTINF:-1 tvg-name="WWE" tvg-logo="https://me.hi.hn/logo/tv/wwe.png" group-title="体育",WWE
 https://iptv.gv.uy/trams/1922/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="W-Sports" tvg-logo="https://me.hi.hn/logo/tv/W-Sports.png" group-title="体育",W-Sports
 https://iptv.gv.uy/trams/2834/playlist.m3u8?token=lanx

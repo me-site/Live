@@ -1427,7 +1427,7 @@ https://iptv.gv.uy/trams/2508/playlist.m3u8?token=lanx
 https://iptv.gv.uy/trams/1694/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="WWE" tvg-logo="https://me.hi.hn/logo/tv/wwe.png" group-title="体育",WWE
 https://iptv.gv.uy/trams/1922/playlist.m3u8?token=lanx
-#EXTINF:-1 tvg-name="W-Sports" tvg-logo="https://me.hi.hn/logo/tv/W-Sports.png" group-title="体育",W-Sports
+#EXTINF:-1 tvg-name="W-Sport" tvg-logo="https://me.hi.hn/logo/tv/W-Sport.png" group-title="体育",W-Sport
 https://iptv.gv.uy/trams/2834/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="Arena Bola" tvg-logo="https://me.hi.hn/logo/tv/ArenaBola1.png" group-title="体育",Arena Bola 1
 https://iptv.gv.uy/trams/2691/playlist.m3u8?token=lanx

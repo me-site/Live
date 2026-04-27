@@ -3,7 +3,7 @@
 #EXTINF:-1 tvg-id="NickJrAsia.sg" tvg-name="Nick Jr." tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/NICKJR..png" group-title="🇭🇰 香港频道",Nick Jr.
 https://iptv.707626.xyz/ch/7378138d7df213f3e16411960dbd2322/master.m3u8
 
-#EXTINF:-1 tvg-id="NickelodeonAsia.sg" tvg-name="Nickelodeon" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/NICKELODEON.png" group-title="🇭🇰 香港频道",Nickelodeon
+#EXTINF:-1 tvg-id="Nickelodeon" tvg-name="Nickelodeon" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/NICKELODEON.png" group-title="🇭🇰 香港频道",Nickelodeon
 https://iptv.707626.xyz/ch/c86c29b2edfc72379273947448977aee/master.m3u8
 
 #EXTINF:-1 tvg-id="Now 爆谷台" tvg-name="Now 爆谷台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/now4.png" group-title="🇭🇰 香港频道",Now 爆谷台
@@ -114,10 +114,10 @@ https://iptv.707626.xyz/ch/6a0c4b49ecf7a9f8c84d23f2d88ed22d/master.m3u8
 #EXTINF:-1 tvg-id="Hub Sports 6" tvg-name="Hub Sports 6 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/226_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",Hub Sports 6 HD
 https://iptv.707626.xyz/ch/734b2377606bd6de69ec71436c224d40/master.m3u8
 
-#EXTINF:-1 tvg-id="329" tvg-name="Hub Sports 7 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/227_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",Hub Sports 7 HD
+#EXTINF:-1 tvg-id="Hub Sports 7" tvg-name="Hub Sports 7 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/227_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",Hub Sports 7 HD
 https://iptv.707626.xyz/ch/9590989cb53f0e47448f53abe5ff4ee8/master.m3u8
 
-#EXTINF:-1 tvg-id="329" tvg-name="Hub Sports 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",Hub Sports 8 HD
+#EXTINF:-1 tvg-id="Hub Sports 8" tvg-name="Hub Sports 8 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/228_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",Hub Sports 8 HD
 https://iptv.707626.xyz/ch/187295c39cc8f118e8c128aa5703e470/master.m3u8
 
 #EXTINF:-1 tvg-id="beIN Sports 2 HD" tvg-name="beIN Sports 2 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/211_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",beIN Sports 2 HD
@@ -129,7 +129,7 @@ https://iptv.707626.xyz/ch/30cc0805acb2aada8da9e2ae3fad5b5c/master.m3u8
 #EXTINF:-1 tvg-id="beINSportsMax2.qa" tvg-name="beIN Sports 4 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/215_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",beIN Sports 4 HD
 https://iptv.707626.xyz/ch/914bdf0fd79c1d2244606b261a3cad5c/master.m3u8
 
-#EXTINF:-1 tvg-id="beINSportsMax3.qa" tvg-name="beIN Sports 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/216_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",beIN Sports 5 HD
+#EXTINF:-1 tvg-id="329" tvg-name="beIN Sports 5 HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/216_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",beIN Sports 5 HD
 https://iptv.707626.xyz/ch/10e13715bab91e96840897bdb33ed0d0/master.m3u8
 
 #EXTINF:-1 tvg-id="beIN Sports HD" tvg-name="beIN Sports HD" tvg-logo="https://tvlogo-282.pages.dev/logos/starhub/213_1920x1080_HTV.png" group-title="🇸🇬 新加坡频道",beIN Sports HD

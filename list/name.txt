@@ -446,8 +446,8 @@ Astro Sports Plus|AstroSportsPlus
 Astro Golf|AstroGolf
 Astro Cricket|ASTROCRICKET
 Astro Grandstand|Astro Grandstand (Back Up 1)|AstroGrandstand
-Astro PL 1|Astro PL 1 (Back Up 1)|Astro PL 1 (Back Up 2)|AstroPL1|Astro Premier League
-Astro PL 2|AstroPL2|Astro Premier League 2|Supersports 2
+Astro Premier League|Astro PL 1|Astro PL 1 (Back Up 1)|Astro PL 1 (Back Up 2)|AstroPL1|Astro Premier League
+Astro Premier League 2|Astro PL 2|AstroPL2|Astro Premier League 2|Supersports 2
 Astro Arena|Arena|AstroArena
 Astro Arena 2|Arena 2|AstroArena2
 Astro Badminton|AstroBadminton
@@ -489,8 +489,6 @@ TLC旅游生活频道|TLC旅游生活频道|TLC旅遊生活頻道|TLC旅遊生�
 
 
 NBA TV|NBATV
-Unbeaten|UNBEATEN
-WWE|WWE TV
 W-Sports|Astro W-Sports
 Arena Bola 1|ArenaBola1|Arena Bola
 Arena Bola 2|ArenaBola2
@@ -500,17 +498,17 @@ TNT Sports 1|TNTSports1|TntSports1|TNT Sports 1 HD|Tnt Sports 1
 TNT Sports 2|TNTSports2|TntSports2|TNT Sports 2 HD
 TNT Sports 3|TNTSports3|TntSports3|TNT Sports 3 HD
 TNT Sports 4|TNTSports4|TntSports4|TNT Sports 4 HD
-Rugby Pass TV|RugbyPassTV
-Skysports Cricket|SkysportsCricket|SkySp Cricket
-Skysports EPL|SkysportsEPL|SkySp PL HD|Sky Sports Premier League
+Rugby Pass TV|RugbyPassTV|beIN SPORTS RUGBY香港
+Skysports Cricket|SkysportsCricket|SkySp Cricket|SkySp Cricket
+Skysports Premier League|Skysports EPL|SkysportsEPL|SkySp PL HD|Sky Sports Premier League|SkySp PL HD
 Skysports F1|SkysportsF1|SkySp F1
-Skysports Golf|SkysportsGolf
-Skysports Main Event|SkysportsMainEvent
+Skysports Golf|SkysportsGolf|SkySp Golf
+Skysports Main Event|SkysportsMainEvent|SkySp Action
 Skysports Mix|SkysportsMix|SkySp Mix HD
-Skysports Racing|SkysportsRacing
+Skysports Racing|SkysportsRacing|SkySp Racing HD
 Eurosport 1|EUROSPORTHD|Eurosport
 Eurosport 2|EUROSPORTHD
-beINSPORTSXTRA|BEINSPORTSXTRA
+beINSPORTSXTRA|BEINSPORTSXTRA|beIN SPORTS 6香港
 beIN Sports 1|BEINSPORTS1|BEINSPORTS1|beinsports1|beIN Sports 1|BEIN SPORTS 1|BEIN SPORTS (HD)|beINSports|Astro Beinsports 1|AstroBeinsports1|beIN Sports HD
 beIN Sports 2|BEINSPORTS2|BEINSPORTS2|beinsports2|beIN Sports 2|BEIN SPORTS 2|BEIN SPORTS 2 (HD)|beINSports2|Astro Beinsports 2|AstroBeinsports2|beIN Sports 2 HD
 beIN Sports 3|BEINSPORTS3|BEINSPORTS3|beinsports3|beIN Sports 3|BEIN SPORTS 3|BEIN SPORTS 3 (HD)|beIN Sports 3|Astro Beinsports 3|AstroBeinsports3|beIN Sports 3 HD

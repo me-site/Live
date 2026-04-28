@@ -8,14 +8,10 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
-HOY TV
-HOY 国际财经
-RTHK 33
 RTHK 34
 RTHK 35
 TVBS综艺台
 tvN
-Astro QJ
 Discovery SCI
 动物星球
 TLC旅游生活频道
@@ -30,16 +26,13 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
-HOY TV
-HOY 国际财经
-RTHK 33
 RTHK 34
 RTHK 35
 TVBS综艺台
 tvN
-Astro QJ
 Discovery SCI
 动物星球
 TLC旅游生活频道
 W-Sports
+SPOTV 2
 beINSPORTSXTRA

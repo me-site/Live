@@ -124,8 +124,6 @@ https://o11.163189.xyz/stream/live/ccm/
 https://o11.163189.xyz/stream/live/tvbxh/
 #EXTINF:-1 tvg-name="千禧經典台" group-title="mytv",千禧经典台
 https://o11.163189.xyz/stream/live/tvbc/
-#EXTINF:-1 tvg-name="KUDADA" group-title="mytv",Astro酷哒哒
-https://o11.163189.xyz/stream/live/test/
 #EXTINF:-1 tvg-name="CCTV1" group-title="mytv",CCTV1
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv1
 #EXTINF:-1 tvg-name="CCTV2" group-title="mytv",CCTV2
@@ -158,6 +156,8 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv14
 #EXTINF:-1 tvg-name="CCTV15" group-title="mytv",CCTV15
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv15
+#EXTINF:-1 tvg-name="CCTV16" group-title="mytv",CCTV16
+https://php.jdshipin.com/TVOD/iptv.php?id=cctv16
 #EXTINF:-1 tvg-name="CCTV17" group-title="mytv",CCTV17
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv17
 #EXTINF:-1 tvg-name="重温经典" group-title="mytv",重温经典

@@ -10,9 +10,7 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-重庆卫视
-陕西卫视
-吉林卫视
+安徽卫视
 黄金华剧台
 myTV SUPER Free
 myTV SUPER 亚洲剧
@@ -42,9 +40,7 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-重庆卫视
-陕西卫视
-吉林卫视
+安徽卫视
 无线财经资讯台
 黄金华剧台
 myTV SUPER Free
@@ -64,5 +60,4 @@ Discovery SCI
 动物星球
 TLC旅游生活频道
 W-Sports
-SPOTV 2
 beINSPORTSXTRA

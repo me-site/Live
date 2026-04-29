@@ -8,6 +8,7 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
+RTHK 33
 RTHK 34
 RTHK 35
 TVBS综艺台
@@ -26,6 +27,7 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
+RTHK 33
 RTHK 34
 RTHK 35
 TVBS综艺台

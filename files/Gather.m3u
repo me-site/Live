@@ -76,9 +76,9 @@ https://iptv.yang-1989.eu.org/phenix/fhzx
 #EXTINF:-1 tvg-id="鳳凰衛視香港台" tvg-name="鳳凰衛視香港台" tvg-logo="https://epg.yang-1989.eu.org/logo/凤凰香港.png" http-user-agent="FengWatch/5.4.14" group-title="•港澳「限制」",鳳凰衛視·香港「回看」
 https://iptv.yang-1989.eu.org/phenix/fhhk
 #EXTINF:-1 tvg-id="商業電台 雷霆881" tvg-name="商業電台 雷霆881" tvg-logo="https://epg.yang-1989.eu.org/logo/雷霆881.png" group-title="•港澳「限制」",雷霆881「电台」
-http://rd.167.de5.net/radio/881hd/chunks.m3u8
+https://cdn-1.ttvb.eu.org/api/881/index.m3u8
 #EXTINF:-1 tvg-id="商業電台 叱咤903" tvg-name="商業電台 叱咤903" tvg-logo="https://epg.yang-1989.eu.org/logo/叱咤903.png" group-title="•港澳「限制」",叱咤903「电台」
-http://rd.167.de5.net/radio/903hd/chunks.m3u8
+https://cdn-1.ttvb.eu.org/api/903/index.m3u8
 #EXTINF:-1 tvg-id="Now新聞台" tvg-name="Now新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now新聞台.png" group-title="•港澳「限制」",Now新聞台
 https://t.ttvb.eu.org/tvb/now-332/index.m3u8
 #EXTINF:-1 tvg-id="Now財經台" tvg-name="Now財經台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now財經台.png" group-title="•港澳「限制」",Now財經台

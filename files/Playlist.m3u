@@ -525,6 +525,9 @@ https://iptv.707626.xyz/ch/ec122a6044dcb179a38479b6752de4c3/master.m3u8
 #EXTINF:-1 tvg-id="東森新聞台" tvg-name="東森新聞台" tvg-logo="https://cdn.jsdelivr.net/gh/wanglindl/TVlogo@main/img/EBC6.png" group-title="🇹🇼 台湾频道",東森新聞台
 https://iptv.707626.xyz/ch/276d9d7351320ebaf09bcd53b121a2b0/master.m3u8
 
+#EXTINF:-1 tvg-id="東森電影台" tvg-name="東森電影台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/EBC3.png" group-title="🇹🇼 台湾频道",東森電影台
+https://iptv.707626.xyz/ch/8dc4bb3175077ae142d16b9ba7e94bbe/master.m3u8
+
 #EXTINF:-1 tvg-id="民視" tvg-name="民視" tvg-logo="https://cdn.jsdelivr.net/gh/wanglindl/TVlogo@main/img/FTV.png" group-title="🇹🇼 台湾频道",民視
 https://iptv.707626.xyz/ch/a00c59dd9be990de5086ceb4cdad6b9e/master.m3u8
 

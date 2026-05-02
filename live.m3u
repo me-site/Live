@@ -26,6 +26,8 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv3
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://me.hi.hn/logo/CCTV3.png" group-title="央视",CCTV3 综艺
 https://iptv.gv.uy/trams/712/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://me.hi.hn/logo/CCTV3.png" group-title="央视",CCTV3 综艺
+https://cdn-2.ttvb.eu.org/api/CCTV3/index.m3u8
+#EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://me.hi.hn/logo/CCTV3.png" group-title="央视",CCTV3 综艺
 https://vip1.484947.xyz/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://me.hi.hn/logo/CCTV4.png" group-title="央视",CCTV4 中文国际
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv4
@@ -129,6 +131,8 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv12
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv12
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://me.hi.hn/logo/CCTV12.png" group-title="央视",CCTV12 社会与法
 https://iptv.gv.uy/trams/722/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://me.hi.hn/logo/CCTV12.png" group-title="央视",CCTV12 社会与法
+https://cdn-2.ttvb.eu.org/api/CCTV12/index.m3u8
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://me.hi.hn/logo/CCTV12.png" group-title="央视",CCTV12 社会与法
 https://vip1.484947.xyz/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
@@ -286,6 +290,8 @@ https://smt2.1678520.xyz/smt3.2.1.php?id=phoenixtv_hd
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://cdn6.163189.xyz/163189/fhzx
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
+https://smt2.1678520.xyz/smt3.2.1.php?id=phoenixinfo_hd
+#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://iptv.gv.uy/trams/61/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://iptv.gv.uy/trams/61/playlist.m3u8?token=lanx
@@ -313,6 +319,10 @@ https://iptv.gv.uy/trams/1615/playlist.m3u8?token=lanx
 https://hls.163189.xyz/163189/a2beac471af96802
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://o11.163189.xyz/stream/tvb/tvbp/
+#EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
+https://smt.1678520.xyz/163189/de659ed6e3ab1e55
+#EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
+https://smt2.1678520.xyz/smt3.2.1.php?id=j2_twn
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://iptv.707626.xyz/ch/c5b298dd4959390d55e5028330511be1/master.m3u8
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
@@ -624,6 +634,8 @@ https://cdn-2.ttvb.eu.org/api/VL-ONTV/index.m3u8
 #EXTINF:-1 tvg-name="纬来日本台" tvg-logo="https://me.hi.hn/logo/纬来日本.png" group-title="台湾",緯來日本台
 https://cdn-2.ttvb.eu.org/api/VL-Japan/index.m3u8
 #EXTINF:-1 tvg-name="纬来电影台" tvg-logo="https://me.hi.hn/logo/纬来电影.png" group-title="台湾",緯來電影台
+https://smt.1678520.xyz/163189/602e9465658d4f8c
+#EXTINF:-1 tvg-name="纬来电影台" tvg-logo="https://me.hi.hn/logo/纬来电影.png" group-title="台湾",緯來電影台
 https://smt2.1678520.xyz/smt3.2.1.php?id=videolandmovie
 #EXTINF:-1 tvg-name="纬来电影台" tvg-logo="https://me.hi.hn/logo/纬来电影.png" group-title="台湾",緯來電影台
 https://iptv.gv.uy/trams/2049/playlist.m3u8?token=lanx
@@ -632,11 +644,15 @@ https://cdn-2.ttvb.eu.org/api/VL-Movies/index.m3u8
 #EXTINF:-1 tvg-name="纬来精采HD" tvg-logo="https://me.hi.hn/logo/纬来精采.png" group-title="台湾",緯來精采台
 https://iptv.gv.uy/trams/2472/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="纬来戏剧台" tvg-logo="https://me.hi.hn/logo/纬来戏剧.png" group-title="台湾",緯來戲劇台
+https://smt.1678520.xyz/163189/ab657380c65c1fd1
+#EXTINF:-1 tvg-name="纬来戏剧台" tvg-logo="https://me.hi.hn/logo/纬来戏剧.png" group-title="台湾",緯來戲劇台
 https://cdn-2.ttvb.eu.org/api/VL-Drama/index.m3u8
 #EXTINF:-1 tvg-name="纬来育乐台" tvg-logo="https://me.hi.hn/logo/纬来育乐.png" group-title="台湾",緯來育樂台
 https://iptv.gv.uy/trams/2470/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="纬来育乐台" tvg-logo="https://me.hi.hn/logo/纬来育乐.png" group-title="台湾",緯來育樂台
 https://cdn-2.ttvb.eu.org/api/VL-E/index.m3u8
+#EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
+https://smt.1678520.xyz/163189/b10b2645c6d9de2b
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
 https://smt2.1678520.xyz/smt3.2.1.php?id=videolandsport
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
@@ -693,6 +709,8 @@ https://cdn12.178.indevs.in/163189/a643783ec587540e
 https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/4gtv/4gtv-4gtv011/index.m3u8
 #EXTINF:-1 tvg-name="影迷数位纪实台" tvg-logo="https://me.hi.hn/logo/影迷数位纪实.png" group-title="台湾",影迷數位紀實台
 https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/4gtv/litv-ftv15/index.m3u8
+#EXTINF:-1 tvg-name="LS Time電影台" tvg-logo="https://me.hi.hn/logo/龙祥时代电影.png" group-title="台湾",龍祥時代電影台
+https://smt.1678520.xyz/163189/6963a2247128286b
 #EXTINF:-1 tvg-name="LS Time電影台" tvg-logo="https://me.hi.hn/logo/龙祥时代电影.png" group-title="台湾",龍祥時代電影台
 https://iptv.707626.xyz/ch/f37266a1a2c1dc8d8989851e93c5b22f/master.m3u8
 #EXTINF:-1 tvg-name="LS Time電影台" tvg-logo="https://me.hi.hn/logo/龙祥时代电影.png" group-title="台湾",龍祥時代電影台

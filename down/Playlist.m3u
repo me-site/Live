@@ -549,6 +549,15 @@ https://iptv.707626.xyz/ch/a61c5f9f78e67dc09393bd3a6138ab34/master.m3u8
 #EXTINF:-1 tvg-id="非凡新聞台" tvg-name="非凡新聞台" tvg-logo="https://cdn.jsdelivr.net/gh/wanglindl/TVlogo@main/img/Unique1.png" group-title="🇹🇼 台湾频道",非凡新聞台
 https://iptv.707626.xyz/ch/a119271e4a5a1ec6522fe55e1e07121f/master.m3u8
 
+#EXTINF:-1 tvg-id="龍華偶像台" tvg-name="龍華偶像台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/LTV6.png" group-title="🇹🇼 台湾频道",龍華偶像台
+https://iptv.707626.xyz/ch/78b19c3262c2b120b085894b89b68fe9/master.m3u8
+
+#EXTINF:-1 tvg-id="龍華卡通台" tvg-name="龍華卡通台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/LTV9.png" group-title="🇹🇼 台湾频道",龍華卡通台
+https://iptv.707626.xyz/ch/d802351ea1782ea01f8bdfcda383c523/master.m3u8
+
+#EXTINF:-1 tvg-id="龍華日韓台" tvg-name="龍華日韓台" tvg-logo="https://raw.githubusercontent.com/wanglindl/TVlogo/main/img/LTV5.png" group-title="🇹🇼 台湾频道",龍華日韓台
+https://iptv.707626.xyz/ch/5d52bcff38c82132ce50d9f10cc7f0a5/master.m3u8
+
 #EXTINF:-1 tvg-id="龍華洋片台" tvg-name="龍華洋片台" tvg-logo="https://cdn.jsdelivr.net/gh/wanglindl/TVlogo@main/img/LTV2.png" group-title="🇹🇼 台湾频道",龍華洋片台
 https://iptv.707626.xyz/ch/4e020d8192f217595d72c81ebcc833b0/master.m3u8
 

@@ -304,6 +304,8 @@ https://cdn6.163189.xyz/163189/wxxwt
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://cdn6.163189.xyz/163189/wxxw
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
+https://smt2.1678520.xyz/smt3.2.1.php?id=inews_twn
+#EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://iptv.707626.xyz/ch/6be62e159f4a470cce4593fc6a780cd5/master.m3u8
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://iptv.gv.uy/trams/1619/playlist.m3u8?token=lanx
@@ -367,6 +369,8 @@ https://iptv.707626.xyz/ch/daeefde9dc8798b55bca340479357ebf/master.m3u8
 https://iptv.707626.xyz/ch/30116d4d4a2bffae6048fcf2b8df944a/master.m3u8
 #EXTINF:-1 tvg-name="NOW新闻台" tvg-logo="https://me.hi.hn/logo/NOW新闻.png" group-title="香港",NOW 新聞台
 https://cdn.163189.xyz/163189/now
+#EXTINF:-1 tvg-name="NOW新闻台" tvg-logo="https://me.hi.hn/logo/NOW新闻.png" group-title="香港",NOW 新聞台
+https://iptv.707626.xyz/ch/7706bf435bcea7af3d335d8482a8a844/master.m3u8
 #EXTINF:-1 tvg-name="NOW爆谷台" tvg-logo="https://me.hi.hn/logo/NOW爆谷.png" group-title="香港",NOW 爆谷台
 https://iptv.707626.xyz/ch/68527adcbbc4f6f0c815314a24d71aaf/master.m3u8
 #EXTINF:-1 tvg-name="HOY77" tvg-logo="https://me.hi.hn/logo/HOY77电视.png" group-title="香港",HOY TV
@@ -377,6 +381,8 @@ https://cdn6.163189.xyz/163189/hoy
 https://cdn.163189.xyz/163189/hoy78
 #EXTINF:-1 tvg-name="HOY78" tvg-logo="https://me.hi.hn/logo/HOY78资讯.png" group-title="香港",HOY资資訊台
 https://smt2.1678520.xyz/smt3.2.1.php?id=hoycaijing_twn
+#EXTINF:-1 tvg-name="HOY78" tvg-logo="https://me.hi.hn/logo/HOY78资讯.png" group-title="香港",HOY资資訊台
+https://iptv.707626.xyz/ch/f87fbca6f344f30626f5913f801b13a2/master.m3u8
 #EXTINF:-1 tvg-name="HOY76" tvg-logo="https://me.hi.hn/logo/HOY76财经.png" group-title="香港",HOY國際財經台
 https://cdn11.163189.xyz/163189/2c86601a7180416e
 #EXTINF:-1 tvg-name="RTHK31" tvg-logo="https://me.hi.hn/logo/RTHK31.png" group-title="香港",RTHK 31
@@ -387,6 +393,8 @@ https://cdn.163189.xyz/163189/rthk32
 https://cdn6.163189.xyz/163189/cctv1
 #EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
 https://cdn10.163189.xyz/stream/163189/viu/
+#EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
+https://smt2.1678520.xyz/smt3.2.1.php?id=viu1_twn
 #EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
 https://iptv.gv.uy/trams/1825/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="ViuTVsix" tvg-logo="https://me.hi.hn/logo/ViuTV6.png" group-title="香港",ViuTVsix

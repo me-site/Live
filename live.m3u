@@ -290,6 +290,8 @@ https://smt2.1678520.xyz/smt3.2.1.php?id=phoenixtv_hd
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://cdn6.163189.xyz/163189/fhzx
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
+https://smt2.1678520.xyz/smt3.2.1.php?id=phoenixinfo_hd
+#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://iptv.gv.uy/trams/61/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
 https://iptv.gv.uy/trams/61/playlist.m3u8?token=lanx
@@ -304,8 +306,6 @@ https://cdn6.163189.xyz/163189/wxxwt
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://cdn6.163189.xyz/163189/wxxw
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
-https://smt2.1678520.xyz/smt3.2.1.php?id=inews_twn
-#EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://iptv.707626.xyz/ch/6be62e159f4a470cce4593fc6a780cd5/master.m3u8
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://iptv.gv.uy/trams/1619/playlist.m3u8?token=lanx
@@ -319,8 +319,6 @@ https://hls.163189.xyz/163189/a2beac471af96802
 https://o11.163189.xyz/stream/tvb/tvbp/
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://smt.1678520.xyz/163189/de659ed6e3ab1e55
-#EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
-https://smt2.1678520.xyz/smt3.2.1.php?id=j2_twn
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://iptv.707626.xyz/ch/c5b298dd4959390d55e5028330511be1/master.m3u8
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
@@ -343,8 +341,6 @@ https://iptv.gv.uy/trams/2831/playlist.m3u8?token=lanx
 https://hls.163189.xyz/163189/d6a00a3009bf239e
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
 https://o11.163189.xyz/stream/tvb/mzt/
-#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
-https://smt2.1678520.xyz/smt3.2.1.php?id=pearl_twn
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
 https://iptv.gv.uy/trams/1617/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="娱乐新闻台" tvg-logo="https://me.hi.hn/logo/TVB娱乐新闻.png" group-title="香港",娛樂新聞台
@@ -726,8 +722,6 @@ https://iptv.gv.uy/trams/2100/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="EYETV戏剧台HD" tvg-logo="https://me.hi.hn/logo/EYE戏剧.png" group-title="台湾",EYETV戏剧台
 https://iptv.gv.uy/trams/2101/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="爱尔达娱乐台" tvg-logo="https://me.hi.hn/logo/爱尔达娱乐.png" group-title="台湾",愛爾達娛樂台
-https://iptv.707626.xyz/ch/ec122a6044dcb179a38479b6752de4c3/master.m3u8
-#EXTINF:-1 tvg-name="爱尔达娱乐台" tvg-logo="https://me.hi.hn/logo/爱尔达娱乐.png" group-title="台湾",愛爾達娛樂台
 https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/4gtv/4gtv-4gtv070/index.m3u8
 #EXTINF:-1 tvg-name="爱尔达影剧台" tvg-logo="https://me.hi.hn/logo/爱尔达影剧.png" group-title="台湾",愛爾達影劇台
 https://iptv.gv.uy/trams/2043/playlist.m3u8?token=lanx
@@ -752,13 +746,21 @@ https://iptv.gv.uy/trams/2087/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="博斯无限台" tvg-logo="https://me.hi.hn/logo/博斯无限.png" group-title="台湾",博斯无限台
 https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/tw/Unlimited-Channel/index.m3u8
 #EXTINF:-1 tvg-name="博斯魅力HD" tvg-logo="https://me.hi.hn/logo/博斯魅力.png" group-title="台湾",博斯魅力台
+https://iptv.707626.xyz/ch/a4e2c7910d0ebe57de4826154d96e8e3/master.m3u8
+#EXTINF:-1 tvg-name="博斯魅力HD" tvg-logo="https://me.hi.hn/logo/博斯魅力.png" group-title="台湾",博斯魅力台
 https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/tw/Trendsport-Channel/index.m3u8
 #EXTINF:-1 tvg-name="博斯运动一台" tvg-logo="https://me.hi.hn/logo/博斯运动1.png" group-title="台湾",博斯運動一台
+https://iptv.707626.xyz/ch/4d3ddf4cd5c66f091c20383002c09f7b/master.m3u8
+#EXTINF:-1 tvg-name="博斯运动一台" tvg-logo="https://me.hi.hn/logo/博斯运动1.png" group-title="台湾",博斯運動一台
 https://iptv.gv.uy/trams/2083/playlist.m3u8?token=lanx
+#EXTINF:-1 tvg-name="博斯运动二台" tvg-logo="https://me.hi.hn/logo/博斯运动2.png" group-title="台湾",博斯運動二台
+https://iptv.707626.xyz/ch/a5b2d92d2f0890c0dcdd3860e3bc47dc/master.m3u8
 #EXTINF:-1 tvg-name="博斯运动二台" tvg-logo="https://me.hi.hn/logo/博斯运动2.png" group-title="台湾",博斯運動二台
 https://iptv.gv.uy/trams/2084/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="博斯运动二台" tvg-logo="https://me.hi.hn/logo/博斯运动2.png" group-title="台湾",博斯運動二台
 https://rtp.cc.cd/play.php?url=https://cdn-2.ttvb.eu.org/tw/Football-Channel/index.m3u8
+#EXTINF:-1 tvg-name="博斯网球台" tvg-logo="https://me.hi.hn/logo/博斯网球.png" group-title="台湾",博斯網球台
+https://iptv.707626.xyz/ch/6e5f448d2a618dfae47872350e301362/master.m3u8
 #EXTINF:-1 tvg-name="博斯网球台" tvg-logo="https://me.hi.hn/logo/博斯网球.png" group-title="台湾",博斯網球台
 https://iptv.gv.uy/trams/2086/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="博斯网球台" tvg-logo="https://me.hi.hn/logo/博斯网球.png" group-title="台湾",博斯網球台

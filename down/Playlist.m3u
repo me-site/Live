@@ -18,6 +18,9 @@ https://iptv.707626.xyz/ch/4213d7c43e94f427ba46fe8d513eeb87/master.m3u8
 #EXTINF:-1 tvg-id="329" tvg-name="Sky Sports F1 4K UK" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/hd/sky-sports-f1-uhd-uk.png?raw=true" group-title="4K超清",Sky Sports F1 4K UK
 https://iptv.707626.xyz/ch/d66d2b3cb0bf682e1198a3d33f9d5ef4/master.m3u8
 
+#EXTINF:-1 tvg-id="" tvg-name="测试" tvg-logo="" group-title="⚽️ 世界杯赛事",测试
+https://iptv.707626.xyz/ch/fe6bf78d1395a5a9ef55beda2626145e/master.m3u8
+
 #EXTINF:-1 tvg-id="USBD25000161U" tvg-name="ACC Digital Network" tvg-logo="https://images.sr.roku.com/idType/roku-trc/context/trc/id/409951b52fa75a1684ba8efe5b724e91/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1657669780439_ACCDigitalNetwork_260x147_centered.png" group-title="体育竞技 - 北美",ACC Digital Network
 https://iptv.707626.xyz/ch/d3f2800feca4e468a70c7464615b1a78/master.m3u8
 

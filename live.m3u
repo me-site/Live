@@ -342,6 +342,8 @@ https://hls.163189.xyz/163189/d6a00a3009bf239e
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
 https://o11.163189.xyz/stream/tvb/mzt/
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
+https://smt2.1678520.xyz/smt3.2.1.php?id=pearl_twn
+#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
 https://iptv.gv.uy/trams/1617/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="娱乐新闻台" tvg-logo="https://me.hi.hn/logo/TVB娱乐新闻.png" group-title="香港",娛樂新聞台
 https://cdn6.163189.xyz/163189/ylxw
@@ -389,8 +391,6 @@ https://cdn.163189.xyz/163189/rthk32
 https://cdn6.163189.xyz/163189/cctv1
 #EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
 https://cdn10.163189.xyz/stream/163189/viu/
-#EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
-https://smt2.1678520.xyz/smt3.2.1.php?id=viu1_twn
 #EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
 https://iptv.gv.uy/trams/1825/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="ViuTVsix" tvg-logo="https://me.hi.hn/logo/ViuTV6.png" group-title="香港",ViuTVsix
@@ -799,8 +799,6 @@ https://smt2.1678520.xyz/smt3.2.1.php?id=Celestial
 https://iptv.gv.uy/trams/2427/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
 https://o11.163189.xyz/stream/live/ccm/
-#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
-https://smt2.1678520.xyz/smt3.2.1.php?id=Celestial2
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
 https://iptv.gv.uy/trams/1587/playlist.m3u8?token=lanx
 #EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5

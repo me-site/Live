@@ -10,9 +10,6 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-广西卫视
-云南卫视
-辽宁卫视
 J2
 黄金华剧台
 myTV SUPER Free
@@ -25,8 +22,6 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
-ViuTV
-ViuTV Six
 中天综合台
 TVBS欢乐台
 TVBS综艺台
@@ -60,13 +55,6 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
-HBO
-HBO强档巨献
-HBO温馨家庭
-HBO原创巨献
-BBC Earth
-BBC Lifestyle
-Discovery
 Discovery Asia
 Discovery SCI
 DMAX
@@ -86,9 +74,6 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-广西卫视
-云南卫视
-辽宁卫视
 无线财经资讯台
 J2
 黄金华剧台
@@ -102,8 +87,6 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
-ViuTV
-ViuTV Six
 中天综合台
 TVBS欢乐台
 TVBS综艺台
@@ -137,13 +120,6 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
-HBO
-HBO强档巨献
-HBO温馨家庭
-HBO原创巨献
-BBC Earth
-BBC Lifestyle
-Discovery
 Discovery Asia
 Discovery SCI
 DMAX

@@ -55,6 +55,8 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+BBC Earth
+BBC Lifestyle
 Discovery Asia
 Discovery SCI
 DMAX
@@ -120,6 +122,8 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+BBC Earth
+BBC Lifestyle
 Discovery Asia
 Discovery SCI
 DMAX
@@ -135,6 +139,5 @@ Rugby Pass TV
 Skysports Golf
 Skysports Main Event
 Skysports Racing
-Eurosport 1
 Eurosport 2
 beINSPORTSXTRA

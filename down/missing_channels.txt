@@ -12,13 +12,10 @@ CCTV-高尔夫网球
 CCTV-央视文化精品
 J2
 黄金华剧台
-PopC
-功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
@@ -26,7 +23,6 @@ NOW Sports 1
 RTHK 34
 RTHK 35
 中天综合台
-非凡新闻台
 TVBS欢乐台
 TVBS综艺台
 台视综合台
@@ -81,13 +77,10 @@ CCTV-央视文化精品
 无线财经资讯台
 J2
 黄金华剧台
-PopC
-功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
@@ -95,7 +88,6 @@ NOW Sports 1
 RTHK 34
 RTHK 35
 中天综合台
-非凡新闻台
 TVBS欢乐台
 TVBS综艺台
 台视综合台
@@ -135,7 +127,6 @@ DMAX
 亚洲美食频道
 HGTV居家乐活频道
 TLC旅游生活频道
-NBA TV
 W-Sports
 Arena Bola 1
 Arena Bola 2
@@ -145,8 +136,3 @@ Skysports Golf
 Skysports Main Event
 Skysports Racing
 beINSPORTSXTRA
-Hub Premier 1
-Hub Premier 2
-Hub Premier 3
-Hub Premier 4
-Hub Premier 7

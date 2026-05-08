@@ -10,7 +10,6 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-安徽卫视
 J2
 黄金华剧台
 myTV SUPER Free
@@ -44,6 +43,7 @@ EYETV戏剧
 爱尔达体育3台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -56,7 +56,6 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
-HBO原创巨献
 Discovery Asia
 Discovery SCI
 DMAX
@@ -76,7 +75,6 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-安徽卫视
 无线财经资讯台
 J2
 黄金华剧台
@@ -111,6 +109,7 @@ EYETV戏剧
 爱尔达体育3台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -123,7 +122,6 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
-HBO原创巨献
 Discovery Asia
 Discovery SCI
 DMAX
@@ -134,7 +132,6 @@ TLC旅游生活频道
 W-Sports
 Arena Bola 1
 Arena Bola 2
-TNT Sports 1
 Rugby Pass TV
 Skysports Golf
 Skysports Main Event

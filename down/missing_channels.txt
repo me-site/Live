@@ -10,7 +10,7 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-贵州卫视
+安徽卫视
 J2
 黄金华剧台
 myTV SUPER Free
@@ -56,6 +56,7 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+HBO原创巨献
 Discovery Asia
 Discovery SCI
 DMAX
@@ -75,7 +76,7 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-贵州卫视
+安徽卫视
 无线财经资讯台
 J2
 黄金华剧台
@@ -122,6 +123,7 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+HBO原创巨献
 Discovery Asia
 Discovery SCI
 DMAX
@@ -137,5 +139,4 @@ Rugby Pass TV
 Skysports Golf
 Skysports Main Event
 Skysports Racing
-Eurosport 2
 beINSPORTSXTRA

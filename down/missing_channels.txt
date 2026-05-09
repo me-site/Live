@@ -55,12 +55,6 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
-HBO
-HBO强档巨献
-HBO温馨家庭
-HBO原创巨献
-BBC Earth
-Discovery
 Discovery Asia
 Discovery SCI
 DMAX
@@ -126,12 +120,6 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
-HBO
-HBO强档巨献
-HBO温馨家庭
-HBO原创巨献
-BBC Earth
-Discovery
 Discovery Asia
 Discovery SCI
 DMAX
@@ -143,9 +131,11 @@ W-Sports
 Arena Bola 1
 Arena Bola 2
 TNT Sports 1
+TNT Sports 4
 Rugby Pass TV
 Skysports Golf
 Skysports Main Event
 Skysports Racing
+Eurosport 1
 Eurosport 2
 beINSPORTSXTRA

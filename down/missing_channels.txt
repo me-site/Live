@@ -19,12 +19,18 @@ NOW华剧台
 NOW 星影台
 NOW 668
 NOW Sports 精选
-NOW Sports 1
 RTHK 34
 RTHK 35
 中天综合台
+中天娱乐台
+中天亚洲台
 TVBS欢乐台
 TVBS综艺台
+东森综合台
+东森洋片台
+东森戏剧台
+东森幼幼台
+台视
 台视综合台
 三立台湾台
 三立戏剧台
@@ -34,7 +40,10 @@ TVBS综艺台
 八大综合台
 八大娱乐台
 八大戏剧台
+纬来综合台
+纬来日本台
 纬来精采台
+纬来育乐台
 EYETV旅游
 EYETV戏剧
 爱尔达影剧台
@@ -55,6 +64,15 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+CINEMAX
+好莱坞电影台
+HBO
+HBO强档巨献
+HBO温馨家庭
+HBO原创巨献
+BBC Earth
+BBC Lifestyle
+Discovery
 Discovery Asia
 Discovery SCI
 DMAX
@@ -84,12 +102,18 @@ NOW华剧台
 NOW 星影台
 NOW 668
 NOW Sports 精选
-NOW Sports 1
 RTHK 34
 RTHK 35
 中天综合台
+中天娱乐台
+中天亚洲台
 TVBS欢乐台
 TVBS综艺台
+东森综合台
+东森洋片台
+东森戏剧台
+东森幼幼台
+台视
 台视综合台
 三立台湾台
 三立戏剧台
@@ -99,7 +123,10 @@ TVBS综艺台
 八大综合台
 八大娱乐台
 八大戏剧台
+纬来综合台
+纬来日本台
 纬来精采台
+纬来育乐台
 EYETV旅游
 EYETV戏剧
 爱尔达影剧台
@@ -120,6 +147,15 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+CINEMAX
+好莱坞电影台
+HBO
+HBO强档巨献
+HBO温馨家庭
+HBO原创巨献
+BBC Earth
+BBC Lifestyle
+Discovery
 Discovery Asia
 Discovery SCI
 DMAX
@@ -130,9 +166,20 @@ TLC旅游生活频道
 W-Sports
 Arena Bola 1
 Arena Bola 2
+SPOTV 1 HD
+SPOTV 2
+TNT Sports 1
+TNT Sports 2
+TNT Sports 3
+TNT Sports 4
 Rugby Pass TV
+Skysports Cricket
+Skysports Premier League
+Skysports F1
 Skysports Golf
 Skysports Main Event
+Skysports Mix
 Skysports Racing
 Eurosport 1
+Eurosport 2
 beINSPORTSXTRA

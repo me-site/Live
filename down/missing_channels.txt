@@ -25,6 +25,7 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+美亚电影台
 中天综合台
 中天娱乐台
 中天亚洲台
@@ -48,11 +49,8 @@ TVBS综艺台
 八大戏剧台
 纬来综合台
 纬来日本台
-纬来电影台
 纬来精采台
-纬来戏剧台
 纬来育乐台
-LSTime 电影台
 EYETV旅游
 EYETV戏剧
 爱尔达影剧台
@@ -62,6 +60,7 @@ EYETV戏剧
 博斯运动一台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -118,6 +117,7 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+美亚电影台
 中天综合台
 中天娱乐台
 中天亚洲台
@@ -141,11 +141,8 @@ TVBS综艺台
 八大戏剧台
 纬来综合台
 纬来日本台
-纬来电影台
 纬来精采台
-纬来戏剧台
 纬来育乐台
-LSTime 电影台
 EYETV旅游
 EYETV戏剧
 爱尔达影剧台
@@ -155,6 +152,7 @@ EYETV戏剧
 博斯运动一台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf

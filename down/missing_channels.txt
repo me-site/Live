@@ -10,24 +10,19 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-北京卫视
-河北卫视
-贵州卫视
-海南卫视
-广西卫视
-四川卫视
-云南卫视
-吉林卫视
-辽宁卫视
 J2
 黄金华剧台
+PopC
+功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
+NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
+NOW Sports 1
 RTHK 34
 RTHK 35
 中天综合台
@@ -53,8 +48,11 @@ TVBS综艺台
 八大戏剧台
 纬来综合台
 纬来日本台
+纬来电影台
 纬来精采台
+纬来戏剧台
 纬来育乐台
+LSTime 电影台
 EYETV旅游
 EYETV戏剧
 爱尔达影剧台
@@ -104,25 +102,20 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-北京卫视
-河北卫视
-贵州卫视
-海南卫视
-广西卫视
-四川卫视
-云南卫视
-吉林卫视
-辽宁卫视
 无线财经资讯台
 J2
 黄金华剧台
+PopC
+功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
+NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
+NOW Sports 1
 RTHK 34
 RTHK 35
 中天综合台
@@ -148,8 +141,11 @@ TVBS综艺台
 八大戏剧台
 纬来综合台
 纬来日本台
+纬来电影台
 纬来精采台
+纬来戏剧台
 纬来育乐台
+LSTime 电影台
 EYETV旅游
 EYETV戏剧
 爱尔达影剧台
@@ -187,6 +183,7 @@ DMAX
 亚洲美食频道
 HGTV居家乐活频道
 TLC旅游生活频道
+NBA TV
 W-Sports
 Arena Bola 1
 Arena Bola 2
@@ -207,3 +204,25 @@ Skysports Racing
 Eurosport 1
 Eurosport 2
 beINSPORTSXTRA
+beIN Sports 1
+beIN Sports 2
+beIN Sports 3
+beIN Sports 4
+beIN Sports 5
+Fight Sports
+Hub Premier 1
+Hub Premier 2
+Hub Premier 3
+Hub Premier 4
+Hub Premier 5
+Hub Premier 6
+Hub Premier 7
+Hub Premier 8
+Hub Sports 1
+Hub Sports 2
+Hub Sports 3
+Hub Sports 4
+Hub Sports 5
+Hub Sports 6
+Hub Sports 7
+Hub Sports 8

@@ -12,55 +12,87 @@ CCTV-高尔夫网球
 CCTV-央视文化精品
 J2
 黄金华剧台
-PopC
-功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
-NOW Sports 1
 RTHK 34
 RTHK 35
-美亚电影台
+中天新闻台
 中天综合台
 中天娱乐台
 中天亚洲台
+寰宇新闻台
+寰宇新闻台湾台
 非凡新闻台
+TVBS
+TVBS新闻台
 TVBS欢乐台
 TVBS综艺台
+TVBS精采台
+东森新闻台
 东森综合台
+东森财经新闻台
 东森电影台
 东森洋片台
 东森戏剧台
 东森幼幼台
+民视
+民视新闻台
+民视综艺台
+民视台湾台
+中视
+中视新闻台
 台视
 台视综合台
+三立综合台
+三立新闻台
 三立台湾台
 三立戏剧台
 三立都会台
+华视
+华视新闻
 公视
 八大第一台
 八大综合台
 八大娱乐台
+八大综艺台
+八大精彩台
 八大戏剧台
 纬来综合台
 纬来日本台
 纬来精采台
 纬来育乐台
+靖天综合台
+靖天资讯台
+靖天国际台
+靖天日本台
+靖天欢乐台
+靖天育乐台
+靖天卡通台
+影迷数位纪实台
 EYETV旅游
 EYETV戏剧
+爱尔达娱乐台
 爱尔达影剧台
 爱尔达体育1台
 爱尔达体育2台
 爱尔达体育3台
+智林体育台
+博斯无限
+博斯魅力台
 博斯运动一台
+博斯运动二台
+博斯网球
+博斯高球 1台
+博斯高球 2台
 tvN
+韩国娱乐台
+时尚运动X
 华丽翡翠台
-Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -79,6 +111,8 @@ HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK X Stream
+ROCK Entertainment
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -86,7 +120,16 @@ Discovery Asia
 Discovery SCI
 DMAX
 动物星球
+CI罪案侦查频道
+视纳华仁纪实频道
+History
 亚洲美食频道
+亚洲旅游HD
+Love Nature
+Lifetime
+Global Trekker
+Magellan TV
+INULTRA
 HGTV居家乐活频道
 TLC旅游生活频道
 CCTV-4K 超高清
@@ -104,55 +147,87 @@ CCTV-央视文化精品
 无线财经资讯台
 J2
 黄金华剧台
-PopC
-功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
-NOW Sports 1
 RTHK 34
 RTHK 35
-美亚电影台
+中天新闻台
 中天综合台
 中天娱乐台
 中天亚洲台
+寰宇新闻台
+寰宇新闻台湾台
 非凡新闻台
+TVBS
+TVBS新闻台
 TVBS欢乐台
 TVBS综艺台
+TVBS精采台
+东森新闻台
 东森综合台
+东森财经新闻台
 东森电影台
 东森洋片台
 东森戏剧台
 东森幼幼台
+民视
+民视新闻台
+民视综艺台
+民视台湾台
+中视
+中视新闻台
 台视
 台视综合台
+三立综合台
+三立新闻台
 三立台湾台
 三立戏剧台
 三立都会台
+华视
+华视新闻
 公视
 八大第一台
 八大综合台
 八大娱乐台
+八大综艺台
+八大精彩台
 八大戏剧台
 纬来综合台
 纬来日本台
 纬来精采台
 纬来育乐台
+靖天综合台
+靖天资讯台
+靖天国际台
+靖天日本台
+靖天欢乐台
+靖天育乐台
+靖天卡通台
+影迷数位纪实台
 EYETV旅游
 EYETV戏剧
+爱尔达娱乐台
 爱尔达影剧台
 爱尔达体育1台
 爱尔达体育2台
 爱尔达体育3台
+智林体育台
+博斯无限
+博斯魅力台
 博斯运动一台
+博斯运动二台
+博斯网球
+博斯高球 1台
+博斯高球 2台
 tvN
+韩国娱乐台
+时尚运动X
 华丽翡翠台
-Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -171,6 +246,8 @@ HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK X Stream
+ROCK Entertainment
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -178,10 +255,18 @@ Discovery Asia
 Discovery SCI
 DMAX
 动物星球
+CI罪案侦查频道
+视纳华仁纪实频道
+History
 亚洲美食频道
+亚洲旅游HD
+Love Nature
+Lifetime
+Global Trekker
+Magellan TV
+INULTRA
 HGTV居家乐活频道
 TLC旅游生活频道
-NBA TV
 W-Sports
 Arena Bola 1
 Arena Bola 2
@@ -202,25 +287,3 @@ Skysports Racing
 Eurosport 1
 Eurosport 2
 beINSPORTSXTRA
-beIN Sports 1
-beIN Sports 2
-beIN Sports 3
-beIN Sports 4
-beIN Sports 5
-Fight Sports
-Hub Premier 1
-Hub Premier 2
-Hub Premier 3
-Hub Premier 4
-Hub Premier 5
-Hub Premier 6
-Hub Premier 7
-Hub Premier 8
-Hub Sports 1
-Hub Sports 2
-Hub Sports 3
-Hub Sports 4
-Hub Sports 5
-Hub Sports 6
-Hub Sports 7
-Hub Sports 8

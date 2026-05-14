@@ -44,6 +44,7 @@ EYETV戏剧
 爱尔达体育3台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -117,6 +118,7 @@ EYETV戏剧
 爱尔达体育3台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf

@@ -62,7 +62,6 @@ BBC Lifestyle
 Discovery
 Discovery Asia
 Discovery SCI
-DMAX
 动物星球
 亚洲美食频道
 TLC旅游生活频道
@@ -131,7 +130,6 @@ BBC Lifestyle
 Discovery
 Discovery Asia
 Discovery SCI
-DMAX
 动物星球
 亚洲美食频道
 TLC旅游生活频道
@@ -152,5 +150,6 @@ Skysports Golf
 Skysports Main Event
 Skysports Mix
 Skysports Racing
+Eurosport 1
+Eurosport 2
 beINSPORTSXTRA
-beIN Sports 1

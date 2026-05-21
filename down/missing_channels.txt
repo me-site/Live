@@ -32,6 +32,7 @@ NOW 星影台
 NOW 668
 RTHK 34
 RTHK 35
+ViuTV
 中天综合台
 非凡新闻台
 TVBS欢乐台
@@ -112,6 +113,7 @@ NOW 星影台
 NOW 668
 RTHK 34
 RTHK 35
+ViuTV
 中天综合台
 非凡新闻台
 TVBS欢乐台

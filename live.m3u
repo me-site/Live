@@ -210,8 +210,6 @@ https://o11.163189.xyz/stream/tvb/tvbp/
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://smt.1678520.xyz/163189/de659ed6e3ab1e55
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
-https://smt2.1678520.xyz/smt3.2.1.php?id=j2_twn
-#EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://iptv.707626.xyz/ch/c5b298dd4959390d55e5028330511be1/master.m3u8
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
 https://cdn6.163189.xyz/163189/fct
@@ -221,8 +219,6 @@ https://hls.163189.xyz/163189/0205c25f6b2ce920
 https://o11.163189.xyz/stream/tvb/fct/
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
 https://o11.163189.xyz/stream/tvb/fct4k/
-#EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
-https://smt2.1678520.xyz/smt3.2.1.php?id=jade_twn
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
 https://iptv.707626.xyz/ch/dcd9af2a8c211c18caf57e82f18e78a9/master.m3u8
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
@@ -275,6 +271,8 @@ https://cdn.163189.xyz/163189/rthk31
 https://cdn.163189.xyz/163189/rthk32
 #EXTINF:-1 tvg-name="RTHK33" tvg-logo="https://me.hi.hn/logo/RTHK33.png" group-title="香港",RTHK 33
 https://cdn6.163189.xyz/163189/cctv1
+#EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
+https://smt2.1678520.xyz/smt3.2.1.php?id=viu1_twn
 #EXTINF:-1 tvg-name="ViuTVsix" tvg-logo="https://me.hi.hn/logo/ViuTV6.png" group-title="香港",ViuTVsix
 https://smt2.1678520.xyz/smt3.2.1.php?id=viusix_twn
 #EXTINF:-1 tvg-name="美亚电影台" tvg-logo="https://me.hi.hn/logo/美亚电影.png" group-title="香港",美亞電影台
@@ -562,6 +560,8 @@ https://cdn6.163189.xyz/163189/chu
 #EXTINF:-1 tvg-name="Astro AOD" tvg-logo="https://me.hi.hn/logo/tv/AstroAOD.png" group-title="新马",Astro AOD
 https://o11.163189.xyz/stream/live/aod/
 #EXTINF:-1 tvg-name="Astro AOD" tvg-logo="https://me.hi.hn/logo/tv/AstroAOD.png" group-title="新马",Astro AOD
+https://smt2.1678520.xyz/smt3.2.1.php?id=Aodhd
+#EXTINF:-1 tvg-name="Astro AOD" tvg-logo="https://me.hi.hn/logo/tv/AstroAOD.png" group-title="新马",Astro AOD
 https://iptv.707626.xyz/ch/6dfc26d69ecab6d1f3fc82d45aca92d1/master.m3u8
 #EXTINF:-1 tvg-name="Astro AEC" tvg-logo="https://me.hi.hn/logo/tv/AstroAEC.png" group-title="新马",Astro AEC
 https://o11.163189.xyz/stream/live/aec/
@@ -573,8 +573,6 @@ https://iptv.707626.xyz/ch/97cc1b4759476645742134512ae9b5fa/master.m3u8
 https://smt2.1678520.xyz/smt3.2.1.php?id=Quanjia
 #EXTINF:-1 tvg-name="Astro QJ" tvg-logo="https://me.hi.hn/logo/tv/AstroQJ.png" group-title="新马",Astro QJ
 https://iptv.707626.xyz/ch/735bf28dff18965ae80c93160e830e3a/master.m3u8
-#EXTINF:-1 tvg-name="Astro Hua Hee Dai" tvg-logo="https://me.hi.hn/logo/tv/Astro欢喜.png" group-title="新马",Astro 欢喜台
-https://o11.163189.xyz/stream/live/hxt/
 #EXTINF:-1 tvg-name="Astro Hua Hee Dai" tvg-logo="https://me.hi.hn/logo/tv/Astro欢喜.png" group-title="新马",Astro 欢喜台
 https://smt2.1678520.xyz/smt3.2.1.php?id=Huahee
 #EXTINF:-1 tvg-name="Astro Hua Hee Dai" tvg-logo="https://me.hi.hn/logo/tv/Astro欢喜.png" group-title="新马",Astro 欢喜台

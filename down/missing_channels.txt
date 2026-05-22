@@ -28,10 +28,10 @@ myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 星影台
 NOW 668
 RTHK 34
 RTHK 35
+美亚电影台
 中天综合台
 非凡新闻台
 TVBS欢乐台
@@ -74,6 +74,7 @@ BBC Lifestyle
 Discovery
 Discovery Asia
 Discovery SCI
+DMAX
 动物星球
 亚洲美食频道
 TLC旅游生活频道
@@ -108,10 +109,10 @@ myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
-NOW 星影台
 NOW 668
 RTHK 34
 RTHK 35
+美亚电影台
 中天综合台
 非凡新闻台
 TVBS欢乐台
@@ -154,6 +155,7 @@ BBC Lifestyle
 Discovery
 Discovery Asia
 Discovery SCI
+DMAX
 动物星球
 亚洲美食频道
 TLC旅游生活频道
@@ -177,3 +179,4 @@ Skysports Racing
 Eurosport 1
 Eurosport 2
 beINSPORTSXTRA
+beIN Sports 1

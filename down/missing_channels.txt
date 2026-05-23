@@ -12,13 +12,20 @@ CCTV-高尔夫网球
 CCTV-央视文化精品
 J2
 黄金华剧台
+PopC
+功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
+NOW 爆谷台
+NOW 星影台
 NOW 668
+NOW Sports 精选
+NOW Sports 1
 RTHK 34
 RTHK 35
+美亚电影台
 中天综合台
 非凡新闻台
 TVBS欢乐台
@@ -42,6 +49,7 @@ EYETV戏剧
 爱尔达体育3台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -54,9 +62,11 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+BBC Earth
 BBC Lifestyle
 Discovery
 Discovery Asia
@@ -64,6 +74,7 @@ Discovery SCI
 DMAX
 动物星球
 亚洲美食频道
+HGTV居家乐活频道
 TLC旅游生活频道
 CCTV-4K 超高清
 CCTV-风云足球
@@ -80,13 +91,20 @@ CCTV-央视文化精品
 无线财经资讯台
 J2
 黄金华剧台
+PopC
+功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
 NOW华剧台
+NOW 爆谷台
+NOW 星影台
 NOW 668
+NOW Sports 精选
+NOW Sports 1
 RTHK 34
 RTHK 35
+美亚电影台
 中天综合台
 非凡新闻台
 TVBS欢乐台
@@ -110,6 +128,7 @@ EYETV戏剧
 爱尔达体育3台
 tvN
 华丽翡翠台
+Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -122,9 +141,11 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+BBC Earth
 BBC Lifestyle
 Discovery
 Discovery Asia
@@ -132,7 +153,9 @@ Discovery SCI
 DMAX
 动物星球
 亚洲美食频道
+HGTV居家乐活频道
 TLC旅游生活频道
+NBA TV
 W-Sports
 Arena Bola 1
 Arena Bola 2
@@ -154,3 +177,24 @@ Eurosport 1
 Eurosport 2
 beINSPORTSXTRA
 beIN Sports 1
+beIN Sports 2
+beIN Sports 3
+beIN Sports 4
+beIN Sports 5
+Fight Sports
+Hub Premier 1
+Hub Premier 2
+Hub Premier 3
+Hub Premier 4
+Hub Premier 5
+Hub Premier 6
+Hub Premier 7
+Hub Premier 8
+Hub Sports 1
+Hub Sports 2
+Hub Sports 3
+Hub Sports 4
+Hub Sports 5
+Hub Sports 6
+Hub Sports 7
+Hub Sports 8

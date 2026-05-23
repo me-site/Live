@@ -7,7 +7,7 @@ https://cdn6.163189.xyz/163189/fhzw
 #EXTINF:-1 tvg-name="RTHK33" group-title="mytv",CCTV1港澳版
 https://cdn6.163189.xyz/163189/cctv1
 #EXTINF:-1 tvg-name="CCTV13" group-title="mytv",CCTV13
-https://cdn3.163189.xyz/163189/cctv13
+https://cdn10.163189.xyz/163189/f2c81af1-6d81-42f9-a95e-f87861bf64db/
 #EXTINF:-1 tvg-name="TVB Plus" group-title="mytv",TVB Plus(字幕)
 https://o11.163189.xyz/stream/tvb/tvbp/
 #EXTINF:-1 tvg-name="HOY77" group-title="mytv",HOY TV
@@ -93,7 +93,7 @@ https://cdn6.163189.xyz/163189/wxxwt
 #EXTINF:-1 tvg-name="TVB星河" group-title="mytv",TVB星河
 https://cdn6.163189.xyz/163189/tvbxh
 #EXTINF:-1 tvg-name="海峡卫视" group-title="mytv",海峡卫视
-https://cdn3.163189.xyz/163189/hxws
+https://cdn10.163189.xyz/163189/37578799-59eb-4cfb-842c-38642e593009/
 #EXTINF:-1 tvg-name="TVB星河" group-title="mytv",TVB星河
 https://cdn10.163189.xyz/163189/182d1bd5-0a1a-4db9-bc5b-8a8a74f3869a/
 #EXTINF:-1 tvg-name="天映新加坡" group-title="mytv",天映新加坡
@@ -162,10 +162,6 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv16
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv17
 #EXTINF:-1 tvg-name="重温经典" group-title="mytv",重温经典
 https://cdn13.178.indevs.in/163189/21d79187db6e9793
-#EXTINF:-1 tvg-name="CHC家庭影院" group-title="mytv",CHC家庭影院
-https://cdn13.178.indevs.in/163189/adafdc2e9ef83fe0
-#EXTINF:-1 tvg-name="CHC动作电影" group-title="mytv",CHC动作电影
-https://cdn13.178.indevs.in/163189/32a810b251717bd0
 #EXTINF:-1 tvg-name="广州综合" group-title="mytv",广州综合
 https://cdn13.178.indevs.in/163189/b13471c5de99d1c7
 #EXTINF:-1 tvg-name="广州新闻" group-title="mytv",广州新闻
@@ -230,53 +226,3 @@ https://smt.1678520.xyz/163189/a2c09ea65fb10aa2
 https://smt.1678520.xyz/163189/f60cd3f14b06dabc
 #EXTINF:-1 tvg-name="东森洋片" group-title="mytv",东森洋片
 https://smt.1678520.xyz/163189/cd69d6ff4e8217c7
-#EXTINF:-1 tvg-name="翡翠台" group-title="mytv",翡翠台
-https://smt2.1678520.xyz/smt3.2.1.php?id=jade_twn
-#EXTINF:-1 tvg-name="TVB Jade HD" group-title="mytv",华丽翡翠台
-https://smt2.1678520.xyz/smt3.2.1.php?id=Tvbjade
-#EXTINF:-1 tvg-name="明珠台" group-title="mytv",明珠台
-https://smt2.1678520.xyz/smt3.2.1.php?id=pearl_twn
-#EXTINF:-1 tvg-name="无线新闻" group-title="mytv",无线新闻台
-https://smt2.1678520.xyz/smt3.2.1.php?id=inews_twn
-#EXTINF:-1 tvg-name="TVB Plus" group-title="mytv",TVB PLUS
-https://smt2.1678520.xyz/smt3.2.1.php?id=j2_twn
-#EXTINF:-1 tvg-name="TVB星河" group-title="mytv",TVB星河
-https://smt2.1678520.xyz/smt3.2.1.php?id=Xinhe
-#EXTINF:-1 tvg-name="千禧經典台" group-title="mytv",千禧经典台
-https://smt2.1678520.xyz/smt3.2.1.php?id=Tvbclassic
-#EXTINF:-1 tvg-name="娛樂新聞台" group-title="mytv",TVB娱乐新闻台
-https://smt2.1678520.xyz/smt3.2.1.php?id=Tvbentertainment
-#EXTINF:-1 tvg-name="ViuTV" group-title="mytv",ViuTV
-https://smt2.1678520.xyz/smt3.2.1.php?id=viu1_twn
-#EXTINF:-1 tvg-name="ViuTVsix" group-title="mytv",ViuTVSix
-https://smt2.1678520.xyz/smt3.2.1.php?id=viusix_twn
-#EXTINF:-1 tvg-name="HOY78" group-title="mytv",HOY资讯台
-https://smt2.1678520.xyz/smt3.2.1.php?id=hoycaijing_twn
-#EXTINF:-1 tvg-name="凤凰中文" group-title="mytv",凤凰中文
-https://smt2.1678520.xyz/smt3.2.1.php?id=phoenixtv_hd
-#EXTINF:-1 tvg-name="凤凰资讯" group-title="mytv",凤凰资讯
-https://smt2.1678520.xyz/smt3.2.1.php?id=phoenixinfo_hd
-#EXTINF:-1 tvg-name="凤凰香港" group-title="mytv",凤凰香港
-https://smt2.1678520.xyz/smt3.2.1.php?id=hkphoenix_twn
-#EXTINF:-1 tvg-name="美亞電影台" group-title="mytv",美亚电影台
-https://smt2.1678520.xyz/smt3.2.1.php?id=meiyamovie_twn
-#EXTINF:-1 tvg-name="天映马来西亚" group-title="mytv",天映频道
-https://smt2.1678520.xyz/smt3.2.1.php?id=Celestial
-#EXTINF:-1 tvg-name="天映经典" group-title="mytv",天映经典
-https://smt2.1678520.xyz/smt3.2.1.php?id=Celestial2
-#EXTINF:-1 tvg-name="AOD" group-title="mytv",Astro AOD
-https://smt2.1678520.xyz/smt3.2.1.php?id=Aodhd
-#EXTINF:-1 tvg-name="AEC" group-title="mytv",Astro AEC
-https://smt2.1678520.xyz/smt3.2.1.php?id=AEC
-#EXTINF:-1 tvg-name="iQIYI" group-title="mytv",爱奇艺
-https://smt2.1678520.xyz/smt3.2.1.php?id=Qiyi
-#EXTINF:-1 tvg-name="QJ" group-title="mytv",Astro QJ
-https://smt2.1678520.xyz/smt3.2.1.php?id=Quanjia
-#EXTINF:-1 tvg-name="HUA HEE DAI" group-title="mytv",Astro欢喜台
-https://smt2.1678520.xyz/smt3.2.1.php?id=Huahee
-#EXTINF:-1 tvg-name="八度空间" group-title="mytv",八度空间
-https://smt2.1678520.xyz/smt3.2.1.php?id=TV8
-#EXTINF:-1 tvg-name="纬来电影台" group-title="mytv",纬来电影
-https://smt2.1678520.xyz/smt3.2.1.php?id=videolandmovie
-#EXTINF:-1 tvg-name="纬来体育台" group-title="mytv",纬来体育
-https://smt2.1678520.xyz/smt3.2.1.php?id=videolandsport

@@ -10,15 +10,6 @@ https://epg.yang-1989.eu.org/v/301.mp4
 #EXTINF:-1 tvg-id="免费订阅" tvg-name="免费订阅" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",建議使用：請保持 个人觀看 請勿頻繁切換
 https://epg.yang-1989.eu.org/v/301.mp4
 
-#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV5.png" group-title="•央視「投屏」",CCTV 5 體育
-http://49.232.195.88:55667/cctv5.m3u8
-#EXTINF:-1 tvg-id="CCTV16" tvg-name="CCTV16" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV16.png" group-title="•央視「投屏」",CCTV 16 奧林匹克
-http://49.232.195.88:55667/cctv164k.m3u8
-#EXTINF:-1 tvg-id="CCTV4K" tvg-name="CCTV4K" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV4K.png" group-title="•央視「投屏」",CCTV 4K 超高清
-http://49.232.195.88:55667/cctv4k.m3u8
-#EXTINF:-1 tvg-id="CCTV8K" tvg-name="CCTV8K" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV8K.png" group-title="•央視「投屏」",CCTV 8K 超高清
-http://49.232.195.88:55667/cctv8k.m3u8
-
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV1.png" group-title="•央視「Relay」",CCTV 1 綜合「Relay」
 https://cdn.19891230.eu.org/api/CCTV1/index.m3u8
 #EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV2.png" group-title="•央視「Relay」",CCTV 2 財經「Relay」

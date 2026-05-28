@@ -106,8 +106,6 @@ https://vip1.484947.xyz/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
-https://cdn10.163189.xyz/163189/f2c81af1-6d81-42f9-a95e-f87861bf64db/
-#EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://cdn.19891230.eu.org/api/CCTV13/index.m3u8
@@ -319,12 +317,8 @@ https://cdn.19891230.eu.org/4gtv/4gtv-live207/index.m3u8
 https://cdn.19891230.eu.org/4gtv/4gtv-live089/index.m3u8
 #EXTINF:-1 tvg-name="华视" tvg-logo="https://me.hi.hn/logo/华视.png" group-title="台湾",華視 HD
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv041/index.m3u8
-#EXTINF:-1 tvg-name="华视新闻" tvg-logo="https://me.hi.hn/logo/华视新闻.png" group-title="台湾",華視新聞
-https://cdn.19891230.eu.org/4gtv/4gtv-4gtv052/index.m3u8
 #EXTINF:-1 tvg-name="公视戏剧" tvg-logo="https://me.hi.hn/logo/公视戏剧.png" group-title="台湾",公視戲劇
 https://cdn12.178.indevs.in/163189/2973b910e7719c08
-#EXTINF:-1 tvg-name="公视戏剧" tvg-logo="https://me.hi.hn/logo/公视戏剧.png" group-title="台湾",公視戲劇
-https://cdn.19891230.eu.org/4gtv/4gtv-4gtv042/index.m3u8
 #EXTINF:-1 tvg-name="八大精彩台" tvg-logo="https://me.hi.hn/logo/八大精彩.png" group-title="台湾",八大精彩台
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv034/index.m3u8
 #EXTINF:-1 tvg-name="八大综艺台" tvg-logo="https://me.hi.hn/logo/八大综艺.png" group-title="台湾",八大綜藝台
@@ -351,8 +345,6 @@ https://cdn.19891230.eu.org/api/VL-E/index.m3u8
 https://smt.1678520.xyz/163189/b10b2645c6d9de2b
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
 https://cdn.19891230.eu.org/api/VL-Sports/index.m3u8
-#EXTINF:-1 tvg-name="靖天综合台" tvg-logo="https://me.hi.hn/logo/靖天综合.png" group-title="台湾",靖天綜合台
-https://cdn.19891230.eu.org/4gtv/4gtv-4gtv046/index.m3u8
 #EXTINF:-1 tvg-name="靖天资讯台" tvg-logo="https://me.hi.hn/logo/靖天资讯.png" group-title="台湾",靖天資訊台
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv065/index.m3u8
 #EXTINF:-1 tvg-name="KLT-靖天国际台" tvg-logo="https://me.hi.hn/logo/靖天国际.png" group-title="台湾",靖天國際台
@@ -405,8 +397,6 @@ https://cdn.19891230.eu.org/4gtv/4gtv-4gtv101/index.m3u8
 https://cdn.19891230.eu.org/4gtv/litv-xinchuang10/index.m3u8
 #EXTINF:-1 tvg-name="博斯魅力HD" tvg-logo="https://me.hi.hn/logo/博斯魅力.png" group-title="台湾",博斯魅力台
 https://cdn.19891230.eu.org/4gtv/litv-xinchuang04/index.m3u8
-#EXTINF:-1 tvg-name="博斯运动一台" tvg-logo="https://me.hi.hn/logo/博斯运动1.png" group-title="台湾",博斯運動一台
-https://cdn.19891230.eu.org/4gtv/litv-xinchuang07/index.m3u8
 #EXTINF:-1 tvg-name="博斯运动二台" tvg-logo="https://me.hi.hn/logo/博斯运动2.png" group-title="台湾",博斯運動二台
 https://cdn.19891230.eu.org/4gtv/litv-xinchuang08/index.m3u8
 #EXTINF:-1 tvg-name="博斯网球台" tvg-logo="https://me.hi.hn/logo/博斯网球.png" group-title="台湾",博斯網球台

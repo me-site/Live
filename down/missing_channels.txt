@@ -25,6 +25,7 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+ViuTV Six
 美亚电影台
 中天综合台
 寰宇财经台
@@ -111,6 +112,7 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+ViuTV Six
 美亚电影台
 中天综合台
 寰宇财经台

@@ -44,6 +44,8 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv6
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://me.hi.hn/logo/CCTV6.png" group-title="央视",CCTV6 电影
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv6
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://me.hi.hn/logo/CCTV6.png" group-title="央视",CCTV6 电影
+https://cdn.19891230.eu.org/api/CCTV6/index.m3u8
+#EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://me.hi.hn/logo/CCTV6.png" group-title="央视",CCTV6 电影
 https://vip1.484947.xyz/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://me.hi.hn/logo/CCTV7.png" group-title="央视",CCTV7 国防军事
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv7
@@ -103,6 +105,8 @@ https://cdn.19891230.eu.org/api/CCTV12/index.m3u8
 https://vip1.484947.xyz/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
+#EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
+https://cdn10.163189.xyz/163189/cctv13/
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
@@ -345,6 +349,8 @@ https://cdn.19891230.eu.org/api/VL-Drama/index.m3u8
 https://cdn.19891230.eu.org/api/VL-E/index.m3u8
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
 https://smt.1678520.xyz/163189/wlty
+#EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
+https://cdn.19891230.eu.org/api/VL-Sports/index.m3u8
 #EXTINF:-1 tvg-name="靖天综合台" tvg-logo="https://me.hi.hn/logo/靖天综合.png" group-title="台湾",靖天綜合台
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv046/index.m3u8
 #EXTINF:-1 tvg-name="靖天资讯台" tvg-logo="https://me.hi.hn/logo/靖天资讯.png" group-title="台湾",靖天資訊台
@@ -421,8 +427,6 @@ https://cdn6.163189.xyz/163189/tvbxh
 https://o11.163189.xyz/stream/live/tvbxh/
 #EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
 https://o11.163189.xyz/stream/live/typd/
-#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
-https://cdn10.163189.xyz/163189/ccm/
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
 https://o11.163189.xyz/stream/live/ccm/
 #EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5

@@ -81,6 +81,14 @@ https://cdn.19891230.eu.org/hk-1/881/index.m3u8
 https://cdn.19891230.eu.org/hk-1/903/index.m3u8
 #EXTINF:-1 tvg-id="商業電台 AM864" tvg-name="商業電台 AM864" tvg-logo="https://epg.yang-1989.eu.org/logo/AM864.png" group-title="•港澳「限制」",AM864「电台」
 https://cdn.19891230.eu.org/hk-1/864/index.m3u8
+
+#EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://epg.yang-1989.eu.org/logo/翡翠台.png" group-title="•港澳「限制」",翡翠台「字幕」
+https://test.19891230.eu.org/hk/J/index.m3u8
+#EXTINF:-1 tvg-id="TVB Plus" tvg-name="TVB Plus" tvg-logo="https://epg.yang-1989.eu.org/logo/TVBPlus.png" group-title="•港澳「限制」",TVB Plus「字幕」
+https://test.19891230.eu.org/hk/TVB-Plus/index.m3u8
+#EXTINF:-1 tvg-id="無綫新聞台" tvg-name="無綫新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/無綫新聞台.png" group-title="•港澳「限制」",無綫新聞台
+https://test.19891230.eu.org/hk/C/index.m3u8
+
 #EXTINF:-1 tvg-id="Now直播台" tvg-name="Now直播台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now直播台.png" group-title="•港澳「限制」",Now直播台
 https://cdn.19891230.eu.org/hk/now-331/index.m3u8
 #EXTINF:-1 tvg-id="Now新聞台" tvg-name="Now新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now新聞台.png" group-title="•港澳「限制」",Now新聞台
@@ -93,19 +101,14 @@ https://cdn.19891230.eu.org/hk/now-630/index.m3u8
 https://cdn.19891230.eu.org/hk/ViuTV/index.m3u8
 #EXTINF:-1 tvg-id="ViuTVsix" tvg-name="ViuTVsix" tvg-logo="https://epg.yang-1989.eu.org/logo/ViuTVsix.png" group-title="•港澳「限制」",ViuTVsix
 https://cdn.19891230.eu.org/hk/ViuTVsix/index.m3u8
-#EXTINF:-1 tvg-id="HOY 國際財經台" tvg-name="HOY 國際財經台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY.png" group-title="•港澳「限制」",HOY 國際財經台
-https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8
-#EXTINF:-1 tvg-id="HOY TV" tvg-name="HOY TV" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY.png" group-title="•港澳「限制」",HOY TV
-https://hoytv-live-stream.hoy.tv/ch77/index-fhd.m3u8
-#EXTINF:-1 tvg-id="HOY 資訊台" tvg-name="HOY 資訊台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY.png" group-title="•港澳「限制」",HOY 資訊台
-https://hoytv-live-stream.hoy.tv/ch78/index-fhd.m3u8
-#EXTINF:-1 tvg-id="HOY生活台" tvg-name="HOY生活台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY.png" group-title="•港澳「限制」",HOY 生活台
-https://edge.media.seaovers.live/856b503e276cc4912b6c0b42cb01878d/baselive/v2/6TV1VW9W.m3u8
-#EXTINF:-1 tvg-id="HOY劇集台" tvg-name="HOY劇集台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY.png" group-title="•港澳「限制」",HOY 劇集台
-https://edge.media.seaovers.live/856b503e276cc49100c1dde528ee8cde/baselive/v2/DPL3J6FY.m3u8
-#EXTINF:-1 tvg-id="HOY怪談台" tvg-name="HOY怪談台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY.png" group-title="•港澳「限制」",HOY 怪談台
-https://edge.media.seaovers.live/856b503e276cc49197dd54aa8a0c740e/baselive/v2/TPLUZIFF.m3u8
-#EXTINF:-1 tvg-id="HOY體育台" tvg-name="HOY體育台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY.png" group-title="•港澳「限制」",HOY 體育台
+
+#EXTINF:-1 tvg-id="HOY 國際財經台" tvg-name="HOY 國際財經台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY76.png" group-title="•港澳「限制」",HOY 國際財經台
+https://test.19891230.eu.org/hkg/hoy76/index.m3u8
+#EXTINF:-1 tvg-id="HOY TV" tvg-name="HOY TV" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY77.png" group-title="•港澳「限制」",HOY TV
+https://test.19891230.eu.org/hkg/hoy77/index.m3u8
+#EXTINF:-1 tvg-id="HOY 資訊台" tvg-name="HOY 資訊台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY78.png" group-title="•港澳「限制」",HOY 資訊台
+https://test.19891230.eu.org/hkg/hoy78/index.m3u8
+
 https://edge.media.seaovers.live/856b503e276cc4917dc388396c23668b/baselive/v2/J0LMZVOV.m3u8
 #EXTINF:-1 tvg-id="RTHK31" tvg-name="RTHK31" tvg-logo="https://epg.yang-1989.eu.org/logo/RTHK31.png" group-title="•港澳「限制」",RTHK 31
 https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8

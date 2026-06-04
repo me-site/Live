@@ -245,6 +245,8 @@ https://cdn.19891230.eu.org/4gtv/4gtv-live059/index.m3u8
 https://cdn.yang-1989.eu.org/ofiii/daystar
 #EXTINF:-1 tvg-id="亞洲旅遊台" tvg-name="亞洲旅遊台" tvg-logo="https://epg.yang-1989.eu.org/logo/亞洲旅遊台.png" group-title="•台湾「限制」",亞洲旅遊「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv076/index.m3u8
+#EXTINF:-1 tvg-id="Getwin Sports運動台" tvg-name="Getwin Sports運動台" tvg-logo="https://epg.yang-1989.eu.org/logo/Getwin-Sports運動台.png" group-title="•台湾「限制」",Getwin Sports運動「4gTV」
+https://cdn.19891230.eu.org/4gtv/4gtv-4gtv035/index.m3u8
 #EXTINF:-1 tvg-id="時尚運動X" tvg-name="時尚運動X" tvg-logo="https://epg.yang-1989.eu.org/logo/時尚運動X.png" group-title="•台湾「限制」",時尚運動X「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv014/index.m3u8
 #EXTINF:-1 tvg-id="智林體育台" tvg-name="智林體育台" tvg-logo="https://epg.yang-1989.eu.org/logo/智林體育台.png" group-title="•台湾「限制」",智林體育「4gTV」
@@ -339,7 +341,7 @@ https://cdn.19891230.eu.org/4gtv/4gtv-live121/index.m3u8
 https://cdn.19891230.eu.org/4gtv/4gtv-live122/index.m3u8
 #EXTINF:-1 tvg-id="幸福空間居家台" tvg-name="幸福空間居家台" tvg-logo="https://epg.yang-1989.eu.org/logo/幸福空間居家台.png" group-title="•台湾「限制」",幸福空間居家「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv064/index.m3u8
-#EXTINF:-1 tvg-id="車迷TV" tvg-name="車迷TV" tvg-logo="https://epg.yang-1989.eu.org/logo/車迷TV.png" group-title="•台湾「限制」",車迷「4gTV」 TV
+#EXTINF:-1 tvg-id="車迷TV" tvg-name="車迷TV" tvg-logo="https://epg.yang-1989.eu.org/logo/車迷TV.png" group-title="•台湾「限制」",車迷 TV「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-live201/index.m3u8
 #EXTINF:-1 tvg-id="金光布袋戲" tvg-name="金光布袋戲" tvg-logo="https://epg.yang-1989.eu.org/logo/金光布袋戲.png" group-title="•台湾「限制」",金光布袋戲「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-live144/index.m3u8

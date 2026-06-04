@@ -104,7 +104,7 @@ https://cdn.19891230.eu.org/hk/ViuTVsix/index.m3u8
 
 #EXTINF:-1 tvg-id="HOY 國際財經台" tvg-name="HOY 國際財經台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY76.png" group-title="•港澳「限制」",HOY 國際財經台
 https://test.19891230.eu.org/hkg/hoy76/index.m3u8
-#EXTINF:-1 tvg-id="HOY TV" tvg-name="HOY TV" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY77.png" group-title="•港澳「限制」",HOY TV
+#EXTINF:-1 tvg-id="HOY TV" tvg-name="HOY TV" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY77.png" group-title="•港澳「限制」" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}",HOY TV「6H」
 https://test.19891230.eu.org/hkg/hoy77/index.m3u8
 #EXTINF:-1 tvg-id="HOY 資訊台" tvg-name="HOY 資訊台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY78.png" group-title="•港澳「限制」",HOY 資訊台
 https://test.19891230.eu.org/hkg/hoy78/index.m3u8

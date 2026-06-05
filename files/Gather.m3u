@@ -104,12 +104,11 @@ https://cdn.19891230.eu.org/hk/ViuTVsix/index.m3u8
 
 #EXTINF:-1 tvg-id="HOY 國際財經台" tvg-name="HOY 國際財經台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY76.png" group-title="•港澳「限制」",HOY 國際財經台
 https://test.19891230.eu.org/hkg/hoy76/index.m3u8
-#EXTINF:-1 tvg-id="HOY TV" tvg-name="HOY TV" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY77.png" group-title="•港澳「限制」",HOY TV「6H」
+#EXTINF:-1 tvg-id="HOY TV" tvg-name="HOY TV" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY77.png" group-title="•港澳「限制」",HOY TV
 https://test.19891230.eu.org/hkg/hoy77/index.m3u8
 #EXTINF:-1 tvg-id="HOY 資訊台" tvg-name="HOY 資訊台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY78.png" group-title="•港澳「限制」",HOY 資訊台
 https://test.19891230.eu.org/hkg/hoy78/index.m3u8
 
-https://edge.media.seaovers.live/856b503e276cc4917dc388396c23668b/baselive/v2/J0LMZVOV.m3u8
 #EXTINF:-1 tvg-id="RTHK31" tvg-name="RTHK31" tvg-logo="https://epg.yang-1989.eu.org/logo/RTHK31.png" group-title="•港澳「限制」",RTHK 31
 https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8
 #EXTINF:-1 tvg-id="RTHK32" tvg-name="RTHK32" tvg-logo="https://epg.yang-1989.eu.org/logo/RTHK32.png" group-title="•港澳「限制」",RTHK 32

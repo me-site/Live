@@ -76,11 +76,11 @@ https://iptv.yang-1989.eu.org/phenix/fhzx
 #EXTINF:-1 tvg-id="鳳凰衛視香港台" tvg-name="鳳凰衛視香港台" tvg-logo="https://epg.yang-1989.eu.org/logo/凤凰香港.png" http-user-agent="FengWatch/5.4.14" group-title="•港澳「限制」",鳳凰衛視·香港「回看」
 https://iptv.yang-1989.eu.org/phenix/fhhk
 #EXTINF:-1 tvg-id="商業電台 雷霆881" tvg-name="商業電台 雷霆881" tvg-logo="https://epg.yang-1989.eu.org/logo/雷霆881.png" group-title="•港澳「限制」",雷霆881「电台」
-https://cdn.19891230.eu.org/hk-1/881/index.m3u8
+https://cdn.19891230.eu.org/hkg/881/index.m3u8
 #EXTINF:-1 tvg-id="商業電台 叱咤903" tvg-name="商業電台 叱咤903" tvg-logo="https://epg.yang-1989.eu.org/logo/叱咤903.png" group-title="•港澳「限制」",叱咤903「电台」
-https://cdn.19891230.eu.org/hk-1/903/index.m3u8
+https://cdn.19891230.eu.org/hkg/903/index.m3u8
 #EXTINF:-1 tvg-id="商業電台 AM864" tvg-name="商業電台 AM864" tvg-logo="https://epg.yang-1989.eu.org/logo/AM864.png" group-title="•港澳「限制」",AM864「电台」
-https://cdn.19891230.eu.org/hk-1/864/index.m3u8
+https://cdn.19891230.eu.org/hkg/864/index.m3u8
 
 #EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://epg.yang-1989.eu.org/logo/翡翠台.png" group-title="•港澳「限制」",翡翠台「字幕」
 https://test.19891230.eu.org/hk/J/index.m3u8
@@ -103,11 +103,11 @@ https://cdn.19891230.eu.org/hk/ViuTV/index.m3u8
 https://cdn.19891230.eu.org/hk/ViuTVsix/index.m3u8
 
 #EXTINF:-1 tvg-id="HOY 國際財經台" tvg-name="HOY 國際財經台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY76.png" group-title="•港澳「限制」",HOY 國際財經台
-https://test.19891230.eu.org/hkg/hoy76/index.m3u8
+https://cdn.19891230.eu.org/hkg/hoy76/index.m3u8
 #EXTINF:-1 tvg-id="HOY TV" tvg-name="HOY TV" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY77.png" group-title="•港澳「限制」",HOY TV
-https://test.19891230.eu.org/hkg/hoy77/index.m3u8
+https://cdn.19891230.eu.org/hkg/hoy77/index.m3u8
 #EXTINF:-1 tvg-id="HOY 資訊台" tvg-name="HOY 資訊台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY78.png" group-title="•港澳「限制」",HOY 資訊台
-https://test.19891230.eu.org/hkg/hoy78/index.m3u8
+https://cdn.19891230.eu.org/hkg/hoy78/index.m3u8
 
 #EXTINF:-1 tvg-id="RTHK31" tvg-name="RTHK31" tvg-logo="https://epg.yang-1989.eu.org/logo/RTHK31.png" group-title="•港澳「限制」",RTHK 31
 https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream5/streamPlaylist.m3u8

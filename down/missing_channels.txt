@@ -42,7 +42,6 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
-RTHK 32
 RTHK 34
 RTHK 35
 美亚电影台
@@ -148,7 +147,6 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
-RTHK 32
 RTHK 34
 RTHK 35
 美亚电影台

@@ -44,6 +44,8 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+ViuTV
+ViuTV Six
 美亚电影台
 中天综合台
 寰宇财经台
@@ -66,6 +68,8 @@ TVBS综艺台
 龙华戏剧
 龙华卡通
 纬来精采台
+靖天综合台
+靖天欢乐台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台
@@ -149,6 +153,8 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+ViuTV
+ViuTV Six
 美亚电影台
 中天综合台
 寰宇财经台
@@ -171,6 +177,8 @@ TVBS综艺台
 龙华戏剧
 龙华卡通
 纬来精采台
+靖天综合台
+靖天欢乐台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台

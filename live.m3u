@@ -80,8 +80,6 @@ https://cdn.19891230.eu.org/api/CCTV12/index.m3u8
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
-https://cdn10.163189.xyz/163189/cctv13/
-#EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://cdn.19891230.eu.org/api/CCTV13/index.m3u8
@@ -138,21 +136,15 @@ https://cdn6.163189.xyz/163189/wxxwt
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://cdn6.163189.xyz/163189/wxxw
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
-https://cdn10.163189.xyz/163189/tvbp/
-#EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://o11.163189.xyz/stream/tvb/tvbp/
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://smt.1678520.xyz/163189/tvbp
-#EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
-https://cdn10.163189.xyz/163189/fct/
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
 https://cdn6.163189.xyz/163189/fct
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
 https://o11.163189.xyz/stream/tvb/fct/
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
 https://o11.163189.xyz/stream/tvb/fct4k/
-#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
-https://cdn10.163189.xyz/163189/mzt/
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
 https://o11.163189.xyz/stream/tvb/mzt/
 #EXTINF:-1 tvg-name="娱乐新闻台" tvg-logo="https://me.hi.hn/logo/TVB娱乐新闻.png" group-title="香港",娛樂新聞台
@@ -175,10 +167,6 @@ https://cdn.163189.xyz/163189/rthk31
 https://cdn.163189.xyz/163189/rthk32
 #EXTINF:-1 tvg-name="RTHK33" tvg-logo="https://me.hi.hn/logo/RTHK33.png" group-title="香港",RTHK 33
 https://cdn6.163189.xyz/163189/cctv1
-#EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
-https://cdn10.163189.xyz/163189/viu/
-#EXTINF:-1 tvg-name="ViuTVsix" tvg-logo="https://me.hi.hn/logo/ViuTV6.png" group-title="香港",ViuTVsix
-https://cdn10.163189.xyz/163189/viu6/
 #EXTINF:-1 tvg-name="中天新闻台" tvg-logo="https://me.hi.hn/logo/中天新闻.png" group-title="台湾",中天新聞台
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv009/index.m3u8
 #EXTINF:-1 tvg-name="中天娱乐台" tvg-logo="https://me.hi.hn/logo/中天娱乐.png" group-title="台湾",中天娛樂台
@@ -261,16 +249,12 @@ https://cdn.19891230.eu.org/api/VL-E/index.m3u8
 https://smt.1678520.xyz/163189/wlty
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
 https://cdn.19891230.eu.org/api/VL-Sports/index.m3u8
-#EXTINF:-1 tvg-name="靖天综合台" tvg-logo="https://me.hi.hn/logo/靖天综合.png" group-title="台湾",靖天綜合台
-https://cdn.19891230.eu.org/4gtv/4gtv-4gtv046/index.m3u8
 #EXTINF:-1 tvg-name="靖天资讯台" tvg-logo="https://me.hi.hn/logo/靖天资讯.png" group-title="台湾",靖天資訊台
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv065/index.m3u8
 #EXTINF:-1 tvg-name="KLT-靖天国际台" tvg-logo="https://me.hi.hn/logo/靖天国际.png" group-title="台湾",靖天國際台
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv063/index.m3u8
 #EXTINF:-1 tvg-name="靖天日本台" tvg-logo="https://me.hi.hn/logo/靖天日本.png" group-title="台湾",靖天日本台
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv047/index.m3u8
-#EXTINF:-1 tvg-name="靖天欢乐台" tvg-logo="https://me.hi.hn/logo/靖天欢乐.png" group-title="台湾",靖天歡樂台
-https://cdn.19891230.eu.org/4gtv/4gtv-4gtv054/index.m3u8
 #EXTINF:-1 tvg-name="靖天映画" tvg-logo="https://me.hi.hn/logo/靖天映画.png" group-title="台湾",靖天映畫台
 https://cdn12.178.indevs.in/163189/bd4752bd7828b2bf
 #EXTINF:-1 tvg-name="靖天映画" tvg-logo="https://me.hi.hn/logo/靖天映画.png" group-title="台湾",靖天映畫台
@@ -330,17 +314,11 @@ https://cdn.19891230.eu.org/4gtv/4gtv-4gtv016/index.m3u8
 #EXTINF:-1 tvg-name="时尚运动X" tvg-logo="https://me.hi.hn/logo/时尚运动X.png" group-title="新马",時尚運動X
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv014/index.m3u8
 #EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
-https://cdn10.163189.xyz/163189/xinghe/
-#EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
 https://cdn6.163189.xyz/163189/tvbxh
 #EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
 https://o11.163189.xyz/stream/live/tvbxh/
 #EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
-https://cdn10.163189.xyz/163189/typd/
-#EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
 https://o11.163189.xyz/stream/live/typd/
-#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
-https://cdn10.163189.xyz/163189/ccm/
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
 https://o11.163189.xyz/stream/live/ccm/
 #EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5

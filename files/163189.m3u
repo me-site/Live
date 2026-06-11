@@ -146,8 +146,12 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv3
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv4
 #EXTINF:-1 tvg-name="CCTV5" group-title="mytv",CCTV5
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv5
+#EXTINF:-1 tvg-name="CCTV5" group-title="mytv",CCTV5
+https://cdn16.163189.xyz/163189/cctv5-2
 #EXTINF:-1 tvg-name="CCTV5+" group-title="mytv",CCTV5+
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv5p
+#EXTINF:-1 tvg-name="CCTV5+" group-title="mytv",CCTV5+
+https://cdn16.163189.xyz/163189/cctv5p-2
 #EXTINF:-1 tvg-name="CCTV6" group-title="mytv",CCTV6
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv6
 #EXTINF:-1 tvg-name="CCTV7" group-title="mytv",CCTV7
@@ -170,6 +174,8 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv14
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv15
 #EXTINF:-1 tvg-name="CCTV16" group-title="mytv",CCTV16
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv16
+#EXTINF:-1 tvg-name="CCTV16" group-title="mytv",CCTV16
+https://cdn16.163189.xyz/163189/cctv16-2
 #EXTINF:-1 tvg-name="CCTV17" group-title="mytv",CCTV17
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv17
 #EXTINF:-1 tvg-name="重温经典" group-title="mytv",重温经典
@@ -230,3 +236,8 @@ https://smt.1678520.xyz/163189/dsdy
 https://smt.1678520.xyz/163189/dsxj
 #EXTINF:-1 tvg-name="东森洋片" group-title="mytv",东森洋片
 https://smt.1678520.xyz/163189/dsyp
+
+#EXTINF:-1 tvg-name="咪咕4K" group-title="mytv",咪咕4K(限移动网络)
+http://r.jdshipin.com/ln4xk
+#EXTINF:-1 tvg-name="咪咕4K-2" group-title="mytv",咪咕4K-2(限移动网络)
+http://r.jdshipin.com/Lqdwf

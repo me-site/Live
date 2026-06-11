@@ -89,6 +89,10 @@ https://test.19891230.eu.org/hk/TVB-Plus/index.m3u8
 #EXTINF:-1 tvg-id="無綫新聞台" tvg-name="無綫新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/無綫新聞台.png" group-title="•港澳「限制」",無綫新聞台
 https://test.19891230.eu.org/hk/C/index.m3u8
 
+#EXTINF:-1 tvg-id="ViuTV" tvg-name="ViuTV" tvg-logo="https://epg.yang-1989.eu.org/logo/ViuTV.png" group-title="•港澳「限制」",ViuTV「12H」
+https://test.19891230.eu.org/hkg/ViuTV/index.m3u8
+#EXTINF:-1 tvg-id="ViuTVsix" tvg-name="ViuTVsix" tvg-logo="https://epg.yang-1989.eu.org/logo/ViuTVsix.png" group-title="•港澳「限制」",ViuTVsix
+https://test.19891230.eu.org/hkg/ViuTVsix/index.m3u8
 #EXTINF:-1 tvg-id="Now直播台" tvg-name="Now直播台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now直播台.png" group-title="•港澳「限制」",Now直播台
 https://cdn.19891230.eu.org/hk/now-331/index.m3u8
 #EXTINF:-1 tvg-id="Now新聞台" tvg-name="Now新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now新聞台.png" group-title="•港澳「限制」",Now新聞台
@@ -97,10 +101,6 @@ https://cdn.19891230.eu.org/hk/now-332/index.m3u8
 https://cdn.19891230.eu.org/hk/now-333/index.m3u8
 #EXTINF:-1 tvg-id="Now Sports 精選" tvg-name="Now Sports 精選" tvg-logo="https://epg.yang-1989.eu.org/logo/Now Sports 精選.png" group-title="•港澳「限制」",Now Sports 精選
 https://cdn.19891230.eu.org/hk/now-630/index.m3u8
-#EXTINF:-1 tvg-id="ViuTV" tvg-name="ViuTV" tvg-logo="https://epg.yang-1989.eu.org/logo/ViuTV.png" group-title="•港澳「限制」",ViuTV
-https://cdn.19891230.eu.org/hk/ViuTV/index.m3u8
-#EXTINF:-1 tvg-id="ViuTVsix" tvg-name="ViuTVsix" tvg-logo="https://epg.yang-1989.eu.org/logo/ViuTVsix.png" group-title="•港澳「限制」",ViuTVsix
-https://cdn.19891230.eu.org/hk/ViuTVsix/index.m3u8
 
 #EXTINF:-1 tvg-id="HOY 國際財經台" tvg-name="HOY 國際財經台" tvg-logo="https://epg.yang-1989.eu.org/logo/HOY76.png" group-title="•港澳「限制」",HOY 國際財經台
 https://cdn.19891230.eu.org/hkg/hoy76/index.m3u8

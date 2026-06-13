@@ -24,10 +24,6 @@ https://cdn.19891230.eu.org/api/CCTV3/index.m3u8
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://me.hi.hn/logo/CCTV3.png" group-title="央视",CCTV3 综艺
 https://vip1.484947.xyz/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://me.hi.hn/logo/CCTV4.png" group-title="央视",CCTV4 中文国际
-https://php.jdshipin.com/TVOD/iptv.php?id=cctv4
-#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://me.hi.hn/logo/CCTV4.png" group-title="央视",CCTV4 中文国际
-https://php.jdshipin.com/TVOD/iptv.php?id=cctv4
-#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://me.hi.hn/logo/CCTV4.png" group-title="央视",CCTV4 中文国际
 https://cdn.19891230.eu.org/api/CCTV4/index.m3u8
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://me.hi.hn/logo/CCTV4.png" group-title="央视",CCTV4 中文国际
 https://vip1.484947.xyz/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0

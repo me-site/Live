@@ -31,8 +31,15 @@ RTHK 35
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
+东森电影台
+东森洋片台
+东森戏剧台
+东森幼幼台
+民视综艺台
 台视综合台
 台视新闻台
+三立综合台
+三立新闻台
 三立台湾台
 三立戏剧台
 三立都会台
@@ -40,6 +47,7 @@ TVBS综艺台
 八大第一台
 八大综合台
 八大娱乐台
+八大综艺台
 八大戏剧台
 龙华经典
 龙华洋片
@@ -47,6 +55,10 @@ TVBS综艺台
 龙华戏剧
 龙华卡通
 纬来精采台
+纬来育乐台
+靖天综合台
+靖天资讯台
+靖天卡通台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台
@@ -54,7 +66,13 @@ EYETV戏剧
 爱尔达体育1台
 爱尔达体育2台
 爱尔达体育3台
+智林体育台
+博斯魅力台
+博斯运动二台
+博斯高球 1台
+博斯高球 2台
 tvN
+时尚运动X
 华丽翡翠台
 Astro QJ
 Astro Football
@@ -69,10 +87,12 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+好莱坞电影台
 HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK Action
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -80,8 +100,9 @@ Discovery Asia
 Discovery SCI
 DMAX
 动物星球
-视纳华仁纪实频道
 亚洲美食频道
+Love Nature
+Magellan TV
 HGTV居家乐活频道
 TLC旅游生活频道
 CCTV-4K 超高清
@@ -118,8 +139,15 @@ RTHK 35
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
+东森电影台
+东森洋片台
+东森戏剧台
+东森幼幼台
+民视综艺台
 台视综合台
 台视新闻台
+三立综合台
+三立新闻台
 三立台湾台
 三立戏剧台
 三立都会台
@@ -127,6 +155,7 @@ TVBS综艺台
 八大第一台
 八大综合台
 八大娱乐台
+八大综艺台
 八大戏剧台
 龙华经典
 龙华洋片
@@ -134,6 +163,10 @@ TVBS综艺台
 龙华戏剧
 龙华卡通
 纬来精采台
+纬来育乐台
+靖天综合台
+靖天资讯台
+靖天卡通台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台
@@ -141,7 +174,13 @@ EYETV戏剧
 爱尔达体育1台
 爱尔达体育2台
 爱尔达体育3台
+智林体育台
+博斯魅力台
+博斯运动二台
+博斯高球 1台
+博斯高球 2台
 tvN
+时尚运动X
 华丽翡翠台
 Astro QJ
 Astro Football
@@ -156,10 +195,12 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+好莱坞电影台
 HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK Action
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -167,8 +208,9 @@ Discovery Asia
 Discovery SCI
 DMAX
 动物星球
-视纳华仁纪实频道
 亚洲美食频道
+Love Nature
+Magellan TV
 HGTV居家乐活频道
 TLC旅游生活频道
 NBA TV

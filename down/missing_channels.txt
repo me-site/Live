@@ -11,7 +11,6 @@ CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
 J2
-TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -28,10 +27,16 @@ RTHK 34
 RTHK 35
 美亚电影台
 中天综合台
+中天亚洲台
 寰宇财经台
+寰宇新闻台湾台
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
+东森电影台
+东森洋片台
+民视
+民视台湾台
 台视综合台
 台视新闻台
 三立台湾台
@@ -41,13 +46,16 @@ TVBS综艺台
 八大第一台
 八大综合台
 八大娱乐台
+八大精彩台
 八大戏剧台
 龙华经典
 龙华洋片
 龙华偶像
 龙华戏剧
 龙华卡通
+纬来日本台
 纬来精采台
+靖天日本台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台
@@ -55,12 +63,10 @@ EYETV戏剧
 爱尔达体育1台
 爱尔达体育2台
 爱尔达体育3台
+博斯高球 2台
 tvN
 华丽翡翠台
-Astro AOD
-Astro AEC
 Astro QJ
-Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -73,10 +79,13 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+好莱坞电影台
 HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK Action
+ROCK X Stream
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -101,7 +110,6 @@ CCTV-高尔夫网球
 CCTV-央视文化精品
 无线财经资讯台
 J2
-TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -118,10 +126,16 @@ RTHK 34
 RTHK 35
 美亚电影台
 中天综合台
+中天亚洲台
 寰宇财经台
+寰宇新闻台湾台
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
+东森电影台
+东森洋片台
+民视
+民视台湾台
 台视综合台
 台视新闻台
 三立台湾台
@@ -131,13 +145,16 @@ TVBS综艺台
 八大第一台
 八大综合台
 八大娱乐台
+八大精彩台
 八大戏剧台
 龙华经典
 龙华洋片
 龙华偶像
 龙华戏剧
 龙华卡通
+纬来日本台
 纬来精采台
+靖天日本台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台
@@ -145,12 +162,10 @@ EYETV戏剧
 爱尔达体育1台
 爱尔达体育2台
 爱尔达体育3台
+博斯高球 2台
 tvN
 华丽翡翠台
-Astro AOD
-Astro AEC
 Astro QJ
-Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -163,10 +178,13 @@ Astro Arena 2
 Astro Badminton
 Astro Badminton 2
 AXN
+好莱坞电影台
 HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK Action
+ROCK X Stream
 BBC Earth
 BBC Lifestyle
 Discovery

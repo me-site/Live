@@ -89,10 +89,10 @@ https://test.19891230.eu.org/hk/TVB-Plus/index.m3u8
 #EXTINF:-1 tvg-id="無綫新聞台" tvg-name="無綫新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/無綫新聞台.png" group-title="•港澳「限制」",無綫新聞台
 https://test.19891230.eu.org/hk/C/index.m3u8
 
-#EXTINF:-1 tvg-id="ViuTV" tvg-name="ViuTV" tvg-logo="https://epg.yang-1989.eu.org/logo/ViuTV.png" group-title="•港澳「限制」",ViuTV
-https://test.19891230.eu.org/hkg/ViuTV/index.m3u8
+#EXTINF:-1 tvg-id="ViuTV" tvg-name="ViuTV" tvg-logo="https://epg.yang-1989.eu.org/logo/ABC-Australia.png" group-title="•港澳「限制」",ViuTV
+https://cdn.19891230.eu.org/hkg/ViuTV/index.m3u8
 #EXTINF:-1 tvg-id="ViuTVsix" tvg-name="ViuTVsix" tvg-logo="https://epg.yang-1989.eu.org/logo/ViuTVsix.png" group-title="•港澳「限制」",ViuTVsix
-https://test.19891230.eu.org/hkg/ViuTVsix/index.m3u8
+https://cdn.19891230.eu.org/hkg/ViuTVsix/index.m3u8
 #EXTINF:-1 tvg-id="Now直播台" tvg-name="Now直播台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now直播台.png" group-title="•港澳「限制」",Now直播台
 https://cdn.19891230.eu.org/hk/now-331/index.m3u8
 #EXTINF:-1 tvg-id="Now新聞台" tvg-name="Now新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now新聞台.png" group-title="•港澳「限制」",Now新聞台
@@ -320,6 +320,8 @@ https://cdn.yang-1989.eu.org/ofiii/4gtv-4gtv104
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv017/index.m3u8
 #EXTINF:-1 tvg-id="My Cinema Europe HD 我的歐洲電影" tvg-name="My Cinema Europe HD 我的歐洲電影" tvg-logo="https://epg.yang-1989.eu.org/logo/My-Cinema-Europe.png" group-title="•台湾「限制」",MCE 我的歐洲電影「4gTV」
 https://cdn.19891230.eu.org/4gtv/litv-ftv10/index.m3u8
+#EXTINF:-1 tvg-id="ABC Australia 澳洲公廣頻道" tvg-name="ABC Australia 澳洲公廣頻道" tvg-logo="https://epg.yang-1989.eu.org/logo/ABC-Australia.png" group-title="•台湾「限制」",ABC Australia 澳洲公廣「4gTV」
+https://cdn.19891230.eu.org/4gtv/4gtv-live167/index.m3u8
 #EXTINF:-1 tvg-id="影迷數位電影台" tvg-name="影迷數位電影台" tvg-logo="https://epg.yang-1989.eu.org/logo/影迷數位電影台.png" group-title="•台湾「限制」",影迷數位電影「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv011/index.m3u8
 #EXTINF:-1 tvg-id="影迷數位紀實台" tvg-name="影迷數位紀實台" tvg-logo="https://epg.yang-1989.eu.org/logo/影迷數位紀實台.png" group-title="•台湾「限制」",影迷數位紀實「4gTV」
@@ -429,11 +431,11 @@ https://cdn.19891230.eu.org/4gtv/4gtv-4gtv085/index.m3u8
 #EXTINF:-1 tvg-id="東森購物一台" tvg-name="東森購物一台" tvg-logo="https://epg.yang-1989.eu.org/logo/東森購物.png" group-title="•台湾「限制」",東森購物 一「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-live047/index.m3u8
 #EXTINF:-1 tvg-id="東森購物二台" tvg-name="東森購物二台" tvg-logo="https://epg.yang-1989.eu.org/logo/東森購物.png" group-title="•台湾「限制」",東森購物 二「4gTV」
-https://cdn.19891230.eu.org/4gtv/4gtv-live046/index.m3u8
+https://cdn.19891230.eu.org/4gtv/4gtv-live049/index.m3u8
 #EXTINF:-1 tvg-id="東森購物三台" tvg-name="東森購物三台" tvg-logo="https://epg.yang-1989.eu.org/logo/東森購物.png" group-title="•台湾「限制」",東森購物 三「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-live048/index.m3u8
 #EXTINF:-1 tvg-id="東森購物四台" tvg-name="東森購物四台" tvg-logo="https://epg.yang-1989.eu.org/logo/東森購物.png" group-title="•台湾「限制」",東森購物 四「4gTV」
-https://cdn.19891230.eu.org/4gtv/4gtv-live0499/index.m3u8
+https://cdn.19891230.eu.org/4gtv/4gtv-live046/index.m3u8
 #EXTINF:-1 tvg-id="新唐人亞太台" tvg-name="新唐人亞太台" tvg-logo="https://epg.yang-1989.eu.org/logo/新唐人亚太台.png" group-title="•台湾「限制」",新唐人亞太「4gTV」
 https://cdn.19891230.eu.org/4gtv/4gtv-live050/index.m3u8
 

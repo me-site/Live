@@ -129,8 +129,6 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv15
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv15
 #EXTINF:-1 tvg-name="CCTV15" tvg-logo="https://me.hi.hn/logo/CCTV15.png" group-title="央视",CCTV15 音乐
 https://cdn.19891230.eu.org/api/CCTV15/index.m3u8
-#EXTINF:-1 tvg-name="CCTV15" tvg-logo="https://me.hi.hn/logo/CCTV15.png" group-title="央视",CCTV15 音乐
-https://vip1.484947.xyz/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://me.hi.hn/logo/CCTV16.png" group-title="央视",CCTV16 奥林匹克
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv16
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://me.hi.hn/logo/CCTV16.png" group-title="央视",CCTV16 奥林匹克
@@ -421,8 +419,6 @@ https://cdn.19891230.eu.org/4gtv/litv-xinchuang09/index.m3u8
 https://cdn.19891230.eu.org/4gtv/litv-xinchuang05/index.m3u8
 #EXTINF:-1 tvg-name="博斯高球2台" tvg-logo="https://me.hi.hn/logo/博斯高球2.png" group-title="台湾",博斯高球2台
 https://cdn.19891230.eu.org/4gtv/litv-xinchuang06/index.m3u8
-#EXTINF:-1 tvg-name="韩国娱乐台KMTV" tvg-logo="https://me.hi.hn/logo/韩国娱乐.png" group-title="新马",韓國娛樂台
-https://cdn.19891230.eu.org/4gtv/4gtv-4gtv016/index.m3u8
 #EXTINF:-1 tvg-name="时尚运动X" tvg-logo="https://me.hi.hn/logo/时尚运动X.png" group-title="新马",時尚運動X
 https://cdn.19891230.eu.org/4gtv/4gtv-4gtv014/index.m3u8
 #EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道

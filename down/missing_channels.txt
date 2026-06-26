@@ -31,7 +31,7 @@ RTHK 35
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
-民视综艺台
+民视台湾台
 台视综合台
 台视新闻台
 三立台湾台
@@ -42,10 +42,8 @@ TVBS综艺台
 八大综合台
 八大娱乐台
 八大戏剧台
-龙华电影
 龙华经典
 龙华洋片
-龙华日韩
 龙华偶像
 龙华戏剧
 龙华卡通
@@ -76,6 +74,7 @@ HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK Entertainment
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -120,7 +119,7 @@ RTHK 35
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
-民视综艺台
+民视台湾台
 台视综合台
 台视新闻台
 三立台湾台
@@ -131,10 +130,8 @@ TVBS综艺台
 八大综合台
 八大娱乐台
 八大戏剧台
-龙华电影
 龙华经典
 龙华洋片
-龙华日韩
 龙华偶像
 龙华戏剧
 龙华卡通
@@ -165,6 +162,7 @@ HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
+ROCK Entertainment
 BBC Earth
 BBC Lifestyle
 Discovery

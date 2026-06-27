@@ -26,12 +26,12 @@ NOW Sports 1
 RTHK 34
 RTHK 35
 美亚电影台
+中天新闻台
 中天综合台
 寰宇财经台
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
-民视台湾台
 台视综合台
 台视新闻台
 三立台湾台
@@ -48,6 +48,7 @@ TVBS综艺台
 龙华戏剧
 龙华卡通
 纬来精采台
+靖天卡通台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台
@@ -74,7 +75,6 @@ HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
-ROCK Entertainment
 BBC Earth
 BBC Lifestyle
 Discovery
@@ -114,12 +114,12 @@ NOW Sports 1
 RTHK 34
 RTHK 35
 美亚电影台
+中天新闻台
 中天综合台
 寰宇财经台
 非凡新闻台
 TVBS欢乐台
 TVBS综艺台
-民视台湾台
 台视综合台
 台视新闻台
 三立台湾台
@@ -136,6 +136,7 @@ TVBS综艺台
 龙华戏剧
 龙华卡通
 纬来精采台
+靖天卡通台
 EYETV旅游
 EYETV戏剧
 爱尔达娱乐台
@@ -162,7 +163,6 @@ HBO
 HBO强档巨献
 HBO温馨家庭
 HBO原创巨献
-ROCK Entertainment
 BBC Earth
 BBC Lifestyle
 Discovery

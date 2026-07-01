@@ -10,21 +10,33 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
+凤凰中文
+凤凰资讯
+凤凰香港
+无线新闻台
 J2
+TVB娱乐新闻
 黄金华剧台
 PopC
 功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
+NOW 新闻台
 NOW华剧台
 NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
+HOY TV
+HOY 资讯台
+RTHK 31
+RTHK 32
+RTHK 33
 RTHK 34
 RTHK 35
+ViuTV
 美亚电影台
 中天综合台
 寰宇财经台
@@ -41,8 +53,10 @@ TVBS综艺台
 八大综合台
 八大娱乐台
 八大戏剧台
+龙华电影
 龙华经典
 龙华洋片
+龙华日韩
 龙华偶像
 龙华戏剧
 龙华卡通
@@ -55,6 +69,9 @@ EYETV戏剧
 爱尔达体育2台
 爱尔达体育3台
 tvN
+Channel 5
+Channel 8
+Channel U
 华丽翡翠台
 Astro AEC
 Astro QJ
@@ -96,22 +113,34 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
+凤凰中文
+凤凰资讯
+凤凰香港
+无线新闻台
 无线财经资讯台
 J2
+TVB娱乐新闻
 黄金华剧台
 PopC
 功夫台
 myTV SUPER Free
 myTV SUPER 亚洲剧
 myTV SUPER 华语剧
+NOW 新闻台
 NOW华剧台
 NOW 爆谷台
 NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
+HOY TV
+HOY 资讯台
+RTHK 31
+RTHK 32
+RTHK 33
 RTHK 34
 RTHK 35
+ViuTV
 美亚电影台
 中天综合台
 寰宇财经台
@@ -128,8 +157,10 @@ TVBS综艺台
 八大综合台
 八大娱乐台
 八大戏剧台
+龙华电影
 龙华经典
 龙华洋片
+龙华日韩
 龙华偶像
 龙华戏剧
 龙华卡通
@@ -142,6 +173,9 @@ EYETV戏剧
 爱尔达体育2台
 爱尔达体育3台
 tvN
+Channel 5
+Channel 8
+Channel U
 华丽翡翠台
 Astro AEC
 Astro QJ

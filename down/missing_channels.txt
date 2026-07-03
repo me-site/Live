@@ -10,38 +10,14 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-湖南卫视
-东方卫视
-浙江卫视
-江苏卫视
-北京卫视
-广东卫视
-深圳卫视
-东南卫视
-天津卫视
-江西卫视
-湖北卫视
-山东卫视
-河北卫视
-贵州卫视
-海南卫视
-广西卫视
-四川卫视
-重庆卫视
-安徽卫视
-云南卫视
-河南卫视
-陕西卫视
-青海卫视
-吉林卫视
-辽宁卫视
-黑龙江卫视
 凤凰中文
 凤凰资讯
 凤凰香港
 无线新闻台
 J2
+明珠台
 TVB娱乐新闻
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -149,8 +125,13 @@ Channel 5
 Channel 8
 Channel U
 华丽翡翠台
+TVB 星河
+天映频道
+天映经典
+Astro AOD
 Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -203,39 +184,15 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-湖南卫视
-东方卫视
-浙江卫视
-江苏卫视
-北京卫视
-广东卫视
-深圳卫视
-东南卫视
-天津卫视
-江西卫视
-湖北卫视
-山东卫视
-河北卫视
-贵州卫视
-海南卫视
-广西卫视
-四川卫视
-重庆卫视
-安徽卫视
-云南卫视
-河南卫视
-陕西卫视
-青海卫视
-吉林卫视
-辽宁卫视
-黑龙江卫视
 凤凰中文
 凤凰资讯
 凤凰香港
 无线新闻台
 无线财经资讯台
 J2
+明珠台
 TVB娱乐新闻
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -343,8 +300,13 @@ Channel 5
 Channel 8
 Channel U
 华丽翡翠台
+TVB 星河
+天映频道
+天映经典
+Astro AOD
 Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf

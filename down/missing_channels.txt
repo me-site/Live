@@ -15,7 +15,9 @@ CCTV-央视文化精品
 凤凰香港
 无线新闻台
 J2
+明珠台
 TVB娱乐新闻
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -123,8 +125,13 @@ Channel 5
 Channel 8
 Channel U
 华丽翡翠台
+TVB 星河
+天映频道
+天映经典
+Astro AOD
 Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -183,7 +190,9 @@ CCTV-央视文化精品
 无线新闻台
 无线财经资讯台
 J2
+明珠台
 TVB娱乐新闻
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -291,8 +300,13 @@ Channel 5
 Channel 8
 Channel U
 华丽翡翠台
+TVB 星河
+天映频道
+天映经典
+Astro AOD
 Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf

@@ -80,6 +80,8 @@ https://vip1.484947.xyz/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
+https://cdn.qd.je/163189.php?id=cctv13-2
+#EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://vip1.484947.xyz/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -165,37 +167,103 @@ https://vip1.484947.xyz/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0
 https://vip1.484947.xyz/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://me.hi.hn/logo/黑龙江卫视.png" group-title="卫视",黑龙江卫视
 https://vip1.484947.xyz/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://me.hi.hn/logo/凤凰中文.png" group-title="香港",鳳凰中文台
+https://cdn.qd.je/163189.php?id=fhzw
+#EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
+https://cdn.qd.je/163189.php?id=fhzx
+#EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://me.hi.hn/logo/凤凰香港.png" group-title="香港",鳳凰香港台
+https://cdn.qd.je/163189.php?id=fhhk
+#EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
+https://cdn.qd.je/163189.php?id=wxxwt
+#EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
+https://cdn.qd.je/163189.php?id=wxxw
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
-https://smt.1678520.xyz/163189/tvbp
+https://cdn.qd.je/163189.php?id=tvbp2
+#EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
+https://cdn.qd.je/163189.php?id=tvbpvtt
+#EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
+https://cdn.qd.je/163189.php?id=tvbp
 #EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
-https://o11.163189.xyz/stream/tvb/fct4k/
+https://cdn.qd.je/163189.php?id=fct4k
+#EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
+https://cdn.qd.je/163189.php?id=fctvtt
+#EXTINF:-1 tvg-name="翡翠台" tvg-logo="https://me.hi.hn/logo/TVB翡翠.png" group-title="香港",翡翠台
+https://cdn.qd.je/163189.php?id=fct
+#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
+https://cdn.qd.je/163189.php?id=mztvtt
+#EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
+https://cdn.qd.je/163189.php?id=mzt
+#EXTINF:-1 tvg-name="娱乐新闻台" tvg-logo="https://me.hi.hn/logo/TVB娱乐新闻.png" group-title="香港",娛樂新聞台
+https://cdn.qd.je/163189.php?id=ylxw
+#EXTINF:-1 tvg-name="千禧经典台" tvg-logo="https://me.hi.hn/logo/千禧经典.png" group-title="香港",千禧经典台
+https://cdn.qd.je/163189.php?id=tvbc
+#EXTINF:-1 tvg-name="NOW新闻台" tvg-logo="https://me.hi.hn/logo/NOW新闻.png" group-title="香港",NOW 新聞台
+https://cdn.qd.je/163189.php?id=now
+#EXTINF:-1 tvg-name="HOY77" tvg-logo="https://me.hi.hn/logo/HOY77电视.png" group-title="香港",HOY TV
+https://cdn.qd.je/163189.php?id=hoy2
+#EXTINF:-1 tvg-name="HOY77" tvg-logo="https://me.hi.hn/logo/HOY77电视.png" group-title="香港",HOY TV
+https://cdn.qd.je/163189.php?id=hoy
+#EXTINF:-1 tvg-name="HOY78" tvg-logo="https://me.hi.hn/logo/HOY78资讯.png" group-title="香港",HOY资資訊台
+https://cdn.qd.je/163189.php?id=hoy78
 #EXTINF:-1 tvg-name="HOY76" tvg-logo="https://me.hi.hn/logo/HOY76财经.png" group-title="香港",HOY國際財經台
-https://cdn11.163189.xyz/163189/hoy76
+https://cdn.qd.je/163189.php?id=hoy76
+#EXTINF:-1 tvg-name="RTHK31" tvg-logo="https://me.hi.hn/logo/RTHK31.png" group-title="香港",RTHK 31
+https://cdn.qd.je/163189.php?id=rthk31
+#EXTINF:-1 tvg-name="RTHK32" tvg-logo="https://me.hi.hn/logo/RTHK32.png" group-title="香港",RTHK 32
+https://cdn.qd.je/163189.php?id=rthk32
+#EXTINF:-1 tvg-name="RTHK33" tvg-logo="https://me.hi.hn/logo/RTHK33.png" group-title="香港",RTHK 33
+https://cdn.qd.je/163189.php?id=cctv1
+#EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
+https://cdn.qd.je/163189.php?id=viu
+#EXTINF:-1 tvg-name="ViuTVsix" tvg-logo="https://me.hi.hn/logo/ViuTV6.png" group-title="香港",ViuTVsix
+https://cdn.qd.je/163189.php?id=viu6
 #EXTINF:-1 tvg-name="公视戏剧" tvg-logo="https://me.hi.hn/logo/公视戏剧.png" group-title="台湾",公視戲劇
-https://cdn12.178.indevs.in/163189/gsxj
+https://cdn.qd.je/163189.php?id=gsxj
+#EXTINF:-1 tvg-name="龙华电影HD" tvg-logo="https://me.hi.hn/logo/龙华电影.png" group-title="台湾",龍華電影台
+https://cdn.qd.je/163189.php?id=lhdy
+#EXTINF:-1 tvg-name="龙华日韩台" tvg-logo="https://me.hi.hn/logo/龙华日韩.png" group-title="台湾",龍華日韓台
+https://cdn.qd.je/163189.php?id=lhrh
 #EXTINF:-1 tvg-name="纬来电影台" tvg-logo="https://me.hi.hn/logo/纬来电影.png" group-title="台湾",緯來電影台
-https://smt.1678520.xyz/163189/wldy
+https://cdn.qd.je/163189.php?id=wldy
 #EXTINF:-1 tvg-name="纬来戏剧台" tvg-logo="https://me.hi.hn/logo/纬来戏剧.png" group-title="台湾",緯來戲劇台
-https://smt.1678520.xyz/163189/wlxj
+https://cdn.qd.je/163189.php?id=wlxj
 #EXTINF:-1 tvg-name="纬来体育台" tvg-logo="https://me.hi.hn/logo/纬来体育.png" group-title="台湾",緯來體育台
-https://smt.1678520.xyz/163189/wlty
+https://cdn.qd.je/163189.php?id=wlty
 #EXTINF:-1 tvg-name="靖天映画" tvg-logo="https://me.hi.hn/logo/靖天映画.png" group-title="台湾",靖天映畫台
-https://cdn12.178.indevs.in/163189/jtyh
+https://cdn.qd.je/163189.php?id=jtyh
 #EXTINF:-1 tvg-name="靖天电影台" tvg-logo="https://me.hi.hn/logo/靖天电影.png" group-title="台湾",靖天電影台
-https://cdn12.178.indevs.in/163189/jtdy
+https://cdn.qd.je/163189.php?id=jtdy
 #EXTINF:-1 tvg-name="靖天戏剧台" tvg-logo="https://me.hi.hn/logo/靖天戏剧.png" group-title="台湾",靖天戲劇台
-https://cdn12.178.indevs.in/163189/jtxj
+https://cdn.qd.je/163189.php?id=jtxj
 #EXTINF:-1 tvg-name="AMC电影台" tvg-logo="https://me.hi.hn/logo/AMC电影.png" group-title="台湾",AMC電影台
-https://cdn12.178.indevs.in/163189/amc
+https://cdn.qd.je/163189.php?id=amc
 #EXTINF:-1 tvg-name="CMUSIC" tvg-logo="https://me.hi.hn/logo/CMusic.png" group-title="台湾",CMusic電影原聲台
-https://cdn12.178.indevs.in/163189/cmusic
+https://cdn.qd.je/163189.php?id=cmusic
 #EXTINF:-1 tvg-name="MYCINEMAEUROPEHD我的欧洲电影" tvg-logo="https://me.hi.hn/logo/MCE光影欧洲.png" group-title="台湾",My Cinema Europe HD
-https://cdn12.178.indevs.in/163189/mce
+https://cdn.qd.je/163189.php?id=mce
 #EXTINF:-1 tvg-name="影迷数位电影台" tvg-logo="https://me.hi.hn/logo/影迷数位电影.png" group-title="台湾",影迷數位電影台
-https://cdn12.178.indevs.in/163189/ymswdyt
+https://cdn.qd.je/163189.php?id=ymswdyt
 #EXTINF:-1 tvg-name="LS Time電影台" tvg-logo="https://me.hi.hn/logo/龙祥时代电影.png" group-title="台湾",龍祥時代電影台
-https://smt.1678520.xyz/163189/lxsd
+https://cdn.qd.je/163189.php?id=lxsd
+#EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
+https://cdn.qd.je/163189.php?id=tvbxh
+#EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
+https://cdn.qd.je/163189.php?id=xinghe
+#EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
+https://cdn.qd.je/163189.php?id=typd2
+#EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
+https://cdn.qd.je/163189.php?id=typd
+#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
+https://cdn.qd.je/163189.php?id=ccm
+#EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5
+https://cdn.qd.je/163189.php?id=ch5
+#EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/tv/Channel8.png" group-title="新马",Channel 8
+https://cdn.qd.je/163189.php?id=ch8
+#EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/tv/ChannelU.png" group-title="新马",Channel U
+https://cdn.qd.je/163189.php?id=chu
+#EXTINF:-1 tvg-name="Astro Hua Hee Dai" tvg-logo="https://me.hi.hn/logo/tv/Astro欢喜.png" group-title="新马",Astro 欢喜台
+https://cdn.qd.je/163189.php?id=hxt
 #EXTINF:-1 tvg-name="CINEMAWORLD" tvg-logo="https://me.hi.hn/logo/CinemaWorld.png" group-title="电影",CinemaWorld
-https://cdn12.178.indevs.in/163189/cinemaworld
+https://cdn.qd.je/163189.php?id=cinemaworld
 #EXTINF:-1 tvg-name="DREAMWORKS" tvg-logo="https://me.hi.hn/logo/DreamWorks.png" group-title="电影",DreamWorks
-https://cdn12.178.indevs.in/163189/dreamworks
+https://cdn.qd.je/163189.php?id=dreamworks

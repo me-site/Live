@@ -1,143 +1,143 @@
 #EXTM3U url-tvg="https://epg.cdn.loc.cc/xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 
 #EXTINF:-1 tvg-name="翡翠台" group-title="mytv",翡翠台4K(字幕)
-https://o11.163189.xyz/stream/tvb/fct4k/
+https://cdn.qd.je/163189.php?id=fct4k
 #EXTINF:-1 tvg-name="凤凰中文" group-title="mytv",凤凰中文
-https://6.cdn.hi.hn/163189/fhzw
+https://cdn.qd.je/163189.php?id=fhzw
 #EXTINF:-1 tvg-name="RTHK33" group-title="mytv",CCTV1港澳版
-https://6.cdn.hi.hn/163189/cctv1
+https://cdn.qd.je/163189.php?id=cctv1
 #EXTINF:-1 tvg-name="CCTV13" group-title="mytv",CCTV13
-https://10.cdn.hi.hn/163189/cctv13/
+https://cdn.qd.je/163189.php?id=cctv13-2
 #EXTINF:-1 tvg-name="TVB Plus" group-title="mytv",TVB Plus(字幕)
-https://o11.163189.xyz/stream/tvb/tvbp/
+https://cdn.qd.je/163189.php?id=tvbp
 #EXTINF:-1 tvg-name="HOY77" group-title="mytv",HOY TV
-https://6.cdn.hi.hn/163189/hoy
+https://cdn.qd.je/163189.php?id=hoy
 #EXTINF:-1 tvg-name="HOY77" group-title="mytv",HOY TV
-https://1.cdn.hi.hn/163189/hoy
+https://cdn.qd.je/163189.php?id=hoy2
 #EXTINF:-1 tvg-name="HOY78" group-title="mytv",HOY资讯台
-https://1.cdn.hi.hn/163189/hoy78
+https://cdn.qd.je/163189.php?id=hoy78
 #EXTINF:-1 tvg-name="HOY 國際財經台" group-title="mytv",HOY国际财经台
-https://cdn11.163189.xyz/163189/hoy76
+https://cdn.qd.je/163189.php?id=hoy76
 #EXTINF:-1 tvg-name="ViuTV" group-title="mytv",ViuTV
-https://10.cdn.hi.hn/163189/viu/
+https://cdn.qd.je/163189.php?id=viu
 #EXTINF:-1 tvg-name="ViuTVsix" group-title="mytv",ViuTVsix
-https://10.cdn.hi.hn/163189/viu6/
+https://cdn.qd.je/163189.php?id=viu6
 #EXTINF:-1 tvg-name="Now新聞台" group-title="mytv",NOW新闻台
-https://1.cdn.hi.hn/163189/now
+https://cdn.qd.je/163189.php?id=now
 #EXTINF:-1 tvg-name="RTHK31" group-title="mytv",RTHK31
-https://1.cdn.hi.hn/163189/rthk31
+https://cdn.qd.je/163189.php?id=rthk31
 #EXTINF:-1 tvg-name="RTHK32" group-title="mytv",RTHK32
-https://1.cdn.hi.hn/163189/rthk32
+https://cdn.qd.je/163189.php?id=rthk32
 #EXTINF:-1 tvg-name="澳视澳门" group-title="mytv",澳视澳门
-https://6.cdn.hi.hn/163189/asam
+https://cdn.qd.je/163189.php?id=asam
 #EXTINF:-1 tvg-name="澳视卫星" group-title="mytv",澳视卫星
-https://6.cdn.hi.hn/163189/as
+https://cdn.qd.je/163189.php?id=as
 #EXTINF:-1 tvg-name="澳视体育" group-title="mytv",澳门体育
-https://6.cdn.hi.hn/163189/amty
+https://cdn.qd.je/163189.php?id=amty
 #EXTINF:-1 tvg-name="澳视综艺" group-title="mytv",澳门综艺
-https://6.cdn.hi.hn/163189/amzy
+https://cdn.qd.je/163189.php?id=amzy
 #EXTINF:-1 tvg-name="澳门莲花" group-title="mytv",澳门莲花
-https://6.cdn.hi.hn/163189/amlh
+https://cdn.qd.je/163189.php?id=amlh
 #EXTINF:-1 tvg-name="重温经典" group-title="mytv",重温经典
-https://6.cdn.hi.hn/163189/cwjd
+https://cdn.qd.je/163189.php?id=cwjd
 #EXTINF:-1 tvg-name="凤凰资讯" group-title="mytv",凤凰资讯
-https://6.cdn.hi.hn/163189/fhzx
+https://cdn.qd.je/163189.php?id=fhzx
 #EXTINF:-1 tvg-name="凤凰香港" group-title="mytv",凤凰香港
-https://6.cdn.hi.hn/163189/fhhk
+https://cdn.qd.je/163189.php?id=fhhk
 #EXTINF:-1 tvg-name="TVB1" group-title="mytv",TVB1
-https://6.cdn.hi.hn/163189/tvb1
+https://cdn.qd.je/163189.php?id=tvb1
 #EXTINF:-1 tvg-name="TVBJ1" group-title="mytv",TVBJ1
-https://6.cdn.hi.hn/163189/j1
+https://cdn.qd.je/163189.php?id=j1
 #EXTINF:-1 tvg-name="翡翠剧集台" group-title="mytv",翡翠剧集台
-https://6.cdn.hi.hn/163189/tvbd
+https://cdn.qd.je/163189.php?id=tvbd
 #EXTINF:-1 tvg-name="翡翠台" group-title="mytv",翡翠台
-https://6.cdn.hi.hn/163189/fct
+https://cdn.qd.je/163189.php?id=fct
 #EXTINF:-1 tvg-name="翡翠台" group-title="mytv",翡翠台(字幕)
-https://o11.163189.xyz/stream/tvb/fct/
+https://cdn.qd.je/163189.php?id=fct2
 #EXTINF:-1 tvg-name="明珠台" group-title="mytv",明珠台(字幕)
-https://o11.163189.xyz/stream/tvb/mzt/
+https://cdn.qd.je/163189.php?id=mzt
 #EXTINF:-1 tvg-name="无线新闻" group-title="mytv",无线新闻台
-https://6.cdn.hi.hn/163189/wxxw
+https://cdn.qd.je/163189.php?id=wxxw
 #EXTINF:-1 tvg-name="广东珠江" group-title="mytv",广东珠江
-https://2.cdn.hi.hn/163189/gdzj
+https://cdn.qd.je/163189.php?id=gdzj
 #EXTINF:-1 tvg-name="广东体育" group-title="mytv",广东体育
-https://2.cdn.hi.hn/163189/gdty
+https://cdn.qd.je/163189.php?id=gdty
 #EXTINF:-1 tvg-name="八度空间" group-title="mytv",八度空间
-https://6.cdn.hi.hn/163189/8tv
+https://cdn.qd.je/163189.php?id=8tv
 #EXTINF:-1 tvg-name="Channel 5" group-title="mytv",CH5
-https://6.cdn.hi.hn/163189/ch5
+https://cdn.qd.je/163189.php?id=ch5
 #EXTINF:-1 tvg-name="Channel 8" group-title="mytv",CH8
-https://6.cdn.hi.hn/163189/ch8
+https://cdn.qd.je/163189.php?id=ch8
 #EXTINF:-1 tvg-name="Channel U" group-title="mytv",CHU
-https://6.cdn.hi.hn/163189/chu
+https://cdn.qd.je/163189.php?id=chu
 #EXTINF:-1 tvg-name="龍華電影" group-title="mytv",龙华电影
-https://8.cdn.hi.hn/163189/lhdy
+https://cdn.qd.je/163189.php?id=lhdy
 #EXTINF:-1 tvg-name="龍華經典" group-title="mytv",龙华经典
-https://8.cdn.hi.hn/163189/lhjd
+https://cdn.qd.je/163189.php?id=lhjd
 #EXTINF:-1 tvg-name="龍華偶像" group-title="mytv",龙华偶像
-https://8.cdn.hi.hn/163189/lhox
+https://cdn.qd.je/163189.php?id=lhox
 #EXTINF:-1 tvg-name="龍華日韓" group-title="mytv",龙华日韩
-https://8.cdn.hi.hn/163189/lhrh
+https://cdn.qd.je/163189.php?id=lhrh
 #EXTINF:-1 tvg-name="龍華戲劇" group-title="mytv",龙华戏剧
-https://8.cdn.hi.hn/163189/lhxj
+https://cdn.qd.je/163189.php?id=lhxj
 #EXTINF:-1 tvg-name="龍華洋片" group-title="mytv",龙华洋片
-https://8.cdn.hi.hn/163189/lhyp
+https://cdn.qd.je/163189.php?id=lhyp
 #EXTINF:-1 tvg-name="龍華卡通" group-title="mytv",龙华卡通
-https://8.cdn.hi.hn/163189/lhkt
+https://cdn.qd.je/163189.php?id=lhkt
 #EXTINF:-1 tvg-name="金光布袋戲" group-title="mytv",金光布袋戏
-https://o11.163189.xyz/stream/live/jgbdx/
+https://cdn.qd.je/163189.php?id=jgbdx
 #EXTINF:-1 tvg-name="TVB Jade HD" group-title="mytv",华丽翡翠台
-https://6.cdn.hi.hn/163189/hlfct
+https://cdn.qd.je/163189.php?id=hlfct
 #EXTINF:-1 tvg-name="TVB亚洲武侠" group-title="mytv",TVB亚洲武侠
-https://6.cdn.hi.hn/163189/yzwx
+https://cdn.qd.je/163189.php?id=yzwx
 #EXTINF:-1 tvg-name="娛樂新聞台" group-title="mytv",TVB娱乐新闻台
-https://6.cdn.hi.hn/163189/ylxw
+https://cdn.qd.je/163189.php?id=ylxw
 #EXTINF:-1 tvg-name="无线新闻" group-title="mytv",无线新闻台
-https://6.cdn.hi.hn/163189/wxxwt
+https://cdn.qd.je/163189.php?id=wxxwt
 #EXTINF:-1 tvg-name="TVB星河" group-title="mytv",TVB星河
-https://6.cdn.hi.hn/163189/tvbxh
+https://cdn.qd.je/163189.php?id=tvbxh
 #EXTINF:-1 tvg-name="海峡卫视" group-title="mytv",海峡卫视
-https://10.cdn.hi.hn/163189/hxws/
+https://cdn.qd.je/163189.php?id=hxws
 #EXTINF:-1 tvg-name="海峡卫视" group-title="mytv",海峡卫视
-https://16.cdn.hi.hn/163189/hxws
+https://cdn.qd.je/163189.php?id=hxws2
 #EXTINF:-1 tvg-name="TVB星河" group-title="mytv",TVB星河
-https://10.cdn.hi.hn/163189/xinghe/
+https://cdn.qd.je/163189.php?id=xinghe
 #EXTINF:-1 tvg-name="天映新加坡" group-title="mytv",天映新加坡
-https://10.cdn.hi.hn/163189/typd/
+https://cdn.qd.je/163189.php?id=typd
 #EXTINF:-1 tvg-name="天映经典" group-title="mytv",天映经典
-https://10.cdn.hi.hn/163189/ccm/
+https://cdn.qd.je/163189.php?id=ccm
 #EXTINF:-1 tvg-name="TVB Jade HD" group-title="mytv",华丽翡翠台
-https://o11.163189.xyz/stream/live/hlt/
+https://cdn.qd.je/163189.php?id=hlt
 #EXTINF:-1 tvg-name="TVB Jade HD" group-title="mytv",华丽翡翠台(硬字幕)
-https://6.cdn.hi.hn/163189/jade
+https://cdn.qd.je/163189.php?id=jade
 #EXTINF:-1 tvg-name="TVB Jade HD" group-title="mytv",华丽翡翠台(新加坡)
-https://o11.163189.xyz/stream/live/jade/
+https://cdn.qd.je/163189.php?id=jade2
 #EXTINF:-1 tvg-name="AOD" group-title="mytv",Astro AOD
-https://o11.163189.xyz/stream/live/aod/
+https://cdn.qd.je/163189.php?id=aod
 #EXTINF:-1 tvg-name="AEC" group-title="mytv",Astro AEC
-https://o11.163189.xyz/stream/live/aec/
+https://cdn.qd.je/163189.php?id=aec
 #EXTINF:-1 tvg-name="QJ" group-title="mytv",Astro QJ
-https://o11.163189.xyz/stream/live/qj/
+https://cdn.qd.je/163189.php?id=qj
 #EXTINF:-1 tvg-name="HUA HEE DAI" group-title="mytv",Astro欢喜台
-https://o11.163189.xyz/stream/live/hxt/
+https://cdn.qd.je/163189.php?id=hxt
 #EXTINF:-1 tvg-name="iQIYI" group-title="mytv",爱奇艺
-https://o11.163189.xyz/stream/live/iqiyi/
+https://cdn.qd.je/163189.php?id=iqiyi
 #EXTINF:-1 tvg-name="天映马来西亚" group-title="mytv",天映频道
-https://o11.163189.xyz/stream/live/typd/
+https://cdn.qd.je/163189.php?id=typd2
 #EXTINF:-1 tvg-name="天映经典" group-title="mytv",天映经典
-https://o11.163189.xyz/stream/live/ccm/
+https://cdn.qd.je/163189.php?id=ccm2
 #EXTINF:-1 tvg-name="TVB星河" group-title="mytv",TVB星河
-https://o11.163189.xyz/stream/live/tvbxh/
+https://cdn.qd.je/163189.php?id=tvbxh2
 #EXTINF:-1 tvg-name="千禧經典台" group-title="mytv",千禧经典台
-https://o11.163189.xyz/stream/live/tvbc/
+https://cdn.qd.je/163189.php?id=tvbc
 #EXTINF:-1 tvg-name="翡翠台" group-title="mytv",翡翠台(WebVTT字幕)
-https://10.cdn.hi.hn/163189/fct/
+https://cdn.qd.je/163189.php?id=fctvtt
 #EXTINF:-1 tvg-name="明珠台" group-title="mytv",明珠台(WebVTT字幕)
-https://10.cdn.hi.hn/163189/mzt/
+https://cdn.qd.je/163189.php?id=mztvtt
 #EXTINF:-1 tvg-name="TVB Plus" group-title="mytv",TVB Plus(WebVTT字幕)
-https://10.cdn.hi.hn/163189/tvbp/
+https://cdn.qd.je/163189.php?id=tvbpvtt
 #EXTINF:-1 tvg-name="黃金華劇台" group-title="mytv",黄金华剧台(WebVTT字幕)
-https://10.cdn.hi.hn/163189/hjhjt/
+https://cdn.qd.je/163189.php?id=hjhjt
 #EXTINF:-1 tvg-name="CCTV1" group-title="mytv",CCTV1
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv1
 #EXTINF:-1 tvg-name="CCTV2" group-title="mytv",CCTV2
@@ -181,63 +181,63 @@ https://16.cdn.hi.hn/163189/cctv16-2
 #EXTINF:-1 tvg-name="CCTV17" group-title="mytv",CCTV17
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv17
 #EXTINF:-1 tvg-name="重温经典" group-title="mytv",重温经典
-https://16.cdn.hi.hn/163189/cwjd
+https://cdn.qd.je/163189.php?id=cwjd2
 #EXTINF:-1 tvg-name="广州综合" group-title="mytv",广州综合
-https://16.cdn.hi.hn/163189/gzzh
+https://cdn.qd.je/163189.php?id=gzzh
 #EXTINF:-1 tvg-name="广州新闻" group-title="mytv",广州新闻
-https://16.cdn.hi.hn/163189/gzxw
+https://cdn.qd.je/163189.php?id=gzxw
 #EXTINF:-1 tvg-name="南国都市4K" group-title="mytv",广州南国都市
-https://cdn15.163189.xyz/163189/ngds
+https://cdn.qd.je/163189.php?id=ngds
 #EXTINF:-1 tvg-name="五星体育" group-title="mytv",五星体育
-https://cdn15.163189.xyz/163189/wxty
+https://cdn.qd.je/163189.php?id=wxty
 #EXTINF:-1 tvg-name="民視影劇台" group-title="mytv",民视影剧台
-https://cdn12.178.indevs.in/163189/msyj
+https://cdn.qd.je/163189.php?id=msyj
 #EXTINF:-1 tvg-name="公視戲劇" group-title="mytv",公视戏剧
-https://cdn12.178.indevs.in/163189/gsxj
+https://cdn.qd.je/163189.php?id=gsxj
 #EXTINF:-1 tvg-name="采昌影劇台" group-title="mytv",采昌影剧台
-https://cdn12.178.indevs.in/163189/ccyj
+https://cdn.qd.je/163189.php?id=ccyj
 #EXTINF:-1 tvg-name="靖天映畫" group-title="mytv",靖天映画
-https://cdn12.178.indevs.in/163189/jtyh
+https://cdn.qd.je/163189.php?id=jtyh
 #EXTINF:-1 tvg-name="靖天戲劇台" group-title="mytv",靖天戏剧台
-https://cdn12.178.indevs.in/163189/jtxj
+https://cdn.qd.je/163189.php?id=jtxj
 #EXTINF:-1 tvg-name="靖天電影台" group-title="mytv",靖天电影台
-https://cdn12.178.indevs.in/163189/jtdy
+https://cdn.qd.je/163189.php?id=jtdy
 #EXTINF:-1 tvg-name="靖洋戲劇台" group-title="mytv",靖洋戏剧台
-https://cdn12.178.indevs.in/163189/jyxj
+https://cdn.qd.je/163189.php?id=jyxj
 #EXTINF:-1 tvg-name="影迷數位電影台" group-title="mytv",影迷数位电影台
-https://cdn12.178.indevs.in/163189/ymswdyt
+https://cdn.qd.je/163189.php?id=ymswdyt
 #EXTINF:-1 tvg-name="amc電影台" group-title="mytv",amc电影台
-https://cdn12.178.indevs.in/163189/amc
+https://cdn.qd.je/163189.php?id=amc
 #EXTINF:-1 tvg-name="CinemaWorld頻道" group-title="mytv",CinemaWorld
-https://cdn12.178.indevs.in/163189/cinemaworld
+https://cdn.qd.je/163189.php?id=cinemaworld
 #EXTINF:-1 tvg-name="My Cinema Europe" group-title="mytv",My Cinema Europe
-https://cdn12.178.indevs.in/163189/mce
+https://cdn.qd.je/163189.php?id=mce
 #EXTINF:-1 tvg-name="經典電影台" group-title="mytv",经典电影台
-https://cdn12.178.indevs.in/163189/jddyt
+https://cdn.qd.je/163189.php?id=jddyt
 #EXTINF:-1 tvg-name="電影原聲台CMusic" group-title="mytv",CMusic
-https://cdn12.178.indevs.in/163189/cmusic
+https://cdn.qd.je/163189.php?id=cmusic
 #EXTINF:-1 tvg-name="DreamWorks" group-title="mytv",DreamWorks梦工厂动画
-https://cdn12.178.indevs.in/163189/dreamworks
+https://cdn.qd.je/163189.php?id=dreamworks
 #EXTINF:-1 tvg-name="精選動漫台" group-title="mytv",精选动漫台
-https://cdn12.178.indevs.in/163189/jxdmt
+https://cdn.qd.je/163189.php?id=jxdmt
 #EXTINF:-1 tvg-name="金光布袋戲" group-title="mytv",金光布袋戏
-https://cdn12.178.indevs.in/163189/jgbdx
+https://cdn.qd.je/163189.php?id=jgbdx2
 #EXTINF:-1 tvg-name="TVB Plus" group-title="mytv",TVB Plus
-https://smt.1678520.xyz/163189/tvbp
+https://cdn.qd.je/163189.php?id=tvbp2
 #EXTINF:-1 tvg-name="纬来电影台" group-title="mytv",纬来电影台
-https://smt.1678520.xyz/163189/wldy
+https://cdn.qd.je/163189.php?id=wldy
 #EXTINF:-1 tvg-name="纬来戏剧台" group-title="mytv",纬来戏剧台
-https://smt.1678520.xyz/163189/wlxj
+https://cdn.qd.je/163189.php?id=wlxj
 #EXTINF:-1 tvg-name="纬来体育台" group-title="mytv",纬来体育台
-https://smt.1678520.xyz/163189/wlty
+https://cdn.qd.je/163189.php?id=wlty
 #EXTINF:-1 tvg-name="龙祥时代" group-title="mytv",龙祥时代
-https://smt.1678520.xyz/163189/lxsd
+https://cdn.qd.je/163189.php?id=lxsd
 #EXTINF:-1 tvg-name="东森电影" group-title="mytv",东森电影
-https://smt.1678520.xyz/163189/dsdy
+https://cdn.qd.je/163189.php?id=dsdy
 #EXTINF:-1 tvg-name="东森戏剧" group-title="mytv",东森戏剧
-https://smt.1678520.xyz/163189/dsxj
+https://cdn.qd.je/163189.php?id=dsxj
 #EXTINF:-1 tvg-name="东森洋片" group-title="mytv",东森洋片
-https://smt.1678520.xyz/163189/dsyp
+https://cdn.qd.je/163189.php?id=dsyp
 
 #EXTINF:-1 tvg-name="咪咕4K" group-title="mytv",咪咕4K(限移动网络)
 http://r.jdshipin.com/ln4xk

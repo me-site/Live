@@ -254,9 +254,13 @@ https://cdn.qd.je/163189/ymswdyt
 #EXTINF:-1 tvg-name="LS Time電影台" tvg-logo="https://me.hi.hn/logo/龙祥时代电影.png" group-title="台湾",龍祥時代電影台
 https://cdn.qd.je/163189/lxsd
 #EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
+https://cdn.qd.je/163189/tvbxh2
+#EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
 https://cdn.qd.je/163189/tvbxh
 #EXTINF:-1 tvg-name="TVB星河" tvg-logo="https://me.hi.hn/logo/TVB星河.png" group-title="新马",TVB星河频道
 https://cdn.qd.je/163189/xinghe
+#EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
+https://cdn.qd.je/163189/typd2
 #EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
 https://cdn.qd.je/163189/typd
 #EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
@@ -269,6 +273,10 @@ https://cdn.qd.je/163189/ch5
 https://cdn.qd.je/163189/ch8
 #EXTINF:-1 tvg-name="Channel U" tvg-logo="https://me.hi.hn/logo/tv/ChannelU.png" group-title="新马",Channel U
 https://cdn.qd.je/163189/chu
+#EXTINF:-1 tvg-name="Astro AOD" tvg-logo="https://me.hi.hn/logo/tv/AstroAOD.png" group-title="新马",Astro AOD
+https://cdn.qd.je/163189/aod
+#EXTINF:-1 tvg-name="Astro Hua Hee Dai" tvg-logo="https://me.hi.hn/logo/tv/Astro欢喜.png" group-title="新马",Astro 欢喜台
+https://cdn.qd.je/163189/hxt
 #EXTINF:-1 tvg-name="CINEMAWORLD" tvg-logo="https://me.hi.hn/logo/CinemaWorld.png" group-title="电影",CinemaWorld
 https://cdn.qd.je/163189/cinemaworld
 #EXTINF:-1 tvg-name="DREAMWORKS" tvg-logo="https://me.hi.hn/logo/DreamWorks.png" group-title="电影",DreamWorks

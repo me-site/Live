@@ -35,6 +35,8 @@ https://vip1.484947.xyz/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv6
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://me.hi.hn/logo/CCTV6.png" group-title="央视",CCTV6 电影
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv6
+#EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://me.hi.hn/logo/CCTV6.png" group-title="央视",CCTV6 电影
+https://vip1.484947.xyz/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://me.hi.hn/logo/CCTV7.png" group-title="央视",CCTV7 国防军事
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv7
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://me.hi.hn/logo/CCTV7.png" group-title="央视",CCTV7 国防军事
@@ -141,8 +143,6 @@ https://vip1.484947.xyz/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
 https://vip1.484947.xyz/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖北卫视" tvg-logo="https://me.hi.hn/logo/湖北卫视.png" group-title="卫视",湖北卫视
 https://vip1.484947.xyz/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://me.hi.hn/logo/山东卫视.png" group-title="卫视",山东卫视
-https://vip1.484947.xyz/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="河北卫视" tvg-logo="https://me.hi.hn/logo/河北卫视.png" group-title="卫视",河北卫视
 https://vip1.484947.xyz/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="贵州卫视" tvg-logo="https://me.hi.hn/logo/贵州卫视.png" group-title="卫视",贵州卫视

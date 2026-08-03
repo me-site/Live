@@ -29,8 +29,6 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv5
 https://cdn.qd.je/163189/cctv5-2
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://me.hi.hn/logo/CCTV5.png" group-title="央视",CCTV5 体育
 https://cdn.qd.je/163189/cctv5
-#EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://me.hi.hn/logo/CCTV5.png" group-title="央视",CCTV5 体育
-https://vip1.484947.xyz/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://me.hi.hn/logo/CCTV6.png" group-title="央视",CCTV6 电影
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv6
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://me.hi.hn/logo/CCTV6.png" group-title="央视",CCTV6 电影
@@ -143,6 +141,8 @@ https://vip1.484947.xyz/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0
 https://vip1.484947.xyz/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖北卫视" tvg-logo="https://me.hi.hn/logo/湖北卫视.png" group-title="卫视",湖北卫视
 https://vip1.484947.xyz/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://me.hi.hn/logo/山东卫视.png" group-title="卫视",山东卫视
+https://vip1.484947.xyz/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="河北卫视" tvg-logo="https://me.hi.hn/logo/河北卫视.png" group-title="卫视",河北卫视
 https://vip1.484947.xyz/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="贵州卫视" tvg-logo="https://me.hi.hn/logo/贵州卫视.png" group-title="卫视",贵州卫视
@@ -169,8 +169,6 @@ https://vip1.484947.xyz/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0
 https://vip1.484947.xyz/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://me.hi.hn/logo/辽宁卫视.png" group-title="卫视",辽宁卫视
 https://vip1.484947.xyz/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://me.hi.hn/logo/黑龙江卫视.png" group-title="卫视",黑龙江卫视
-https://vip1.484947.xyz/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="凤凰中文" tvg-logo="https://me.hi.hn/logo/凤凰中文.png" group-title="香港",鳳凰中文台
 https://cdn.qd.je/163189/fhzw
 #EXTINF:-1 tvg-name="凤凰资讯" tvg-logo="https://me.hi.hn/logo/凤凰资讯.png" group-title="香港",鳳凰資訊台
@@ -218,7 +216,7 @@ https://cdn.qd.je/163189/rthk31
 #EXTINF:-1 tvg-name="RTHK32" tvg-logo="https://me.hi.hn/logo/RTHK32.png" group-title="香港",RTHK 32
 https://cdn.qd.je/163189/rthk32
 #EXTINF:-1 tvg-name="RTHK33" tvg-logo="https://me.hi.hn/logo/RTHK33.png" group-title="香港",RTHK 33
-https://cdn.qd.je/163189/cctv1
+https://cdn.qd.je/163189/rthk33
 #EXTINF:-1 tvg-name="ViuTV" tvg-logo="https://me.hi.hn/logo/ViuTV.png" group-title="香港",ViuTV
 https://cdn.qd.je/163189/viu
 #EXTINF:-1 tvg-name="ViuTVsix" tvg-logo="https://me.hi.hn/logo/ViuTV6.png" group-title="香港",ViuTVsix

@@ -54,13 +54,9 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv9
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://me.hi.hn/logo/CCTV9.png" group-title="央视",CCTV9 纪录
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv9
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://me.hi.hn/logo/CCTV9.png" group-title="央视",CCTV9 纪录
-https://vip1.484947.xyz/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://me.hi.hn/logo/CCTV9.png" group-title="央视",CCTV9 纪录
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv9
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://me.hi.hn/logo/CCTV9.png" group-title="央视",CCTV9 纪录
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv9
-#EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://me.hi.hn/logo/CCTV9.png" group-title="央视",CCTV9 纪录
-https://vip1.484947.xyz/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV10" tvg-logo="https://me.hi.hn/logo/CCTV10.png" group-title="央视",CCTV10 科教
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv10
 #EXTINF:-1 tvg-name="CCTV10" tvg-logo="https://me.hi.hn/logo/CCTV10.png" group-title="央视",CCTV10 科教
@@ -167,6 +163,8 @@ https://vip1.484947.xyz/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0
 https://vip1.484947.xyz/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="青海卫视" tvg-logo="https://me.hi.hn/logo/青海卫视.png" group-title="卫视",青海卫视
 https://vip1.484947.xyz/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="吉林卫视" tvg-logo="https://me.hi.hn/logo/吉林卫视.png" group-title="卫视",吉林卫视
+https://vip1.484947.xyz/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://me.hi.hn/logo/辽宁卫视.png" group-title="卫视",辽宁卫视
 https://vip1.484947.xyz/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="黑龙江卫视" tvg-logo="https://me.hi.hn/logo/黑龙江卫视.png" group-title="卫视",黑龙江卫视

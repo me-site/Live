@@ -11,7 +11,6 @@ CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
 广西卫视
-云南卫视
 J2
 黄金华剧台
 PopC
@@ -27,8 +26,6 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
-ViuTV
-ViuTV Six
 美亚电影台
 中天新闻台
 中天综合台
@@ -164,7 +161,6 @@ CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
 广西卫视
-云南卫视
 无线财经资讯台
 J2
 黄金华剧台
@@ -181,8 +177,6 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
-ViuTV
-ViuTV Six
 美亚电影台
 中天新闻台
 中天综合台

@@ -33,6 +33,8 @@ https://vip1.484947.xyz/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv7
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://me.hi.hn/logo/CCTV7.png" group-title="央视",CCTV7 国防军事
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv7
+#EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://me.hi.hn/logo/CCTV7.png" group-title="央视",CCTV7 国防军事
+https://vip1.484947.xyz/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://me.hi.hn/logo/CCTV8.png" group-title="央视",CCTV8 电视剧
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv8
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://me.hi.hn/logo/CCTV8.png" group-title="央视",CCTV8 电视剧

@@ -69,6 +69,8 @@ https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
 https://cdn.qd.je/163189/cctv13-2
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv13
+#EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://me.hi.hn/logo/CCTV13.png" group-title="央视",CCTV13 新闻
+https://vip1.484947.xyz/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV14" tvg-logo="https://me.hi.hn/logo/CCTV14.png" group-title="央视",CCTV14 少儿
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv14
 #EXTINF:-1 tvg-name="CCTV14" tvg-logo="https://me.hi.hn/logo/CCTV14.png" group-title="央视",CCTV14 少儿
@@ -203,6 +205,8 @@ https://cdn.qd.je/163189/jtxj
 https://cdn.qd.je/163189/amc
 #EXTINF:-1 tvg-name="CMUSIC" tvg-logo="https://me.hi.hn/logo/CMusic.png" group-title="台湾",CMusic電影原聲台
 https://cdn.qd.je/163189/cmusic
+#EXTINF:-1 tvg-name="MYCINEMAEUROPEHD我的欧洲电影" tvg-logo="https://me.hi.hn/logo/MCE光影欧洲.png" group-title="台湾",My Cinema Europe HD
+https://cdn.qd.je/163189/mce
 #EXTINF:-1 tvg-name="影迷数位电影台" tvg-logo="https://me.hi.hn/logo/影迷数位电影.png" group-title="台湾",影迷數位電影台
 https://cdn.qd.je/163189/ymswdyt
 #EXTINF:-1 tvg-name="LS Time電影台" tvg-logo="https://me.hi.hn/logo/龙祥时代电影.png" group-title="台湾",龍祥時代電影台

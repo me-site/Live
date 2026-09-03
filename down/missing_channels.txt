@@ -117,8 +117,6 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
-Astro AEC
-Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -279,8 +277,6 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
-Astro AEC
-Astro QJ
 Astro Football
 Astro Sports Plus
 Astro Golf

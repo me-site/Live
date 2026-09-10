@@ -11,6 +11,7 @@ CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
 东南卫视
+河北卫视
 海南卫视
 J2
 黄金华剧台
@@ -107,7 +108,6 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
-Astro AEC
 Astro QJ
 Astro Football
 Astro Sports Plus
@@ -162,6 +162,7 @@ CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
 东南卫视
+河北卫视
 海南卫视
 无线财经资讯台
 J2
@@ -259,7 +260,6 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
-Astro AEC
 Astro QJ
 Astro Football
 Astro Sports Plus

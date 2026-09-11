@@ -9,8 +9,6 @@ https://vip1.484947.xyz/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv2
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://me.hi.hn/logo/CCTV2.png" group-title="央视",CCTV2 财经
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv2
-#EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://me.hi.hn/logo/CCTV2.png" group-title="央视",CCTV2 财经
-https://vip1.484947.xyz/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://me.hi.hn/logo/CCTV3.png" group-title="央视",CCTV3 综艺
 https://php.jdshipin.com/TVOD/iptv.php?id=cctv3
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://me.hi.hn/logo/CCTV3.png" group-title="央视",CCTV3 综艺

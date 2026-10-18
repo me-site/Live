@@ -13,7 +13,7 @@
 大湾区卫视,https://vip1.484947.xyz/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
 
 
-广东影视,https://qb.484947.xyz
+广东影视,https://qb1.484947.xyz
 广东影视,https://vip1.484947.xyz/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&authid=0
 
 

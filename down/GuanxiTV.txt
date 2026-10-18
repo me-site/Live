@@ -13,7 +13,7 @@ https://cdxzbyy.484947.xyz/gdws4k
 #EXTINF:-1 tvg-name="大湾区卫视",大湾区卫视
 https://vip1.484947.xyz/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广东影视",广东影视
-https://qb.484947.xyz
+https://qb1.484947.xyz
 #EXTINF:-1 tvg-name="广东影视",广东影视
 https://vip1.484947.xyz/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV1",CCTV1

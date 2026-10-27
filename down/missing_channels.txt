@@ -37,6 +37,7 @@ CCTV-央视文化精品
 辽宁卫视
 黑龙江卫视
 J2
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -131,7 +132,10 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
+Astro AOD
+Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -212,6 +216,7 @@ CCTV-央视文化精品
 黑龙江卫视
 无线财经资讯台
 J2
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -306,7 +311,10 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
+Astro AOD
+Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf

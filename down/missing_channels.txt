@@ -11,6 +11,7 @@ CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
 J2
+TVB娱乐新闻
 TVB千禧经典
 黄金华剧台
 PopC
@@ -24,6 +25,7 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
+HOY 国际财经
 RTHK 34
 RTHK 35
 美亚电影台
@@ -106,7 +108,6 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
-天映经典
 Astro AOD
 Astro AEC
 Astro QJ
@@ -165,6 +166,7 @@ CCTV-高尔夫网球
 CCTV-央视文化精品
 无线财经资讯台
 J2
+TVB娱乐新闻
 TVB千禧经典
 黄金华剧台
 PopC
@@ -178,6 +180,7 @@ NOW 星影台
 NOW 668
 NOW Sports 精选
 NOW Sports 1
+HOY 国际财经
 RTHK 34
 RTHK 35
 美亚电影台
@@ -260,7 +263,6 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
-天映经典
 Astro AOD
 Astro AEC
 Astro QJ

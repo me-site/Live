@@ -180,8 +180,6 @@ https://cdn.qd.je/163189/fhzx
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://me.hi.hn/logo/凤凰香港.png" group-title="香港",鳳凰香港台
 https://cdn.qd.je/163189/fhhk
 #EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
-https://cdn.qd.je/163189/wxxwt
-#EXTINF:-1 tvg-name="无线新闻" tvg-logo="https://me.hi.hn/logo/TVB新闻.png" group-title="香港",無綫新聞台
 https://cdn.qd.je/163189/wxxw
 #EXTINF:-1 tvg-name="TVBPLUS" tvg-logo="https://me.hi.hn/logo/TVBPlus.png" group-title="香港",TVB Plus
 https://cdn.qd.je/163189/tvbp2
@@ -201,8 +199,6 @@ https://cdn.qd.je/163189/fct
 https://cdn.qd.je/163189/mztvtt
 #EXTINF:-1 tvg-name="明珠台" tvg-logo="https://me.hi.hn/logo/TVB明珠.png" group-title="香港",明珠台
 https://cdn.qd.je/163189/mzt
-#EXTINF:-1 tvg-name="娱乐新闻台" tvg-logo="https://me.hi.hn/logo/TVB娱乐新闻.png" group-title="香港",娛樂新聞台
-https://cdn.qd.je/163189/ylxw
 #EXTINF:-1 tvg-name="NOW新闻台" tvg-logo="https://me.hi.hn/logo/NOW新闻.png" group-title="香港",NOW 新聞台
 https://cdn.qd.je/163189/now
 #EXTINF:-1 tvg-name="HOY77" tvg-logo="https://me.hi.hn/logo/HOY77电视.png" group-title="香港",HOY TV
@@ -211,8 +207,6 @@ https://cdn.qd.je/163189/hoy2
 https://cdn.qd.je/163189/hoy
 #EXTINF:-1 tvg-name="HOY78" tvg-logo="https://me.hi.hn/logo/HOY78资讯.png" group-title="香港",HOY资資訊台
 https://cdn.qd.je/163189/hoy78
-#EXTINF:-1 tvg-name="HOY76" tvg-logo="https://me.hi.hn/logo/HOY76财经.png" group-title="香港",HOY國際財經台
-https://cdn.qd.je/163189/hoy76
 #EXTINF:-1 tvg-name="RTHK31" tvg-logo="https://me.hi.hn/logo/RTHK31.png" group-title="香港",RTHK 31
 https://cdn.qd.je/163189/rthk31
 #EXTINF:-1 tvg-name="RTHK32" tvg-logo="https://me.hi.hn/logo/RTHK32.png" group-title="香港",RTHK 32
@@ -257,6 +251,8 @@ https://cdn.qd.je/163189/tvbxh
 https://cdn.qd.je/163189/xinghe
 #EXTINF:-1 tvg-name="天映新加坡" tvg-logo="https://me.hi.hn/logo/天映频道.png" group-title="新马",天映新加坡
 https://cdn.qd.je/163189/typd
+#EXTINF:-1 tvg-name="天映经典" tvg-logo="https://me.hi.hn/logo/天映经典.png" group-title="新马",天映经典频道
+https://cdn.qd.je/163189/ccm
 #EXTINF:-1 tvg-name="Channel 5" tvg-logo="https://me.hi.hn/logo/tv/Channel5.png" group-title="新马",Channel 5
 https://cdn.qd.je/163189/ch5
 #EXTINF:-1 tvg-name="Channel 8" tvg-logo="https://me.hi.hn/logo/tv/Channel8.png" group-title="新马",Channel 8

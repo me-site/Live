@@ -106,6 +106,7 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
+天映经典
 Astro AOD
 Astro AEC
 Astro QJ
@@ -259,6 +260,7 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
+天映经典
 Astro AOD
 Astro AEC
 Astro QJ

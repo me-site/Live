@@ -10,20 +10,9 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-东方卫视
-北京卫视
-广东卫视
-东南卫视
-河北卫视
-海南卫视
-广西卫视
-重庆卫视
 安徽卫视
-河南卫视
-陕西卫视
-吉林卫视
-辽宁卫视
 J2
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -38,6 +27,7 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+ViuTV Six
 美亚电影台
 中天新闻台
 中天综合台
@@ -118,7 +108,12 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
+天映频道
+天映经典
+Astro AOD
+Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf
@@ -171,21 +166,10 @@ CCTV-央视台球
 CCTV-女性时尚
 CCTV-高尔夫网球
 CCTV-央视文化精品
-东方卫视
-北京卫视
-广东卫视
-东南卫视
-河北卫视
-海南卫视
-广西卫视
-重庆卫视
 安徽卫视
-河南卫视
-陕西卫视
-吉林卫视
-辽宁卫视
 无线财经资讯台
 J2
+TVB千禧经典
 黄金华剧台
 PopC
 功夫台
@@ -200,6 +184,7 @@ NOW Sports 精选
 NOW Sports 1
 RTHK 34
 RTHK 35
+ViuTV Six
 美亚电影台
 中天新闻台
 中天综合台
@@ -280,7 +265,12 @@ tvN
 韩国娱乐台
 时尚运动X
 华丽翡翠台
+天映频道
+天映经典
+Astro AOD
+Astro AEC
 Astro QJ
+Astro欢喜台
 Astro Football
 Astro Sports Plus
 Astro Golf
